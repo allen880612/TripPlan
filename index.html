@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首爾 2026 私人訂製行程 | T1 朝聖 & 美學漫遊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        /* Chart Container Styling */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f3f4f6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+
+        /* Utility for hiding sections */
+        .hidden-section {
+            display: none;
+        }
+        
+        /* Fade in animation */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #FDFBF7; /* Warm off-white */
+            color: #333333;
+        }
+
+        .btn-primary {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #333333;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: #e5e7eb;
+            color: #1f2937;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #d1d5db;
+        }
+
+        .tab-active {
+            border-bottom: 2px solid #1a1a1a;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        .tab-inactive {
+            color: #9ca3af;
+        }
+        .tab-inactive:hover {
+            color: #4b5563;
+        }
+    </style>
+    <!-- Chosen Palette: Seoul Spring Minimalist (Warm Beige #FDFBF7, Charcoal #333333, Soft Concrete #E5E7EB, Pale Cherry Accent #FCE7F3) -->
+    <!-- Application Structure Plan:
+         1. Hero Dashboard: Immediate trip context (Countdown, Flight, Hotel).
+         2. Tab Navigation: "每日行程 (Daily)", "分頭行動 (T1/Beauty)", "美食攻略 (Dining)", "行前準備 (Prep)".
+         3. Daily View: Interactive timeline with "Morning/Afternoon/Evening" slots. Includes transport logic and "Guide's Real Talk" (verification notes).
+         4. Budget Visualizer: Chart.js to show cost breakdown.
+         5. T1 & Beauty Special: Dedicated detailed modal for Day 2 logistics.
+         Rationale: The user wants a "Travel Book" experience. A clean, tabbed dashboard allows linear planning (day by day) but also quick access to specific needs (food lists, budget) without scrolling endlessly. 
+    -->
+    <!-- Visualization & Content Choices:
+         - Chart.js Doughnut: Budget breakdown (Goal: Inform/Organize).
+         - Interactive List/Cards: Daily Itinerary (Goal: Organize/Inform). Click to expand details.
+         - Status Indicators: "Reservation Required", "Walk-in", "Queue Alert" using CSS badges (Goal: Inform).
+         - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="antialiased min-h-screen flex flex-col items-center">
+
+    <!-- Main Container -->
+    <main class="w-full max-w-5xl bg-white shadow-xl min-h-screen flex flex-col">
+
+        <!-- Hero Section -->
+        <header class="bg-[#F5F5F0] p-6 md:p-10 border-b border-gray-100">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <span class="text-xs font-bold tracking-widest text-gray-500 uppercase">2026 首爾私人訂製</span>
+                    <h1 class="text-3xl md:text-4xl font-light text-gray-900 mt-1">美學與 T1 朝聖之旅</h1>
+                    <p class="text-gray-600 mt-2 text-sm">3/09 (一) - 3/14 (六) • 6 天 5 夜 • 4 人同行</p>
+                </div>
+                <div class="flex flex-col items-end">
+                    <div class="text-right">
+                        <div class="text-xs text-gray-500">住宿基地</div>
+                        <div class="font-medium text-gray-800">Seoulchae (龍山區)</div>
+                    </div>
+                    <div class="mt-2 text-right">
+                        <div class="text-xs text-gray-500">航班 (華航)</div>
+                        <div class="text-sm font-mono text-gray-800">TPE 07:50 ➔ ICN 11:20</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Context Intro -->
+            <div class="mt-6 p-4 bg-white border-l-4 border-gray-800 rounded-r shadow-sm">
+                <p class="text-sm text-gray-700 leading-relaxed">
+                    <strong>導遊筆記：</strong> 歡迎來到首爾！這份行程專為你們設計，結合了 <strong>T1 粉絲朝聖</strong> 與 <strong>質感美學漫遊</strong>。
+                    行程重點在於「分區慢遊」，避免長途拉車。我們將龍山區作為核心，輻射至江南、聖水與鐘路。
+                    已特別避開週二景福宮休館日，並針對熱門餐廳（如夢炭）提供了備案策略。
+                </p>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="flex overflow-x-auto border-b border-gray-200 sticky top-0 bg-white z-10">
+            <button onclick="switchTab('itinerary')" id="tab-itinerary" class="tab-active px-6 py-4 text-sm font-medium whitespace-nowrap focus:outline-none">每日行程規劃</button>
+            <button onclick="switchTab('special')" id="tab-special" class="tab-inactive px-6 py-4 text-sm font-medium whitespace-nowrap focus:outline-none">Day 2: T1 & 質感分流</button>
+            <button onclick="switchTab('dining')" id="tab-dining" class="tab-inactive px-6 py-4 text-sm font-medium whitespace-nowrap focus:outline-none">美食 & 預約攻略</button>
+            <button onclick="switchTab('budget')" id="tab-budget" class="tab-inactive px-6 py-4 text-sm font-medium whitespace-nowrap focus:outline-none">預算 & 準備</button>
+        </nav>
+
+        <!-- CONTENT: ITINERARY -->
+        <section id="content-itinerary" class="p-6 md:p-8 fade-in">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-semibold text-gray-800">行程總覽</h2>
+                <div class="flex space-x-2">
+                    <!-- Day Buttons -->
+                    <div id="day-buttons" class="flex bg-gray-100 rounded-lg p-1 overflow-x-auto">
+                        <!-- Buttons injected via JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day Detail Card -->
+            <div id="day-detail-container" class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                <!-- Content injected via JS -->
+            </div>
+        </section>
+
+        <!-- CONTENT: SPECIAL (T1/Beauty) -->
+        <section id="content-special" class="p-6 md:p-8 hidden-section fade-in">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- MEN: T1 -->
+                <div class="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
+                    <div class="bg-black text-white p-4">
+                        <h3 class="text-lg font-bold">♟️ 男士路線：T1 榮耀朝聖</h3>
+                        <p class="text-xs text-gray-400">地點：江南區 新論峴/宣靖陵</p>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2">T1 HQ & Shop</h4>
+                            <p class="text-sm text-gray-600 mb-2">首爾江南區宣陵路 627 (627 Seolleung-ro)</p>
+                            <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4">
+                                <li><strong>營業時間：</strong> 12:00 - 20:00 (通常週一公休，Day 2 為週二，請務必確認當月公告)。</li>
+                                <li><strong>亮點：</strong> 1F T1 Shop (隊服、周邊), 2F T1 Café & 獎盃展示區。</li>
+                                <li><strong>攻略：</strong> 建議 13:00 左右到達，避開剛開門的人潮。可以在 Café 點一杯選手特調。</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2">周邊備案 (網咖體驗)</h4>
+                            <p class="text-sm text-gray-600">如果逛完還有時間，推薦去體驗首爾的高級網咖 (PC Bang)，江南區很多配置 RTX 4090 的頂級網咖，體驗韓服 LoL。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WOMEN: Beauty -->
+                <div class="bg-[#FFF5F7] border border-pink-100 rounded-xl overflow-hidden">
+                    <div class="bg-pink-200 text-pink-900 p-4">
+                        <h3 class="text-lg font-bold">💄 女士路線：質感美學</h3>
+                        <p class="text-xs text-pink-700">地點：江南區 狎鷗亭/新沙/清潭</p>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2">CHAHONG (車紅) 妝髮體驗</h4>
+                            <p class="text-sm text-gray-600 mb-2">需提前 1-2 個月預約。</p>
+                            <div class="bg-white p-3 rounded text-sm text-gray-600 border border-pink-100">
+                                <strong>流程：</strong> 洗髮 -> 造型剪/燙 -> 韓系淡妝。全程約 2-3 小時。
+                                <br><strong>分店：</strong> 建議預約 "Ardor" 或 "Room" 江南店，離 T1 較近。
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2">Tamburins & Haus Dosan</h4>
+                            <p class="text-sm text-gray-600">Gentle Monster 旗下的複合空間。Tamburins 的香氛護手霜是最佳伴手禮。就在狎鷗亭羅德奧附近，離美容室不遠。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-white border border-gray-200 rounded-xl p-6 text-center">
+                <h3 class="text-lg font-bold text-gray-800">🤝 會合點：星空圖書館 (Starfield Library)</h3>
+                <p class="text-sm text-gray-600 mt-2">位於 COEX Mall。男生逛完 T1，女生做完造型，大約 17:30 在此集合拍照，然後前往晚餐。</p>
+                <div class="mt-4 inline-block bg-gray-100 px-4 py-2 rounded text-sm font-mono text-gray-700">
+                    交通：皆搭乘計程車前往 COEX (約 10-15 分鐘車程)
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENT: DINING -->
+        <section id="content-dining" class="p-6 md:p-8 hidden-section fade-in">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">嚴選餐廳清單 (已驗證 2024-2025)</h2>
+                    <div class="space-y-4" id="dining-list">
+                        <!-- Dining Cards Injected JS -->
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-1">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 sticky top-24">
+                        <h3 class="font-bold text-gray-800 mb-4">預約注意事項 ⚠️</h3>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-start">
+                                <span class="mr-2">📱</span>
+                                <span><strong>Catch Table Global:</strong> 這是必備 App。夢炭、Nanpo 等熱門店偶爾會釋出位置，或需現場取號。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">🕒</span>
+                                <span><strong>夢炭 (Mongtan):</strong> 不接受海外線上預約。攻略：Day 1 下午由一人先去現場登記候位 (就在飯店旁)，其他人整理行李。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">🥩</span>
+                                <span><strong>韓優板:</strong> 屬於高級韓牛，建議透過飯店禮賓部或 Catch Table 提前付訂金預約。</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENT: BUDGET & PREP -->
+        <section id="content-budget" class="p-6 md:p-8 hidden-section fade-in">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                
+                <!-- Budget Chart -->
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">預算預估 (每人)</h2>
+                    <p class="text-sm text-gray-500 mb-6">不含個人精品購物，以舒適體驗為標準。</p>
+                    <div class="chart-container">
+                        <canvas id="budgetChart"></canvas>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <p class="text-2xl font-light text-gray-800">NT$ 34,000 <span class="text-sm text-gray-500">/ 人</span></p>
+                        <p class="text-xs text-gray-400 mt-1">(含機票、食宿、交通、門票)</p>
+                    </div>
+                </div>
+
+                <!-- Prep Checklist -->
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold text-gray-800 mb-3">行前準備清單</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center p-3 bg-white border border-gray-100 rounded shadow-sm">
+                                <span class="w-6 h-6 flex items-center justify-center bg-gray-200 text-gray-600 rounded-full text-xs mr-3">1</span>
+                                <span class="text-sm text-gray-700"><strong>ESIM 網卡：</strong> 建議買吃到飽，地圖查詢很耗流量。</span>
+                            </li>
+                            <li class="flex items-center p-3 bg-white border border-gray-100 rounded shadow-sm">
+                                <span class="w-6 h-6 flex items-center justify-center bg-gray-200 text-gray-600 rounded-full text-xs mr-3">2</span>
+                                <span class="text-sm text-gray-700"><strong>Naver Map：</strong> Google Map 在韓國不好用。請事先註冊並收藏地點。</span>
+                            </li>
+                            <li class="flex items-center p-3 bg-white border border-gray-100 rounded shadow-sm">
+                                <span class="w-6 h-6 flex items-center justify-center bg-gray-200 text-gray-600 rounded-full text-xs mr-3">3</span>
+                                <span class="text-sm text-gray-700"><strong>WOWPASS / T-Money：</strong> 機場購買。方便地鐵與便利商店消費。</span>
+                            </li>
+                            <li class="flex items-center p-3 bg-white border border-gray-100 rounded shadow-sm">
+                                <span class="w-6 h-6 flex items-center justify-center bg-gray-200 text-gray-600 rounded-full text-xs mr-3">4</span>
+                                <span class="text-sm text-gray-700"><strong>插座轉接頭：</strong> 韓國為雙圓孔 (Type C/F)，電壓 220V。</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-gray-800 mb-3">3月天氣與穿搭</h3>
+                        <div class="bg-blue-50 p-4 rounded text-sm text-blue-800">
+                            <strong>平均氣溫：</strong> 2°C ~ 11°C
+                            <br><br>
+                            早晚溫差非常大。建議<strong>洋蔥式穿搭</strong>：發熱衣 + 襯衫/大學T + 厚大衣/風衣。圍巾是必備的，室內暖氣強，大衣方便穿脫。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // --- Data Layer ---
+        const tripData = {
+            days: [
+                {
+                    id: 1,
+                    date: "3/09 (一)",
+                    title: "抵達與明洞初印象",
+                    theme: "Relax & Street Food",
+                    weather: "☀ 4°C~10°C",
+                    schedule: [
+                        { time: "11:20", activity: "抵達仁川機場 (ICN)", note: "搭乘 AREX 直達首爾站，轉計程車/地鐵至龍山飯店 (Seoulchae)。" },
+                        { time: "14:30", activity: "飯店 Check-in & 休息", note: "整理儀容。派一人去夢炭 (Mongtan) 看現場候位狀況(若就在隔壁)。" },
+                        { time: "16:00", activity: "明洞商圈 (Myeongdong)", note: "換錢 (大使館前)、逛街、聖堂拍照。一定要吃街頭小吃 (雞蛋糕、糖餅)。" },
+                        { time: "19:00", activity: "晚餐：南營豚 或 夢炭", note: "如果夢炭排不到，推薦去旁邊的「南營豚」吃炭火烤肉，評價極高且更在地。" },
+                        { time: "21:30", activity: "回飯店休息", note: "第一天早起搭機，建議早點休息。" }
+                    ],
+                    transport: "機場快線 AREX + 地鐵 4 號線 (淑大入口 -> 明洞)",
+                    tips: "明洞最近復活了，人潮很多，注意隨身財物。Olive Young 旗艦店可以先逛，但建議最後一天再買重的東西。"
+                },
+                {
+                    id: 2,
+                    date: "3/10 (二)",
+                    title: "分頭行動：T1 與 美學",
+                    theme: "Esports vs Beauty",
+                    weather: "☁ 3°C~11°C",
+                    schedule: [
+                        { time: "10:30", activity: "早午餐：飯店附近", note: "龍山區很多文青咖啡廳，推薦 Approach Coffee。" },
+                        { time: "12:30", activity: "分頭行動開始", note: "男生往宣靖陵 (T1)，女生往狎鷗亭 (美容室)。" },
+                        { time: "13:00", activity: "【男】T1 HQ 參觀", note: "逛 Shop，喝咖啡，感受冠軍氛圍。附近還有 Riot PC Bang。" },
+                        { time: "13:00", activity: "【女】CHAHONG 妝髮 & 逛街", note: "做完妝髮後去逛 Tamburins, Gentle Monster, London Bagel Museum (需排隊)。" },
+                        { time: "17:30", activity: "合體：星空圖書館", note: "COEX Mall 內。這個時間點光線好，且妝髮完整，最適合拍照。" },
+                        { time: "19:00", activity: "晚餐：韓優板 (Hanwoo Board)", note: "慶祝合體，享用頂級韓牛包廂體驗。" }
+                    ],
+                    transport: "建議全程計程車 (Kakao T)，區域移動約 10000-15000 韓元，四人分攤很划算。",
+                    tips: "T1 Shop 的庫存流動很快，如果有特定隊服想買，要有缺貨的心理準備。"
+                },
+                {
+                    id: 3,
+                    date: "3/11 (三)",
+                    title: "古典首爾：宮殿與韓屋",
+                    theme: "History & Culture",
+                    weather: "☀ 2°C~12°C",
+                    schedule: [
+                        { time: "09:30", activity: "景福宮 (Gyeongbokgung)", note: "穿韓服進場免門票。建議 10:00 觀看守門將換崗儀式。" },
+                        { time: "11:30", activity: "午餐：土俗村參雞湯", note: "景福宮旁經典老店，暖胃首選。若排隊太長可選附近的「大瓦房」。" },
+                        { time: "13:30", activity: "北村韓屋村 & 三清洞", note: "著名的韓屋坡道拍照。三清洞有許多藝廊與質感小店。" },
+                        { time: "16:00", activity: "西村 & Ground Seesaw", note: "往西走，氣氛更文藝安靜。適合散步喝咖啡 (推荐 mk2)。" },
+                        { time: "18:30", activity: "晚餐：廣藏市場", note: "生牛肉 (Yukhoe)、綠豆煎餅、麻藥飯捲。體驗在地熱鬧氣氛。" }
+                    ],
+                    transport: "地鐵 3 號線 (安國站/景福宮站)。走路較多，請穿好走的鞋。",
+                    tips: "北村有「寧静時間」，遊客請輕聲細語。廣藏市場著名的「糯米麻花捲」必排。"
+                },
+                {
+                    id: 4,
+                    date: "3/12 (四)",
+                    title: "潮流聖地：聖水與弘大",
+                    theme: "Trendy & Hipster",
+                    weather: "☁ 5°C~13°C",
+                    schedule: [
+                        { time: "10:30", activity: "聖水洞 (Seongsu-dong)", note: "首爾布魯克林。必看：Dior 聖水 (外觀)、NUDAKE (藝術甜點)。" },
+                        { time: "12:30", activity: "午餐：Somunnan Gamjatang", note: "傳說中的聖水馬鈴薯排骨湯，白鍾元推薦。就在聖水站附近。" },
+                        { time: "14:30", activity: "LCDC SEOUL", note: "複合文化空間，很多設計師小品牌，建築本身非常好拍。" },
+                        { time: "16:30", activity: "移動至弘大 (Hongdae)", note: "感受大學生青春活力。購物 (服飾/鞋子)、拍貼機。" },
+                        { time: "19:00", activity: "晚餐：弘大烤腸 或 豬腳小姐", note: "弘大美食選擇多，氣氛熱鬧。" },
+                        { time: "20:30", activity: "弘大 Busking (街頭表演)", note: "晚餐後散步看街頭表演，是首爾獨有體驗。" }
+                    ],
+                    transport: "地鐵 2 號線 (聖水 -> 弘大入口)，這條線貫穿主要景點，很方便。",
+                    tips: "聖水洞有很多 Pop-up Store (快閃店)，出發前可以查一下當時有什麼品牌活動。"
+                },
+                {
+                    id: 5,
+                    date: "3/13 (五)",
+                    title: "藝術與漢南洞",
+                    theme: "Art & Luxury",
+                    weather: "☀ 4°C~12°C",
+                    schedule: [
+                        { time: "10:30", activity: "Leeum 美術館", note: "三星集團的美術館。建築與展品皆為世界級。需事前預約門票。" },
+                        { time: "13:00", activity: "午餐：漢南洞特色料理", note: "推薦 Downtowner 漢堡 或 Parc (精緻韓式家常菜)。" },
+                        { time: "15:00", activity: "漢南洞逛街", note: "Mardi Mercredi, Marithé, Nonfiction 等潮牌旗艦店都在這。" },
+                        { time: "17:00", activity: "Vinyl & Plastic", note: "現代卡圖書館旁，可以試聽黑膠唱片，空間感極佳。" },
+                        { time: "19:00", activity: "晚餐：Nanpo (漢南店) 或 On-6-point", note: "精緻創意韓食，為旅程畫下完美句點。" }
+                    ],
+                    transport: "漢南洞地鐵較遠 (漢江鎮站)，建議區域內步行或搭短程公車/計程車。",
+                    tips: "漢南洞坡道多，這天也是考驗腳力的一天。Mardi 衣服很多人買，建議早點去。"
+                },
+                {
+                    id: 6,
+                    date: "3/14 (六)",
+                    title: "最後巡禮與返家",
+                    theme: "Last Minute & Departure",
+                    weather: "☀ 5°C~14°C",
+                    schedule: [
+                        { time: "10:00", activity: "Check-out & 寄放行李", note: "行李可寄放飯店或直接拉去首爾站預辦登機 (若搭華航可查是否有此服務)。" },
+                        { time: "11:00", activity: "Amorepacific 總部", note: "就在龍山站旁。建築大師作品，1F 大廳極美，有 Osulloc 茶屋。" },
+                        { time: "13:00", activity: "午餐 & 樂天超市 (首爾站)", note: "最後採買零食伴手禮 (海苔、泡菜、零食)。" },
+                        { time: "16:00", activity: "搭乘 AREX 前往機場", note: "預留充裕時間退稅與逛免稅店。" },
+                        { time: "20:15", activity: "起飛 (ICN -> TPE)", note: "帶著滿滿回憶回家。" }
+                    ],
+                    transport: "步行 + AREX。最輕鬆的一天。",
+                    tips: "首爾站樂天超市可以退稅並提供打包箱，非常方便。"
+                }
+            ],
+            dining: [
+                {
+                    name: "夢炭 (Mongtan) 몽탄",
+                    type: "牛肋骨燒肉",
+                    area: "龍山區 (飯店旁)",
+                    rating: "⭐⭐⭐⭐⭐",
+                    note: "首爾最難排。稻草煙燻香氣獨特。需下午 2-3 點現場登記晚上的位置。"
+                },
+                {
+                    name: "南營豚 (Namyeong-don) 남영돈",
+                    type: "炭火豬頸肉",
+                    area: "龍山區",
+                    rating: "⭐⭐⭐⭐⭐",
+                    note: "肉質彈牙，炭火香氣足。夢炭的超強備案，也是排隊名店。"
+                },
+                {
+                    name: "土俗村參雞湯",
+                    type: "傳統補身湯",
+                    area: "景福宮",
+                    rating: "⭐⭐⭐⭐",
+                    note: "觀光客多但味道正宗，翻桌率快，不用等太久。"
+                },
+                {
+                    name: "Hanwoo Board (韓優板)",
+                    type: "高級韓牛",
+                    area: "江南區",
+                    rating: "⭐⭐⭐⭐⭐",
+                    note: "包廂式服務，肉質頂級，適合重要聚餐。需預約。"
+                },
+                {
+                    name: "Nanpo (난포)",
+                    type: "創意韓食",
+                    area: "聖水/漢南",
+                    rating: "⭐⭐⭐⭐",
+                    note: "包飯捲與陳年泡菜生魚片是必點。裝潢美，適合拍照。"
+                },
+                {
+                    name: "廣藏市場 (富村生牛肉)",
+                    type: "米其林生牛肉",
+                    area: "鐘路",
+                    rating: "⭐⭐⭐⭐",
+                    note: "連續多年米其林必比登推薦，活章魚牛肉必試。"
+                }
+            ]
+        };
+
+        // --- Logic Layer ---
+
+        // State
+        let currentDayId = 1;
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            renderDayButtons();
+            renderDayDetail(1);
+            renderDining();
+            initChart();
+        });
+
+        function switchTab(tabName) {
+            // Hide all contents
+            ['itinerary', 'special', 'dining', 'budget'].forEach(id => {
+                document.getElementById(`content-${id}`).classList.add('hidden-section');
+                document.getElementById(`tab-${id}`).classList.replace('tab-active', 'tab-inactive');
+            });
+
+            // Show selected
+            document.getElementById(`content-${tabName}`).classList.remove('hidden-section');
+            document.getElementById(`tab-${tabName}`).classList.replace('tab-inactive', 'tab-active');
+        }
+
+        function renderDayButtons() {
+            const container = document.getElementById('day-buttons');
+            container.innerHTML = tripData.days.map(day => `
+                <button onclick="renderDayDetail(${day.id})" 
+                        class="px-4 py-2 rounded-md text-sm whitespace-nowrap transition-colors ${day.id === currentDayId ? 'bg-black text-white shadow' : 'text-gray-600 hover:bg-gray-200'}">
+                    Day ${day.id}
+                </button>
+            `).join('');
+        }
+
+        function renderDayDetail(dayId) {
+            currentDayId = dayId;
+            renderDayButtons(); // Update active state
+            
+            const day = tripData.days.find(d => d.id === dayId);
+            const container = document.getElementById('day-detail-container');
+            
+            // Generate Timeline HTML
+            const timelineHtml = day.schedule.map((item, index) => `
+                <div class="flex gap-4 pb-8 relative last:pb-0">
+                    <!-- Line -->
+                    ${index !== day.schedule.length - 1 ? '<div class="absolute left-[2.25rem] top-8 bottom-0 w-0.5 bg-gray-200"></div>' : ''}
+                    
+                    <!-- Time Bubble -->
+                    <div class="flex-shrink-0 w-18 text-right pt-1">
+                        <span class="font-mono font-bold text-gray-900 bg-gray-100 px-2 py-1 rounded text-sm">${item.time}</span>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="flex-grow pt-1">
+                        <h4 class="font-bold text-gray-800 text-lg">${item.activity}</h4>
+                        <p class="text-gray-600 text-sm mt-1 leading-relaxed">${item.note}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            container.innerHTML = `
+                <div class="border-b border-gray-100 pb-4 mb-6">
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800">${day.date} ${day.title}</h3>
+                            <p class="text-sm text-gray-500 mt-1 uppercase tracking-wide font-semibold text-pink-600">${day.theme}</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-2xl">${day.weather.split(' ')[0]}</span>
+                            <span class="text-sm text-gray-600 block">${day.weather.split(' ')[1]}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    ${timelineHtml}
+                </div>
+
+                <div class="mt-8 bg-[#FDFBF7] p-4 rounded-lg border border-gray-200">
+                    <div class="flex items-start gap-3 mb-2">
+                        <span class="text-lg">🚇</span>
+                        <div>
+                            <strong class="text-sm text-gray-900">交通建議：</strong>
+                            <p class="text-sm text-gray-600">${day.transport}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lg">💡</span>
+                        <div>
+                            <strong class="text-sm text-gray-900">導遊小撇步：</strong>
+                            <p class="text-sm text-gray-600">${day.tips}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderDining() {
+            const container = document.getElementById('dining-list');
+            container.innerHTML = tripData.dining.map(place => `
+                <div class="flex flex-col sm:flex-row bg-white border border-gray-100 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between mb-1">
+                            <h4 class="font-bold text-lg text-gray-800">${place.name}</h4>
+                            <span class="text-xs font-bold bg-yellow-100 text-yellow-800 px-2 py-1 rounded">${place.rating}</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-2">${place.area} • ${place.type}</p>
+                        <p class="text-sm text-gray-700">${place.note}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function initChart() {
+            const ctx = document.getElementById('budgetChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['機票', '住宿', '餐飲 (含高級)', '購物/門票/其他'],
+                    datasets: [{
+                        data: [13000, 8000, 9000, 4000], // Approx breakdown
+                        backgroundColor: ['#333333', '#6b7280', '#e5e7eb', '#fce7f3'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { usePointStyle: true, boxWidth: 8 }
+                        }
+                    }
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
