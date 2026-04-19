@@ -1,1160 +1,241 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>首爾散步手帖 V3 - 6日5夜首爾完全攻略</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --paper: #faf6ef;
-            --ink: #3a322a;
-            --accent-red: #c84b31;
-            --accent-blue: #6b9ebb;
-            --accent-green: #7da87b;
-            --accent-orange: #d4883a;
-            --accent-purple: #9b7eb5;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--paper); color: var(--ink); line-height: 1.8; font-weight: 300; font-size: 16px; }
-        h1,h2,h3,h4,h5,h6 { font-family: 'Zen Maru Gothic', sans-serif; font-weight: 700; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wei's Trip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFF9F5; --ink: #1A1A2E; --body: #3D3D52; --muted: #8B8B9F;
+    --cream: #FFF3E8; --coral: #FF6B4A; --sun: #FFB84D; --matcha: #8BA446;
+    --navy: #1E3A8A; --sakura: #EC88A8; --white: #FFFFFF;
+    --line: rgba(26,26,46,0.12);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Zen Kaku Gothic New", "PingFang TC", "Noto Sans TC", sans-serif;
+    background: var(--bg); color: var(--body); line-height: 1.7;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    min-height: 100vh; display: flex; flex-direction: column;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
 
-        /* NAV */
-        nav { position: sticky; top: 0; background-color: rgba(250,246,239,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid #e0ddd5; z-index: 1000; box-shadow: 0 2px 8px rgba(58,50,42,0.08); }
-        .nav-container { max-width: 1000px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 56px; }
-        .nav-logo { font-family: 'Zen Maru Gothic', sans-serif; font-size: 17px; font-weight: 700; color: var(--accent-red); white-space: nowrap; }
-        .nav-links { display: flex; gap: 4px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--ink); font-size: 13px; padding: 6px 10px; border-radius: 20px; transition: all 0.3s; }
-        .nav-links a:hover { background-color: rgba(200,75,49,0.1); color: var(--accent-red); }
-        .hamburger-toggle { display: none; }
-        .hamburger-label { display: none; flex-direction: column; cursor: pointer; gap: 5px; padding: 8px; }
-        .hamburger-label span { width: 22px; height: 2px; background-color: var(--ink); transition: all 0.3s; display: block; }
+  .topnav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    background: rgba(255, 249, 245, 0.85);
+    border-bottom: 1px solid var(--line);
+  }
+  .topnav-inner {
+    max-width: 1280px; margin: 0 auto; padding: 0.75rem 1.25rem;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap;
+  }
+  .brand-mark {
+    font-family: "Shippori Mincho", serif; font-weight: 700; font-size: 1rem;
+    color: var(--ink); letter-spacing: 0.02em;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .brand-mark .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); display: inline-block; }
+  .brand-jp { font-size: 0.72rem; letter-spacing: 0.22em; color: var(--muted); text-transform: uppercase; }
 
-        /* COVER */
-        .cover { min-height: 100vh; background: linear-gradient(135deg, #3a322a 0%, #5a4a3a 30%, #c84b31 70%, #d4883a 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; position: relative; overflow: hidden; }
-        .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 80%, rgba(200,75,49,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(212,136,58,0.3) 0%, transparent 50%); }
-        .cover::after { content: ''; position: absolute; width: 300px; height: 300px; border: 1px solid rgba(255,255,255,0.1); border-radius: 50%; top: -50px; right: -80px; animation: float 8s ease-in-out infinite; }
-        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        .cover-content { position: relative; z-index: 2; padding: 40px; }
-        .cover-content h1 { font-size: 52px; margin-bottom: 10px; letter-spacing: 4px; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
-        .cover-content .subtitle { font-size: 18px; font-weight: 300; margin-bottom: 25px; letter-spacing: 2px; opacity: 0.9; }
-        .cover-content .meta { font-size: 14px; opacity: 0.85; line-height: 2; }
-        .cover-badge { display: inline-block; margin-top: 25px; padding: 8px 24px; border: 1px solid rgba(255,255,255,0.4); border-radius: 30px; font-size: 12px; letter-spacing: 1px; animation: pulse 2s ease-in-out infinite; }
-        @keyframes pulse { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
+  main { flex: 1; max-width: 1280px; width: 100%; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        section { padding: 55px 0; }
-        section h2 { font-size: 28px; margin-bottom: 28px; padding-bottom: 12px; border-bottom: 3px solid var(--accent-red); position: relative; padding-left: 20px; }
-        section h2::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; background-color: var(--accent-red); border-radius: 50%; }
-        section h3 { font-size: 21px; margin: 28px 0 16px 0; padding-left: 14px; border-left: 4px solid var(--accent-red); }
-        section h4 { font-size: 17px; margin: 16px 0 12px 0; }
+  .page-head {
+    margin: 1rem 0 2rem;
+    display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  .page-head .label {
+    font-family: "Shippori Mincho", serif; color: var(--coral);
+    font-weight: 700; font-size: 0.9rem; letter-spacing: 0.22em;
+  }
+  .page-head h1 {
+    font-family: "Shippori Mincho", serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: var(--ink); font-weight: 700; line-height: 1.1;
+    margin-top: 0.3rem;
+  }
+  .page-head .jp {
+    font-size: 0.72rem; letter-spacing: 0.25em; color: var(--muted); text-transform: uppercase;
+  }
+  .page-head .sub { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; }
 
-        /* DAY HERO WITH IMAGES */
-        .day-hero { height: 280px; display: flex; align-items: flex-end; position: relative; margin-bottom: 30px; border-radius: 8px; overflow: hidden; background-size: cover; background-position: center; }
-        .day-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(58,50,42,0.8) 0%, rgba(58,50,42,0.2) 50%, transparent 100%); z-index: 1; }
-        .day-hero-title { position: relative; z-index: 2; color: white; padding: 24px; font-size: 20px; text-shadow: 0 1px 8px rgba(0,0,0,0.4); line-height: 1.4; }
-        .day-hero-title small { display: block; font-size: 12px; font-weight: 300; opacity: 0.85; margin-top: 4px; letter-spacing: 1px; }
+  .section-head {
+    margin: 1.5rem 0 1rem;
+    display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  .section-head h2 { font-family: "Shippori Mincho", serif; font-size: 1.3rem; color: var(--ink); font-weight: 700; }
+  .section-head .jp { font-size: 0.7rem; letter-spacing: 0.22em; color: var(--muted); text-transform: uppercase; }
 
-        /* CARDS */
-        .card { background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(58,50,42,0.08); margin-bottom: 16px; transition: transform 0.2s, box-shadow 0.2s; }
-        .card:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(58,50,42,0.12); }
-        .card-image { width: 100%; height: 220px; object-fit: cover; display: block; }
-        .card-content { padding: 20px; }
-        .card-content h4 { margin-top: 0; }
-        .card-content p { margin-bottom: 5px; }
+  .trips { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+  @media (min-width: 900px) { .trips { grid-template-columns: 1fr 1fr; } }
 
-        /* IMAGE CONTAINER */
-        .image-container { margin: 22px 0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(58,50,42,0.08); }
-        .image-container img { width: 100%; height: auto; display: block; }
+  .trip-card {
+    position: relative; display: block;
+    border-radius: 22px; overflow: hidden;
+    border: 1px solid var(--line); background: var(--ink);
+    min-height: 280px; padding: 1.6rem 1.6rem 1.5rem;
+    color: var(--white);
+    transition: transform 200ms ease, border-color 200ms;
+  }
+  .trip-card::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(26,26,46,0.55) 0%, rgba(26,26,46,0.35) 40%, rgba(26,26,46,0.85) 100%);
+    z-index: 1;
+  }
+  .trip-card .bg {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: 0; opacity: 0.9;
+  }
+  .trip-card > * { position: relative; z-index: 2; }
+  .trip-card:hover { transform: translateY(-2px); border-color: rgba(26,26,46,0.4); }
 
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 22px; }
+  .trip-inner {
+    display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 248px; gap: 1.2rem;
+  }
+  .trip-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .tag {
+    display: inline-flex; align-items: center;
+    padding: 0.3rem 0.75rem; border-radius: 999px;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.05em;
+  }
+  .tag.coral { background: var(--coral); color: var(--white); }
+  .tag.sun { background: var(--sun); color: var(--ink); }
+  .tag.sakura { background: var(--sakura); color: var(--white); }
+  .tag.matcha { background: var(--matcha); color: var(--white); }
+  .tag.line-tag { background: transparent; border: 1px solid rgba(255,255,255,0.4); color: var(--white); }
 
-        /* TIP BOXES */
-        .tip-box { padding: 16px; margin: 16px 0; border-left: 4px solid var(--accent-blue); background-color: rgba(107,158,187,0.08); border-radius: 0 8px 8px 0; font-size: 15px; }
-        .tip-box.warn { border-left-color: var(--accent-red); background-color: rgba(200,75,49,0.06); }
-        .tip-box.photo { border-left-color: var(--accent-orange); background-color: rgba(212,136,58,0.06); }
-        .tip-box.route { border-left-color: var(--accent-green); background-color: rgba(125,168,123,0.06); }
-        .tip-box strong { color: var(--ink); display: block; margin-bottom: 5px; }
-        .backup-box { border: 2px dashed var(--accent-red); padding: 16px; margin: 16px 0; border-radius: 8px; background-color: rgba(200,75,49,0.03); }
-        .backup-box h4 { color: var(--accent-red); margin-top: 0; }
+  .trip-title {
+    font-family: "Shippori Mincho", serif;
+    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+    line-height: 1.1; font-weight: 700; letter-spacing: -0.01em;
+  }
+  .trip-title .accent { color: var(--sun); }
+  .trip-sub { font-size: 0.88rem; opacity: 0.9; margin-top: 0.5rem; }
 
-        .area-intro { background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(58,50,42,0.08); margin: 20px 0; border-top: 4px solid; }
-        .area-intro.red { border-top-color: var(--accent-red); }
-        .area-intro.blue { border-top-color: var(--accent-blue); }
-        .area-intro.orange { border-top-color: var(--accent-orange); }
-        .area-intro.green { border-top-color: var(--accent-green); }
-        .area-intro.purple { border-top-color: var(--accent-purple); }
-        .area-intro-content { padding: 20px; }
-        .area-intro h4 { margin-top: 0; margin-bottom: 10px; }
+  .trip-meta {
+    display: flex; gap: 1.4rem; flex-wrap: wrap;
+    padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .trip-meta .m { font-size: 0.72rem; opacity: 0.9; }
+  .trip-meta .m .n {
+    font-family: "Shippori Mincho", serif; font-size: 1.25rem;
+    display: block; line-height: 1; margin-bottom: 0.2rem; font-weight: 700;
+  }
 
-        /* ROUTE DIAGRAM */
-        .route-diagram { width: 100%; margin: 20px 0; background-color: white; padding: 16px; border-radius: 8px; box-shadow: 0 2px 12px rgba(58,50,42,0.08); overflow-x: auto; }
-        .route-diagram svg { width: 100%; min-width: 580px; height: auto; }
+  .arrow-cta {
+    position: absolute; right: 1.6rem; bottom: 1.3rem; z-index: 3;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em;
+    color: var(--white); opacity: 0.95;
+  }
+  .arrow-cta svg { width: 16px; height: 16px; stroke-width: 2; transition: transform 200ms; }
+  .trip-card:hover .arrow-cta svg { transform: translateX(3px); }
 
-        /* TIMELINE */
-        .timeline { position: relative; padding-left: 26px; }
-        .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background-color: var(--accent-red); border-radius: 2px; }
-        .timeline-item { margin-bottom: 24px; position: relative; }
-        .timeline-item::before { content: ''; position: absolute; left: -16px; top: 5px; width: 10px; height: 10px; background-color: var(--accent-red); border-radius: 50%; border: 3px solid var(--paper); }
-        .timeline-time { color: var(--accent-red); font-weight: 500; margin-bottom: 3px; font-size: 14px; }
-        .timeline-title { font-size: 16px; font-weight: 500; margin-bottom: 6px; }
+  footer {
+    text-align: center; padding: 2rem 1.25rem;
+    color: var(--muted); font-size: 0.75rem; letter-spacing: 0.08em;
+    border-top: 1px solid var(--line);
+  }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--ink); }
 
-        /* TABLES */
-        .table-container { overflow-x: auto; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 12px rgba(58,50,42,0.08); }
-        table { width: 100%; border-collapse: collapse; background-color: white; }
-        thead { background-color: var(--ink); color: white; }
-        th { padding: 12px; text-align: left; font-weight: 600; font-size: 13px; }
-        td { padding: 10px 12px; border-bottom: 1px solid #e0ddd5; font-size: 13px; }
-        tbody tr:nth-child(even) { background-color: #f5f2ed; }
-
-        .sched-table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
-        .sched-table th { background: var(--ink); color: white; padding: 10px; text-align: left; font-size: 12px; }
-        .sched-table td { padding: 10px; border-bottom: 1px solid #e8e4de; vertical-align: top; }
-        .sched-table tr:nth-child(even) { background: #f8f5f0; }
-        .sched-table .time-col { white-space: nowrap; color: var(--accent-red); font-weight: 500; width: 110px; }
-        .failover { color: #888; font-size: 13px; }
-
-        /* DETAILS */
-        details { margin: 12px 0; }
-        details summary { cursor: pointer; font-weight: 500; padding: 10px 14px; background-color: #f5f2ed; border-radius: 6px; user-select: none; font-size: 14px; transition: background-color 0.2s; list-style: none; }
-        details summary::-webkit-details-marker { display: none; }
-        details summary::before { content: '\25B6\00a0 '; font-size: 0.7em; }
-        details[open] summary::before { content: '\25BC\00a0 '; }
-        details summary:hover { background-color: #ede9e1; }
-        details[open] summary { background-color: #ede9e1; border-radius: 6px 6px 0 0; }
-        .details-content { padding: 14px; background-color: #f9f7f3; border-radius: 0 0 6px 6px; border: 1px solid #ede9e1; border-top: none; font-size: 14px; }
-
-        .meal-tag { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 6px; }
-        .tag-breakfast { background: #fef3c7; color: #92400e; }
-        .tag-lunch { background: #dbeafe; color: #1e40af; }
-        .tag-dinner { background: #fce7f3; color: #9d174d; }
-        .tag-late { background: #ede9fe; color: #5b21b6; }
-
-        .naver-link { display: inline-block; font-size: 12px; background: #1EC800; color: white; padding: 1px 6px; border-radius: 4px; text-decoration: none; margin-left: 4px; font-weight: 500; vertical-align: middle; }
-        .naver-link:hover { background: #17a800; }
-
-        footer { background-color: var(--ink); color: white; padding: 35px 20px; margin-top: 40px; }
-        .footer-container { max-width: 1000px; margin: 0 auto; text-align: center; }
-        .footer-logo { font-family: 'Zen Maru Gothic', sans-serif; font-size: 18px; margin-bottom: 10px; color: var(--accent-orange); }
-        .footer-text { font-size: 13px; line-height: 1.8; opacity: 0.9; }
-
-        .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 42px; height: 42px; background-color: var(--accent-red); color: white; border: none; border-radius: 50%; font-size: 18px; cursor: pointer; box-shadow: 0 4px 12px rgba(200,75,49,0.3); transition: all 0.3s; z-index: 999; opacity: 0; transform: translateY(20px); }
-        .scroll-top.visible { opacity: 1; transform: translateY(0); }
-        .scroll-top:hover { background-color: #a83d27; transform: translateY(-2px); }
-
-        .nice-list { margin-left: 18px; line-height: 2; }
-        .compact-list { margin-left: 18px; line-height: 1.9; font-size: 14px; }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hamburger-label { display: flex; }
-            .hamburger-toggle:checked ~ .nav-links { display: flex; position: absolute; top: 56px; left: 0; right: 0; flex-direction: column; background-color: rgba(250,246,239,0.98); backdrop-filter: blur(10px); padding: 16px; gap: 4px; border-bottom: 1px solid #e0ddd5; box-shadow: 0 8px 16px rgba(58,50,42,0.1); }
-            .hamburger-toggle:checked ~ .nav-links a { padding: 10px 16px; font-size: 15px; }
-            .hamburger-toggle:checked ~ .hamburger-label span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-            .hamburger-toggle:checked ~ .hamburger-label span:nth-child(2) { opacity: 0; }
-            .hamburger-toggle:checked ~ .hamburger-label span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-            .grid-2,.grid-3 { grid-template-columns: 1fr; }
-            section h2 { font-size: 23px; }
-            section h3 { font-size: 18px; }
-            .cover-content h1 { font-size: 34px; }
-            body { font-size: 15px; }
-            .day-hero { height: 200px; }
-            .day-hero-title { font-size: 17px; padding: 18px; }
-            section { padding: 35px 0; }
-            .card-image { height: 180px; }
-        }
-        @media (max-width: 480px) {
-            .nav-container { height: 50px; }
-            body { font-size: 14px; }
-            section h2 { font-size: 20px; }
-            .cover-content h1 { font-size: 26px; letter-spacing: 2px; }
-            .card-content { padding: 14px; }
-            .tip-box,.backup-box { padding: 12px; }
-            th,td { padding: 8px; font-size: 12px; }
-            .day-hero { height: 160px; }
-            .timeline { padding-left: 18px; }
-            .card-image { height: 150px; }
-        }
-        @media print { nav,.scroll-top { display: none; } .cover { min-height: auto; padding: 40px; } body { background: white; } .card,.area-intro { break-inside: avoid; } }
-    </style>
+  @media (max-width: 480px) {
+    main { padding: 1.5rem 1rem 2rem; }
+    .trip-card { padding: 1.2rem; min-height: 240px; }
+    .trip-inner { min-height: 216px; }
+  }
+</style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="nav-logo">首爾散步手帖 V3</div>
-            <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
-            <label for="hamburger-toggle" class="hamburger-label"><span></span><span></span><span></span></label>
-            <ul class="nav-links">
-                <li><a href="#prep">行前</a></li>
-                <li><a href="#day1">D1</a></li>
-                <li><a href="#day2">D2</a></li>
-                <li><a href="#day3">D3</a></li>
-                <li><a href="#day4">D4</a></li>
-                <li><a href="#day5">D5</a></li>
-                <li><a href="#day6">D6</a></li>
-                <li><a href="#summary">總覽</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <div class="cover">
-        <div class="cover-content">
-            <h1>首爾散步手帖</h1>
-            <div class="subtitle">六日五夜 · 十二餐廳 · T1 朝聖 · asterum · V3.0</div>
-            <div class="meta">
-                2026.3.9 (一) - 3.14 (六) · 4 位成人<br>
-                Base Camp：龍山區 首爾采 Seoulchae<br>
-                南營站 남영역 (1號線) + 淑大入口站 숙대입구역 (4號線) 雙節點
-            </div>
-            <div class="cover-badge">VERIFIED & OPTIMIZED</div>
-        </div>
+<nav class="topnav">
+  <div class="topnav-inner">
+    <span class="brand-mark"><span class="dot"></span>Wei's Trip</span>
+    <span class="brand-jp">TRAVEL · ARCHIVE</span>
+  </div>
+</nav>
+
+<main>
+
+  <div class="page-head">
+    <div>
+      <div class="label">COLLECTION</div>
+      <h1>旅の記録</h1>
+      <p class="sub">個人旅行行程集 · 離線可查</p>
     </div>
+    <span class="jp">Wei's Travel Notebook</span>
+  </div>
 
-    <!-- ===== 行前準備 ===== -->
-    <section id="prep">
-        <div class="container">
-            <h2>行前準備</h2>
+  <div class="section-head">
+    <h2>行程一覽</h2>
+    <span class="jp">Trips</span>
+  </div>
 
-            <div class="image-container">
-                <img src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1200&h=500&fit=crop" alt="Seoul cityscape at dusk">
-            </div>
+  <div class="trips">
 
-            <h3>航班資訊</h3>
-            <div class="card"><div class="card-content">
-                <p><strong>去程：</strong> 華航 CI160, TPE 07:50 → ICN 仁川國際機場 인천국제공항 11:20, 3/9 (週一)</p>
-                <p><strong>回程：</strong> 華航 CI161, ICN 20:15 → TPE 22:10, 3/14 (週六)</p>
-            </div></div>
-
-            <h3>Base Camp 雙節點優勢</h3>
-            <div class="area-intro red"><div class="area-intro-content">
-                <h4>首爾采 Seoulchae — 為何這個住宿超棒</h4>
-                <p>位於龍山區，夾在<strong>南營站 남영역 Namyeong Stn.（1號線 Line 1）</strong>與<strong>淑大入口站 숙대입구역 Sookdae-ipgu Stn.（4號線 Line 4）</strong>之間（各步行 5-8 分），擁有兩條地鐵大動脈：</p>
-                <ul class="compact-list">
-                    <li><strong>去明洞/東大門：</strong> 淑大入口 4 號線，2 站直達明洞站 명동역 Myeongdong Stn.</li>
-                    <li><strong>去鐘路/安國：</strong> 南營 1 號線，直達鐘路三街站 종로3가역 Jongno 3-ga Stn.</li>
-                    <li><strong>去機場：</strong> 南營到首爾站 서울역 Seoul Stn. 只有 1 站，搭 AREX 공항철도 超方便</li>
-                </ul>
-            </div></div>
-
-            <div class="tip-box warn">
-                <strong>首爾站大迷宮警告</strong>
-                千萬不要在首爾站內提大行李換乘地鐵！AREX 走到 1/4 號線需上下 10-15 分鐘。<strong>解法：</strong>出站後地面搭計程車到首爾采，5-8 分，約 ₩5,000-6,000。
-            </div>
-
-            <h3>核心交通策略</h3>
-            <div class="grid-2">
-                <div class="card"><div class="card-content">
-                    <h4>4人交通負載平衡</h4>
-                    <ul class="compact-list">
-                        <li>5km 以內一律 <strong>Kakao T 叫車</strong></li>
-                        <li>選「現場結帳」，下車刷信用卡</li>
-                        <li>車資與 4 人地鐵票 (~₩5,600) 相近</li>
-                        <li>節省大量體力與時間</li>
-                    </ul>
-                </div></div>
-                <div class="card"><div class="card-content">
-                    <h4>WOWPASS 辦理前置</h4>
-                    <ul class="compact-list">
-                        <li><strong>仁川機場 AREX 閘口旁</strong>即可辦理</li>
-                        <li>不用等到明洞，入市區即可支付</li>
-                        <li>台幣只收 500/1000 紙鈔</li>
-                        <li>機場另換 ₩50,000-100,000 現金</li>
-                    </ul>
-                </div></div>
-            </div>
-
-            <h3>天氣穿搭 (3月9-14日)</h3>
-            <div class="card"><div class="card-content">
-                <p>日間 7-10°C，夜間 -2~2°C。3月是沙塵暴（黃沙）高峰期。</p>
-                <p><strong>必備：</strong> 發熱衣 ×5 · 厚外套 · 圍巾 · 手套 · KF94 口罩 ×10 · 防滑運動鞋 · 摺疊雨傘 · 保濕乳液/護唇膏/護手霜</p>
-            </div></div>
-
-            <h3>必備 APP</h3>
-            <div class="card"><div class="card-content">
-                <p><strong>Naver Map</strong>（韓國導航最準）· <strong>Kakao T</strong>（叫車）· <strong>Papago</strong>（翻譯）· <strong>CATCH TABLE GLOBAL</strong>（國際版，Email 註冊免韓國手機號）· <strong>WOWPASS</strong> · <strong>Subway Korea</strong> · <strong>Air Korea</strong></p>
-            </div></div>
-
-            <h3>住宿周邊隱藏版</h3>
-            <div class="card"><div class="card-content">
-                <h4>龍理團路 용리단길 <a href="https://map.naver.com/v5/search/용리단길" target="_blank" class="naver-link">Naver</a></h4>
-                <p>南營站往南，三角地站周邊的新興熱門街區。推薦 <strong>Teddy Beurre House 테디뵈르하우스</strong>（可頌名店）。Day 6 退房前在這裡喝杯咖啡是最棒的收尾。</p>
-                <h4>淑大商圈</h4>
-                <p>平價服飾、Olive Young、高 CP 值小吃。物價比明洞/弘大親民。</p>
-                <h4>深夜食堂</h4>
-                <p>南營站附近有 24 小時馬鈴薯排骨湯、血腸湯飯。不用跑明洞也有宵夜。</p>
-            </div></div>
+    <a class="trip-card" href="./fukuoka/index.html">
+      <img class="bg" src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=1400&q=80" alt="Fukuoka" onerror="this.style.display='none'">
+      <div class="trip-inner">
+        <div>
+          <div class="trip-tags">
+            <span class="tag coral">2026 夏</span>
+            <span class="tag sun">5 天 4 夜</span>
+            <span class="tag line-tag">三人家族</span>
+          </div>
+          <h3 class="trip-title" style="margin-top:0.9rem;">福岡 <span class="accent">自由行</span></h3>
+          <p class="trip-sub">博多山笠 · 柳川川下 · 太宰府本殿 · 糸島海岸</p>
         </div>
-    </section>
-    <!-- ===== DAY 1 ===== -->
-    <section id="day1">
-        <div class="container">
-            <h2>DAY 1 (3/9 週一) — 抵達登入 & 明洞初始化</h2>
-
-            <div class="day-hero" style="background-image: url('https://images.unsplash.com/photo-1601042879364-f3947d3f9c16?w=1200&h=600&fit=crop');">
-                <div class="day-hero-title">
-                    ICN → 首爾站 → 住宿 → Solsot 釜飯 → 明洞血拼 → 南營豚
-                    <small>淑大入口 숙대입구역 4號線 → 明洞站 명동역（2 站直達）→ 回淑大入口 → 南營豚</small>
-                </div>
-            </div>
-
-            <div class="route-diagram">
-                <svg viewBox="0 0 900 95" xmlns="http://www.w3.org/2000/svg">
-                    <style>.rt{font-family:'Noto Sans TC',sans-serif;font-size:11px;fill:#3a322a;text-anchor:middle}.rtt{font-size:10px;fill:#c84b31;font-weight:bold;text-anchor:middle}.rts{font-size:9px;fill:#6b9ebb;text-anchor:middle}</style>
-                    <line x1="50" y1="35" x2="850" y2="35" stroke="#e0ddd5" stroke-width="2"/>
-                    <circle cx="50" cy="35" r="7" fill="#c84b31"/><text x="50" y="58" class="rt">ICN</text><text x="50" y="70" class="rtt">11:20</text>
-                    <circle cx="210" cy="35" r="7" fill="#7da87b"/><text x="210" y="58" class="rt">首爾站</text><text x="210" y="70" class="rts">AREX 43m</text>
-                    <circle cx="360" cy="35" r="7" fill="#d4883a"/><text x="360" y="58" class="rt">住宿</text><text x="360" y="70" class="rts">Taxi ~13:30</text>
-                    <circle cx="520" cy="35" r="7" fill="#6b9ebb"/><text x="520" y="58" class="rt">Solsot</text><text x="520" y="70" class="rts">14:30</text>
-                    <circle cx="680" cy="35" r="7" fill="#9b7eb5"/><text x="680" y="58" class="rt">明洞逛街</text><text x="680" y="70" class="rts">15:30</text>
-                    <circle cx="840" cy="35" r="7" fill="#c84b31"/><text x="840" y="58" class="rt">南營豚</text><text x="840" y="70" class="rts">18:15</text>
-                </svg>
-            </div>
-
-            <div class="table-container">
-                <table class="sched-table">
-                    <thead><tr><th>時間</th><th>節點</th><th>首選</th><th>備援</th><th>筆記</th></tr></thead>
-                    <tbody>
-                        <tr><td class="time-col">11:20-14:00</td><td>機場交通</td><td>ICN → 辦 WOWPASS → AREX 공항철도 → 首爾站 서울역 → 計程車到住宿</td><td class="failover">—</td><td>機場超商先買飯糰墊胃</td></tr>
-                        <tr><td class="time-col">14:30-15:30</td><td>午餐</td><td><strong>Solsot 釜飯 明洞店</strong>（솔솥 명동점）<a href="https://map.naver.com/v5/search/솔솥%20명동" target="_blank" class="naver-link">Naver</a><br>牛排釜飯 ₩17,000</td><td class="failover">明洞餃子（명동교자 본점）<a href="https://map.naver.com/v5/search/명동교자%20본점" target="_blank" class="naver-link">Naver</a></td><td>明洞10街 16-1 2F。11:00-22:00。鍋巴倒入熱茶是精華。</td></tr>
-                        <tr><td class="time-col">15:30-17:30</td><td>明洞探索</td><td>Olive Young 明洞旗艦店（올리브영）· WOWPASS 換匯 · 明洞聖堂（명동성당）</td><td class="failover">樂天免稅店明洞本店</td><td>Olive Young 單筆 ₩15,000 帶護照可退稅。<strong>雪冰明洞店</strong>（설빙）在同一條街，逛累了順路吃草莓雪冰 ~₩14,900。</td></tr>
-                        <tr><td class="time-col">17:45-19:15</td><td>晚餐</td><td><strong>南營豚</strong>（남영돈）<a href="https://map.naver.com/v5/search/남영돈" target="_blank" class="naver-link">Naver</a><br>韓國三大燒肉 · 生三層肉 200g ₩7,900 起</td><td class="failover">名倫進士排骨（명륜진사갈비）₩18,900 吃到飽 / 荒謬的生肉 ₩17,900</td><td>平日 16:00-22:00。不接預約。숙대입구 6 號出口步行 3 分。17:45 到排第二輪，預估等 30 分。超過 1hr → 回明洞吃備案。</td></tr>
-                        <tr><td class="time-col">20:00~</td><td>宵夜</td><td><strong>君子大韓烤腸 明洞</strong>（군자대한곱창）<a href="https://map.naver.com/v5/search/군자대한곱창%20명동" target="_blank" class="naver-link">Naver</a><br>모둠곱창 ₩20,900</td><td class="failover">BHC 炸雞外帶 / 便利商店 치맥</td><td>명동7길 18-1。營業至 02:00。華莎推薦、有中文店員。體力好再去。</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>午餐：Solsot 釜飯</h3>
-            <div class="card"><div class="card-content">
-                <h4>Solsot 明洞店（솔솥 명동점）<a href="https://map.naver.com/v5/search/솔솥%20명동" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>地址：</strong> 明洞10街 16-1 2F（명동10길 16-1 2층）· 明洞站步行 2 分</p>
-                <p><strong>時間：</strong> 11:00-22:00（LO 21:30）每日營業</p>
-                <p><strong>推薦：</strong> 牛排釜飯（스테이크솥밥）₩17,000 · 鯛魚釜飯（도미관자솥밥）₩17,900</p>
-                <p><strong>吃法：</strong> 先吃飯和配菜 → 鍋巴倒入熱茶變成湯泡飯，是精華！</p>
-            </div></div>
-
-            <h3>晚餐：南營豚（韓國三大燒肉）</h3>
-            <div class="card"><div class="card-content" style="border-left: 4px solid var(--accent-red);">
-                <h4>南營豚（남영돈）<a href="https://map.naver.com/v5/search/남영돈" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>地址：</strong> 漢江大路80街 17（한강대로80길 17）· 숙대입구역 6 號出口步行 3-5 分</p>
-                <p><strong>時間：</strong> 平日 16:00-22:00 / 假日 12:00-21:00</p>
-                <p><strong>價格：</strong> 國產生三層肉 200g ₩7,900 起 · 參熟火爐炭火全程代烤</p>
-                <p><strong>排隊攻略：</strong> 不接預約，現場登記排隊。平日第二輪（17:45 到）約等 30 分。超過 1 小時直接放棄回明洞。</p>
-            </div></div>
-
-            <h3>晚餐備選清單</h3>
-            <div class="card"><div class="card-content">
-                <h4>南營豚排不到時的明洞備案</h4>
-                <ul class="compact-list">
-                    <li><strong>名倫進士排骨</strong>（명륜진사갈비 명동）₩18,900 吃到飽 <a href="https://map.naver.com/v5/search/명륜진사갈비%20명동" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>荒謬的生肉 明洞店</strong>（엉터리생고기 명동점）₩17,900 吃到飽 <a href="https://map.naver.com/v5/search/엉터리생고기%20명동" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>肉統領 明洞本店</strong>（육통령 명동본점）韓牛拼盤 ~₩25,000 <a href="https://map.naver.com/v5/search/육통령%20명동" target="_blank" class="naver-link">Naver</a></li>
-                </ul>
-            </div></div>
-
-            <h3>宵夜：君子大韓烤腸</h3>
-            <div class="card"><div class="card-content">
-                <h4>군자대한곱창 明洞店 <a href="https://map.naver.com/v5/search/군자대한곱창%20명동" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>地址：</strong> 명동7길 18-1 1F · 營業至凌晨 02:00</p>
-                <p><strong>推薦：</strong> 大韓모둠곱창（綜合烤腸）₩20,900 · 곱창뚝배기전골（烤腸鍋）₩8,900</p>
-                <p><strong>備案：</strong> BHC 炸雞外帶（뿌링클 Bburingkle 必點）/ 便利商店 치맥</p>
-                <p>MAMAMOO 華莎推薦。有中文服務員。南營豚吃完如果還有體力，4號線 2 站回明洞。</p>
-            </div></div>
-
-            <h3>明洞商圈</h3>
-            <div class="image-container">
-                <img src="https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=1000&h=500&fit=crop" alt="Seoul Myeongdong at night">
-            </div>
-
-            <div class="card"><div class="card-content">
-                <h4>Olive Young 必買</h4>
-                <ul class="compact-list">
-                    <li><strong>MEDIHEAL 面膜</strong>（茶樹/膠原蛋白）</li>
-                    <li><strong>AMUSE 果凍唇釉</strong>（7色，清透保濕）</li>
-                    <li><strong>romand Juicy Lasting Tint</strong></li>
-                    <li><strong>ROUND LAB 樺樹保濕系列</strong></li>
-                </ul>
-            </div></div>
-
-            <div class="tip-box photo">
-                <strong>便利商店必買</strong>
-                香蕉牛奶胖胖瓶 · 螃蟹餅乾 · 烏龜餅乾 · 青葡萄汁 · 延世大學生乳包 · 扁可頌餅乾
-            </div>
+        <div class="trip-meta">
+          <div class="m"><span class="n">7/22</span>抵達日</div>
+          <div class="m"><span class="n">7/26</span>返程日</div>
+          <div class="m"><span class="n">3</span>人同行</div>
         </div>
-    </section>
-    <!-- ===== DAY 2 ===== -->
-    <section id="day2">
-        <div class="container">
-            <h2>DAY 2 (3/10 週二) — 江南模組 & T1 朝聖 & 狎鷗亭 & 山清</h2>
+      </div>
+      <span class="arrow-cta">
+        展開指南
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </span>
+    </a>
 
-            <div class="day-hero" style="background-image: url('https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=1200&h=600&fit=crop');">
-                <div class="day-hero-title">
-                    COEX 星空圖書館 → 江南午餐 → T1 HQ → 狎鷗亭 Haus Dosan → 山清烤肉
-                    <small>南營 남영역 1號線 → 鷺梁津 노량진역 轉 9號線急行 → 奉恩寺 봉은사역 · 壓구정 3號線直達 을지로3가</small>
-                </div>
-            </div>
-
-            <div class="route-diagram">
-                <svg viewBox="0 0 900 95" xmlns="http://www.w3.org/2000/svg">
-                    <style>.rt{font-family:'Noto Sans TC',sans-serif;font-size:11px;fill:#3a322a;text-anchor:middle}.rtt{font-size:10px;fill:#c84b31;font-weight:bold;text-anchor:middle}.rts{font-size:9px;fill:#6b9ebb;text-anchor:middle}</style>
-                    <line x1="30" y1="35" x2="870" y2="35" stroke="#e0ddd5" stroke-width="2"/>
-                    <circle cx="30" cy="35" r="7" fill="#c84b31"/><text x="30" y="58" class="rt">住宿</text><text x="30" y="70" class="rtt">08:30</text>
-                    <circle cx="155" cy="35" r="7" fill="#d4883a"/><text x="155" y="58" class="rt">COEX</text><text x="155" y="70" class="rts">10:00</text>
-                    <circle cx="280" cy="35" r="7" fill="#7da87b"/><text x="280" y="58" class="rt">香港飯店</text><text x="280" y="70" class="rts">11:30</text>
-                    <circle cx="405" cy="35" r="7" fill="#6b9ebb"/><text x="405" y="58" class="rt">T1 HQ</text><text x="405" y="70" class="rts">13:30</text>
-                    <circle cx="555" cy="35" r="7" fill="#9b7eb5"/><text x="555" y="58" class="rt">狎鷗亭</text><text x="555" y="70" class="rts">14:45</text>
-                    <circle cx="710" cy="35" r="7" fill="#c84b31"/><text x="710" y="58" class="rt">山清</text><text x="710" y="70" class="rts">16:30</text>
-                    <circle cx="850" cy="35" r="7" fill="#d4883a"/><text x="850" y="58" class="rt">回住宿</text><text x="850" y="70" class="rts">~18:30</text>
-                </svg>
-            </div>
-
-            <div class="tip-box route">
-                <strong>路由優化</strong>
-                去 COEX 走「南營站 남영역 → 鷺梁津站 노량진역 轉 9 號線急行」最快。奉恩寺站 봉은사역 7 號出口直通 COEX 地下。COEX → T1 HQ → 狎鷗亭全程 Kakao T。狎鷗亭 → 山清走 3 號線 6 站直達乙支路3街。
-            </div>
-
-            <div class="table-container">
-                <table class="sched-table">
-                    <thead><tr><th>時間</th><th>節點</th><th>首選</th><th>備援</th><th>筆記</th></tr></thead>
-                    <tbody>
-                        <tr><td class="time-col">08:30-09:30</td><td>早餐</td><td>Isaac Toast（이삭토스트）</td><td class="failover">飯捲天國（김밥천국）</td><td>住宿附近找分店，快速解決</td></tr>
-                        <tr><td class="time-col">10:00-11:30</td><td>景點</td><td><strong>星空圖書館</strong>（별마당 도서관）<a href="https://map.naver.com/v5/search/별마당도서관" target="_blank" class="naver-link">Naver</a></td><td class="failover">奉恩寺（봉은사）對面古剎</td><td>10:00 開門抵達避人潮。二樓俯拍書牆最壯觀。</td></tr>
-                        <tr><td class="time-col">11:30-13:00</td><td>午餐</td><td><strong>香港飯店 0410</strong>（홍콩반점 0410）<a href="https://map.naver.com/v5/search/홍콩반점%200410%20코엑스" target="_blank" class="naver-link">Naver</a></td><td class="failover">Shake Shack COEX</td><td>炸醬麵 ₩7,000 + 糖醋肉 ₩18,000 必點</td></tr>
-                        <tr><td class="time-col">13:30-14:30</td><td>朝聖</td><td><strong>T1 HQ Shop</strong>（T1 본사 팬샵）<a href="https://map.naver.com/v5/search/T1%20본사%20강남" target="_blank" class="naver-link">Naver</a></td><td class="failover">—</td><td>壓縮 1 小時聚焦買周邊 + 冠軍獎盃合影。COEX → T1 Kakao T ~₩6,000。</td></tr>
-                        <tr><td class="time-col">14:45-15:50</td><td>狎鷗亭</td><td><strong>Haus Dosan</strong>（하우스 도산）<a href="https://map.naver.com/v5/search/하우스도산" target="_blank" class="naver-link">Naver</a><br>Gentle Monster · Tamburins · Nudake</td><td class="failover">—</td><td>T1 → Kakao T ~₩8,000-12,000（10-15 分）。5 層一棟逛：1F 墨鏡 + 4F 香氛伴手禮 + B1 甜點。</td></tr>
-                        <tr><td class="time-col">16:30-18:00</td><td>晚餐</td><td><strong>山清炭火花園</strong> 乙支路2號店（산청숯불가든 을지로 2호점）<a href="https://map.naver.com/v5/search/산청숯불가든%20을지로" target="_blank" class="naver-link">Naver</a></td><td class="failover">已預訂 ✓</td><td>CatchTable 已訂 16:30。국산 생삼겹 200g ₩7,900。全程代烤。을지로3가역 10 號出口 1 分。</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>星空圖書館</h3>
-            <div class="card">
-                <img class="card-image" src="https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=800&h=400&fit=crop" alt="Starfield Library COEX">
-                <div class="card-content">
-                    <p><strong>地址：</strong> 三成站 삼성역 Samsung Stn.（2號線）5/6 號出口直通 COEX 內</p>
-                    <p><strong>時間：</strong> 10:00-21:00 全年無休 · 免費</p>
-                    <p><strong>周邊：</strong> 奉恩寺（봉은사，對面千年古剎，免費 15 分）· COEX 水族館（~₩25,000）· 江南地下街</p>
-                </div>
-            </div>
-
-            <h3>T1 HQ Shop</h3>
-            <div class="card"><div class="card-content" style="border-left: 4px solid var(--accent-red);">
-                <h4>T1 Headquarters Shop & Cafe（T1 본사 팬샵）</h4>
-                <p><strong>地址：</strong> 首爾市江南區宣陵路 627（서울시 강남구 선릉로 627）</p>
-                <p><strong>時間：</strong> 12:00-20:00（國定假日休）</p>
-                <p><strong>費用：</strong> 免費 · 壓縮至 1 小時（聚焦周邊購物 + 獎盃合影）</p>
-                <p><strong>必看：</strong> Worlds 冠軍獎盃、Faker 紀念品、官方周邊（隊服 ~₩100,000+）</p>
-            </div></div>
-
-            <h3>狎鷗亭 Haus Dosan</h3>
-            <div class="card"><div class="card-content" style="border-left: 4px solid #9b7eb5;">
-                <h4>Haus Dosan（하우스 도산）<a href="https://map.naver.com/v5/search/하우스도산" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>地址：</strong> 狎鷗亭路46街 50（압구정로46길 50）</p>
-                <p><strong>時間：</strong> 11:00-21:00 全年無休</p>
-                <p><strong>停留：</strong> 約 1 小時（一棟 5 層逛完）</p>
-                <ul class="compact-list">
-                    <li><strong>1F Gentle Monster（젠틀몬스터）</strong>：沉浸式藝術空間 + 墨鏡選購</li>
-                    <li><strong>4F Tamburins（탬버린즈）</strong>：質感香氛，人氣伴手禮首選</li>
-                    <li><strong>B1 Nudake（누데이크）</strong>：造型蛋糕＆甜點，IG 打卡名店</li>
-                </ul>
-                <p style="margin-top:8px;font-size:13px;color:#888;">交通：T1 HQ 搭 Kakao T ~₩8,000-12,000（10-15 分）</p>
-            </div></div>
-
-            <h3>山清炭火花園 乙支路2號店</h3>
-            <div class="card"><div class="card-content" style="border-left: 4px solid var(--accent-red);">
-                <h4>산청숯불가든 을지로 2호점 <span class="tag-dinner">晚餐</span> <a href="https://map.naver.com/v5/search/산청숯불가든%20을지로" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>地址：</strong> 乙支路14街 12 別館 2F（을지로14길 12 별관 2층）</p>
-                <p><strong>時間：</strong> 平日 16:00-23:00（LO 21:50）/ 假日 11:30-23:00</p>
-                <p><strong>費用：</strong> 國產生三層肉 200g ₩7,900 / 生五花 200g ₩7,900</p>
-                <p><strong>預訂：</strong> ✅ CatchTable 已預訂 16:30（4位）</p>
-                <p><strong>特色：</strong> 玄彬孫藝珍愛店。全程代烤（不用自己烤）。炭火香氣十足。</p>
-                <p style="margin-top:8px;font-size:13px;color:#888;">交通：狎鷗亭站 압구정 → 3號線 6 站直達乙支路3街站 을지로3가（約 15 分 + 候車 5 分）→ 10 號出口步行 1 分</p>
-            </div></div>
-
-            <div class="tip-box">
-                <strong>순路提示：乙支路노가리골목</strong>
-                山清出來步行 3 分鐘即達 <strong>乙支路小魚乾胡同</strong>（을지로 노가리골목）<a href="https://map.naver.com/v5/search/을지로%20노가리골목" target="_blank" class="naver-link">Naver</a>。在地人的深夜啤酒街，乾明太魚（노가리）配生啤酒一杯約 ₩5,000-8,000。感受을지로夜晚氛圍再回住宿。
-            </div>
-
-            <div class="tip-box">
-                <strong>T1 Base Camp 弘大（留到 Day 4 順訪）</strong>
-                T1 베이스캠프 홍대，弘益路 23（홍익로 23），主題網咖+官方商品店，營業至深夜。<a href="https://map.naver.com/v5/search/T1%20베이스캠프%20홍대" target="_blank" class="naver-link">Naver</a>
-            </div>
+    <a class="trip-card" href="./korea/index.html">
+      <img class="bg" src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=1400&q=80" alt="Seoul" onerror="this.style.display='none'">
+      <div class="trip-inner">
+        <div>
+          <div class="trip-tags">
+            <span class="tag sakura">2026 春</span>
+            <span class="tag sun">6 天 5 夜</span>
+            <span class="tag line-tag">4 位成人</span>
+          </div>
+          <h3 class="trip-title" style="margin-top:0.9rem;">首爾 <span class="accent">散步手帖</span></h3>
+          <p class="trip-sub">景福宮 · 北村韓屋 · 聖水洞 · 東大門平壤冷麵</p>
         </div>
-    </section>
-    <!-- ===== DAY 3 ===== -->
-    <section id="day3">
-        <div class="container">
-            <h2>DAY 3 (3/11 週三) — 韓屋文化日 & 仁寺洞 & 廣藏市場</h2>
-
-            <div class="day-hero" style="background-image: url('https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=1200&h=600&fit=crop');">
-                <div class="day-hero-title">
-                    早餐三選一 → 北村韓屋村 → 景福宮 → 乙支面屋 → 仁寺洞 → 益善洞 → 廣藏市場 → 元祖元奶奶一隻雞
-                    <small>南營 남영역 1號線 → 鐘路三街 종로3가역 轉 3號線 → 安國 안국역 · 體力消耗最大的一天</small>
-                </div>
-            </div>
-
-            <div class="route-diagram">
-                <svg viewBox="0 0 900 95" xmlns="http://www.w3.org/2000/svg">
-                    <style>.rt{font-family:'Noto Sans TC',sans-serif;font-size:11px;fill:#3a322a;text-anchor:middle}.rtt{font-size:10px;fill:#c84b31;font-weight:bold;text-anchor:middle}.rts{font-size:9px;fill:#6b9ebb;text-anchor:middle}</style>
-                    <line x1="30" y1="35" x2="870" y2="35" stroke="#e0ddd5" stroke-width="2"/>
-                    <circle cx="30" cy="35" r="7" fill="#c84b31"/><text x="30" y="58" class="rt">住宿</text><text x="30" y="70" class="rtt">07:30</text>
-                    <circle cx="120" cy="35" r="7" fill="#d4883a"/><text x="120" y="58" class="rt">早餐</text><text x="120" y="70" class="rts">08:00</text>
-                    <circle cx="230" cy="35" r="7" fill="#7da87b"/><text x="230" y="58" class="rt">北村</text><text x="230" y="70" class="rts">09:00</text>
-                    <circle cx="340" cy="35" r="7" fill="#6b9ebb"/><text x="340" y="58" class="rt">景福宮</text><text x="340" y="70" class="rts">10:30</text>
-                    <circle cx="445" cy="35" r="7" fill="#c84b31"/><text x="445" y="58" class="rt">乙支面屋</text><text x="445" y="70" class="rts">12:30</text>
-                    <circle cx="535" cy="35" r="7" fill="#9b7eb5"/><text x="535" y="58" class="rt">仁寺洞</text><text x="535" y="70" class="rts">13:30</text>
-                    <circle cx="625" cy="35" r="7" fill="#d4883a"/><text x="625" y="58" class="rt">益善洞</text><text x="625" y="70" class="rts">14:00</text>
-                    <circle cx="730" cy="35" r="7" fill="#7da87b"/><text x="730" y="58" class="rt">廣藏市場</text><text x="730" y="70" class="rts">16:30</text>
-                    <circle cx="845" cy="35" r="7" fill="#c84b31"/><text x="845" y="58" class="rt">一隻雞</text><text x="845" y="70" class="rts">17:30</text>
-                </svg>
-            </div>
-
-            <div class="tip-box warn">
-                <strong>體力管理關鍵日</strong>
-                今天步行量最大。北村必須「由下往上」走嘉會洞胡同，到高點後往三清洞方向「下坡」，再進景福宮。絕不走回頭路！
-            </div>
-
-            <div class="table-container">
-                <table class="sched-table">
-                    <thead><tr><th>時間</th><th>節點</th><th>首選</th><th>備援</th><th>筆記</th></tr></thead>
-                    <tbody>
-                        <tr><td class="time-col">08:00-09:00</td><td>早餐</td><td><strong>安國站三選一</strong>：Artist Bakery / London Bagel Museum / Cafe Onion 安國<br>↓ 見下方三選一</td><td class="failover">到現場看排隊決定</td><td>CatchTable 抽號。排超過 40 分鐘果斷換下一家。Onion 週三 07:00 最早開門。</td></tr>
-                        <tr><td class="time-col">09:00-12:00</td><td>景點串接</td><td>安國站 안국역 1號出口租韓服 → 北村韓屋村（북촌한옥마을）<a href="https://map.naver.com/v5/search/북촌한옥마을" target="_blank" class="naver-link">Naver</a> → 三清洞（삼청동길）→ 景福宮（경복궁）<a href="https://map.naver.com/v5/search/경복궁" target="_blank" class="naver-link">Naver</a></td><td class="failover">僅逛景福宮慶會樓周邊</td><td>穿韓服免門票！週三開放（每週二休）。北村→三清洞→景福宮單向動線最省力。</td></tr>
-                        <tr><td class="time-col">12:30-13:30</td><td>午餐</td><td><strong>乙支面屋</strong>（을지면옥）<a href="https://map.naver.com/v5/search/을지면옥" target="_blank" class="naver-link">Naver</a><br>樂園洞新址 11:00-21:00（午休 15:00-17:00）</td><td class="failover">黃生家刀削麵（황생가 칼국수）<a href="https://map.naver.com/v5/search/황생가칼국수" target="_blank" class="naver-link">Naver</a></td><td>首爾三大平壤冷麵！景福宮搭 Kakao T ~₩5,000 約 8 分。<strong>午休 15:00 前必須入座！</strong></td></tr>
-                        <tr><td class="time-col">13:30-14:00</td><td>仁寺洞</td><td><strong>仁寺洞</strong>（인사동）<a href="https://map.naver.com/v5/search/인사동" target="_blank" class="naver-link">Naver</a><br>쌈지길 · 안녕인사동</td><td class="failover">—</td><td>乙支面屋步行 5 分。逛 30 分鐘（螺旋步道 + 手作小店）。再步行 5 分到益善洞。</td></tr>
-                        <tr><td class="time-col">14:00-16:30</td><td>景點</td><td><strong>益善洞</strong>（익선동）<a href="https://map.naver.com/v5/search/익선동" target="_blank" class="naver-link">Naver</a>（步行 5 分鐘即達）</td><td class="failover">大林倉庫 MUSINSA</td><td>小夏鹽田（소하소금빵）鹽可頌 · 溫花咖啡（온화）舒芙蕾鬆餅 · 京城衣服（경성의복）復古洋裝</td></tr>
-                        <tr><td class="time-col">16:30-17:15</td><td>廣藏市場</td><td><strong>廣藏市場 순대</strong>（광장시장）<a href="https://map.naver.com/v5/search/광장시장" target="_blank" class="naver-link">Naver</a></td><td class="failover">—</td><td>益善洞往東步行 10 分。찹쌀순대（糯米血腸）₩6,000，蘸粗鹽吃。逛 30 分鐘不影響晚餐。</td></tr>
-                        <tr><td class="time-col">17:30-19:00</td><td>晚餐</td><td><strong>元祖元奶奶一隻雞</strong>（원조원할매 소문난닭한마리）<a href="https://map.naver.com/v5/search/원조원할매%20소문난닭한마리" target="_blank" class="naver-link">Naver</a></td><td class="failover">陳玉華一隻雞（진옥화할매원조닭한마리）</td><td>廣藏市場步行 5 分。A套 ₩35,000（2人份含麵條年糕）。蒜泥醬油是本體！</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>早餐三選一：安國站（到現場看排隊決定）</h3>
-            <div class="grid-2">
-                <div class="card"><div class="card-content">
-                    <span class="meal-tag tag-breakfast">早餐 A</span>
-                    <h4>Artist Bakery（아티스트 베이커리）<a href="https://map.naver.com/v5/search/아티스트베이커리%20안국" target="_blank" class="naver-link">Naver</a></h4>
-                    <p><strong>地址：</strong> 종로구 율곡로 45（安國站 1 號出口 1 分鐘）</p>
-                    <p><strong>時間：</strong> 每日 07:30-20:00</p>
-                    <p><strong>價位：</strong> 鹽麵包 ~₩4,000-6,000</p>
-                    <p><strong>亮點：</strong> London Bagel Museum 姐妹店，20+ 種鹽麵包。CatchTable 抽號。</p>
-                </div></div>
-                <div class="card"><div class="card-content">
-                    <span class="meal-tag tag-breakfast">早餐 B</span>
-                    <h4>London Bagel Museum 安國（런던베이글뮤지엄 안국）<a href="https://map.naver.com/v5/search/런던베이글뮤지엄%20안국" target="_blank" class="naver-link">Naver</a></h4>
-                    <p><strong>時間：</strong> 每日 08:00-18:00 或售完</p>
-                    <p><strong>價位：</strong> 貝果 ~₩6,000</p>
-                    <p><strong>亮點：</strong> CatchTable 抽號。經典原味貝果必買。排超過 40 分果斷轉其他家。</p>
-                </div></div>
-            </div>
-            <div class="card"><div class="card-content">
-                <span class="meal-tag tag-breakfast">早餐 C</span>
-                <h4>Cafe Onion 安國（카페어니언 안국）<a href="https://map.naver.com/v5/search/카페어니언%20안국" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>地址：</strong> 종로구 계동길 5</p>
-                <p><strong>時間：</strong> 平日 <strong>07:00</strong>-22:00 / 假日 09:00-22:00（<strong>週三 07:00 最早開門！</strong>）</p>
-                <p><strong>價位：</strong> 팡도르 + 咖啡 ~₩10,000</p>
-                <p><strong>亮點：</strong> 1920 年代韓屋改建，超美空間。週三比另兩家早開門，排隊壓力最小。</p>
-            </div></div>
-
-            <h3>北村韓屋村 & 景福宮</h3>
-            <div class="image-container">
-                <img src="https://images.unsplash.com/photo-1578037571214-25e07ed4a901?w=1000&h=500&fit=crop" alt="Bukchon Hanok Village">
-            </div>
-
-            <div class="card"><div class="card-content">
-                <p><strong>景福宮 경복궁：</strong> 09:00-18:00，每週二休（今天週三 OK！）· ₩3,000/人（穿韓服免費！）<a href="https://map.naver.com/v5/search/경복궁" target="_blank" class="naver-link">Naver</a></p>
-                <p><strong>韓服租借：</strong> 北村周邊，4 小時 ~₩20,000/人。出發前先換裝，一路拍到景福宮。</p>
-                <p><strong>必看：</strong> 慶會樓（경회루）· 勤政殿</p>
-                <p><strong>拍照三景：</strong> 嘉會洞胡同下坡（最經典）· 上坡制高點（遠眺市景）· 慶會樓（3月初湖面可能有薄冰倒影）</p>
-            </div></div>
-
-            <div class="tip-box route">
-                <strong>景福宮周邊順路</strong>
-                三清洞街（삼청동길）文青小店 · 國立現代美術館首爾館（常設展免費）· 通仁市場銅板便當（景福宮西側步行 5 分）
-            </div>
-
-            <h3>午餐：乙支面屋（重開朝聖）</h3>
-            <div class="card"><div class="card-content">
-                <span class="meal-tag tag-lunch">午餐</span>
-                <h4>을지면옥 — 首爾三大平壤冷麵 <a href="https://map.naver.com/v5/search/을지면옥" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>新址：</strong> 鐘路區三一大路30街12號（서울시 종로구 삼일대로30길 12, 낙원동 55-1）</p>
-                <p><strong>營業：</strong> 11:00-21:00（<strong>午休 15:00-17:00</strong>）</p>
-                <p><strong>公休：</strong> 每週日（今天週三 OK！）</p>
-                <p><strong>電話：</strong> 02-2266-7052</p>
-                <p><strong>價格：</strong> 冷麵 ₩15,000 · 水肉（수육）₩35,000 · 餃子湯（만두국）₩15,000</p>
-                <p><strong>故事：</strong> 2022 年因東大門都更被迫搬遷，2024 年 4 月在樂園洞 5 層獨棟建物重生。首爾三大平壤冷麵之一（與筆洞面屋、又來屋齊名）。</p>
-                <p><strong>動線完美：</strong> 景福宮搭 Kakao T 到樂園洞約 8 分鐘（~₩5,000）。吃完步行 5 分鐘就是益善洞！</p>
-                <div class="tip-box warn" style="margin-top: 12px;">
-                    <strong>時間警告</strong>
-                    午休 15:00 開始！從景福宮出發建議 12:00-12:30，確保 12:30 前抵達入座。3月天冷怕吃冷麵？餃子湯和水肉都是熱食，一樣經典。
-                </div>
-                <details>
-                    <summary>如果乙支面屋排太長或想吃其他的</summary>
-                    <div class="details-content">
-                        <p><strong>黃生家刀削麵（황생가 칼국수）：</strong> 三清洞，米其林必比登連續 7 年推薦，11:00-21:30。在景福宮附近直接吃，免跑樂園洞。<a href="https://map.naver.com/v5/search/황생가칼국수" target="_blank" class="naver-link">Naver</a></p>
-                        <p><strong>土俗村參雞湯：</strong> 景福宮旁，經典人蔘雞湯名店。</p>
-                    </div>
-                </details>
-            </div></div>
-
-            <h3>仁寺洞快閃（30 分鐘）</h3>
-            <div class="card"><div class="card-content">
-                <h4>인사동 仁寺洞 <a href="https://map.naver.com/v5/search/인사동" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>交通：</strong> 乙支面屋步行 5 分鐘</p>
-                <p><strong>停留：</strong> 約 30 分鐘（快速一圈）</p>
-                <ul class="compact-list">
-                    <li><strong>쌈지길（Ssamziegil）：</strong> 4 層螺旋步道，手作小店＆文創商品（10:30-20:30）</li>
-                    <li><strong>안녕인사동（Hello 仁寺洞）：</strong> 複合文化空間，拍照打卡（~10:30-21:00）</li>
-                </ul>
-                <p style="margin-top:8px;font-size:13px;color:#888;">出仁寺洞後步行 5 分鐘即達益善洞</p>
-            </div></div>
-
-            <h3>益善洞散步 & 下午茶</h3>
-            <div class="card"><div class="card-content">
-                <h4>益善洞 익선동 — 從乙支面屋步行 5 分鐘 <a href="https://map.naver.com/v5/search/익선동" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>停留：</strong> 1.5-2 小時</p>
-                <ul class="compact-list">
-                    <li><strong>소하소금빵 (小夏鹽田)：</strong> 鹽可頌、松露鹽可頌（出發前確認營業）</li>
-                    <li><strong>溫花咖啡 Onhwa（온화）：</strong> 韓屋改建，招牌舒芙蕾鬆餅</li>
-                    <li><strong>樂園驛（낙원역）：</strong> 火車站主題咖啡廳</li>
-                    <li><strong>京城衣服（경성의복）：</strong> 1920 年代復古洋裝租借</li>
-                </ul>
-            </div></div>
-
-            <div class="tip-box photo">
-                <strong>益善洞拍照筆記</strong>
-                韓屋巷弄比北村更小巧精緻。午後光線柔和最美。IG 搜 #익선동
-            </div>
-
-            <h3>廣藏市場 순대（小食站）</h3>
-            <div class="card"><div class="card-content">
-                <h4>광장시장 먹자골목（美食巷）<a href="https://map.naver.com/v5/search/광장시장" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>地址：</strong> 鐘路5街站 종로5가역（1號線）7 號出口</p>
-                <p><strong>美食巷營業：</strong> 09:00-23:00 全年無休</p>
-                <p><strong>交通：</strong> 益善洞往東步行 10 分鐘</p>
-                <p><strong>推薦攤位：</strong> <strong>3시50분 순대할머니</strong> — 찹쌀순대（糯米血腸）₩6,000/份，蒸好切片蘸粗鹽，一份 4 人分著吃幾片當小食。</p>
-                <p><strong>其他名物：</strong> 綠豆煎餅（녹두전）· 麻藥紫菜飯捲（마약김밥）· 生牛肉拌飯（육회）</p>
-                <p style="margin-top:8px;font-size:13px;color:#888;">逛一圈 30-45 分鐘，少量多嘗不影響晚餐胃口</p>
-            </div></div>
-
-            <h3>晚餐：元祖元奶奶一隻雞</h3>
-            <div class="card"><div class="card-content">
-                <span class="meal-tag tag-dinner">晚餐</span>
-                <h4>원조원할매 소문난닭한마리 <a href="https://map.naver.com/v5/search/원조원할매%20소문난닭한마리" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>地址：</strong> 鐘路40街 25（종로40가길 25），鐘路5街站 종로5가역 5 號出口步行 3 分</p>
-                <p><strong>時間：</strong> 10:30-23:00（週日至 22:30）</p>
-                <p><strong>價格：</strong> A套餐 ₩35,000（닭한마리 + 국수 + 떡 + 버섯 + 감자，2人份）/ 單點 ₩30,000</p>
-                <p><strong>不可預約：</strong> 現場排隊。廣藏市場步行 5 分鐘即達。</p>
-                <p><strong>吃法：</strong> 先喝清湯 → 吃雞肉 → 加麵條收尾。蒜泥醬油是神級沾醬！</p>
-                <details>
-                    <summary>備案：陳玉華一隻雞（진옥화할매원조닭한마리）</summary>
-                    <div class="details-content">
-                        <p>元祖排太長時的替代。同一條街上，10:30-01:00，₩33,000/2人份。<a href="https://map.naver.com/v5/search/진옥화닭한마리" target="_blank" class="naver-link">Naver</a></p>
-                    </div>
-                </details>
-            </div></div>
-
-            <div class="tip-box">
-                <strong>甜點提示：雪冰 東大門店（설빙 동대문점）</strong>
-                一隻雞吃完散步過去即達。乙支路 254（東大門歷史文化公園站 12 號出口 91m）。3月限定草莓雪冰（생딸기설빙）~₩14,900。月-四 11:00-23:00。<a href="https://map.naver.com/v5/search/설빙%20동대문" target="_blank" class="naver-link">Naver</a>
-            </div>
+        <div class="trip-meta">
+          <div class="m"><span class="n">3/9</span>抵達日</div>
+          <div class="m"><span class="n">3/14</span>返程日</div>
+          <div class="m"><span class="n">4</span>人同行</div>
         </div>
-    </section>
-    <!-- ===== DAY 4 ===== -->
-    <section id="day4">
-        <div class="container">
-            <h2>DAY 4 (3/12 週四) — 麻浦弘大全日 & asterum & 風川鰻魚</h2>
+      </div>
+      <span class="arrow-cta">
+        展開指南
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </span>
+    </a>
 
-            <div class="day-hero" style="background-image: url('https://images.unsplash.com/photo-1570171934986-a75a2d4f8f3b?w=1200&h=600&fit=crop');">
-                <div class="day-hero-title">
-                    望遠市場 → 豬腳小姐 → 延南洞 → 弘大 → asterum → 風川碳烤鰻魚
-                    <small>淑大入口 숙대입구역 4號線 → 三角地 삼각지역 轉 6號線 → 望遠 망원역 · 全天麻浦區</small>
-                </div>
-            </div>
+  </div>
 
-            <div class="route-diagram">
-                <svg viewBox="0 0 900 95" xmlns="http://www.w3.org/2000/svg">
-                    <style>.rt{font-family:'Noto Sans TC',sans-serif;font-size:11px;fill:#3a322a;text-anchor:middle}.rtt{font-size:10px;fill:#c84b31;font-weight:bold;text-anchor:middle}.rts{font-size:9px;fill:#6b9ebb;text-anchor:middle}</style>
-                    <line x1="20" y1="35" x2="880" y2="35" stroke="#e0ddd5" stroke-width="2"/>
-                    <circle cx="20" cy="35" r="7" fill="#c84b31"/><text x="20" y="58" class="rt">住宿</text><text x="20" y="70" class="rtt">09:30</text>
-                    <circle cx="160" cy="35" r="7" fill="#d4883a"/><text x="160" y="58" class="rt">望遠市場</text><text x="160" y="70" class="rts">10:00</text>
-                    <circle cx="300" cy="35" r="7" fill="#7da87b"/><text x="300" y="58" class="rt">豬腳小姐</text><text x="300" y="70" class="rts">12:00</text>
-                    <circle cx="430" cy="35" r="7" fill="#6b9ebb"/><text x="430" y="58" class="rt">延南洞</text><text x="430" y="70" class="rts">13:30</text>
-                    <circle cx="570" cy="35" r="7" fill="#9b7eb5"/><text x="570" y="58" class="rt">弘大</text><text x="570" y="70" class="rts">14:30</text>
-                    <circle cx="720" cy="35" r="7" fill="#d4883a"/><text x="720" y="58" class="rt">asterum</text><text x="720" y="70" class="rts">17:40</text>
-                    <circle cx="860" cy="35" r="7" fill="#c84b31"/><text x="860" y="58" class="rt">風川鰻魚</text><text x="860" y="70" class="rts">19:30</text>
-                </svg>
-            </div>
+</main>
 
-            <div class="table-container">
-                <table class="sched-table">
-                    <thead><tr><th>時間</th><th>節點</th><th>首選</th><th>備援</th><th>筆記</th></tr></thead>
-                    <tbody>
-                        <tr><td class="time-col">10:00-11:30</td><td>早午餐</td><td><strong>望遠市場</strong>（망원시장）<a href="https://map.naver.com/v5/search/망원시장" target="_blank" class="naver-link">Naver</a></td><td class="failover">望遠洞豬骨湯（망원동 뼈해장국）</td><td>精選 4-5 攤留胃！QS炸雞 · 雨耳樂 · 可樂餅 · 糖餅</td></tr>
-                        <tr><td class="time-col">12:00-13:30</td><td>午餐</td><td><strong>豬腳小姐 弘大本店</strong>（족발야시장 홍대본점）<a href="https://map.naver.com/v5/search/족발야시장%20홍대" target="_blank" class="naver-link">Naver</a></td><td class="failover">滿足五香豬腳（만족오향족발 홍대점）</td><td>大份 ₩39,000（4人夠）。原味+辣味各半必點。12:00 開門。</td></tr>
-                        <tr><td class="time-col">13:30-14:30</td><td>散步</td><td><strong>延南洞林蔭道</strong>（연트럴파크 Yeontral Park）<a href="https://map.naver.com/v5/search/연트럴파크" target="_blank" class="naver-link">Naver</a></td><td class="failover">—</td><td>經義線森林公園，弘大站 3 號出口旁。文青咖啡廳看哪間有位就進。</td></tr>
-                        <tr><td class="time-col">14:30-16:30</td><td>弘大逛街</td><td>弘大入口站 홍대입구역 一帶</td><td class="failover">弘大 MUSINSA（室內）</td><td>MUSINSA · SPAO · Style Nanda · T1 Base Camp · Kakao Friends</td></tr>
-                        <tr><td class="time-col">17:40-19:00</td><td>朝聖</td><td><strong>asterum 433-10</strong>（아스테리움 433-10）<a href="https://map.naver.com/v5/search/아스테리움%20433-10" target="_blank" class="naver-link">Naver</a></td><td class="failover">延禧洞咖啡街</td><td>PLAVE 主題空間。⚠️ 必須 Catch Table 預約！Kakao T 從弘大 ~₩6,000-8,000</td></tr>
-                        <tr><td class="time-col">19:30-21:00</td><td>晚餐</td><td><strong>風川碳烤鰻魚</strong>（풍천장어숯불구이）<a href="https://map.naver.com/v5/search/풍천장어숯불구이%20연남" target="_blank" class="naver-link">Naver</a></td><td class="failover">元祖奶奶鰻魚（원조할매장어）</td><td>碳烤鰻魚套餐 ~₩30,000-40,000/人。Kakao T 從延禧洞 ~₩5,000-6,000</td></tr>
-                    </tbody>
-                </table>
-            </div>
+<footer>
+  <a href="https://github.com/allen880612/TripPlan">GitHub · allen880612/TripPlan</a>
+</footer>
 
-            <h3>望遠市場</h3>
-            <div class="card">
-                <img class="card-image" src="https://images.unsplash.com/photo-1570171934986-a75a2d4f8f3b?w=800&h=400&fit=crop" alt="Korean street market">
-                <div class="card-content">
-                    <h4>망원시장 必吃攤位 <a href="https://map.naver.com/v5/search/망원시장" target="_blank" class="naver-link">Naver</a></h4>
-                    <ul class="compact-list">
-                        <li><strong>QS 炸雞（큐스닭강정）：</strong> 5 種口味無骨炸雞，附炸年糕，~₩7,000</li>
-                        <li><strong>雨耳樂炸辣椒（우이락）：</strong> 辣椒鑲鮮肉餡，只有鮮甜不辣，~₩4,000</li>
-                        <li><strong>望遠手工可樂餅：</strong> ₩700-1,000，5 種口味</li>
-                        <li><strong>勳勳糖餅（훈훈호떡）：</strong> 5 款口味，即叫即做，~₩2,000</li>
-                        <li><strong>慶東炸雞（경동닭강정）：</strong> 雙重油炸甜醬炸雞，在地人最愛</li>
-                        <li><strong>無窮花魚板（무궁화어묵）：</strong> 市場盡頭，辣炒年糕+魚板+天婦羅</li>
-                        <li><strong>望遠飯捲（망원김밥）：</strong> 在地排隊飯捲</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h3>延南洞林蔭道（연남동 연트럴파크）</h3>
-            <div class="card"><div class="card-content">
-                <h4>推薦咖啡廳</h4>
-                <ul class="compact-list">
-                    <li><strong>Cafe Layered（카페레이어드）：</strong> 歐風雙層空間，司康名店 <a href="https://map.naver.com/v5/search/카페레이어드%20연남" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>Coffee Nap Roasters（커피냅로스터스）：</strong> 自家烘焙精品咖啡 <a href="https://map.naver.com/v5/search/커피냅로스터스" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>Perlen Haus 연남（펄렌하우스）：</strong> 08:30 開門，現烤麵包+露台 <a href="https://map.naver.com/v5/search/펄렌하우스%20연남" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>Cong Ca Phe（콩카페）：</strong> 越南風咖啡，椰奶冰沙咖啡招牌 <a href="https://map.naver.com/v5/search/콩카페%20연남" target="_blank" class="naver-link">Naver</a></li>
-                </ul>
-                <h4 style="margin-top:14px;">推薦小店</h4>
-                <ul class="compact-list">
-                    <li><strong>Neon Moon（네온문）：</strong> 復古雜貨、古董玩具、日系進口小物</li>
-                    <li><strong>May Store（메이스토어）：</strong> 設計師文具+獨立品牌服飾</li>
-                </ul>
-            </div></div>
-
-            <h3>弘大逛街（홍대 Hongdae）</h3>
-            <div class="card"><div class="card-content">
-                <h4>購物推薦</h4>
-                <ul class="compact-list">
-                    <li><strong>MUSINSA Standard（무신사 스탠다드）：</strong> 韓國最大潮流實體店，4 層 <a href="https://map.naver.com/v5/search/무신사스탠다드%20홍대" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>SPAO（스파오）：</strong> 平價韓版 UNIQLO，常有 IP 聯名款</li>
-                    <li><strong>Style Nanda Pink Hotel（스타일난다 핑크호텔）：</strong> 粉紅主題 5 層，3CE 彩妝+屋頂咖啡 <a href="https://map.naver.com/v5/search/스타일난다%20홍대" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>Object（오브젝트）：</strong> 北歐風生活雜貨</li>
-                    <li><strong>Ader Error 弘大（아더에러）：</strong> 韓國潮牌</li>
-                </ul>
-                <h4 style="margin-top:14px;">K-Pop 周邊 & 特色店</h4>
-                <ul class="compact-list">
-                    <li><strong>T1 Base Camp 弘大（T1 베이스캠프 홍대）：</strong> 弘益路 23，主題網咖+官方商品店 <a href="https://map.naver.com/v5/search/T1%20베이스캠프%20홍대" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>Kakao Friends 旗艦店（카카오프렌즈）：</strong> 2 層商品+3F Ryan Cafe <a href="https://map.naver.com/v5/search/카카오프렌즈%20홍대" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>K-Pop Square（케이팝 스퀘어）：</strong> 互動展示+期間限定快閃</li>
-                    <li><strong>Story K：</strong> 官方 K-pop 周邊（專輯、手燈、小卡）</li>
-                </ul>
-                <h4 style="margin-top:14px;">特色咖啡廳</h4>
-                <ul class="compact-list">
-                    <li><strong>Cafe 943 King's Cross（카페 943 킹스크로스）：</strong> 哈利波特主題 7 層 <a href="https://map.naver.com/v5/search/카페943%20킹스크로스" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>Thanks Nature Cafe（땡스네이처카페）：</strong> 可以跟綿羊一起喝咖啡</li>
-                    <li><strong>Bronsis（브롱씨）：</strong> 自製水果塔，弘大最佳甜點</li>
-                </ul>
-                <h4 style="margin-top:14px;">K-Beauty</h4>
-                <p>Olive Young 弘大店（올리브영 홍대점）· Innisfree（이니스프리）· Etude House（에뛰드하우스）</p>
-            </div></div>
-
-            <h3>asterum 433-10（PLAVE 主題空間）</h3>
-            <div class="card"><div class="card-content" style="border-left: 4px solid var(--accent-purple);">
-                <h4>아스테리움 433-10 <a href="https://map.naver.com/v5/search/아스테리움%20433-10" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>地址：</strong> 首爾市西大門區延禧洞 433-10（서울시 서대문구 연희동 433-10）</p>
-                <p><strong>性質：</strong> PLAVE 主題咖啡廳+周邊商品+拍照區（URBANPLAY 營運）</p>
-                <p><strong>停留：</strong> 60-90 分鐘</p>
-                <div class="tip-box warn" style="margin-top:10px;">
-                    <strong>預約必讀</strong>
-                    必須提前在 Catch Table 預約！每月第三個週四開放預約。出發前務必確認。
-                </div>
-                <p style="margin-top:8px;font-size:13px;color:#888;">延禧洞（연희동）是近年新興文青區，舊洋房改建的獨立咖啡廳密集，等候時間可在附近逛逛。</p>
-            </div></div>
-
-            <div class="tip-box">
-                <strong>甜點提示：雪冰弘大店（설빙 홍대점）</strong>
-                弘大逛街途中可順路吃。3月限定草莓雪冰（생딸기설빙）~₩14,900。弘大入口站 9 號出口附近，營業 ~11:00-23:00。<a href="https://map.naver.com/v5/search/설빙%20홍대" target="_blank" class="naver-link">Naver</a>
-            </div>
-
-            <details>
-                <summary>雨天備案</summary>
-                <div class="details-content">
-                    <p><strong>NANTA 亂打秀（난타 홍대）：</strong> 弘大劇場步行 5 分，~100 分鐘</p>
-                    <p><strong>Dragon Hill Spa 汗蒸幕（드래곤힐스파）：</strong> 龍山站 용산역 旁，7 層設施</p>
-                </div>
-            </details>
-        </div>
-    </section>
-    <!-- ===== DAY 5 ===== -->
-    <section id="day5">
-        <div class="container">
-            <h2>DAY 5 (3/13 週五) — 聖水洞藝文 & 最終備貨</h2>
-
-            <div class="day-hero" style="background-image: url('https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=1200&h=600&fit=crop');">
-                <div class="day-hero-title">
-                    早餐 → 首爾林 → 聖水洞 Cafe 巡禮 → 無垢屋午餐 → 樂天超市 → 烏達里家醬油蟹
-                    <small>淑大入口 숙대입구역 4號線 → 東大門 동대문역사문화공원역 轉 2號線 → 首爾林 서울숲역</small>
-                </div>
-            </div>
-
-            <div class="route-diagram">
-                <svg viewBox="0 0 900 95" xmlns="http://www.w3.org/2000/svg">
-                    <style>.rt{font-family:'Noto Sans TC',sans-serif;font-size:11px;fill:#3a322a;text-anchor:middle}.rtt{font-size:10px;fill:#c84b31;font-weight:bold;text-anchor:middle}.rts{font-size:9px;fill:#6b9ebb;text-anchor:middle}</style>
-                    <line x1="30" y1="35" x2="870" y2="35" stroke="#e0ddd5" stroke-width="2"/>
-                    <circle cx="30" cy="35" r="7" fill="#c84b31"/><text x="30" y="58" class="rt">住宿</text><text x="30" y="70" class="rtt">08:30</text>
-                    <circle cx="155" cy="35" r="7" fill="#d4883a"/><text x="155" y="58" class="rt">早餐</text><text x="155" y="70" class="rts">08:30</text>
-                    <circle cx="280" cy="35" r="7" fill="#7da87b"/><text x="280" y="58" class="rt">首爾林</text><text x="280" y="70" class="rts">10:00</text>
-                    <circle cx="405" cy="35" r="7" fill="#6b9ebb"/><text x="405" y="58" class="rt">聖水 Cafe</text><text x="405" y="70" class="rts">11:00</text>
-                    <circle cx="540" cy="35" r="7" fill="#c84b31"/><text x="540" y="58" class="rt">無垢屋</text><text x="540" y="70" class="rts">12:00</text>
-                    <circle cx="670" cy="35" r="7" fill="#d4883a"/><text x="670" y="58" class="rt">樂天超市</text><text x="670" y="70" class="rts">14:30</text>
-                    <circle cx="820" cy="35" r="7" fill="#c84b31"/><text x="820" y="58" class="rt">醬油蟹</text><text x="820" y="70" class="rts">18:30</text>
-                </svg>
-            </div>
-
-            <h3>早餐（住宿周邊 3 選）</h3>
-            <div class="grid-3">
-                <div class="card"><div class="card-content">
-                    <span class="meal-tag tag-breakfast">選項 A</span>
-                    <h4>Isaac Toast 淑大店（이삭토스트 숙대점）<a href="https://map.naver.com/v5/search/이삭토스트%20숙대" target="_blank" class="naver-link">Naver</a></h4>
-                    <p>快速平價 ~₩4,000</p>
-                </div></div>
-                <div class="card"><div class="card-content">
-                    <span class="meal-tag tag-breakfast">選項 B</span>
-                    <h4>Teddy Beurre House（테디뵈르하우스）<a href="https://map.naver.com/v5/search/테디뵈르하우스%20용산" target="_blank" class="naver-link">Naver</a></h4>
-                    <p>龍理團路可頌名店 ~₩8,000-12,000<br>住宿步行 10-15 分</p>
-                </div></div>
-                <div class="card"><div class="card-content">
-                    <span class="meal-tag tag-breakfast">選項 C</span>
-                    <h4>便利商店早餐</h4>
-                    <p>延世生乳包（연세우유빵）+ 三角飯糰 + 香蕉牛奶 ~₩5,000</p>
-                </div></div>
-            </div>
-
-            <div class="tip-box route">
-                <strong>路由優化</strong>
-                在<strong>首爾林站 서울숲역</strong>（分堂線 Bundang Line）下車，1 號出口步行 5 分入園，順著往聖水站 성수역 方向走，沿途打卡不回頭。
-            </div>
-
-            <div class="table-container">
-                <table class="sched-table">
-                    <thead><tr><th>時間</th><th>節點</th><th>首選</th><th>備援</th><th>筆記</th></tr></thead>
-                    <tbody>
-                        <tr><td class="time-col">08:30-09:30</td><td>早餐</td><td>住宿周邊 3 選（見上方）</td><td class="failover">—</td><td>選最方便的吃</td></tr>
-                        <tr><td class="time-col">10:00-12:00</td><td>景點</td><td><strong>首爾林 서울숲</strong> <a href="https://map.naver.com/v5/search/서울숲" target="_blank" class="naver-link">Naver</a> → <strong>聖水洞 Cafe 街</strong>（성수동 카페거리）<a href="https://map.naver.com/v5/search/성수동%20카페거리" target="_blank" class="naver-link">Naver</a></td><td class="failover">—</td><td>首爾林免費，有鹿園。聖水洞 10 大景點見下方（含 Human Made × Blue Bottle）。IG 搜 #성수팝업</td></tr>
-                        <tr><td class="time-col">12:00-13:00</td><td>午餐</td><td><strong>無垢屋 聖水店</strong>（무구옥 성수점）<a href="https://map.naver.com/v5/search/무구옥%20성수" target="_blank" class="naver-link">Naver</a></td><td class="failover">聖水馬鈴薯排骨湯（소문난감자탕）/ Okdongsik</td><td>이북식 삼계백반 ₩18,000。11:30 開門，12:00 到避排隊。<strong>午休 15:00-17:30！</strong></td></tr>
-                        <tr><td class="time-col">14:30-16:30</td><td>採買</td><td><strong>樂天超市 首爾站店</strong>（롯데마트 서울역점）<a href="https://map.naver.com/v5/search/롯데마트%20서울역" target="_blank" class="naver-link">Naver</a></td><td class="failover">—</td><td>2 小時重點採買。單筆 ₩30,000 帶護照退稅。買完先回住宿放（1 站）。</td></tr>
-                        <tr><td class="time-col">18:30-20:30</td><td>晚餐</td><td><strong>烏達里家 醬油蟹</strong>（우다리집 간장게장）<a href="https://map.naver.com/v5/search/우다리집%20간장게장%20명동" target="_blank" class="naver-link">Naver</a></td><td class="failover">安東燉雞（안동찜닭 명동본점）<a href="https://map.naver.com/v5/search/안동찜닭%20명동" target="_blank" class="naver-link">Naver</a></td><td>生食風控：放最後一晚。腸胃敏感果斷啟動備案。事先電話確認有蟹。</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>聖水洞完全攻略（10 大景點）</h3>
-            <div class="image-container">
-                <img src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=1000&h=500&fit=crop" alt="Seongsu-dong cafe district">
-            </div>
-            <div class="card"><div class="card-content">
-                <p><strong>路線：</strong>首爾林 → 聖水聯邦 → Cafe Onion → NUDAKE → Dior → 大林倉庫方向</p>
-                <ul class="compact-list">
-                    <li><strong>1. 聖水聯邦（성수연방）：</strong> 廢棄化學工廠改建，3F 全玻璃咖啡廳，免費 <a href="https://map.naver.com/v5/search/성수연방" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>2. Cafe Onion 聖水（카페어니언 성수）：</strong> 廢墟工業風，紅磚+綠藤蔓，08:00-22:00，咖啡 ₩6,000-8,000 <a href="https://map.naver.com/v5/search/카페어니언%20성수" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>3. NUDAKE（누데이크）：</strong> Gentle Monster 旗下，純白建築，11:00-21:00，Nude Cake 必吃 <a href="https://map.naver.com/v5/search/누데이크%20성수" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>4. Gentle Monster 聖水（젠틀몬스터 성수）：</strong> 眼鏡品牌旗艦，每層不同藝術裝置 <a href="https://map.naver.com/v5/search/젠틀몬스터%20성수" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>5. Dior 聖水概念店（디올 성수）：</strong> 傍晚亮燈最夢幻 <a href="https://map.naver.com/v5/search/디올%20성수" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>6. Rain Report（레인리포트）：</strong> 人造雨裝置，彩虹牛角包 <a href="https://map.naver.com/v5/search/레인리포트%20성수" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>7. 大林倉庫 MUSINSA（대림창고 무신사）：</strong> 200 坪，100+ 品牌 <a href="https://map.naver.com/v5/search/대림창고" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>8. LCDC Seoul：</strong> 4 層複合空間，選品店+咖啡+展覽 <a href="https://map.naver.com/v5/search/LCDC%20성수" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>9. 纛島漢江公園（뚝섬한강공원）：</strong> 天氣好必去！聖水站步行 15 分，便利商店泡麵+漢江 View <a href="https://map.naver.com/v5/search/뚝섬한강공원" target="_blank" class="naver-link">Naver</a></li>
-                    <li><strong>10. Human Made × Blue Bottle（휴먼메이드 × 블루보틀）：</strong> 聖水洞 2가 333-94 2F，NIGO® 潮牌旗艦 + Blue Bottle 聯名咖啡，08:00-20:00 <a href="https://map.naver.com/v5/search/휴먼메이드%20성수" target="_blank" class="naver-link">Naver</a></li>
-                </ul>
-            </div></div>
-
-            <h3>午餐：無垢屋 聖水店</h3>
-            <div class="card"><div class="card-content" style="border-left: 4px solid var(--accent-red);">
-                <span class="meal-tag tag-lunch">午餐</span>
-                <h4>무구옥 성수점 — 以北式蔘雞白飯 <a href="https://map.naver.com/v5/search/무구옥%20성수" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>地址：</strong> 아차산로11길 11 103호（聖水洞 Cafe 街區內）</p>
-                <p><strong>時間：</strong> 11:30-21:00（<strong>午休 15:00-17:30</strong>）</p>
-                <p><strong>價位：</strong> 이북식 삼계백반 ₩18,000</p>
-                <p><strong>特色：</strong> 1954 年風韓屋風格。걸쭉한 국물（濃郁雞湯）+ 부드러운 닭고기（軟嫩雞肉）。週五是甜蜜點，人潮比週末少。</p>
-                <p><strong>攻略：</strong> 12:00 到（開門後 30 分鐘），避開排隊高峰。建議提前查 CatchTable 或電話確認。</p>
-                <details>
-                    <summary>無垢屋排太長時的備案</summary>
-                    <div class="details-content">
-                        <p><strong>聖水馬鈴薯排骨湯（소문난감자탕 성수）：</strong> 24 小時營業。白鐘元推薦。大塊豬骨濃郁湯頭 ~₩12,000。<a href="https://map.naver.com/v5/search/소문난감자탕%20성수" target="_blank" class="naver-link">Naver</a></p>
-                        <p><strong>Okdongsik 手工刀削麵（옥동식）：</strong> 聖水洞人氣刀削麵。<a href="https://map.naver.com/v5/search/옥동식%20성수" target="_blank" class="naver-link">Naver</a></p>
-                        <p><strong>Our Bakery（아우어베이커리 성수）：</strong> 聖水名店輕食+麵包 ~₩10,000-15,000。<a href="https://map.naver.com/v5/search/아우어베이커리%20성수" target="_blank" class="naver-link">Naver</a></p>
-                    </div>
-                </details>
-            </div></div>
-
-            <h3>伴手禮：樂天超市</h3>
-            <div class="card">
-                <img class="card-image" src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=800&h=400&fit=crop" alt="Korean supermarket snacks">
-                <div class="card-content">
-                    <h4>伴手禮清單</h4>
-                    <p><strong>食品：</strong> 辛拉麵（신라면）· 海苔大包裝（김）· 辣椒醬（고추장）· 蜂蜜奶油杏仁（허니버터아몬드）</p>
-                    <p><strong>零食：</strong> Market O 布朗尼 · 柚子茶（유자차）· 人蔘糖 · 烏龜餅乾（꼬북칩）</p>
-                    <p><strong>美妝：</strong> Olive Young 沒買完的在這補</p>
-                    <p style="margin-top:8px;"><strong>交通：</strong> 聖水站 성수역（2號線）→ 市廳站 시청역 City Hall Stn. 轉 1號線 → 首爾站 서울역（或 Kakao T ~₩12,000）</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ===== DAY 6 ===== -->
-    <section id="day6">
-        <div class="container">
-            <h2>DAY 6 (3/14 週六) — 最後巡禮 & 回家</h2>
-
-            <div class="day-hero" style="background-image: url('https://images.unsplash.com/photo-1546874177-9e664107314e?w=1200&h=600&fit=crop');">
-                <div class="day-hero-title">
-                    龍理團路 → I'Park Mall → 午餐 → Seoullo 7017 → AREX → ICN → 回台北
-                    <small>南營 남영역 1 站到首爾站 서울역 → AREX 直達 43m → 20:15 起飛</small>
-                </div>
-            </div>
-
-            <div class="route-diagram">
-                <svg viewBox="0 0 900 95" xmlns="http://www.w3.org/2000/svg">
-                    <style>.rt{font-family:'Noto Sans TC',sans-serif;font-size:11px;fill:#3a322a;text-anchor:middle}.rtt{font-size:10px;fill:#c84b31;font-weight:bold;text-anchor:middle}.rts{font-size:9px;fill:#6b9ebb;text-anchor:middle}</style>
-                    <line x1="50" y1="35" x2="850" y2="35" stroke="#e0ddd5" stroke-width="2"/>
-                    <circle cx="50" cy="35" r="7" fill="#c84b31"/><text x="50" y="58" class="rt">住宿</text><text x="50" y="70" class="rtt">09:00</text>
-                    <circle cx="190" cy="35" r="7" fill="#7da87b"/><text x="190" y="58" class="rt">龍理團路</text><text x="190" y="70" class="rts">09:30</text>
-                    <circle cx="330" cy="35" r="7" fill="#d4883a"/><text x="330" y="58" class="rt">I'Park Mall</text><text x="330" y="70" class="rts">10:30</text>
-                    <circle cx="470" cy="35" r="7" fill="#6b9ebb"/><text x="470" y="58" class="rt">午餐</text><text x="470" y="70" class="rts">12:30</text>
-                    <circle cx="600" cy="35" r="7" fill="#9b7eb5"/><text x="600" y="58" class="rt">Seoullo</text><text x="600" y="70" class="rts">13:30</text>
-                    <circle cx="730" cy="35" r="7" fill="#7da87b"/><text x="730" y="58" class="rt">AREX</text><text x="730" y="70" class="rts">15:00</text>
-                    <circle cx="850" cy="35" r="7" fill="#c84b31"/><text x="850" y="58" class="rt">ICN ✈</text><text x="850" y="70" class="rts">20:15</text>
-                </svg>
-            </div>
-
-            <div class="table-container">
-                <table class="sched-table">
-                    <thead><tr><th>時間</th><th>節點</th><th>首選</th><th>備援</th><th>筆記</th></tr></thead>
-                    <tbody>
-                        <tr><td class="time-col">09:00-10:30</td><td>散步</td><td><strong>龍理團路</strong>（용리단길）<a href="https://map.naver.com/v5/search/용리단길" target="_blank" class="naver-link">Naver</a><br>Teddy Beurre House（테디뵈르하우스）可頌+咖啡</td><td class="failover">住宿附近便利商店</td><td>從住宿步行 10-15 分。喝杯咖啡做最美收尾。</td></tr>
-                        <tr><td class="time-col">10:30-12:30</td><td>補貨</td><td><strong>I'Park Mall 龍山</strong>（아이파크몰 용산）<a href="https://map.naver.com/v5/search/아이파크몰%20용산" target="_blank" class="naver-link">Naver</a></td><td class="failover">—</td><td>龍山站 용산역 Yongsan Stn.（1號線/京義中央線）直通。最後補貨機會。</td></tr>
-                        <tr><td class="time-col">12:30-13:30</td><td>午餐</td><td><strong>I'Park Mall 餐廳區</strong>（味加本 미가본 韓定食等）</td><td class="failover">首爾站周邊美食街 / Lotteria（롯데리아）</td><td>輕鬆吃不趕路</td></tr>
-                        <tr><td class="time-col">13:30-14:30</td><td>景點</td><td><strong>Seoullo 7017 首爾路</strong>（서울로 7017）<a href="https://map.naver.com/v5/search/서울로7017" target="_blank" class="naver-link">Naver</a></td><td class="failover">—</td><td>首爾站正上方空中花園步道。免費，全天開放。停留 30-45 分鐘。</td></tr>
-                        <tr><td class="time-col">15:00-17:00</td><td>交通</td><td>AREX 直達車 공항철도 직통열차 → ICN</td><td class="failover">—</td><td>退稅（3F 自動退稅機）· WOWPASS 退還 · 免稅店</td></tr>
-                        <tr><td class="time-col">20:15</td><td>航班</td><td>CI161 → 22:10 桃園</td><td class="failover">—</td><td>19:30 前抵達登機門</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>Seoullo 7017 首爾路空中花園</h3>
-            <div class="card"><div class="card-content">
-                <h4>서울로 7017 <a href="https://map.naver.com/v5/search/서울로7017" target="_blank" class="naver-link">Naver</a></h4>
-                <p><strong>位置：</strong> 首爾站 서울역 正上方（高架橋改建的空中花園步道）</p>
-                <p><strong>費用：</strong> 免費，全天開放</p>
-                <p><strong>停留：</strong> 30-45 分鐘</p>
-                <p><strong>特色：</strong> 可俯瞰首爾站和南大門市場方向，種植超過 200 種植物。在空中步道散步是最美的收尾。</p>
-                <p><strong>交通：</strong> 從 I'Park Mall 龍山步行或搭 1 站到首爾站即可到達</p>
-            </div></div>
-        </div>
-    </section>
-    <!-- ===== 總覽 ===== -->
-    <section id="summary">
-        <div class="container">
-            <h2>完整總覽</h2>
-
-            <h3>費用估算（不含機票住宿）</h3>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th>日期</th><th>餐飲（4人）</th><th>交通（4人）</th><th>門票/體驗</th><th>購物預估</th><th>小計</th></tr></thead>
-                    <tbody>
-                        <tr><td>D1</td><td>₩200,000</td><td>₩60,000</td><td>₩0</td><td>₩100,000</td><td>₩360,000</td></tr>
-                        <tr><td>D2</td><td>₩160,000</td><td>₩80,000</td><td>₩0</td><td>₩50,000</td><td>₩290,000</td></tr>
-                        <tr><td>D3</td><td>₩244,000</td><td>₩50,000</td><td>₩80,000</td><td>₩40,000</td><td>₩414,000</td></tr>
-                        <tr><td>D4</td><td>₩320,000</td><td>₩60,000</td><td>₩0</td><td>₩100,000</td><td>₩480,000</td></tr>
-                        <tr><td>D5</td><td>₩252,000</td><td>₩60,000</td><td>₩0</td><td>₩300,000</td><td>₩612,000</td></tr>
-                        <tr><td>D6</td><td>₩100,000</td><td>₩50,000</td><td>₩0</td><td>₩100,000</td><td>₩250,000</td></tr>
-                        <tr style="font-weight:700;background:#f0ebe3;"><td>合計</td><td>₩1,276,000</td><td>₩360,000</td><td>₩80,000</td><td>₩690,000</td><td>₩2,406,000</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="area-intro orange"><div class="area-intro-content">
-                <h4>每人預算總覽</h4>
-                <div class="table-container" style="box-shadow:none;margin:10px 0;">
-                    <table>
-                        <thead><tr><th>項目</th><th>每人金額（₩）</th><th>約台幣（NT$）</th></tr></thead>
-                        <tbody>
-                            <tr><td>餐飲</td><td>~₩319,000</td><td>~NT$7,700</td></tr>
-                            <tr><td>交通</td><td>~₩90,000</td><td>~NT$2,200</td></tr>
-                            <tr><td>門票/體驗</td><td>~₩20,000</td><td>~NT$500</td></tr>
-                            <tr><td>購物（彈性）</td><td>~₩172,500</td><td>~NT$4,100</td></tr>
-                            <tr style="font-weight:700;background:#f0ebe3;"><td>合計</td><td>~₩601,500</td><td>~NT$14,400</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p style="font-size:13px;color:#888;margin-top:8px;">匯率參考：₩1,000 ≈ NT$24（2026年3月估）· 購物為彈性項目 · 不含機票、住宿、eSIM/WiFi</p>
-            </div></div>
-
-            <details>
-                <summary>費用明細說明</summary>
-                <div class="details-content">
-                    <p><strong>餐飲（₩1,276,000 / 4人）= ~₩319,000/人</strong></p>
-                    <ul class="compact-list">
-                        <li>D1：Solsot ~₩60,000 + 南營豚 ~₩80,000 + 君子烤腸 ~₩60,000</li>
-                        <li>D2：Isaac ~₩20,000 + 香港飯店 ~₩60,000 + 山清 ~₩80,000</li>
-                        <li>D3：早餐三選一 ~₩30,000 + 乙支面屋 ~₩80,000 + 仁寺洞/益善洞 ~₩40,000 + 廣藏市場 ~₩24,000 + 一隻雞 ~₩70,000</li>
-                        <li>D4：望遠市場 ~₩50,000 + 豬腳小姐 ~₩50,000 + 咖啡 ~₩30,000 + asterum ~₩40,000 + 風川鰻魚 ~₩140,000</li>
-                        <li>D5：早餐 ~₩30,000 + 無垢屋 ~₩72,000 + Cafe ~₩30,000 + 醬油蟹 ~₩120,000</li>
-                        <li>D6：咖啡 ~₩20,000 + 午餐 ~₩60,000</li>
-                    </ul>
-                    <p style="margin-top:12px;"><strong>交通（₩360,000 / 4人）= ~₩90,000/人</strong></p>
-                    <ul class="compact-list">
-                        <li>AREX 來回：₩9,500 × 4 × 2 = ₩76,000</li>
-                        <li>地鐵（T-money）：~₩1,400/次/人，估 6 天 × 4 次 = ~₩134,000</li>
-                        <li>Kakao T 計程車：估 8-10 次 × ~₩8,000 = ~₩80,000</li>
-                    </ul>
-                    <p style="margin-top:12px;"><strong>門票/體驗（₩80,000 / 4人）= ~₩20,000/人</strong></p>
-                    <ul class="compact-list">
-                        <li>景福宮（穿韓服免費！否則 ₩3,000×4）</li>
-                        <li>韓服租借：₩20,000 × 4 = ₩80,000</li>
-                    </ul>
-                </div>
-            </details>
-
-            <h3>餐廳一覽表</h3>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th>餐廳</th><th>韓文</th><th>日/餐</th><th>地點</th><th>價位</th><th>預約</th><th>備援</th></tr></thead>
-                    <tbody>
-                        <tr><td>Solsot 釜飯</td><td>솔솥</td><td>D1 午</td><td>明洞</td><td>~₩13,000</td><td>Naver 可約</td><td>明洞餃子</td></tr>
-                        <tr><td><strong>南營豚</strong></td><td><strong>남영돈</strong></td><td><strong>D1 晚</strong></td><td><strong>淑大入口</strong></td><td><strong>₩7,900/200g</strong></td><td><strong>不可（現場排）</strong></td><td><strong>名倫進士/荒謬生肉</strong></td></tr>
-                        <tr><td>君子大韓烤腸</td><td>군자대한곱창</td><td>D1 宵夜</td><td>明洞</td><td>~₩20,900</td><td>免</td><td>BHC 炸雞外帶</td></tr>
-                        <tr><td>Isaac Toast</td><td>이삭토스트</td><td>D2 早</td><td>住宿附近</td><td>~₩4,000</td><td>免</td><td>飯捲天國</td></tr>
-                        <tr><td>香港飯店 0410</td><td>홍콩반점 0410</td><td>D2 午</td><td>COEX</td><td>~₩10,000</td><td>免</td><td>Shake Shack</td></tr>
-                        <tr><td><strong>山清炭火花園</strong></td><td><strong>산청숯불가든</strong></td><td><strong>D2 晚</strong></td><td><strong>乙支路</strong></td><td><strong>₩7,900/200g</strong></td><td><strong>CatchTable 已訂 16:30</strong></td><td><strong>—</strong></td></tr>
-                        <tr><td>早餐三選一</td><td>Artist Bakery / LBM / Onion</td><td>D3 早</td><td>安國站</td><td>~₩6,000</td><td>CatchTable</td><td>到現場看排隊</td></tr>
-                        <tr><td>乙支面屋</td><td>을지면옥</td><td>D3 午</td><td>樂園洞</td><td>₩15,000</td><td>免</td><td>黃生家刀削麵</td></tr>
-                        <tr><td>廣藏市場 순대</td><td>광장시장</td><td>D3 小食</td><td>鐘路5街</td><td>~₩6,000</td><td>免</td><td>—</td></tr>
-                        <tr><td><strong>元祖元奶奶一隻雞</strong></td><td><strong>원조원할매 소문난닭한마리</strong></td><td><strong>D3 晚</strong></td><td><strong>鐘路5街</strong></td><td><strong>₩35,000/A套</strong></td><td><strong>不可</strong></td><td><strong>陳玉華一隻雞</strong></td></tr>
-                        <tr><td>望遠市場</td><td>망원시장</td><td>D4 早午</td><td>望遠站</td><td>~₩12,000</td><td>免</td><td>望遠洞豬骨湯</td></tr>
-                        <tr><td><strong>豬腳小姐</strong></td><td><strong>족발야시장</strong></td><td><strong>D4 午</strong></td><td><strong>弘大</strong></td><td><strong>₩39,000</strong></td><td><strong>不可</strong></td><td><strong>滿足五香豬腳</strong></td></tr>
-                        <tr><td><strong>asterum 433-10</strong></td><td><strong>아스테리움</strong></td><td><strong>D4 下午茶</strong></td><td><strong>延禧洞</strong></td><td><strong>~₩10,000</strong></td><td><strong>Catch Table</strong></td><td><strong>延禧洞咖啡街</strong></td></tr>
-                        <tr><td><strong>風川碳烤鰻魚</strong></td><td><strong>풍천장어숯불구이</strong></td><td><strong>D4 晚</strong></td><td><strong>延南洞</strong></td><td><strong>~₩35,000</strong></td><td><strong>建議預約</strong></td><td><strong>元祖奶奶鰻魚</strong></td></tr>
-                        <tr><td><strong>無垢屋 聖水</strong></td><td><strong>무구옥 성수</strong></td><td><strong>D5 午</strong></td><td><strong>聖水洞</strong></td><td><strong>₩18,000</strong></td><td><strong>建議查 CatchTable</strong></td><td><strong>馬鈴薯排骨湯/Okdongsik</strong></td></tr>
-                        <tr><td>烏達里家 醬油蟹</td><td>우다리집 간장게장</td><td>D5 晚</td><td>明洞</td><td>~₩30,000</td><td>建議預約</td><td>安東燉雞</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>景點一覽表</h3>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th>景點</th><th>韓文</th><th>所在地</th><th>時間</th><th>費用</th><th>停留</th></tr></thead>
-                    <tbody>
-                        <tr><td>Starfield Library</td><td>별마당 도서관</td><td>三成站/COEX</td><td>10:00-21:00</td><td>免費</td><td>30-45m</td></tr>
-                        <tr><td>T1 HQ Shop</td><td>T1 본사 팬샵</td><td>江南區宣陵路 627</td><td>12:00-20:00</td><td>免費</td><td>1h</td></tr>
-                        <tr><td>Haus Dosan（狎鷗亭）</td><td>하우스 도산</td><td>狎鷗亭</td><td>11:00-21:00</td><td>免費</td><td>1h</td></tr>
-                        <tr><td>景福宮</td><td>경복궁</td><td>景福宮站</td><td>09:00-18:00 (二休)</td><td>₩3,000</td><td>1-1.5h</td></tr>
-                        <tr><td>北村韓屋村</td><td>북촌한옥마을</td><td>安國站</td><td>全天</td><td>免費</td><td>45m</td></tr>
-                        <tr><td>仁寺洞</td><td>인사동</td><td>鐘路</td><td>~10:30-20:30</td><td>免費</td><td>30m</td></tr>
-                        <tr><td>益善洞</td><td>익선동</td><td>鐘路3街</td><td>全天</td><td>免費</td><td>1.5-2h</td></tr>
-                        <tr><td>廣藏市場</td><td>광장시장</td><td>鐘路5街</td><td>09:00-23:00</td><td>免費</td><td>30-45m</td></tr>
-                        <tr><td>望遠市場</td><td>망원시장</td><td>望遠站</td><td>08:00-21:00</td><td>免費</td><td>1-1.5h</td></tr>
-                        <tr><td>asterum 433-10</td><td>아스테리움 433-10</td><td>延禧洞</td><td>需預約</td><td>消費入場</td><td>60-90m</td></tr>
-                        <tr><td>首爾林</td><td>서울숲</td><td>首爾林站</td><td>全天</td><td>免費</td><td>30-45m</td></tr>
-                        <tr><td>聖水洞 Cafe 街</td><td>성수동 카페거리</td><td>聖水站</td><td>各店不同</td><td>免費</td><td>2-3h</td></tr>
-                        <tr><td>Seoullo 7017</td><td>서울로 7017</td><td>首爾站上方</td><td>全天</td><td>免費</td><td>30-45m</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>旅途須知</h3>
-            <div class="grid-2">
-                <div class="card"><div class="card-content">
-                    <h4>用餐禮儀</h4>
-                    <ul class="compact-list">
-                        <li>小菜 (밑반찬) 免費無限續</li>
-                        <li>叫服務生：「저기요」(處gi喲)</li>
-                        <li>不端碗喝湯，用湯匙</li>
-                        <li>結帳：「계산이요」(ㄍㄟ散你喲)</li>
-                        <li>不收小費</li>
-                    </ul>
-                </div></div>
-                <div class="card"><div class="card-content">
-                    <h4>交通 & 生活</h4>
-                    <ul class="compact-list">
-                        <li>手扶梯靠右站（台北靠左）</li>
-                        <li>末班車約 23:30-00:00</li>
-                        <li>電源：圓形雙孔 220V 需轉接頭</li>
-                        <li>垃圾桶路上很少，帶到超商丟</li>
-                        <li>4人共乘計程車比地鐵划算！</li>
-                    </ul>
-                </div></div>
-            </div>
-
-            <h3>實用韓文九句</h3>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th>中文</th><th>韓文</th><th>發音</th></tr></thead>
-                    <tbody>
-                        <tr><td>你好</td><td>안녕하세요</td><td>安妞哈塞喲</td></tr>
-                        <tr><td>謝謝</td><td>감사합니다</td><td>卡姆薩哈密達</td></tr>
-                        <tr><td>不好意思</td><td>저기요</td><td>處gi喲</td></tr>
-                        <tr><td>多少錢？</td><td>얼마예요?</td><td>歐兒馬耶喲</td></tr>
-                        <tr><td>請給我這個</td><td>이거 주세요</td><td>以勾主塞喲</td></tr>
-                        <tr><td>結帳</td><td>계산이요</td><td>ㄍㄟ散你喲</td></tr>
-                        <tr><td>好吃！</td><td>맛있어요!</td><td>馬西搜喲</td></tr>
-                        <tr><td>請幫我拍照</td><td>사진 찍어 주세요</td><td>沙金吉勾主塞喲</td></tr>
-                        <tr><td>4位</td><td>네 명이요</td><td>內猛以喲</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>緊急聯絡</h3>
-            <div class="tip-box warn">
-                <strong>緊急電話</strong> 警察 112 ｜ 消防 119 ｜ 觀光諮詢 1330（中文）｜ 駐韓台北代表部 +82-2-6329-6000 ｜ 急難 24h +82-10-9080-2761
-            </div>
-
-            <h3>出發前 Checklist</h3>
-            <div class="backup-box">
-                <h4>APP 下載</h4>
-                <ul class="nice-list">
-                    <li>Naver Map · Kakao T · Papago · <strong>CATCH TABLE GLOBAL</strong> · WOWPASS · Subway Korea · Air Korea</li>
-                </ul>
-                <h4 style="margin-top:14px;">預約確認</h4>
-                <ul class="nice-list">
-                    <li><strong>山清炭火花園 乙支路2號店：CatchTable 已訂 D2 16:30 ✅</strong></li>
-                    <li><strong>asterum 433-10：Catch Table 預約（每月第三個週四開放）</strong></li>
-                    <li>風川碳烤鰻魚：Naver Map 確認地址與營業時間</li>
-                    <li>無垢屋 聖水店：建議 CatchTable 查看或電話確認</li>
-                    <li>烏達里家醬油蟹：Day 5 前電話確認有蟹</li>
-                    <li>乙支面屋：確認營業狀態（午休 15:00-17:00）</li>
-                    <li>Solsot 釜飯（D1 午）：Naver 可預約（4人以上）</li>
-                </ul>
-                <h4 style="margin-top:14px;">攜帶物品</h4>
-                <ul class="nice-list">
-                    <li>衣物：厚外套 · 圍巾 · 手套 · KF94 口罩 ×10 · 發熱衣 ×5 · 雨傘</li>
-                    <li>台幣 500/1000 紙鈔（WOWPASS 用）+ 先換韓幣 ₩50,000-100,000</li>
-                    <li>轉接頭（圓形雙孔 220V）· eSIM/WiFi 機 · 護照 · 信用卡 ×2</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-logo">首爾散步手帖 V3.0</div>
-            <div class="footer-text">
-                <p>2026 春 · 六日五夜 · Verified & Cross-checked</p>
-                <p>最後更新：2026年3月3日</p>
-                <p style="margin-top: 12px; font-size: 12px; opacity: 0.7;">出發前請再次確認各店最新狀態。祝旅途愉快！</p>
-            </div>
-        </div>
-    </footer>
-
-    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
-    <script>
-        window.addEventListener('scroll',function(){document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>500)});
-        document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('hamburger-toggle').checked=false})});
-    </script>
 </body>
 </html>
