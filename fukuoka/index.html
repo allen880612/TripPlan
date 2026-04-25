@@ -446,6 +446,7 @@
   .lang-row:last-child { border-bottom: none; }
   .lang-row .jp-text { font-family: "Shippori Mincho", serif; color: var(--ink); font-weight: 500; }
   .lang-row .romaji { color: var(--muted); font-style: italic; font-size: 0.78rem; }
+  .phrase-table .romaji { color: var(--muted); font-style: italic; font-size: 0.78rem; font-weight: 400; }
   .lang-row .zh { color: var(--body); }
 
   .hotel-card {
@@ -689,12 +690,12 @@
       margin-right: 0.3rem;
     }
     .decisions-body td:nth-child(2)::before {
-      content: '決策：';
+      content: '情況：';
       color: #8B4513;
       margin-right: 0.3rem;
     }
     .decisions-body td:nth-child(3)::before {
-      content: 'IF-THEN：';
+      content: '怎麼辦：';
       color: #8B4513;
       margin-right: 0.3rem;
     }
@@ -910,7 +911,7 @@
         
         <div class="pitem">
           <span class="ptime">1900</span>
-          <span class="pname food">天神屋台 小金ちゃん 晚餐</span>
+          <span class="pname food">天神屋台 小金ちゃん（Kogane-chan）晚餐</span>
         </div>
         
         
@@ -919,7 +920,7 @@
         
         <div class="pitem">
           <span class="ptime">1930</span>
-          <span class="pname night">天神夏まつり（選配）</span>
+          <span class="pname night">天神夏まつり（Tenjin Natsu Matsuri、夏日祭典・選配）</span>
         </div>
         
         
@@ -995,7 +996,7 @@
         
         <div class="pitem">
           <span class="ptime">1000</span>
-          <span class="pname culture">柳川川下り</span>
+          <span class="pname culture">柳川川下り（Yanagawa Kawakudari、坐船順流而下）</span>
         </div>
         
         
@@ -1013,7 +1014,7 @@
         
         <div class="pitem">
           <span class="ptime">1200</span>
-          <span class="pname food">元祖本吉屋 鰻魚せいろ蒸し</span>
+          <span class="pname food">元祖本吉屋 鰻魚せいろ蒸し（Seiro Mushi、蒸籠飯）</span>
         </div>
         
         
@@ -1071,7 +1072,7 @@
         
         <div class="pitem">
           <span class="ptime">1830</span>
-          <span class="pname food">ShinShin 博多デイトス店 強棒麵</span>
+          <span class="pname food">ShinShin 博多 Deitos 店（デイトス）強棒麵</span>
         </div>
         
         
@@ -1268,7 +1269,7 @@
         
         <div class="pitem">
           <span class="ptime">1145</span>
-          <span class="pname food">大濠テラス & LOCALS 八女茶</span>
+          <span class="pname food">大濠 Terrace & LOCALS（テラス）八女茶</span>
         </div>
         
         
@@ -1380,7 +1381,7 @@
         
         <div class="pitem">
           <span class="ptime">0930</span>
-          <span class="pname shop">博多マイング · KITTE 採買</span>
+          <span class="pname shop">博多 Maing（マイング）· KITTE 採買</span>
         </div>
         
         
@@ -1397,7 +1398,7 @@
         
         
         <div class="pitem">
-          <span class="ptime">1130</span>
+          <span class="ptime">1115</span>
           <span class="pname food">The Full Full Hakata 明太子麵包</span>
         </div>
         
@@ -1406,7 +1407,7 @@
         
         
         <div class="pitem">
-          <span class="ptime">1145</span>
+          <span class="ptime">1130</span>
           <span class="pname transport">取行李 · 地鐵 → 福岡機場</span>
         </div>
         
@@ -1415,8 +1416,8 @@
         
         
         <div class="pitem">
-          <span class="ptime">1200</span>
-          <span class="pname food">福岡機場午餐 · 拉麵跑道</span>
+          <span class="ptime">1145</span>
+          <span class="pname food">福岡機場午餐 · 拉麵跑道（ラーメン滑走路 / Ramen Kassoro）</span>
         </div>
         
         
@@ -1424,7 +1425,7 @@
         
         
         <div class="pitem">
-          <span class="ptime">1420</span>
+          <span class="ptime">1400</span>
           <span class="pname transport">國際線 Check-in · 安檢</span>
         </div>
         
@@ -1570,13 +1571,13 @@
     
     <a class="t-item" href="#d1-11">
       <div class="t-time">19:00</div>
-      <div class="t-name">天神屋台 小金ちゃん 晚餐</div>
+      <div class="t-name">天神屋台 小金ちゃん（Kogane-chan）晚餐</div>
       <div class="t-cat">FOOD</div>
     </a>
     
     <a class="t-item" href="#d1-12">
       <div class="t-time">19:30</div>
-      <div class="t-name">天神夏まつり（選配）</div>
+      <div class="t-name">天神夏まつり（Tenjin Natsu Matsuri、夏日祭典・選配）</div>
       <div class="t-cat">NIGHT</div>
     </a>
     
@@ -1672,7 +1673,7 @@
       
       <div class="sec">
         <div class="sec-head"><span class="ico matcha-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"></path><path d="M15 2v6"></path><path d="M12 22a8 8 0 0 0 8-8V6H4v8a8 8 0 0 0 8 8z"></path></svg></span><h5>為什麼值得</h5><span class="jp-mini">Why</span></div>
-        <div class="sec-body"><p>福岡空港是全日本唯一地鐵直達市中心的國際機場。國際線出關 → 免費接駁巴士到國內線（3 分鐘）→ 地鐵 2 站 5 分鐘到博多。媽媽拉行李全程不轉計程車，對長程飛行後的體力最友善。</p></div>
+        <div class="sec-body"><p>福岡空港是全日本唯一地鐵直達市中心的國際機場。國際線出關、免費接駁巴士到國內線（3 分鐘）、地鐵 2 站 5 分鐘到博多。媽媽拉行李全程不轉計程車，對長程飛行後的體力最友善。</p></div>
       </div>
       
       
@@ -1681,7 +1682,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>入國審查 → 領行李 → 海關：30-40 分鐘</li><li>出境大廳 → 1F 南出口「無料連絡バス」→ 接駁到國內線（3 分鐘、10 分鐘一班）</li><li>國內線 B2F 地鐵「福岡空港」站 → 售票機買 SUGOCA IC 卡</li><li>空港線往姪浜方向 → 博多站下車（5 分鐘 ¥260）</li><li>跟黃色「到着 Arrivals」指標出關</li><li>1F 南出口找「無料連絡バス」（中英日三語）</li><li>上國內線後往 B2 地鐵站</li><li>售票機選「ICカード」→ 購入 → SUGOCA ¥2,000（內含 ¥500 押金 + ¥1,500 可用額度）</li><li>刷卡進閘 → 2 號月台上車 → 2 站下車</li>
+            <li>入國審查、領行李、海關：30-40 分鐘</li><li>出境大廳、1F 南出口「無料連絡バス」、接駁到國內線（3 分鐘、10 分鐘一班）</li><li>國內線 B2F 地鐵「福岡空港」站、售票機買 SUGOCA IC 卡</li><li>空港線往姪浜方向、博多站下車（5 分鐘 ¥260）</li><li>跟黃色「到着 Arrivals」指標出關</li><li>1F 南出口找「無料連絡バス」（中英日三語）</li><li>上國內線後往 B2 地鐵站</li><li>售票機選「ICカード」、購入、SUGOCA ¥2,000（內含 ¥500 押金 + ¥1,500 可用額度）</li><li>刷卡進閘、2 號月台上車、2 站下車</li>
           </ol>
           
         </div>
@@ -1715,7 +1716,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">班機延誤超過 2 小時 → 直接搭計程車到飯店（約 ¥1,500-2,000、15 分車程），讓媽媽休息，下午行程全往後推 1 小時，天神屋台改 19:30。</div></div>
+        <div class="sec-body"><div class="plan-b">班機延誤超過 2 小時、直接搭計程車到飯店（約 ¥1,500-2,000、15 分車程），讓媽媽休息，下午行程全往後推 1 小時，天神屋台改 19:30。</div></div>
       </div>
       
     </div>
@@ -1881,7 +1882,7 @@
       
       <div class="sec">
         <div class="sec-head"><span class="ico matcha-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"></path><path d="M15 2v6"></path><path d="M12 22a8 8 0 0 0 8-8V6H4v8a8 8 0 0 0 8 8z"></path></svg></span><h5>為什麼值得</h5><span class="jp-mini">Why</span></div>
-        <div class="sec-body"><p>弘法大師空海於 806 年從唐返日所建、<strong>日本最古真言密教寺院</strong>。本尊「福岡大佛」為高 10.8m、重 30 噸的木造釋迦如來坐像、由四萬人歷時 4 年雕刻完成（1992 年開眼）、為<strong>日本最大級木造坐佛</strong>。免費參拜、就在博多站旁、是博多家族行程<strong>短時間文化收穫高</strong>的首選。媽阿姨膝蓋不好不耐久站、這裡無需爬樓梯即能看到大佛、地獄極樂巡走在平地暗道、非常適合長輩。</p></div>
+        <div class="sec-body"><p>弘法大師空海於 806 年從唐返日所建、<strong>日本最古真言密教寺院</strong>。本尊「福岡大佛」為高 10.8m、重 30 噸的木造釋迦如來坐像、由四萬人歷時 4 年雕刻完成（1992 年開眼）、為<strong>日本最大級木造坐佛</strong>。免費參拜、就在博多站旁、是博多家族行程<strong>短時間文化收穫高</strong>的首選。媽阿姨膝蓋不好不耐久站、這裡無需爬樓梯即能看到大佛、地獄極樂巡走在平地暗道、非常適合媽媽阿姨。</p></div>
       </div>
       
       
@@ -1903,7 +1904,7 @@
         <div class="sec-body">
           <div class="warn-box">
             <ul>
-              <li>拝観時間 09:00-16:45、最後入場約 16:30</li><li><strong>地獄極樂巡完全黑暗、媽阿姨若有幽閉恐懼或膝蓋不穩可跳過、在外面等候</strong></li><li><strong>大佛殿內全面禁止攝影錄影</strong>、境內五重塔、山門可拍</li><li>脫鞋進大佛殿、長輩請穿易穿脫鞋款（避免靴子綁帶）</li><li>境內有公共廁所（山門進入後右側）、無障礙廁所有</li><li>週末與正月參拜人潮多、平日上午相對安靜</li><li>夏季境內無冷氣、大佛殿內有但不強、帶扇子</li><li>捐獻日（毎月 28 日縁日）會有特別法會、人潮較多</li>
+              <li>拝観時間 09:00-16:45、最後入場約 16:30</li><li><strong>地獄極樂巡完全黑暗、媽阿姨若有幽閉恐懼或膝蓋不穩可跳過、在外面等候</strong></li><li><strong>大佛殿內全面禁止攝影錄影</strong>、境內五重塔、山門可拍</li><li>脫鞋進大佛殿、媽媽阿姨請穿易穿脫鞋款（避免靴子綁帶）</li><li>境內有公共廁所（山門進入後右側）、無障礙廁所有</li><li>週末與正月參拜人潮多、平日上午相對安靜</li><li>夏季境內無冷氣、大佛殿內有但不強、帶扇子</li><li>捐獻日（毎月 28 日縁日）會有特別法會、人潮較多</li>
             </ul>
           </div>
         </div>
@@ -1924,7 +1925,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">若整修閉殿（罕見）→ 改走櫛田神社（步行 7 分、博多總鎮守）；若大雨 → 寺內可避雨、走廊有頂</div></div>
+        <div class="sec-body"><div class="plan-b">若整修閉殿（罕見）、改走櫛田神社（步行 7 分、博多總鎮守）；若大雨、寺內可避雨、走廊有頂</div></div>
       </div>
       
     </div>
@@ -1989,7 +1990,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>從櫛田神社北口進入上川端商店街</li><li>慢走看看藥妝店、手工藝店、茶葉老鋪</li><li>到中段的<strong>川端ぜんざい広場</strong>坐下來</li><li>點一碗博多ぜんざい（紅豆湯 ¥500）配抹茶</li><li>拍飾山笠 + 買山笠造型明信片</li><li>繼續往北走到盡頭（中洲川端站地下直通）</li><li>搭地鐵 1 站空港線 → 天神站</li>
+            <li>從櫛田神社北口進入上川端商店街</li><li>慢走看看藥妝店、手工藝店、茶葉老鋪</li><li>到中段的<strong>川端ぜんざい広場</strong>坐下來</li><li>點一碗博多ぜんざい（紅豆湯 ¥500）配抹茶</li><li>拍飾山笠 + 買山笠造型明信片</li><li>繼續往北走到盡頭（中洲川端站地下直通）</li><li>搭地鐵 1 站空港線、天神站</li>
           </ol>
           
         </div>
@@ -2023,7 +2024,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">若太累 → 從櫛田神社直接走到中洲川端站坐地鐵，跳過商店街深度行程。</div></div>
+        <div class="sec-body"><div class="plan-b">若太累、從櫛田神社直接走到中洲川端站坐地鐵，跳過商店街深度行程。</div></div>
       </div>
       
     </div>
@@ -2088,7 +2089,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>先進博多町家「みやげ処」物產棟（免費）吹冷氣</li><li>買票 ¥200 × 3 → 1F 看明治商家起居、古井、廚房</li><li>2F 看山笠文化資料（影片 15 分鐘，中英日字幕）</li><li>中庭展示棟看職人實作（週末機率高）</li><li>出館對街走到櫛田神社南大門鳥居拍照</li><li>手水舍洗手 → 本殿拜拜（5 円賽錢、2 拜 2 拍手 1 拜）</li><li>繞到本殿後方看 <strong>13 公尺飾山笠</strong>（免費入內）</li><li>看千年銀杏神木、博多塀土牆</li>
+            <li>先進博多町家「みやげ処」物產棟（免費）吹冷氣</li><li>買票 ¥200 × 3、1F 看明治商家起居、古井、廚房</li><li>2F 看山笠文化資料（影片 15 分鐘，中英日字幕）</li><li>中庭展示棟看職人實作（週末機率高）</li><li>出館對街走到櫛田神社南大門鳥居拍照</li><li>手水舍洗手、本殿拜拜（5 円賽錢、2 拜 2 拍手 1 拜）</li><li>繞到本殿後方看 <strong>13 公尺飾山笠</strong>（免費入內）</li><li>看千年銀杏神木、博多塀土牆</li>
           </ol>
           
         </div>
@@ -2122,7 +2123,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">博多町家週一休 → 跳過直接去櫛田神社、時間多的去旁邊川端ぜんざい広場看另一座山笠。下雨 → 兩館都有室內展示，照常。</div></div>
+        <div class="sec-body"><div class="plan-b">博多町家週一休、可以跳過 直接去櫛田神社、時間多的去旁邊川端ぜんざい広場看另一座山笠。下雨、兩館都有室內展示，照常。</div></div>
       </div>
       
     </div>
@@ -2215,7 +2216,7 @@
 <article class="spot span-2" id="d1-11">
   <div class="spot-cover cat-food cat-with-image" onclick="toggleSpot(this)">
     
-    <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=1400&q=80" alt="天神屋台 小金ちゃん 晚餐" onerror="this.style.display='none'">
+    <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=1400&q=80" alt="天神屋台 小金ちゃん（Kogane-chan）晚餐" onerror="this.style.display='none'">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2225,7 +2226,7 @@
       <span class="cat-pill food">FOOD</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">天神屋台 小金ちゃん 晚餐</h3>
+      <h3 class="spot-name">天神屋台 小金ちゃん（Kogane-chan）晚餐</h3>
       
       <p class="teaser">焼きラーメン、焼き鳥、博多餃子。全日本僅福岡合法屋台，每人 ¥2,000-3,000 現金。</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
@@ -2258,7 +2259,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>天神站 16 號出口 → 沿市役所西側人行道走</li><li>看到屋台排列，挑<strong>人少、老闆面善、有中英文菜單</strong>的</li><li>入座前說「3 人、入れますか？」（3 nin, hairemasuka）</li><li>老闆手指菜單點，或直接說「焼きラーメン、焼き鳥 5 本、博多餃子」</li><li>飲料多數是瓶裝啤酒 + 可樂，¥500 左右</li><li>一攤吃 40-50 分鐘差不多，付現金離開</li><li>想吃更多可再換一攤（屋台 hopping 是在地玩法）</li>
+            <li>天神站 16 號出口、沿市役所西側人行道走</li><li>看到屋台排列，挑<strong>人少、老闆面善、有中英文菜單</strong>的</li><li>入座前說「3 人、入れますか？」（3 nin, hairemasuka）</li><li>老闆手指菜單點，或直接說「焼きラーメン、焼き鳥 5 本、博多餃子」</li><li>飲料多數是瓶裝啤酒 + 可樂，¥500 左右</li><li>一攤吃 40-50 分鐘差不多，付現金離開</li><li>想吃更多可再換一攤（屋台 hopping 是在地玩法）</li>
           </ol>
           
         </div>
@@ -2292,12 +2293,18 @@
       <div class="sec">
         <div class="sec-head"><h5>實用日文</h5><span class="jp-mini">Phrases</span></div>
         <div class="sec-body">
-          <table class="menu-table">
+          <table class="menu-table phrase-table">
             <tbody>
               
-              <tr><td>一份燒拉麵</td><td class="price">焼きラーメン一つお願いします</td></tr>
+              <tr>
+                <td>一份燒拉麵</td>
+                <td class="price">焼きラーメン一つお願いします<br><span class="romaji">Yaki rāmen hitotsu onegai shimasu</span></td>
+              </tr>
               
-              <tr><td>明太子玉子燒</td><td class="price">明太子玉子焼き</td></tr>
+              <tr>
+                <td>明太子玉子燒</td>
+                <td class="price">明太子玉子焼き<br><span class="romaji">Mentaiko tamagoyaki</span></td>
+              </tr>
               
             </tbody>
           </table>
@@ -2307,7 +2314,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">媽媽走累坐不住高椅 → 改去<strong>博多屋台バー えびちゃん</strong>（博多站前 ホテル フォルツァ 1F 室內屋台，有靠背椅、冷氣）。或直接在天神地下街附近找<strong>一蘭</strong>、<strong>博多もつ鍋や</strong>有座位版。</div></div>
+        <div class="sec-body"><div class="plan-b">媽媽走累坐不住高椅、改去<strong>博多屋台バー えびちゃん</strong>（博多站前 ホテル フォルツァ 1F 室內屋台，有靠背椅、冷氣）。或直接在天神地下街附近找<strong>一蘭</strong>、<strong>博多もつ鍋や</strong>有座位版。</div></div>
       </div>
       
     </div>
@@ -2318,7 +2325,7 @@
 <div class="transit-bridge">
   <div class="transit-bridge-inner">
     <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"></circle><path d="M15 22v-5l-2-4 3-5 2 4 3 1"></path><path d="M8 14l-3 1-3-2 5-4 2-2"></path></svg></span>
-    <span class="from-to">天神屋台 小金ちゃん 晚餐 → 天神夏まつり（選配）：同在天神區、走過去</span>
+    <span class="from-to">天神屋台 小金ちゃん（Kogane-chan）晚餐 → 天神夏まつり（選配）：同在天神區、走過去</span>
     <span class="time-cost">5 分 · 步行 · 350 m</span>
     <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=%E5%A4%A9%E7%A5%9E%E5%B1%8B%E5%8F%B0%20%E5%B0%8F%E9%87%91%E3%81%A1%E3%82%83%E3%82%93%20%E6%99%9A%E9%A4%90%20%E7%A6%8F%E5%B2%A1&destination=%E5%A4%A9%E7%A5%9E%E5%A4%8F%E3%81%BE%E3%81%A4%E3%82%8A%EF%BC%88%E9%81%B8%E9%85%8D%EF%BC%89%20%E7%A6%8F%E5%B2%A1&travelmode=walking" target="_blank" rel="noopener">Google 導航</a>
   </div>
@@ -2329,7 +2336,7 @@
 <article class="spot" id="d1-12">
   <div class="spot-cover cat-night cat-with-image" onclick="toggleSpot(this)">
     
-    <img src="https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=1400&q=80" alt="天神夏まつり（選配）" onerror="this.style.display='none'">
+    <img src="https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=1400&q=80" alt="天神夏まつり（Tenjin Natsu Matsuri、夏日祭典・選配）" onerror="this.style.display='none'">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2339,7 +2346,7 @@
       <span class="cat-pill night">NIGHT</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">天神夏まつり（選配）</h3>
+      <h3 class="spot-name">天神夏まつり（Tenjin Natsu Matsuri、夏日祭典・選配）</h3>
       
       <p class="teaser">32 攤屋台、射的、ヨーヨー釣り、盆踊り、りんご飴。浴衣打扮有折扣。</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
@@ -2395,7 +2402,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">2026 夏まつり日期不對 → 改去<strong>博多運河城（キャナル）夜間噴泉秀</strong>（免費、每 15 分一次、20:00-22:00 有大型噴泉配音樂燈光）。或<strong>天神中央公園</strong>屋台夜景散步。</div></div>
+        <div class="sec-body"><div class="plan-b">2026 夏まつり日期不對、改去<strong>博多運河城（キャナル）夜間噴泉秀</strong>（免費、每 15 分一次、20:00-22:00 有大型噴泉配音樂燈光）。或<strong>天神中央公園</strong>屋台夜景散步。</div></div>
       </div>
       
     </div>
@@ -2497,7 +2504,7 @@
     
     <a class="t-item" href="#d2-5">
       <div class="t-time">10:00</div>
-      <div class="t-name">柳川川下り</div>
+      <div class="t-name">柳川川下り（Yanagawa Kawakudari、坐船順流而下）</div>
       <div class="t-cat">CULTURE</div>
     </a>
     
@@ -2509,7 +2516,7 @@
     
     <a class="t-item" href="#d2-7">
       <div class="t-time">12:00</div>
-      <div class="t-name">元祖本吉屋 鰻魚せいろ蒸し</div>
+      <div class="t-name">元祖本吉屋 鰻魚せいろ蒸し（Seiro Mushi、蒸籠飯）</div>
       <div class="t-cat">FOOD</div>
     </a>
     
@@ -2551,7 +2558,7 @@
     
     <a class="t-item" href="#d2-14">
       <div class="t-time">18:30</div>
-      <div class="t-name">ShinShin 博多デイトス店 強棒麵</div>
+      <div class="t-name">ShinShin 博多 Deitos 店（デイトス）強棒麵</div>
       <div class="t-cat">FOOD</div>
     </a>
     
@@ -2668,7 +2675,7 @@
 <article class="spot" id="d2-5">
   <div class="spot-cover cat-culture cat-with-image" onclick="toggleSpot(this)">
     
-    <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=1400&q=80" alt="柳川川下り" onerror="this.style.display='none'">
+    <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=1400&q=80" alt="柳川川下り（Yanagawa Kawakudari、坐船順流而下）" onerror="this.style.display='none'">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2678,7 +2685,7 @@
       <span class="cat-pill culture">CULTURE</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">柳川川下り</h3>
+      <h3 class="spot-name">柳川川下り（Yanagawa Kawakudari、坐船順流而下）</h3>
       
       <p class="teaser">水鄉柳川 470 公里水路、江戶立花氏城下町。早上河面最涼，60-70 分鐘木船遊水路。</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
@@ -2711,7 +2718,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>西鐵柳川站 09:50 下車 → 步行 5 分到站前乘船處</li><li>出示套票兌換船票（已含船資 ¥1,800）</li><li>10:00 上船（木製平底船、每船 15-20 人 + 1 船夫）</li><li>坐定後船夫開始說柳川歷史、唱民歌</li><li>船會穿過<strong>低橋（低い橋）</strong>——全體要彎腰</li><li>途經柳川城跡、北原白秋紀念館水景、沖端老街</li><li>約 11:10 抵達沖端地區下船</li><li>步行 10-15 分（商店街有陰影）到元祖本吉屋午餐</li>
+            <li>西鐵柳川站 09:50 下車、步行 5 分到站前乘船處</li><li>出示套票兌換船票（已含船資 ¥1,800）</li><li>10:00 上船（木製平底船、每船 15-20 人 + 1 船夫）</li><li>坐定後船夫開始說柳川歷史、唱民歌</li><li>船會穿過<strong>低橋（低い橋）</strong>——全體要彎腰</li><li>途經柳川城跡、北原白秋紀念館水景、沖端老街</li><li>約 11:10 抵達沖端地區下船</li><li>步行 10-15 分（商店街有陰影）到元祖本吉屋午餐</li>
           </ol>
           
         </div>
@@ -2745,7 +2752,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">大雨取消 → 直接西鐵回二日市轉太宰府線，太宰府時段拉長到全日；套票的船票可改退 ¥1,800 現金。</div></div>
+        <div class="sec-body"><div class="plan-b">大雨取消、直接西鐵回二日市轉太宰府線，太宰府時段拉長到全日；套票的船票可改退 ¥1,800 現金。</div></div>
       </div>
       
     </div>
@@ -2756,7 +2763,7 @@
 <div class="transit-bridge">
   <div class="transit-bridge-inner">
     <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"></circle><path d="M15 22v-5l-2-4 3-5 2 4 3 1"></path><path d="M8 14l-3 1-3-2 5-4 2-2"></path></svg></span>
-    <span class="from-to">柳川川下り → 柳川街道漫步：川下り終點 → 街道區</span>
+    <span class="from-to">柳川川下り（Yanagawa Kawakudari、坐船順流而下） → 柳川街道漫步：川下り終點 → 街道區</span>
     <span class="time-cost">5 分 · 步行 · 350 m</span>
     <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=%E6%9F%B3%E5%B7%9D%E5%B7%9D%E4%B8%8B%E3%82%8A%20%E7%A6%8F%E5%B2%A1&destination=%E6%9F%B3%E5%B7%9D%E8%A1%97%E9%81%93%E6%BC%AB%E6%AD%A5%20%E7%A6%8F%E5%B2%A1&travelmode=walking" target="_blank" rel="noopener">Google 導航</a>
   </div>
@@ -2812,7 +2819,7 @@
 <article class="spot span-2" id="d2-7">
   <div class="spot-cover cat-food cat-with-image" onclick="toggleSpot(this)">
     
-    <img src="https://images.unsplash.com/photo-1617196701537-7329482cc9fe?w=1400&q=80" alt="元祖本吉屋 鰻魚せいろ蒸し" onerror="this.style.display='none'">
+    <img src="https://images.unsplash.com/photo-1617196701537-7329482cc9fe?w=1400&q=80" alt="元祖本吉屋 鰻魚せいろ蒸し（Seiro Mushi、蒸籠飯）" onerror="this.style.display='none'">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2822,7 +2829,7 @@
       <span class="cat-pill food">FOOD</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">元祖本吉屋 鰻魚せいろ蒸し</h3>
+      <h3 class="spot-name">元祖本吉屋 鰻魚せいろ蒸し（Seiro Mushi、蒸籠飯）</h3>
       
       <p class="teaser">創業 340 年、柳川鰻魚飯元祖。11:00-21:00 彈性、無排隊壓力。¥3,000-4,000。</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
@@ -2836,7 +2843,7 @@
         <div class="sec-body">
           <div class="addr-block">
             <div class="a-text">福岡県柳川市旭町69（沖端地區）
-              <span class="station">柳川川下り下船處 步行 10-15 分 · 商店街動線</span>
+              <span class="station">柳川川下り下船處 步行 10-15 分 · 走商店街路線</span>
             </div>
             <a class="maps-btn" href="https://www.google.com/maps/search/?api=1&query=%E5%85%83%E7%A5%96%E6%9C%AC%E5%90%89%E5%B1%8B+%E6%9F%B3%E5%B7%9D" target="_blank" rel="noopener">Google Maps</a>
           </div>
@@ -2846,7 +2853,7 @@
       
       <div class="sec">
         <div class="sec-head"><span class="ico matcha-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"></path><path d="M15 2v6"></path><path d="M12 22a8 8 0 0 0 8-8V6H4v8a8 8 0 0 0 8 8z"></path></svg></span><h5>為什麼值得</h5><span class="jp-mini">Why</span></div>
-        <div class="sec-body"><p>柳川鰻魚飯與一般關東風「蒲燒鰻」不同——<strong>せいろ蒸し</strong>是柳川特有作法：白飯先拌蛋液、鋪上烤過的鰻魚，整個放進蒸籠再蒸 15-20 分鐘。飯吸滿鰻魚汁 + 蛋香，入口就化。<strong>元祖本吉屋</strong>是 1681 年創業、340 年歷史的柳川鰻魚飯始祖。<strong>v3 主選原因</strong>：11:00-21:00 營業彈性、非假日走得進去無排隊壓力（對比若松屋 11:00 開店、11:45 抵達會等 30 分換桌空窗期、對長輩不利）。創業 340 年老店名氣不輸。</p></div>
+        <div class="sec-body"><p>柳川鰻魚飯與一般關東風「蒲燒鰻」不同——<strong>せいろ蒸し</strong>是柳川特有作法：白飯先拌蛋液、鋪上烤過的鰻魚，整個放進蒸籠再蒸 15-20 分鐘。飯吸滿鰻魚汁 + 蛋香，入口就化。<strong>元祖本吉屋</strong>是 1681 年創業、340 年歷史的柳川鰻魚飯始祖。<strong>v3 主選原因</strong>：11:00-21:00 營業彈性、非假日走得進去無排隊壓力（對比若松屋 11:00 開店、11:45 抵達會等 30 分換桌空窗期、對媽媽阿姨不利）。創業 340 年老店名氣不輸。</p></div>
       </div>
       
       
@@ -2855,7 +2862,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>下船後沿商店街步行 10-15 分（有陰影、走慢一點）</li><li>門口脫鞋入店 → 跟店員說「3 人、テーブル席 お願いします」（媽媽膝蓋不跪坐）</li><li>指菜單點「うなぎせいろ蒸し」¥3,000-4,000</li><li>等 15-20 分（鰻魚現蒸、慢食體驗）</li><li>蒸籠上桌 → 白飯 + 烤鰻 + 錦絲玉子蒸透、入口即化</li><li>配漬物、吸い物</li><li>13:00-13:15 走回西鐵柳川站，準備轉往太宰府</li>
+            <li>下船後沿商店街步行 10-15 分（有陰影、走慢一點）</li><li>門口脫鞋入店、跟店員說「3 人、テーブル席 お願いします」（媽媽膝蓋不跪坐）</li><li>指菜單點「うなぎせいろ蒸し」¥3,000-4,000</li><li>等 15-20 分（鰻魚現蒸、慢食體驗）</li><li>蒸籠上桌、白飯 + 烤鰻 + 錦絲玉子蒸透、入口即化</li><li>配漬物、吸い物</li><li>13:00-13:15 走回西鐵柳川站，準備轉往太宰府</li>
           </ol>
           
         </div>
@@ -2889,10 +2896,13 @@
       <div class="sec">
         <div class="sec-head"><h5>實用日文</h5><span class="jp-mini">Phrases</span></div>
         <div class="sec-body">
-          <table class="menu-table">
+          <table class="menu-table phrase-table">
             <tbody>
               
-              <tr><td>鰻魚定食四人份</td><td class="price">うなぎ定食四人前お願いします</td></tr>
+              <tr>
+                <td>鰻魚定食四人份</td>
+                <td class="price">うなぎ定食四人前お願いします<br><span class="romaji">Unagi teishoku yo-nin-mae onegai shimasu</span></td>
+              </tr>
               
             </tbody>
           </table>
@@ -2902,7 +2912,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">本吉屋當日休 / 滿席 → <strong>若松屋</strong>（沖端町 26、同區、1694 創業）或<strong>うなぎの夜明</strong>（柳川站步行 5 分、交通方便）。</div></div>
+        <div class="sec-body"><div class="plan-b">本吉屋當日休 / 滿席、<strong>若松屋</strong>（沖端町 26、同區、1694 創業）或<strong>うなぎの夜明</strong>（柳川站步行 5 分、交通方便）。</div></div>
       </div>
       
     </div>
@@ -2913,7 +2923,7 @@
 <div class="transit-bridge">
   <div class="transit-bridge-inner">
     <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"></circle><path d="M15 22v-5l-2-4 3-5 2 4 3 1"></path><path d="M8 14l-3 1-3-2 5-4 2-2"></path></svg></span>
-    <span class="from-to">元祖本吉屋 鰻魚せいろ蒸し → 太宰府天滿宮參拜：柳川 → 西鐵二日市轉車 → 太宰府（共 35 分）+ 步行 5 分到神社</span>
+    <span class="from-to">元祖本吉屋 鰻魚せいろ蒸し（Seiro Mushi、蒸籠飯） → 太宰府天滿宮參拜：柳川 → 西鐵二日市轉車 → 太宰府（共 35 分）+ 步行 5 分到神社</span>
     <span class="time-cost">50 分 · 西鐵 + 步行</span>
     <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=%E5%85%83%E7%A5%96%E6%9C%AC%E5%90%89%E5%B1%8B%20%E9%B0%BB%E9%AD%9A%E3%81%9B%E3%81%84%E3%82%8D%E8%92%B8%E3%81%97%20%E7%A6%8F%E5%B2%A1&destination=%E5%A4%AA%E5%AE%B0%E5%BA%9C%E5%A4%A9%E6%BB%BF%E5%AE%AE%E5%8F%83%E6%8B%9C%20%E7%A6%8F%E5%B2%A1&travelmode=walking" target="_blank" rel="noopener">Google 導航</a>
   </div>
@@ -2961,7 +2971,7 @@
       
       <div class="sec">
         <div class="sec-head"><span class="ico matcha-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"></path><path d="M15 2v6"></path><path d="M12 22a8 8 0 0 0 8-8V6H4v8a8 8 0 0 0 8 8z"></path></svg></span><h5>為什麼值得</h5><span class="jp-mini">Why</span></div>
-        <div class="sec-body"><p>太宰府天満宮是日本全國約 12,000 座天滿宮的總本社之一，祭祀學問之神菅原道真，1,100 年歷史。每年 900 萬人造訪。本殿進行 124 年一次的大改修、<strong>藤本壯介設計的「仮殿」已於 2026/5 公開終了</strong>（v1 版本寫的仮殿 7 月已拆），現場看的是<strong>大改修完工後重新開放的新本殿</strong>。飛梅樹齡 1,100 年、御神牛、博多塀土牆都還在。<strong>6 月中需再查工程狀態</strong>：IF 仍有圍簾 → 縮短本殿拜拜、九博時間拉長到 16:30。</p></div>
+        <div class="sec-body"><p>太宰府天満宮是日本全國約 12,000 座天滿宮的總本社之一，祭祀學問之神菅原道真，1,100 年歷史。每年 900 萬人造訪。本殿進行 124 年一次的大改修、<strong>藤本壯介設計的「仮殿」已於 2026/5 公開終了</strong>（v1 版本寫的仮殿 7 月已拆），現場看的是<strong>大改修完工後重新開放的新本殿</strong>。飛梅樹齡 1,100 年、御神牛、博多塀土牆都還在。<strong>6 月中再查一次工程狀態</strong>：萬一還有圍簾、本殿就拜短、把九博時間拉到 16:30。</p></div>
       </div>
       
       
@@ -2970,7 +2980,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>從參道走到神社入口（太鼓橋前）</li><li>過<strong>太鼓橋</strong>（三座紅橋代表過去、現在、未來）</li><li>手水舍 → 樓門 → 拜<strong>改修完工的新本殿</strong></li><li>右側<strong>飛梅</strong>（傳說道真放逐後從京都飛來的梅樹、樹齡 1,100 年）</li><li>境內<strong>御神牛</strong>摸頭據說增加智慧（學生必做）</li><li>買御守「学業守」¥800、御朱印 ¥500</li><li>15:00 前走到東側手扶梯 → 九博</li>
+            <li>從參道走到神社入口（太鼓橋前）</li><li>過<strong>太鼓橋</strong>（三座紅橋代表過去、現在、未來）</li><li>手水舍、樓門、拜<strong>改修完工的新本殿</strong></li><li>右側<strong>飛梅</strong>（傳說道真放逐後從京都飛來的梅樹、樹齡 1,100 年）</li><li>境內<strong>御神牛</strong>摸頭據說增加智慧（學生必做）</li><li>買御守「学業守」¥800、御朱印 ¥500</li><li>15:00 前走到東側手扶梯、九博</li>
           </ol>
           
         </div>
@@ -3004,7 +3014,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">IF 仍有工程圍簾 → 縮短本殿參拜到 15 分、九博延長到 16:30。下雨 → 手扶梯全程室內到九博。</div></div>
+        <div class="sec-body"><div class="plan-b">萬一7 月還有圍簾遮住、本殿就拜一下 15 分內結束、把時間挪去九州博物館、九博待到 16:30。下雨的話、手扶梯走全程室內到九博。</div></div>
       </div>
       
     </div>
@@ -3060,7 +3070,7 @@
       
       <div class="sec">
         <div class="sec-head"><span class="ico matcha-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"></path><path d="M15 2v6"></path><path d="M12 22a8 8 0 0 0 8-8V6H4v8a8 8 0 0 0 8 8z"></path></svg></span><h5>為什麼值得</h5><span class="jp-mini">Why</span></div>
-        <div class="sec-body"><p>由建築師<strong>隈研吾（Kengo Kuma、非藤本壯介）</strong>設計、以「自然素材で伝統と現代の融合」為主題、用約 2000 根杉木以斜向交錯方式拼接出深邃隧道狀空間、從表參道延伸至店內 25m 深。<strong>全球星巴克 Top 5 必訪分店</strong>。從太宰府天滿宮走回車站途中順路、適合家族喘口氣坐下喝杯飲料、長輩也愛拍照。</p></div>
+        <div class="sec-body"><p>由建築師<strong>隈研吾（Kengo Kuma、非藤本壯介）</strong>設計、以「自然素材で伝統と現代の融合」為主題、用約 2000 根杉木以斜向交錯方式拼接出深邃隧道狀空間、從表參道延伸至店內 25m 深。<strong>全球星巴克 Top 5 必訪分店</strong>。從太宰府天滿宮走回車站途中順路、適合家族喘口氣坐下喝杯飲料、媽媽阿姨也愛拍照。</p></div>
       </div>
       
       
@@ -3082,7 +3092,7 @@
         <div class="sec-body">
           <div class="warn-box">
             <ul>
-              <li><strong>設計師為隈研吾、不是藤本壯介</strong>（用詞要正確）</li><li>假日中午極度擁擠、店內常滿座、想坐建議避開 11:00-14:00</li><li><strong>店內拍照可、但禁三腳架、不要堵到動線、不要拍其他客人正面</strong></li><li>店內無大型廁所、只有 1 間單人廁、長輩需要請先在天滿宮上完</li><li>夏季冷氣足但人多時悶、長輩不適可外帶離開</li><li>閉店 20:00、最後點餐 19:30</li><li>店外表參道全是石板路、推輪椅或拐杖請慢行</li><li>梅枝餅熱的吃才好吃、外帶超過 30 分變硬</li>
+              <li><strong>設計師為隈研吾、不是藤本壯介</strong>（用詞要正確）</li><li>假日中午極度擁擠、店內常滿座、想坐建議避開 11:00-14:00</li><li><strong>店內拍照可、但禁三腳架、不要堵到走法、不要拍其他客人正面</strong></li><li>店內無大型廁所、只有 1 間單人廁、媽媽阿姨需要請先在天滿宮上完</li><li>夏季冷氣足但人多時悶、媽媽阿姨不適可外帶離開</li><li>閉店 20:00、最後點餐 19:30</li><li>店外表參道全是石板路、推輪椅或拐杖請慢行</li><li>梅枝餅熱的吃才好吃、外帶超過 30 分變硬</li>
             </ul>
           </div>
         </div>
@@ -3103,7 +3113,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">假日太擠 → 表參道另一側「Cafe Risi e Bisi」（西式）或「茶房 きくち」（日式甜點）；雨天 → 直接外帶坐西鐵車廂裡</div></div>
+        <div class="sec-body"><div class="plan-b">假日太擠、表參道另一側「Cafe Risi e Bisi」（西式）或「茶房 きくち」（日式甜點）；雨天、直接外帶坐西鐵車廂裡</div></div>
       </div>
       
     </div>
@@ -3223,7 +3233,7 @@
 <article class="spot span-2" id="d2-14">
   <div class="spot-cover cat-food cat-with-image" onclick="toggleSpot(this)">
     
-    <img src="https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=1400&q=80" alt="ShinShin 博多デイトス店 強棒麵" onerror="this.style.display='none'">
+    <img src="https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=1400&q=80" alt="ShinShin 博多 Deitos 店（デイトス）強棒麵" onerror="this.style.display='none'">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3233,7 +3243,7 @@
       <span class="cat-pill food">FOOD</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">ShinShin 博多デイトス店 強棒麵</h3>
+      <h3 class="spot-name">ShinShin 博多 Deitos 店（デイトス）強棒麵</h3>
       
       <p class="teaser">博多站內冷氣走一下就到。豚骨拉麵 ¥900、博多車站直通、媽媽友善。</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
@@ -3298,10 +3308,13 @@
       <div class="sec">
         <div class="sec-head"><h5>實用日文</h5><span class="jp-mini">Phrases</span></div>
         <div class="sec-body">
-          <table class="menu-table">
+          <table class="menu-table phrase-table">
             <tbody>
               
-              <tr><td>海鮮強棒麵</td><td class="price">海鮮ちゃんぽん</td></tr>
+              <tr>
+                <td>海鮮強棒麵</td>
+                <td class="price">海鮮ちゃんぽん<br><span class="romaji">Kaisen chanpon</span></td>
+              </tr>
               
             </tbody>
           </table>
@@ -3621,7 +3634,7 @@
       
       <div class="sec">
         <div class="sec-head"><span class="ico matcha-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"></path><path d="M15 2v6"></path><path d="M12 22a8 8 0 0 0 8-8V6H4v8a8 8 0 0 0 8 8z"></path></svg></span><h5>為什麼值得</h5><span class="jp-mini">Why</span></div>
-        <div class="sec-body"><p><strong>日本之渚百選、夕陽百選、福岡縣指定名勝</strong>、被視為與三重縣伊勢二見浦對應的「<strong>夕陽二見浦</strong>」。距岸 150m 海上聳立兩塊巨岩（男岩 11.8m、女岩 11.2m）、由長 30m、直徑 50cm、重 1 噸的注連繩相連、象徵伊邪那岐與伊邪那美夫婦神。岸邊的白色鳥居（1968 年立、選白色為了保存景觀美）框住海上夫婦岩、是糸島<strong>最具代表性的拍照景點</strong>。下車走幾步就能拍到、長輩友善。</p></div>
+        <div class="sec-body"><p><strong>日本之渚百選、夕陽百選、福岡縣指定名勝</strong>、被視為與三重縣伊勢二見浦對應的「<strong>夕陽二見浦</strong>」。距岸 150m 海上聳立兩塊巨岩（男岩 11.8m、女岩 11.2m）、由長 30m、直徑 50cm、重 1 噸的注連繩相連、象徵伊邪那岐與伊邪那美夫婦神。岸邊的白色鳥居（1968 年立、選白色為了保存景觀美）框住海上夫婦岩、是糸島<strong>最具代表性的拍照景點</strong>。下車走幾步就能拍到、媽媽阿姨友善。</p></div>
       </div>
       
       
@@ -3630,7 +3643,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>包車或自駕停在「櫻井二見浦」停車場（免費、約 30 車位）</li><li>過馬路下到沙灘、第一眼就能看到白鳥居與海上夫婦岩同框</li><li>經典拍法：站在白鳥居正下方、由內往外拍夫婦岩</li><li>退潮時可走到鳥居旁岩礁拍特寫、漲潮鳥居會被海包圍</li><li>沿海岸線走 100m 可看「夕陽石碑」、夏至前後夕陽剛好落在兩岩之間</li><li>全程駐留 20-30 分即可、不需爬樓梯、長輩友善</li><li>拍完可直接驅車前往下一站（PALM BEACH 或天使之羽都很近）</li>
+            <li>包車或自駕停在「櫻井二見浦」停車場（免費、約 30 車位）</li><li>過馬路下到沙灘、第一眼就能看到白鳥居與海上夫婦岩同框</li><li>經典拍法：站在白鳥居正下方、由內往外拍夫婦岩</li><li>退潮時可走到鳥居旁岩礁拍特寫、漲潮鳥居會被海包圍</li><li>沿海岸線走 100m 可看「夕陽石碑」、夏至前後夕陽剛好落在兩岩之間</li><li>全程駐留 20-30 分即可、不需爬樓梯、媽媽阿姨友善</li><li>拍完可直接驅車前往下一站（PALM BEACH 或天使之羽都很近）</li>
           </ol>
           
         </div>
@@ -3664,7 +3677,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">雨天 → 拍照效果差、改進 PALM BEACH THE GARDENS 室內；若強風海浪大 → 從停車場遠觀後直接前往下一站</div></div>
+        <div class="sec-body"><div class="plan-b">雨天、拍照效果差、改進 PALM BEACH THE GARDENS 室內；若強風海浪大、從停車場遠觀後直接前往下一站</div></div>
       </div>
       
     </div>
@@ -3720,7 +3733,7 @@
       
       <div class="sec">
         <div class="sec-head"><span class="ico matcha-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"></path><path d="M15 2v6"></path><path d="M12 22a8 8 0 0 0 8-8V6H4v8a8 8 0 0 0 8 8z"></path></svg></span><h5>為什麼值得</h5><span class="jp-mini">Why</span></div>
-        <div class="sec-body"><p>PALM BEACH THE GARDENS 商場面海一側的擋土牆上、繪有兩對巨型白色翅膀、人站中央拍照彷彿背上長翅膀飛翔。<strong>糸島最知名的 SNS 打卡點之一</strong>、年輕世代與家族都愛、長輩拍起來也很可愛。免費、不用排隊（有時要等前一組離開）、約 10 分鐘即可結束。</p></div>
+        <div class="sec-body"><p>PALM BEACH THE GARDENS 商場面海一側的擋土牆上、繪有兩對巨型白色翅膀、人站中央拍照彷彿背上長翅膀飛翔。<strong>糸島最知名的 SNS 打卡點之一</strong>、年輕世代與家族都愛、媽媽阿姨拍起來也很可愛。免費、不用排隊（有時要等前一組離開）、約 10 分鐘即可結束。</p></div>
       </div>
       
       
@@ -3742,7 +3755,7 @@
         <div class="sec-body">
           <div class="warn-box">
             <ul>
-              <li><strong>上午逆光、午後（13:00 後）順光最佳</strong></li><li>假日下午需排隊輪流拍、平日通常人不多</li><li>沙灘有風飛沙、長輩戴帽避免吹掉</li><li>從商場下沙灘有階梯、媽阿姨膝蓋不好需扶欄杆慢走</li><li>壁畫位置低、需蹲或微彎拍才能整對翅膀入鏡</li><li>公共廁所在 PALM BEACH 商場內</li><li>無障礙：階梯下不去、輪椅族只能在上方遠觀</li><li>夏天沙地溫度高、別久站赤腳</li>
+              <li><strong>上午逆光、午後（13:00 後）順光最佳</strong></li><li>假日下午需排隊輪流拍、平日通常人不多</li><li>沙灘有風飛沙、媽媽阿姨戴帽避免吹掉</li><li>從商場下沙灘有階梯、媽阿姨膝蓋不好需扶欄杆慢走</li><li>壁畫位置低、需蹲或微彎拍才能整對翅膀入鏡</li><li>公共廁所在 PALM BEACH 商場內</li><li>無障礙：階梯下不去、輪椅族只能在上方遠觀</li><li>夏天沙地溫度高、別久站赤腳</li>
             </ul>
           </div>
         </div>
@@ -3763,7 +3776,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">排隊太久 → 看夫婦岩白鳥居即可（同樣是糸島代表景）；雨天 → 直接進 PALM BEACH 商場喝咖啡</div></div>
+        <div class="sec-body"><div class="plan-b">排隊太久、看夫婦岩白鳥居即可（同樣是糸島代表景）；雨天、直接進 PALM BEACH 商場喝咖啡</div></div>
       </div>
       
     </div>
@@ -3862,7 +3875,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">停車場滿 → 改去附近 PALM BEACH（已有天使之羽）；雨天 → 取消、改室內咖啡店</div></div>
+        <div class="sec-body"><div class="plan-b">停車場滿、改去附近 PALM BEACH（已有天使之羽）；雨天、取消、改室內咖啡店</div></div>
       </div>
       
     </div>
@@ -3918,7 +3931,7 @@
       
       <div class="sec">
         <div class="sec-head"><span class="ico matcha-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"></path><path d="M15 2v6"></path><path d="M12 22a8 8 0 0 0 8-8V6H4v8a8 8 0 0 0 8 8z"></path></svg></span><h5>為什麼值得</h5><span class="jp-mini">Why</span></div>
-        <div class="sec-body"><p><strong>日本三大玄武洞之一、國指定天然紀念物</strong>。芥屋大門高 64m、深 90m、入口寬 10m、由規則的玄武岩柱狀節理構成、<strong>只能從海上欣賞</strong>。25 分鐘船程帶你開到洞口、視天氣可進入洞內 15-20m。長輩坐船吹海風很舒服、不用走路、是糸島<strong>最有「啊真的來到日本不一樣的地方」感的體驗</strong>。</p></div>
+        <div class="sec-body"><p><strong>日本三大玄武洞之一、國指定天然紀念物</strong>。芥屋大門高 64m、深 90m、入口寬 10m、由規則的玄武岩柱狀節理構成、<strong>只能從海上欣賞</strong>。25 分鐘船程帶你開到洞口、視天氣可進入洞內 15-20m。媽媽阿姨坐船吹海風很舒服、不用走路、是糸島<strong>最有「啊真的來到日本不一樣的地方」感的體驗</strong>。</p></div>
       </div>
       
       
@@ -3961,7 +3974,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">停航 → 改芥屋海水浴場散步看大門外觀（步道 200m 即可看到崖壁）；媽阿姨怕暈船 → 哥與崴上船、媽阿姨在漁港咖啡店等</div></div>
+        <div class="sec-body"><div class="plan-b">停航、改芥屋海水浴場散步看大門外觀（步道 200m 即可看到崖壁）；媽阿姨怕暈船、哥與崴上船、媽阿姨在漁港咖啡店等</div></div>
       </div>
       
     </div>
@@ -4026,7 +4039,7 @@
         <div class="sec-body">
           
           <ol>
-            <li><strong>務必提前 1-2 週用官網或電話 070-4005-7508 預約「銀波」</strong></li><li>抵達後在門口報訂位姓名、店員帶到 2 樓銀波房</li><li>進門脫鞋、塌塌米下方挖洞、長輩腿可自然垂下</li><li>點餐：建議 4 人各點不同（並 / 上 / 極上 + 一份炙燒丼）共享比較</li><li>等餐時間約 15-20 分、可看海聊天</li><li>海鮮丼附味噌湯、小菜、白飯（可換糙米或無料追加）</li><li>飯後可加點抹茶或飲料、店內無甜點主推</li><li>用餐約 60-75 分、結帳離開</li>
+            <li><strong>務必提前 1-2 週用官網或電話 070-4005-7508 預約「銀波」</strong></li><li>抵達後在門口報訂位姓名、店員帶到 2 樓銀波房</li><li>進門脫鞋、塌塌米下方挖洞、媽媽阿姨腿可自然垂下</li><li>點餐：建議 4 人各點不同（並 / 上 / 極上 + 一份炙燒丼）共享比較</li><li>等餐時間約 15-20 分、可看海聊天</li><li>海鮮丼附味噌湯、小菜、白飯（可換糙米或無料追加）</li><li>飯後可加點抹茶或飲料、店內無甜點主推</li><li>用餐約 60-75 分、結帳離開</li>
           </ol>
           
         </div>
@@ -4060,7 +4073,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">訂不到銀波 → 訂普通個室或一般座位；無生食選項 → 改去糸島食堂本店（炸物多）；當日不定休 → 改海岸線「ZAUO 漁夫料理」</div></div>
+        <div class="sec-body"><div class="plan-b">訂不到銀波、訂普通個室或一般座位；無生食選項、改去糸島食堂本店（炸物多）；當日不定休、改海岸線「ZAUO 漁夫料理」</div></div>
       </div>
       
     </div>
@@ -4159,7 +4172,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">工房とったん 不定休 → 在糸島市區「季節屋」買花鹽布丁；伊都きんぐ 排隊太久 → 改買 amaou 苺大福外帶；行程不順路 → 在博多阪急 B1 兩家都有分店</div></div>
+        <div class="sec-body"><div class="plan-b">工房とったん 不定休、在糸島市區「季節屋」買花鹽布丁；伊都きんぐ 排隊太久、改買 amaou 苺大福外帶；行程不順路、在博多阪急 B1 兩家都有分店</div></div>
       </div>
       
     </div>
@@ -4280,7 +4293,7 @@
         <div class="sec-body">
           
           <ol>
-            <li><strong>必須提前訂位</strong>、線上「Tabelog」或電話 092-472-1129、最晚 1 個月前</li><li>17:00-19:00 為高峰、訂 17:30 第一輪較好</li><li>入座後菜單有中英日韓 4 國語、平板點餐</li><li>必點「黑毛和牛盛合せ 5 種」（¥4,800）、含上カルビ、ロース、イチボ等</li><li>加點「ハラミ」（橫膈膜、不是內臟）、ヒレ（菲力）、上タン（牛舌、若 OK）</li><li><strong>媽阿姨不吃內臟 → 跳過テッチャン、ホルモン、ミノ、レバー</strong></li><li>配菜建議冷麵或石鍋拌飯（4 人共享 2 份）</li><li>燒肉服務員會主動幫忙翻肉 / 切肉、長輩不需自己烤</li>
+            <li><strong>必須提前訂位</strong>、線上「Tabelog」或電話 092-472-1129、最晚 1 個月前</li><li>17:00-19:00 為高峰、訂 17:30 第一輪較好</li><li>入座後菜單有中英日韓 4 國語、平板點餐</li><li>必點「黑毛和牛盛合せ 5 種」（¥4,800）、含上カルビ、ロース、イチボ等</li><li>加點「ハラミ」（橫膈膜、不是內臟）、ヒレ（菲力）、上タン（牛舌、若 OK）</li><li><strong>媽阿姨不吃內臟、可以跳過 テッチャン、ホルモン、ミノ、レバー</strong></li><li>配菜建議冷麵或石鍋拌飯（4 人共享 2 份）</li><li>燒肉服務員會主動幫忙翻肉 / 切肉、媽媽阿姨不需自己烤</li>
           </ol>
           
         </div>
@@ -4293,7 +4306,7 @@
         <div class="sec-body">
           <div class="warn-box">
             <ul>
-              <li><strong>營業 16:00-24:00（L.O.23:00）、12/31、1/1 休</strong></li><li><strong>極熱門、提前 1-2 個月訂、6 月初訂 7/22-26 行程是極限</strong></li><li>店內全自動排煙但夏天會悶熱、衣服會吸味、長輩準備換洗</li><li><strong>內臟單品多（ホルモン、テッチャン、ミノ）、媽阿姨點餐前看清楚菜單</strong></li><li>店內無個室、4 人桌位置但旁邊就是其他客人</li><li>廁所在店內、無障礙設施有限（門框較窄）</li><li>炭火桌邊溫度高、媽阿姨注意手不要碰火爐邊緣</li><li>結帳僅現金 + 部分信用卡（無 PayPay 確認）</li>
+              <li><strong>營業 16:00-24:00（L.O.23:00）、12/31、1/1 休</strong></li><li><strong>極熱門、提前 1-2 個月訂、6 月初訂 7/22-26 行程是極限</strong></li><li>店內全自動排煙但夏天會悶熱、衣服會吸味、媽媽阿姨準備換洗</li><li><strong>內臟單品多（ホルモン、テッチャン、ミノ）、媽阿姨點餐前看清楚菜單</strong></li><li>店內無個室、4 人桌位置但旁邊就是其他客人</li><li>廁所在店內、無障礙設施有限（門框較窄）</li><li>炭火桌邊溫度高、媽阿姨注意手不要碰火爐邊緣</li><li>結帳僅現金 + 部分信用卡（無 PayPay 確認）</li>
             </ul>
           </div>
         </div>
@@ -4314,7 +4327,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">訂不到 → 改「焼肉すどう 博多本店」或「肉割烹ふたごころ」；媽阿姨不吃內臟太難點 → 改華味鳥水炊鍋（已備案 d4-7）；當天臨時取消 → 博多駅前 KITTE 內燒肉店</div></div>
+        <div class="sec-body"><div class="plan-b">訂不到、改「焼肉すどう 博多本店」或「肉割烹ふたごころ」；媽阿姨不吃內臟太難點、改華味鳥水炊鍋（已備案 d4-7）；當天臨時取消、博多駅前 KITTE 內燒肉店</div></div>
       </div>
       
     </div>
@@ -4413,7 +4426,7 @@
     
     <a class="t-item" href="#d4-5">
       <div class="t-time">11:45</div>
-      <div class="t-name">大濠テラス & LOCALS 八女茶</div>
+      <div class="t-name">大濠 Terrace & LOCALS（テラス）八女茶</div>
       <div class="t-cat">FOOD</div>
     </a>
     
@@ -4565,7 +4578,7 @@
       
       <div class="sec">
         <div class="sec-head"><span class="ico matcha-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"></path><path d="M15 2v6"></path><path d="M12 22a8 8 0 0 0 8-8V6H4v8a8 8 0 0 0 8 8z"></path></svg></span><h5>為什麼值得</h5><span class="jp-mini">Why</span></div>
-        <div class="sec-body"><p><strong>1984 年為紀念大濠公園開園 50 週年所建、面積 1.2 公頃</strong>、由著名造園家中根金作監修。同一座庭園內可同時欣賞<strong>池泉迴遊式、枯山水、露地（茶庭）三種日本傳統庭園形式</strong>、福岡市內難得清淨綠洲。<strong>65 歲以上免費</strong>（媽阿姨 + ¥0）、整體平緩無大階梯、是長輩家族行最舒適的庭園選擇。</p></div>
+        <div class="sec-body"><p><strong>1984 年為紀念大濠公園開園 50 週年所建、面積 1.2 公頃</strong>、由著名造園家中根金作監修。同一座庭園內可同時欣賞<strong>池泉迴遊式、枯山水、露地（茶庭）三種日本傳統庭園形式</strong>、福岡市內難得清淨綠洲。<strong>65 歲以上免費</strong>（媽阿姨 + ¥0）、整體平緩無大階梯、是媽媽阿姨家族行最舒適的庭園選擇。</p></div>
       </div>
       
       
@@ -4574,7 +4587,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>從大濠公園駅 3 號出口出來、沿湖畔走 5-7 分到日本庭園入口</li><li>入園購票（一般 ¥250、媽阿姨年滿 65 歲出示護照可免費）</li><li>進門先到「茶會館」（不是「仰松軒」）、可預約抹茶體驗 ¥500（坐著喝、長輩友善）</li><li>順時針沿池泉迴遊路線走、約 20-30 分鐘</li><li>經過枯山水區、坐長椅 10 分欣賞砂紋</li><li>露地（茶庭）有飛石、媽阿姨注意腳下、走慢</li><li>出庭園後可繼續逛大濠公園湖、湖畔步道 1 圈約 2km</li><li>不想走完全圈 → 走一半到大濠テラス休息（已備案 d4-5）</li>
+            <li>從大濠公園駅 3 號出口出來、沿湖畔走 5-7 分到日本庭園入口</li><li>入園購票（一般 ¥250、媽阿姨年滿 65 歲出示護照可免費）</li><li>進門先到「茶會館」（不是「仰松軒」）、可預約抹茶體驗 ¥500（坐著喝、媽媽阿姨友善）</li><li>順時針沿池泉迴遊路線走、約 20-30 分鐘</li><li>經過枯山水區、坐長椅 10 分欣賞砂紋</li><li>露地（茶庭）有飛石、媽阿姨注意腳下、走慢</li><li>出庭園後可繼續逛大濠公園湖、湖畔步道 1 圈約 2km</li><li>不想走完全圈、走一半到大濠テラス休息（已備案 d4-5）</li>
           </ol>
           
         </div>
@@ -4608,7 +4621,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">週一閉園 → 改大濠公園湖畔散步（免費）；雨天 → 改大濠テラス & LOCALS 室內喝茶；長輩太累 → 跳過庭園、直接到大濠テラス</div></div>
+        <div class="sec-body"><div class="plan-b">週一閉園、改大濠公園湖畔散步（免費）；雨天、改大濠テラス & LOCALS 室內喝茶；媽媽阿姨太累、可以跳過 庭園、直接到大濠テラス</div></div>
       </div>
       
     </div>
@@ -4630,7 +4643,7 @@
 <article class="spot span-2" id="d4-5">
   <div class="spot-cover cat-food cat-with-image" onclick="toggleSpot(this)">
     
-    <img src="https://images.unsplash.com/photo-1505275350441-83dcda8eeef5?w=1400&q=80" alt="大濠テラス & LOCALS 八女茶" onerror="this.style.display='none'">
+    <img src="https://images.unsplash.com/photo-1505275350441-83dcda8eeef5?w=1400&q=80" alt="大濠 Terrace & LOCALS（テラス）八女茶" onerror="this.style.display='none'">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -4640,7 +4653,7 @@
       <span class="cat-pill food">FOOD</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">大濠テラス & LOCALS 八女茶</h3>
+      <h3 class="spot-name">大濠 Terrace & LOCALS（テラス）八女茶</h3>
       
       <p class="teaser">大濠湖畔咖啡店、八女茶主題、9:00-21:00、週一休</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
@@ -4664,7 +4677,7 @@
       
       <div class="sec">
         <div class="sec-head"><span class="ico matcha-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"></path><path d="M15 2v6"></path><path d="M12 22a8 8 0 0 0 8-8V6H4v8a8 8 0 0 0 8 8z"></path></svg></span><h5>為什麼值得</h5><span class="jp-mini">Why</span></div>
-        <div class="sec-body"><p>2023 年新開幕、以<strong>福岡縣八女市八女茶為主題</strong>的湖畔咖啡店與和食設施。整面落地窗正對大濠公園湖、坐下就是「<strong>和風湖景</strong>」。和服租借「YAMATO」也在同設施內、家族可選擇是否拍和服照。<strong>& LOCALS 八女茶咖啡櫃檯</strong>：抹茶、煎茶冰飲、抹茶 latte、抹茶聖代、抹茶蕨餅。長輩坐得舒服、有湖景療癒、是 Day 4 上午行程<strong>最舒緩</strong>的點。</p></div>
+        <div class="sec-body"><p>2023 年新開幕、以<strong>福岡縣八女市八女茶為主題</strong>的湖畔咖啡店與和食設施。整面落地窗正對大濠公園湖、坐下就是「<strong>和風湖景</strong>」。和服租借「YAMATO」也在同設施內、家族可選擇是否拍和服照。<strong>& LOCALS 八女茶咖啡櫃檯</strong>：抹茶、煎茶冰飲、抹茶 latte、抹茶聖代、抹茶蕨餅。媽媽阿姨坐得舒服、有湖景療癒、是 Day 4 上午行程<strong>最舒緩</strong>的點。</p></div>
       </div>
       
       
@@ -4673,7 +4686,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>從日本庭園出來沿湖畔走 5 分到大濠テラス</li><li>進入「& LOCALS」櫃檯點抹茶 latte（¥600）或煎茶（¥500）</li><li>加點抹茶蕨餅（¥800）或抹茶聖代（¥1,200）4 人分享</li><li>找窗邊湖景座、家族 4 人共享下午茶 30-45 分</li><li>想拍和服照 → 隔壁「YAMATO Tsunagari gallery」現場租（建議提前線上預約）</li><li>喝完可在湖畔散步 15-20 分回大濠公園駅</li><li>帶回伴手禮：八女茶茶包、抹茶餅乾</li>
+            <li>從日本庭園出來沿湖畔走 5 分到大濠テラス</li><li>進入「& LOCALS」櫃檯點抹茶 latte（¥600）或煎茶（¥500）</li><li>加點抹茶蕨餅（¥800）或抹茶聖代（¥1,200）4 人分享</li><li>找窗邊湖景座、家族 4 人共享下午茶 30-45 分</li><li>想拍和服照、隔壁「YAMATO Tsunagari gallery」現場租（建議提前線上預約）</li><li>喝完可在湖畔散步 15-20 分回大濠公園駅</li><li>帶回伴手禮：八女茶茶包、抹茶餅乾</li>
           </ol>
           
         </div>
@@ -4686,7 +4699,7 @@
         <div class="sec-body">
           <div class="warn-box">
             <ul>
-              <li><strong>& LOCALS 9:00-21:00（L.O.20:30）、週一休</strong>、Day 4（7/25 週六）OK</li><li><strong>和服店「YAMATO」9:00-17:00、週一休</strong></li><li>假日中午湖景座位需等 15-30 分、平日上午直接進</li><li>店內冷氣足、不悶</li><li><strong>設施內有公共廁所與無障礙廁所</strong></li><li>可拍照但禁拍其他客人正面</li><li>停車：搭地鐵最方便、開車有附近付費場（¥400/h）</li><li>甜點選擇有限、想吃西式 → 改去 KITTE 博多</li>
+              <li><strong>& LOCALS 9:00-21:00（L.O.20:30）、週一休</strong>、Day 4（7/25 週六）OK</li><li><strong>和服店「YAMATO」9:00-17:00、週一休</strong></li><li>假日中午湖景座位需等 15-30 分、平日上午直接進</li><li>店內冷氣足、不悶</li><li><strong>設施內有公共廁所與無障礙廁所</strong></li><li>可拍照但禁拍其他客人正面</li><li>停車：搭地鐵最方便、開車有附近付費場（¥400/h）</li><li>甜點選擇有限、想吃西式、改去 KITTE 博多</li>
             </ul>
           </div>
         </div>
@@ -4707,7 +4720,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">週一休 → 改 Day 4 行程改週二（不適用、Day 4 已是週六）；座位滿 → 改公園內「Royal Garden Cafe」或星巴克分店；不想喝抹茶 → 走大濠テラス內其他餐廳</div></div>
+        <div class="sec-body"><div class="plan-b">萬一週一休、改 Day 4 那天就找另一天（不適用、Day 4 已是週六）；座位滿就改公園內「Royal Garden Cafe」或星巴克分店；不想喝抹茶、走大濠テラス內其他餐廳</div></div>
       </div>
       
     </div>
@@ -4718,7 +4731,7 @@
 <div class="transit-bridge">
   <div class="transit-bridge-inner">
     <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"></circle><path d="M15 22v-5l-2-4 3-5 2 4 3 1"></path><path d="M8 14l-3 1-3-2 5-4 2-2"></path></svg></span>
-    <span class="from-to">大濠テラス & LOCALS 八女茶 → 華味鳥 博多駅前店 水炊鍋：大濠 → 博多 5 站 13 分 + 步行 5 分到華味鳥</span>
+    <span class="from-to">大濠 Terrace & LOCALS（テラス）八女茶 → 華味鳥 博多駅前店 水炊鍋：大濠 → 博多 5 站 13 分 + 步行 5 分到華味鳥</span>
     <span class="time-cost">18 分 · 地鐵</span>
     <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=%E5%A4%A7%E6%BF%A0%E3%83%86%E3%83%A9%E3%82%B9%20%26%20LOCALS%20%E5%85%AB%E5%A5%B3%E8%8C%B6%20%E7%A6%8F%E5%B2%A1&destination=%E8%8F%AF%E5%91%B3%E9%B3%A5%20%E5%8D%9A%E5%A4%9A%E9%A7%85%E5%89%8D%E5%BA%97%20%E6%B0%B4%E7%82%8A%E9%8D%8B%20%E7%A6%8F%E5%B2%A1&travelmode=transit" target="_blank" rel="noopener">Google 導航</a>
   </div>
@@ -4775,7 +4788,7 @@
         <div class="sec-body">
           
           <ol>
-            <li><strong>6 月起線上預約</strong>（網路 yoyaku.toreta.in/hakataekimaeten 或電話 092-432-1801）、選 4 人個室椅子座</li><li>抵店報訂位姓名、店員帶到個室</li><li>點水炊套餐：「華味鳥水たきコース」（¥4,200）或「上コース」（¥6,500）</li><li>鍋上桌時店員會服務、先喝原味白濁雞湯（小杯）</li><li>接著放入雞腿肉、雞胸肉、雞肉丸子（つくね）、煮 5-7 分</li><li>配高麗菜、菇、豆腐、最後下烏冬 / 雜炊</li><li>套餐通常含前菜、刺身（雞、可選不要）、主鍋、雜炊、甜點</li><li>用餐約 90-120 分、長輩慢慢吃舒服</li>
+            <li><strong>6 月起線上預約</strong>（網路 yoyaku.toreta.in/hakataekimaeten 或電話 092-432-1801）、選 4 人個室椅子座</li><li>抵店報訂位姓名、店員帶到個室</li><li>點水炊套餐：「華味鳥水たきコース」（¥4,200）或「上コース」（¥6,500）</li><li>鍋上桌時店員會服務、先喝原味白濁雞湯（小杯）</li><li>接著放入雞腿肉、雞胸肉、雞肉丸子（つくね）、煮 5-7 分</li><li>配高麗菜、菇、豆腐、最後下烏冬 / 雜炊</li><li>套餐通常含前菜、刺身（雞、可選不要）、主鍋、雜炊、甜點</li><li>用餐約 90-120 分、媽媽阿姨慢慢吃舒服</li>
           </ol>
           
         </div>
@@ -4788,7 +4801,7 @@
         <div class="sec-body">
           <div class="warn-box">
             <ul>
-              <li><strong>營業午 11:30-15:00、晚 月-六 17:00-23:00、日祝 17:00-22:00</strong></li><li><strong>套餐起價 ¥4,200／人、上コース ¥6,500／人</strong></li><li><strong>雞肉刺身（鶏わさ）為生雞肉、長輩若擔心可請店家換煮熟前菜</strong></li><li>個室冷氣足、長輩舒適</li><li>店內和洋折衷個室有椅子座、媽阿姨不用盤腿</li><li><strong>廁所在個室外走廊、無障礙廁所有</strong></li><li><strong>博多站附近、行程結束可直接搭車回飯店</strong></li><li>禁拍他客、個室內隨拍 OK</li>
+              <li><strong>營業午 11:30-15:00、晚 月-六 17:00-23:00、日祝 17:00-22:00</strong></li><li><strong>套餐起價 ¥4,200／人、上コース ¥6,500／人</strong></li><li><strong>雞肉刺身（鶏わさ）為生雞肉、媽媽阿姨若擔心可請店家換煮熟前菜</strong></li><li>個室冷氣足、媽媽阿姨舒適</li><li>店內和洋折衷個室有椅子座、媽阿姨不用盤腿</li><li><strong>廁所在個室外走廊、無障礙廁所有</strong></li><li><strong>博多站附近、行程結束可直接搭車回飯店</strong></li><li>禁拍他客、個室內隨拍 OK</li>
             </ul>
           </div>
         </div>
@@ -4809,10 +4822,13 @@
       <div class="sec">
         <div class="sec-head"><h5>實用日文</h5><span class="jp-mini">Phrases</span></div>
         <div class="sec-body">
-          <table class="menu-table">
+          <table class="menu-table phrase-table">
             <tbody>
               
-              <tr><td>水炊鍋 4 人份</td><td class="price">水炊きコース四人前</td></tr>
+              <tr>
+                <td>水炊鍋 4 人份</td>
+                <td class="price">水炊きコース四人前<br><span class="romaji">Mizutaki kōsu yo-nin-mae</span></td>
+              </tr>
               
             </tbody>
           </table>
@@ -4822,7 +4838,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">訂不到博多駅前店 → 改華味鳥 KITTE 博多店或博多駅筑紫口店（同集團）；不想吃雞肉 → 改大丸博多店「もつ鍋一藤」（媽阿姨不吃內臟需選和牛鍋款）；當日臨時取消 → 博多運河城內「博多 もつ鍋 おおやま」（雞肉鍋款）</div></div>
+        <div class="sec-body"><div class="plan-b">訂不到博多駅前店、改華味鳥 KITTE 博多店或博多駅筑紫口店（同集團）；不想吃雞肉、改大丸博多店「もつ鍋一藤」（媽阿姨不吃內臟需選和牛鍋款）；當日臨時取消、博多運河城內「博多 もつ鍋 おおやま」（雞肉鍋款）</div></div>
       </div>
       
     </div>
@@ -4955,7 +4971,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">I'm donut? 賣光 → 改博多阪急 B1F 其他甜點（PIERRE HERMÉ）；不想跑天神 → 全部在博多阪急完成；行程趕 → 機場航廈也有部分伴手禮店</div></div>
+        <div class="sec-body"><div class="plan-b">I'm donut? 賣光、改博多阪急 B1F 其他甜點（PIERRE HERMÉ）；不想跑天神、全部在博多阪急完成；行程趕、機場航廈也有部分伴手禮店</div></div>
       </div>
       
     </div>
@@ -5061,7 +5077,7 @@
       
       <div class="sec">
         <div class="sec-head"><span class="ico matcha-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"></path><path d="M15 2v6"></path><path d="M12 22a8 8 0 0 0 8-8V6H4v8a8 8 0 0 0 8 8z"></path></svg></span><h5>為什麼值得</h5><span class="jp-mini">Why</span></div>
-        <div class="sec-body"><p><strong>全九州最大車站「JR 博多城」屋頂、地上 60m</strong>、可眺望博多市區與遠處福岡塔。<strong>免費入場、24 點前開放</strong>、是博多旅遊最 CP 值的夜景點。<strong>有日本鐵道神社「鐵道神社」、迷你電車（¥200）、寵物公園</strong>。長輩可在椅子上坐著看夜景吹晚風、不需爬山。Day 4 晚上華味鳥用餐後步行 5 分即達、是行程結尾的療癒點。</p></div>
+        <div class="sec-body"><p><strong>全九州最大車站「JR 博多城」屋頂、地上 60m</strong>、可眺望博多市區與遠處福岡塔。<strong>免費入場、24 點前開放</strong>、是博多旅遊最 CP 值的夜景點。<strong>有日本鐵道神社「鐵道神社」、迷你電車（¥200）、寵物公園</strong>。媽媽阿姨可在椅子上坐著看夜景吹晚風、不需爬山。Day 4 晚上華味鳥用餐後步行 5 分即達、是行程結尾的療癒點。</p></div>
       </div>
       
       
@@ -5083,7 +5099,7 @@
         <div class="sec-body">
           <div class="warn-box">
             <ul>
-              <li><strong>10:00-22:00、最終入場 21:30、荒天閉鎖</strong></li><li><strong>免費、迷你電車 ¥200/次（孩童取向、家族可跳過）</strong></li><li>夏季 7 月晚間仍熱、20 點後較涼</li><li><strong>屋頂風大、長輩帶薄外套</strong></li><li>夜景需自然光不足才美、19:30 後最佳</li><li><strong>有公廁與無障礙廁所、電梯直達</strong></li><li>禁三腳架（人多時）、可一般拍照</li><li>下雨天會關閉部分區域、強颱風直接全閉</li>
+              <li><strong>10:00-22:00、最終入場 21:30、荒天閉鎖</strong></li><li><strong>免費、迷你電車 ¥200/次（孩童取向、家族可跳過）</strong></li><li>夏季 7 月晚間仍熱、20 點後較涼</li><li><strong>屋頂風大、媽媽阿姨帶薄外套</strong></li><li>夜景需自然光不足才美、19:30 後最佳</li><li><strong>有公廁與無障礙廁所、電梯直達</strong></li><li>禁三腳架（人多時）、可一般拍照</li><li>下雨天會關閉部分區域、強颱風直接全閉</li>
             </ul>
           </div>
         </div>
@@ -5104,7 +5120,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">雨天閉鎖 → 改博多運河城夜間燈光秀（免費）；長輩太累 → 直接回飯店；想看更高夜景 → 福岡塔（地鐵 2 站、¥800）</div></div>
+        <div class="sec-body"><div class="plan-b">雨天閉鎖、改博多運河城夜間燈光秀（免費）；媽媽阿姨太累、直接回飯店；想看更高夜景、福岡塔（地鐵 2 站、¥800）</div></div>
       </div>
       
     </div>
@@ -5194,7 +5210,7 @@
     
     <a class="t-item" href="#d5-4">
       <div class="t-time">09:30</div>
-      <div class="t-name">博多マイング · KITTE 採買</div>
+      <div class="t-name">博多 Maing（マイング）· KITTE 採買</div>
       <div class="t-cat">SHOP</div>
     </a>
     
@@ -5205,25 +5221,25 @@
     </a>
     
     <a class="t-item" href="#d5-7">
-      <div class="t-time">11:30</div>
+      <div class="t-time">11:15</div>
       <div class="t-name">The Full Full Hakata 明太子麵包</div>
       <div class="t-cat">FOOD</div>
     </a>
     
     <a class="t-item" href="#d5-8">
-      <div class="t-time">11:45</div>
+      <div class="t-time">11:30</div>
       <div class="t-name">取行李 · 地鐵 → 福岡機場</div>
       <div class="t-cat">TRANSPORT</div>
     </a>
     
     <a class="t-item" href="#d5-9">
-      <div class="t-time">12:00</div>
-      <div class="t-name">福岡機場午餐 · 拉麵跑道</div>
+      <div class="t-time">11:45</div>
+      <div class="t-name">福岡機場午餐 · 拉麵跑道（ラーメン滑走路 / Ramen Kassoro）</div>
       <div class="t-cat">FOOD</div>
     </a>
     
     <a class="t-item" href="#d5-10">
-      <div class="t-time">14:20</div>
+      <div class="t-time">14:00</div>
       <div class="t-name">國際線 Check-in · 安檢</div>
       <div class="t-cat">TRANSPORT</div>
     </a>
@@ -5296,7 +5312,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>從飯店退房後拉行李到博多站、寄放在 Coin Locker（¥600/大件）</li><li>下到 B1F 博多 1 番街、找「たんや HAKATA」</li><li><strong>早餐 7:00-10:00 提供</strong>、選擇朝定食</li><li>推薦：牛タン朝定食 ¥710（4 人都點同款最快）</li><li><strong>麥飯免費續</strong>、長輩若食量小可不要續</li><li><strong>牛尾湯（テールスープ）為精華</strong>、長輩會喜歡</li><li>用餐約 25-30 分、可順便買牛舌伴手禮（真空包裝）</li><li>結帳離開後直接搭機場巴士去福岡空港</li>
+            <li>從飯店退房後拉行李到博多站、寄放在 Coin Locker（¥600/大件）</li><li>下到 B1F 博多 1 番街、找「たんや HAKATA」</li><li><strong>早餐 7:00-10:00 提供</strong>、選擇朝定食</li><li>推薦：牛タン朝定食 ¥710（4 人都點同款最快）</li><li><strong>麥飯免費續</strong>、媽媽阿姨若食量小可不要續</li><li><strong>牛尾湯（テールスープ）為精華</strong>、媽媽阿姨會喜歡</li><li>用餐約 25-30 分、可順便買牛舌伴手禮（真空包裝）</li><li>結帳離開後直接搭機場巴士去福岡空港</li>
           </ol>
           
         </div>
@@ -5330,10 +5346,13 @@
       <div class="sec">
         <div class="sec-head"><h5>實用日文</h5><span class="jp-mini">Phrases</span></div>
         <div class="sec-body">
-          <table class="menu-table">
+          <table class="menu-table phrase-table">
             <tbody>
               
-              <tr><td>牛舌定食 4 份</td><td class="price">牛タン定食四人前</td></tr>
+              <tr>
+                <td>牛舌定食 4 份</td>
+                <td class="price">牛タン定食四人前<br><span class="romaji">Gyū-tan teishoku yo-nin-mae</span></td>
+              </tr>
               
             </tbody>
           </table>
@@ -5343,7 +5362,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">店內客滿 → 博多 1 番街內「博多もつ鍋 おおやま」早餐或「博多 たんか」（同 JR 博多シティ）；不想吃牛舌 → 同街「ShinShin」拉麵或「やよい軒」定食；早餐時間錯過 → 拉麵跑道再吃也來得及</div></div>
+        <div class="sec-body"><div class="plan-b">店內客滿、博多 1 番街內「博多もつ鍋 おおやま」早餐或「博多 たんか」（同 JR 博多シティ）；不想吃牛舌、同街「ShinShin」拉麵或「やよい軒」定食；早餐時間錯過、拉麵跑道再吃也來得及</div></div>
       </div>
       
     </div>
@@ -5399,7 +5418,7 @@
 <article class="spot" id="d5-4">
   <div class="spot-cover cat-shop cat-with-image" onclick="toggleSpot(this)">
     
-    <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1400&q=80" alt="博多マイング · KITTE 採買" onerror="this.style.display='none'">
+    <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1400&q=80" alt="博多 Maing（マイング）· KITTE 採買" onerror="this.style.display='none'">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -5409,7 +5428,7 @@
       <span class="cat-pill shop">SHOP</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">博多マイング · KITTE 採買</h3>
+      <h3 class="spot-name">博多 Maing（マイング）· KITTE 採買</h3>
       
       <p class="teaser">JR 博多站內最大伴手禮賣場。通りもん、めんべい、ひよ子一站買齊。</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
@@ -5444,7 +5463,7 @@
         <div class="sec-body">
           <div class="warn-box">
             <ul>
-              <li><strong>滿 ¥5,000 免稅</strong>，出示護照 + 登機證</li><li>明太子冷藏要問<strong>保冷剤</strong>（ほれいざい）包冰</li><li>通常只能保冷 3-4 小時，直達班機 OK</li><li>壽司/生鮮類別帶回台灣（海關）</li><li>10:30-11:30 是人潮空窗期，較好逛</li><li>帶大行李不方便逛 → 先寄放再來</li>
+              <li><strong>滿 ¥5,000 免稅</strong>，出示護照 + 登機證</li><li>明太子冷藏要問<strong>保冷剤</strong>（ほれいざい）包冰</li><li>通常只能保冷 3-4 小時，直達班機 OK</li><li>壽司/生鮮類別帶回台灣（海關）</li><li>10:30-11:30 是人潮空窗期，較好逛</li><li>帶大行李不方便逛、先寄放再來</li>
             </ul>
           </div>
         </div>
@@ -5471,7 +5490,7 @@
 <div class="transit-bridge">
   <div class="transit-bridge-inner">
     <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"></circle><path d="M15 22v-5l-2-4 3-5 2 4 3 1"></path><path d="M8 14l-3 1-3-2 5-4 2-2"></path></svg></span>
-    <span class="from-to">博多マイング · KITTE 採買 → Pain Stock 明太子麵包（選配）：走出博多站</span>
+    <span class="from-to">博多 Maing（マイング）· KITTE 採買 → Pain Stock 明太子麵包（選配）：走出博多站</span>
     <span class="time-cost">5 分 · 步行 · 350 m</span>
     <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8D%9A%E5%A4%9A%E3%83%9E%E3%82%A4%E3%83%B3%E3%82%B0%20%C2%B7%20KITTE%20%E6%8E%A1%E8%B2%B7%20%E7%A6%8F%E5%B2%A1&destination=Pain%20Stock%20%E6%98%8E%E5%A4%AA%E5%AD%90%E9%BA%B5%E5%8C%85%EF%BC%88%E9%81%B8%E9%85%8D%EF%BC%89%20%E7%A6%8F%E5%B2%A1&travelmode=walking" target="_blank" rel="noopener">Google 導航</a>
   </div>
@@ -5546,7 +5565,7 @@
     <div class="cover-top">
       <span class="time-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        11:30
+        11:15
       </span>
       <span class="cat-pill food">FOOD</span>
     </div>
@@ -5596,7 +5615,7 @@
     <div class="cover-top">
       <span class="time-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        11:45
+        11:30
       </span>
       <span class="cat-pill transport">TRANSPORT</span>
     </div>
@@ -5638,17 +5657,17 @@
 <article class="spot span-2" id="d5-9">
   <div class="spot-cover cat-food cat-with-image" onclick="toggleSpot(this)">
     
-    <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1400&q=80" alt="福岡機場午餐 · 拉麵跑道" onerror="this.style.display='none'">
+    <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1400&q=80" alt="福岡機場午餐 · 拉麵跑道（ラーメン滑走路 / Ramen Kassoro）" onerror="this.style.display='none'">
     
     <div class="cover-top">
       <span class="time-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        12:00
+        11:45
       </span>
       <span class="cat-pill food">FOOD</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">福岡機場午餐 · 拉麵跑道</h3>
+      <h3 class="spot-name">福岡機場午餐 · 拉麵跑道（ラーメン滑走路 / Ramen Kassoro）</h3>
       
       <p class="teaser">國內線 3F 拉麵專區、9 家全國名店、10:00-21:00</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
@@ -5681,7 +5700,7 @@
         <div class="sec-body">
           
           <ol>
-            <li><strong>回國當日先到國內線 3F 吃午餐、再回國際線 check-in</strong></li><li>行李拖到國內線 3F 的「拉麵跑道」入口、放置物櫃 ¥300</li><li>9 家店瀏覽：一風堂大名本店別館（2024/12 新開）、つじ田、海鳴、博多元助、月や、博多新風、玉龍、博龍軒、伍丸</li><li><strong>長輩友善推薦</strong>：一風堂（清淡白丸元味）、海鳴（魚介豚骨）、月や（豚そば）</li><li>各人在不同店點餐、回到中央座位區共享</li><li><strong>媽阿姨食量小 → 點半碗（小ラーメン）</strong></li><li>用餐後搭國內線到國際線接駁巴士（免費）回國際線</li><li><strong>預留國際線 check-in 至少 2 小時</strong></li>
+            <li><strong>回國當日先到國內線 3F 吃午餐、再回國際線 check-in</strong></li><li>行李拖到國內線 3F 的「拉麵跑道」入口、放置物櫃 ¥300</li><li>9 家店瀏覽：一風堂大名本店別館（2024/12 新開）、つじ田、海鳴、博多元助、月や、博多新風、玉龍、博龍軒、伍丸</li><li><strong>媽媽阿姨友善推薦</strong>：一風堂（清淡白丸元味）、海鳴（魚介豚骨）、月や（豚そば）</li><li>各人在不同店點餐、回到中央座位區共享</li><li><strong>媽阿姨食量小、點半碗（小ラーメン）</strong></li><li>用餐後搭國內線到國際線接駁巴士（免費）回國際線</li><li><strong>預留國際線 check-in 至少 2 小時</strong></li>
           </ol>
           
         </div>
@@ -5694,7 +5713,7 @@
         <div class="sec-body">
           <div class="warn-box">
             <ul>
-              <li><strong>10:00-21:00、年中無休</strong></li><li><strong>位於國內線 3F、不是國際線</strong>、回台灣需轉接駁巴士</li><li><strong>接駁巴士免費、5-10 分一班、車程 5 分、預留 30 分含上下行李</strong></li><li>拉麵跑道午餐高峰 12:00-13:30、家族建議 11:30 前進</li><li>店內無內臟必選、但部分店有「内臓系」trade、媽阿姨點餐前確認</li><li>公廁與無障礙廁所在 3F 拉麵跑道附近</li><li>拉麵湯重、長輩血壓高建議不要喝完</li><li>禁外帶到登機口、必須在區內吃完</li>
+              <li><strong>10:00-21:00、年中無休</strong></li><li><strong>位於國內線 3F、不是國際線</strong>、回台灣需轉接駁巴士</li><li><strong>接駁巴士免費、5-10 分一班、車程 5 分、預留 30 分含上下行李</strong></li><li>拉麵跑道午餐高峰 12:00-13:30、家族建議 11:30 前進</li><li>店內無內臟必選、但部分店有「内臓系」trade、媽阿姨點餐前確認</li><li>公廁與無障礙廁所在 3F 拉麵跑道附近</li><li>拉麵湯重、媽媽阿姨血壓高建議不要喝完</li><li>禁外帶到登機口、必須在區內吃完</li>
             </ul>
           </div>
         </div>
@@ -5715,7 +5734,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">排隊太久 → 改國際線 4F 美食街（拉麵店少但更近登機口）；長輩吃不完 → 點 1 碗 4 人分；班機時間趕 → 直接國際線 4F 吃簡餐</div></div>
+        <div class="sec-body"><div class="plan-b">排隊太久、改國際線 4F 美食街（拉麵店少但更近登機口）；媽媽阿姨吃不完、點 1 碗 4 人分；班機時間趕、直接國際線 4F 吃簡餐</div></div>
       </div>
       
     </div>
@@ -5731,7 +5750,7 @@
     <div class="cover-top">
       <span class="time-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        14:20
+        14:00
       </span>
       <span class="cat-pill transport">TRANSPORT</span>
     </div>
@@ -5993,7 +6012,7 @@
 <section class="tab-section" id="hotel-compare">
   <h2>飯店候選比較</h2>
   <span class="jp">HOTEL OPTIONS · COMPARISON</span>
-  <p style="margin-top: 0.5rem; color: var(--ink-soft);">決策時對比的 6 個方案、依總價排序、給同行評估參考</p>
+  <p style="margin-top: 0.5rem; color: var(--ink-soft);">選飯店時對比的 6 個方案、依總價排序、給同行評估參考</p>
 
   <div class="tab-grid">
     <div class="tab-card" style="grid-column: 1 / -1;">
@@ -6390,21 +6409,63 @@
         <li>
           <span class="chk"></span>
           下載地鐵離線地圖 + 翻譯 APP
-          
+          <br><small>Google Translate（先下載日文離線資料）、Google Maps 福岡離線地圖</small>
         </li>
         
         <li>
           <span class="chk"></span>
           準備 eSIM（5-6 天方案）
-          
+          <br><small>Airalo / KKday 預先買、抵達當天落地裝、約 NT$300/人</small>
+        </li>
+        
+        <li>
+          <span class="chk"></span>
+          投保旅平險（出發前 1-2 天）
+          <br><small>含醫療 + 行李遺失、5 天額度約 NT$400/人、不能當天投</small>
+        </li>
+        
+        <li>
+          <span class="chk"></span>
+          兌換現金 ¥30,000-50,000/人
+          <br><small>屋台 / 小店 / 神社賽錢只收現金、台灣銀行買入價較划算</small>
         </li>
         
       </ul>
     </div>
     
     <div class="tab-card">
-      <h3>出發前再確認<span class="chip navy">PHASE</span></h3>
+      <h3>出發前 3 天<span class="chip navy">PHASE</span></h3>
       <ul class="check-list" data-storage="prep-5">
+        
+        <li>
+          <span class="chk"></span>
+          確認天氣預報、有無颱風
+          <br><small>7 月底福岡偶有颱風尾、若雨備啟動 Day 3 糸島可改太宰府二訪 / 博多市區深度</small>
+        </li>
+        
+        <li>
+          <span class="chk"></span>
+          雨備裝備：折傘 × 4、輕便雨衣（媽媽阿姨各 1）
+          
+        </li>
+        
+        <li>
+          <span class="chk"></span>
+          防曬：帽子 × 4、輕薄長袖、防曬乳 SPF50+
+          <br><small>媽媽阿姨易曬傷、糸島自駕日海邊曬</small>
+        </li>
+        
+        <li>
+          <span class="chk"></span>
+          隨身水壺、鹽糖 / 糖果
+          <br><small>7 月福岡 31°C / 濕度 80%、媽媽阿姨易中暑</small>
+        </li>
+        
+        <li>
+          <span class="chk"></span>
+          護照影本 / 駕照譯本確認帶齊
+          <br><small>崴 + 哥哥日文駕照譯本是糸島租車必備</small>
+        </li>
         
         <li>
           <span class="chk"></span>
@@ -6417,7 +6478,7 @@
           <span class="chk"></span>
           <a href="https://www.dazaifutenmangu.or.jp/" target="_blank" rel="noopener">太宰府本殿工程狀態</a>
           
-          
+          <br><small>萬一還有圍簾、Day 2 縮短本殿、九博時間多</small>
         </li>
         
         <li>
@@ -6426,10 +6487,29 @@
           
         </li>
         
+      </ul>
+    </div>
+    
+    <div class="tab-card">
+      <h3>出發當天（機上 / 抵達）<span class="chip navy">PHASE</span></h3>
+      <ul class="check-list" data-storage="prep-6">
+        
         <li>
           <span class="chk"></span>
-          天氣預報 + 雨備裝備
+          機上填日本入境卡 + 海關申告
+          <br><small>亞航回程記得自帶筆、入境卡有電子版（Visit Japan Web）但紙本仍可用</small>
+        </li>
+        
+        <li>
+          <span class="chk"></span>
+          抵達後啟用 eSIM、加入 LINE 群組分享位置
           
+        </li>
+        
+        <li>
+          <span class="chk"></span>
+          在福岡空港 B2F 買 SUGOCA IC 卡（4 張）
+          <br><small>押金 ¥500 + 預儲 ¥1,500、5 天可用、走 Day 1 Jumbo Taxi 之前先買</small>
         </li>
         
       </ul>
@@ -6485,58 +6565,58 @@
 
   <div class="tab-grid">
     <div class="tab-card" style="grid-column: 1 / -1;">
-      <table class="menu-table">
-        <thead><tr><th>中文</th><th>日文</th></tr></thead>
+      <table class="menu-table phrase-table">
+        <thead><tr><th>中文</th><th>日文（含羅馬拼音）</th></tr></thead>
         <tbody>
           
           <tr>
             <td>請問有菜單（圖片）嗎？</td>
-            <td class="price">すみません、写真付きのメニューはありますか？</td>
+            <td class="price">すみません、写真付きのメニューはありますか？<br><span class="romaji">Sumimasen, shashin-tsuki no menyū wa arimasu ka?</span></td>
           </tr>
           
           <tr>
             <td>這個多少錢？</td>
-            <td class="price">これはいくらですか？</td>
+            <td class="price">これはいくらですか？<br><span class="romaji">Kore wa ikura desu ka?</span></td>
           </tr>
           
           <tr>
             <td>請給我水</td>
-            <td class="price">お水をください</td>
+            <td class="price">お水をください<br><span class="romaji">O-mizu o kudasai</span></td>
           </tr>
           
           <tr>
             <td>不要內臟</td>
-            <td class="price">内臓は抜いてください</td>
+            <td class="price">内臓は抜いてください<br><span class="romaji">Naizō wa nuite kudasai</span></td>
           </tr>
           
           <tr>
             <td>可以用信用卡嗎？</td>
-            <td class="price">クレジットカード使えますか？</td>
+            <td class="price">クレジットカード使えますか？<br><span class="romaji">Kurejitto kādo tsukaemasu ka?</span></td>
           </tr>
           
           <tr>
             <td>有 Wi-Fi 嗎？</td>
-            <td class="price">Wi-Fi ありますか？</td>
+            <td class="price">Wi-Fi ありますか？<br><span class="romaji">Wi-Fi arimasu ka?</span></td>
           </tr>
           
           <tr>
             <td>廁所在哪？</td>
-            <td class="price">トイレはどこですか？</td>
+            <td class="price">トイレはどこですか？<br><span class="romaji">Toire wa doko desu ka?</span></td>
           </tr>
           
           <tr>
             <td>請問怎麼走？</td>
-            <td class="price">道を教えてください</td>
+            <td class="price">道を教えてください<br><span class="romaji">Michi o oshiete kudasai</span></td>
           </tr>
           
           <tr>
             <td>謝謝</td>
-            <td class="price">ありがとうございます</td>
+            <td class="price">ありがとうございます<br><span class="romaji">Arigatō gozaimasu</span></td>
           </tr>
           
           <tr>
             <td>對不起</td>
-            <td class="price">すみません</td>
+            <td class="price">すみません<br><span class="romaji">Sumimasen</span></td>
           </tr>
           
         </tbody>
