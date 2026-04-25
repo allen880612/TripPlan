@@ -571,6 +571,74 @@
     margin: 0 auto 1.5rem;
     padding: 0 1.6rem;
   }
+
+  /* ============ 每日出門前 checklist ============ */
+  .daily-checklist {
+    max-width: 1200px;
+    margin: 0 auto 1.2rem;
+    padding: 0 1.6rem;
+  }
+  .daily-checklist details {
+    background: linear-gradient(135deg, #F0FBF5 0%, #DDF4E5 100%);
+    border: 1.5px solid #6CB68C;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .daily-checklist summary {
+    cursor: pointer;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    color: #2D5C3F;
+    list-style: none;
+    user-select: none;
+  }
+  .daily-checklist summary::-webkit-details-marker { display: none; }
+  .daily-checklist summary::before {
+    content: '▸';
+    font-size: 0.95rem;
+    transition: transform 0.2s;
+    color: #5A9670;
+    flex-shrink: 0;
+  }
+  .daily-checklist details[open] summary::before { transform: rotate(90deg); }
+  .checklist-icon {
+    display: inline-flex;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: #6CB68C; color: white;
+    align-items: center; justify-content: center;
+    font-size: 0.95rem; font-weight: 700;
+  }
+  .checklist-title { font-size: 1rem; }
+  .checklist-hint {
+    margin-left: auto;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: #5A9670;
+    opacity: 0.85;
+  }
+  .daily-checklist ul {
+    padding: 0.4rem 1.4rem 1rem 2.6rem;
+    margin: 0;
+    border-top: 1px dashed #6CB68C;
+    background: #FCFFFD;
+    line-height: 1.85;
+    font-size: 0.92rem;
+  }
+  .daily-checklist ul li.extra {
+    color: #B87333;
+    list-style: none;
+    margin-left: -1.2rem;
+    padding-left: 0.3rem;
+  }
+  .daily-checklist ul li.extra::before {
+    content: '☉ ';
+    color: #E89855;
+    margin-right: 0.2rem;
+  }
+
   .decisions-card {
     background: linear-gradient(135deg, #FFF8ED 0%, #FFEED9 100%);
     border: 1.5px solid #E89855;
@@ -777,6 +845,7 @@
       <a class="pill" href="#day5">Day 5</a>
       
       <a class="pill" href="#prep">事前準備</a>
+      <a class="pill" href="#contacts">重要電話</a>
       <a class="pill" href="#hotel-compare">飯店比較</a>
       <a class="pill" href="#budget">預算</a>
     </div>
@@ -1465,6 +1534,32 @@
   </div>
 </section>
 
+
+<section class="daily-checklist">
+  <details open>
+    <summary>
+      <span class="checklist-icon">✓</span>
+      <span class="checklist-title">每天出門前 5 秒檢查</span>
+      <span class="checklist-hint">點擊展開 · 出門前 5 秒</span>
+    </summary>
+    <ul>
+      
+      <li>護照（每人帶自己的、Day 1 機場 + Day 3 租車要看）</li>
+      
+      <li>SUGOCA IC 卡（Day 1 買好後每天用）</li>
+      
+      <li>水壺 / 鹽糖（7 月 31°C 80% 濕度、媽媽阿姨易中暑）</li>
+      
+      <li>防曬乳 / 帽子（神社 / 糸島 / 大濠都會曬）</li>
+      
+      <li>折傘 / 輕便雨衣（午後雷陣雨機率高）</li>
+      
+      
+    </ul>
+  </details>
+</section>
+
+
 <!-- 當日決策卡 -->
 
 <section class="day-decisions">
@@ -1682,7 +1777,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>入國審查、領行李、海關：30-40 分鐘</li><li>出境大廳、1F 南出口「無料連絡バス」、接駁到國內線（3 分鐘、10 分鐘一班）</li><li>國內線 B2F 地鐵「福岡空港」站、售票機買 SUGOCA IC 卡</li><li>空港線往姪浜方向、博多站下車（5 分鐘 ¥260）</li><li>跟黃色「到着 Arrivals」指標出關</li><li>1F 南出口找「無料連絡バス」（中英日三語）</li><li>上國內線後往 B2 地鐵站</li><li>售票機選「ICカード」、購入、SUGOCA ¥2,000（內含 ¥500 押金 + ¥1,500 可用額度）</li><li>刷卡進閘、2 號月台上車、2 站下車</li>
+            <li>跟黃色「到着 Arrivals」指標出關（入國審查 + 領行李 + 海關約 30-40 分鐘）</li><li>1F 南出口找「無料連絡バス」（免費接駁巴士、中英日三語標示、3 分鐘一班）</li><li>上接駁車到國內線航廈、走到 B2F 地鐵站</li><li>售票機選「ICカード」買 SUGOCA × 4（每張 ¥2,000、含 ¥500 押金 + ¥1,500 可用額度）</li><li>刷卡進閘、2 號月台上車、2 站下車就到博多（5 分鐘 ¥260）</li><li>啟用 Airalo eSIM、加入 LINE 群組同步位置（哥哥若同時段抵達在這裡會合）</li>
           </ol>
           
         </div>
@@ -2439,6 +2534,32 @@
     <p style="color: var(--muted); font-size: 0.95rem; margin-top: 0.8rem; max-width: 800px;">這是最豐富的一天。從博多南下柳川、坐上平底船遊運河、午餐吃 340 年老店蒸籠鰻魚、下午到千年古都太宰府參拜、晚上回博多站內吃強棒麵。</p>
   </div>
 </section>
+
+
+<section class="daily-checklist">
+  <details >
+    <summary>
+      <span class="checklist-icon">✓</span>
+      <span class="checklist-title">每天出門前 5 秒檢查</span>
+      <span class="checklist-hint">點擊展開 · 出門前 5 秒</span>
+    </summary>
+    <ul>
+      
+      <li>護照（每人帶自己的、Day 1 機場 + Day 3 租車要看）</li>
+      
+      <li>SUGOCA IC 卡（Day 1 買好後每天用）</li>
+      
+      <li>水壺 / 鹽糖（7 月 31°C 80% 濕度、媽媽阿姨易中暑）</li>
+      
+      <li>防曬乳 / 帽子（神社 / 糸島 / 大濠都會曬）</li>
+      
+      <li>折傘 / 輕便雨衣（午後雷陣雨機率高）</li>
+      
+      
+    </ul>
+  </details>
+</section>
+
 
 <!-- 當日決策卡 -->
 
@@ -3353,6 +3474,40 @@
     <p style="color: var(--muted); font-size: 0.95rem; margin-top: 0.8rem; max-width: 800px;">今天租車、開往博多西邊的糸島半島、沿著海岸公路兜風、是九州版的 IG 打卡海岸。晚上回博多吃 A5 和牛犒賞自己。</p>
   </div>
 </section>
+
+
+<section class="daily-checklist">
+  <details >
+    <summary>
+      <span class="checklist-icon">✓</span>
+      <span class="checklist-title">每天出門前 5 秒檢查</span>
+      <span class="checklist-hint">點擊展開 · 出門前 5 秒</span>
+    </summary>
+    <ul>
+      
+      <li>護照（每人帶自己的、Day 1 機場 + Day 3 租車要看）</li>
+      
+      <li>SUGOCA IC 卡（Day 1 買好後每天用）</li>
+      
+      <li>水壺 / 鹽糖（7 月 31°C 80% 濕度、媽媽阿姨易中暑）</li>
+      
+      <li>防曬乳 / 帽子（神社 / 糸島 / 大濠都會曬）</li>
+      
+      <li>折傘 / 輕便雨衣（午後雷陣雨機率高）</li>
+      
+      
+      
+      <li class="extra"><strong>今天額外：</strong>崴 + 哥哥的台灣駕照本人 + 日文譯本</li>
+      
+      <li class="extra"><strong>今天額外：</strong>暈車藥（媽媽阿姨海邊路彎多）</li>
+      
+      <li class="extra"><strong>今天額外：</strong>Google Maps 離線地圖（糸島訊號偶爾差）</li>
+      
+      
+    </ul>
+  </details>
+</section>
+
 
 <!-- 當日決策卡 -->
 
@@ -4362,6 +4517,32 @@
   </div>
 </section>
 
+
+<section class="daily-checklist">
+  <details >
+    <summary>
+      <span class="checklist-icon">✓</span>
+      <span class="checklist-title">每天出門前 5 秒檢查</span>
+      <span class="checklist-hint">點擊展開 · 出門前 5 秒</span>
+    </summary>
+    <ul>
+      
+      <li>護照（每人帶自己的、Day 1 機場 + Day 3 租車要看）</li>
+      
+      <li>SUGOCA IC 卡（Day 1 買好後每天用）</li>
+      
+      <li>水壺 / 鹽糖（7 月 31°C 80% 濕度、媽媽阿姨易中暑）</li>
+      
+      <li>防曬乳 / 帽子（神社 / 糸島 / 大濠都會曬）</li>
+      
+      <li>折傘 / 輕便雨衣（午後雷陣雨機率高）</li>
+      
+      
+    </ul>
+  </details>
+</section>
+
+
 <!-- 當日決策卡 -->
 
 <section class="day-decisions">
@@ -5157,6 +5338,32 @@
     <p style="color: var(--muted); font-size: 0.95rem; margin-top: 0.8rem; max-width: 800px;">最後半天吃牛舌早餐、採買明太子和伴手禮、中午搭地鐵到福岡機場、機場吃拉麵跑道午餐後搭機回台。</p>
   </div>
 </section>
+
+
+<section class="daily-checklist">
+  <details >
+    <summary>
+      <span class="checklist-icon">✓</span>
+      <span class="checklist-title">每天出門前 5 秒檢查</span>
+      <span class="checklist-hint">點擊展開 · 出門前 5 秒</span>
+    </summary>
+    <ul>
+      
+      <li>護照（每人帶自己的、Day 1 機場 + Day 3 租車要看）</li>
+      
+      <li>SUGOCA IC 卡（Day 1 買好後每天用）</li>
+      
+      <li>水壺 / 鹽糖（7 月 31°C 80% 濕度、媽媽阿姨易中暑）</li>
+      
+      <li>防曬乳 / 帽子（神社 / 糸島 / 大濠都會曬）</li>
+      
+      <li>折傘 / 輕便雨衣（午後雷陣雨機率高）</li>
+      
+      
+    </ul>
+  </details>
+</section>
+
 
 <!-- 當日決策卡 -->
 
@@ -6516,7 +6723,122 @@
     </div>
     
   </div>
+
+  
+  <div class="tab-grid" style="margin-top: 1.5rem;">
+    <div class="tab-card" style="grid-column: 1 / -1;">
+      <h3>哥哥 · 從上海會合<span class="chip sun">COMPANION</span></h3>
+      <ul style="line-height: 1.9;">
+        
+        <li><strong>機票</strong>：哥哥還沒訂、由他自理上海 → 福岡來回</li>
+        
+        <li><strong>會合</strong>：當地 LINE 聯絡、抵達後群組裡同步位置</li>
+        
+        <li><strong>一起買的票券</strong>：SUGOCA IC 卡 4 張、太宰府柳川套票 4 人份（崴在博多站一起買）</li>
+        
+        <li><strong>自己處理</strong>：上海端的機票 / 通訊 / 機場到飯店交通、若哥哥比我們早到可先在飯店大廳寄行李等</li>
+        
+        <li><strong>Day 3 糸島自駕</strong>：哥哥跟崴輪流開車（崴跟哥哥都辦日文駕照譯本）</li>
+        
+      </ul>
+    </div>
+  </div>
+  
 </section>
+
+<!-- ========== 重要電話 ========== -->
+
+<section class="tab-section" id="contacts">
+  <h2>重要電話</h2>
+  <span class="jp">EMERGENCY CONTACTS</span>
+  <p style="margin-top: 0.5rem; color: var(--ink-soft);">媽媽阿姨手機都存一份、走丟或意外才不慌</p>
+
+  <div class="tab-grid">
+    
+    <div class="tab-card">
+      <h3>緊急報案（日本）<span class="chip coral">PHONE</span></h3>
+      <table class="menu-table">
+        <tbody>
+          
+          <tr>
+            <td><strong>警察報案</strong><br><small>免費、24h</small></td>
+            <td class="price"><a href="tel:110">110</a></td>
+          </tr>
+          
+          <tr>
+            <td><strong>消防 / 救護</strong><br><small>免費、24h</small></td>
+            <td class="price"><a href="tel:119">119</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="tab-card">
+      <h3>台灣駐日本辦事處（24h 急難救助）<span class="chip coral">PHONE</span></h3>
+      <table class="menu-table">
+        <tbody>
+          
+          <tr>
+            <td><strong>台北駐日經濟文化代表處 那霸分處（離福岡最近）</strong><br><small>白天領務</small></td>
+            <td class="price"><a href="tel:+81-98-862-7008">+81-98-862-7008</a></td>
+          </tr>
+          
+          <tr>
+            <td><strong>急難救助專線（行動電話）</strong><br><small><strong>僅供緊急聯絡（生命危險）使用、非急難勿撥</strong></small></td>
+            <td class="price"><a href="tel:+81-90-1942-1107">+81-90-1942-1107</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="tab-card">
+      <h3>飯店<span class="chip coral">PHONE</span></h3>
+      <table class="menu-table">
+        <tbody>
+          
+          <tr>
+            <td><strong>JR Kyushu Hotel Blossom Hakata Central</strong><br><small>Booking 確認信內也會附</small></td>
+            <td class="price"><a href="tel:+81-92-433-5489">+81-92-433-5489</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="tab-card">
+      <h3>交通 / 航空<span class="chip coral">PHONE</span></h3>
+      <table class="menu-table">
+        <tbody>
+          
+          <tr>
+            <td><strong>Jumbo Taxi（福岡 MK Taxi）</strong><br><small>Day 1 機場接送</small></td>
+            <td class="price"><a href="tel:+81-92-712-0001">+81-92-712-0001</a></td>
+          </tr>
+          
+          <tr>
+            <td><strong>星宇航空 客服</strong><br><small>去程 JX840</small></td>
+            <td class="price"><a href="tel:+886-2-2791-1199">+886-2-2791-1199</a></td>
+          </tr>
+          
+          <tr>
+            <td><strong>亞洲航空 客服</strong><br><small>回程</small></td>
+            <td class="price"><a href="tel:+886-2-8793-3532">+886-2-8793-3532</a></td>
+          </tr>
+          
+          <tr>
+            <td><strong>Nippon Rent-A-Car</strong><br><small>Day 3 糸島自駕</small></td>
+            <td class="price"><a href="tel:+81-92-411-0919">+81-92-411-0919</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
+</section>
+
 
 <!-- ========== 7 月旅遊 tips ========== -->
 <section class="tab-section" id="tips">
@@ -6556,6 +6878,39 @@
     </div>
     
   </div>
+
+  
+  <div class="tab-grid" style="margin-top: 1.5rem;">
+    <div class="tab-card" style="grid-column: 1 / -1;">
+      <h3>萬一遇到颱風 / 大雨<span class="chip coral">WEATHER</span></h3>
+      <p style="margin: 0 0 0.8rem; color: var(--ink-soft); font-size: 0.9rem;">7 月底福岡偶有颱風尾、看新聞或氣象 APP 確認</p>
+      <table class="menu-table">
+        <thead><tr><th>哪天</th><th>遇到什麼</th><th>怎麼辦</th></tr></thead>
+        <tbody>
+          
+          <tr>
+            <td><strong>Day 2 柳川 · 太宰府</strong></td>
+            <td>暴雨、川下り停航</td>
+            <td>套票船票可全額退、直接西鐵到太宰府、九博 + 太宰府參道時間拉長到全天、或回博多運河城避雨</td>
+          </tr>
+          
+          <tr>
+            <td><strong>Day 3 糸島自駕</strong></td>
+            <td>颱風 / 大雨、海邊景點全壞</td>
+            <td>整天改去太宰府二訪 + 九州國立博物館（室內、有冷氣）+ 晚上肉屋肉一照常；租車可改期或退（Nippon Rent-A-Car 出發前一天可退）</td>
+          </tr>
+          
+          <tr>
+            <td><strong>Day 4 大濠 · 水炊鍋</strong></td>
+            <td>雨天</td>
+            <td>大濠公園湖邊散步取消、改博多運河城（キャナル）室內逛街 + 華味鳥午餐照常 + 夜景看天候、若雨太大改 KITTE 9F 室內景觀</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
 </section>
 
 <!-- ========== 實用日文 ========== -->
