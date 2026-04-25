@@ -688,6 +688,19 @@
   }
 
 
+/* Spot card category gradient fallback (when no image) */
+.spot-cover.cat-culture { background: linear-gradient(135deg, #1E3A8A 0%, #1A1A2E 100%); }
+.spot-cover.cat-shrine { background: linear-gradient(135deg, #EC88A8 0%, #8B4567 100%); }
+.spot-cover.cat-food { background: linear-gradient(135deg, #FF6B4A 0%, #8B2E1A 100%); }
+.spot-cover.cat-shop { background: linear-gradient(135deg, #FFB84D 0%, #8B5E1A 100%); }
+.spot-cover.cat-nature { background: linear-gradient(135deg, #8BA446 0%, #4D5C28 100%); }
+.spot-cover.cat-rest { background: linear-gradient(135deg, #8B8B9F 0%, #4A4A56 100%); }
+.spot-cover.cat-transport { background: linear-gradient(135deg, #3D3D52 0%, #1A1A2E 100%); }
+.spot-cover.cat-night { background: linear-gradient(135deg, #1E3A8A 0%, #0F1A3D 100%); }
+.spot-cover.cat-view { background: linear-gradient(135deg, #FFB84D 0%, #1A1A2E 100%); }
+.spot-cover.cat-with-image::after { background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 55%, rgba(0,0,0,0.85) 100%); }
+.spot-cover.no-image::after { background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.55) 100%); }
+
 /* 5-day preview digest - NEW */
 .preview-digest { max-width: 1280px; margin: 3rem auto 2rem; padding: 0 1.25rem; }
 .preview-head { margin-bottom: 1.2rem; }
@@ -1443,30 +1456,30 @@
   <details class="decisions-card" open>
     <summary>
       <span class="decisions-icon">!</span>
-      <span class="decisions-title">Day 1 當日決策卡</span>
-      <span class="decisions-hint">IF-THEN 備案 · 點擊展開/收合</span>
+      <span class="decisions-title">Day 1 · 萬一遇到狀況</span>
+      <span class="decisions-hint">彈性備案 · 點擊展開/收合</span>
     </summary>
     <div class="decisions-body">
       <table>
-        <thead><tr><th>時點</th><th>決策</th><th>IF-THEN</th></tr></thead>
+        <thead><tr><th>時段</th><th>情況</th><th>怎麼辦</th></tr></thead>
         <tbody>
           
           <tr>
             <td>出發前</td>
-            <td>行李處理</td>
-            <td>IF 想 Day 1 兩手空空跑行程 → 機場 Yamato 櫃檯寄送行李到飯店（¥1,500/件）ELSE Jumbo Taxi 直達飯店寄放</td>
+            <td>行李怎麼處理</td>
+            <td>想第一天兩手空空跑行程的話、可在福岡機場的 Yamato 黑貓櫃檯寄行李到飯店（¥1,500/件、傍晚送到）。如果不嫌行李重、Jumbo Taxi 直接拉到飯店寄放也行。</td>
           </tr>
           
           <tr>
             <td>19:00 屋台</td>
-            <td>排隊時間</td>
-            <td>IF 小金ちゃん 排超過 20 分 → 改博多っ子純情（同樣燒拉麵）</td>
+            <td>如果客滿了</td>
+            <td>小金ちゃん 通常會排隊、超過 20 分就轉戰附近的博多っ子純情、一樣是燒拉麵名店、味道差不多。</td>
           </tr>
           
           <tr>
             <td>19:30 夏祭</td>
-            <td>體力檢查</td>
-            <td>IF 媽媽阿姨累 → 直接回飯店、捨棄夏祭</td>
+            <td>走累了的話</td>
+            <td>今天剛抵達、看大家狀況。累了就直接回飯店休息、夏祭跳過沒關係、明後天還有體力。</td>
           </tr>
           
         </tbody>
@@ -1573,7 +1586,7 @@
 
 
 <article class="spot" id="d1-1">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-transport no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -1604,7 +1617,7 @@
 
 
 <article class="spot" id="d1-2">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-transport no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -1635,7 +1648,7 @@
 
 
 <article class="spot" id="d1-3">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-transport no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -1675,7 +1688,7 @@
 
 
 <article class="spot span-2" id="d1-4">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -1711,7 +1724,7 @@
 
 
 <article class="spot" id="d1-5">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-culture no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -1759,7 +1772,7 @@
 
 
 <article class="spot" id="d1-6">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-shop no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -1795,7 +1808,7 @@
 
 
 <article class="spot" id="d1-7">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-shrine no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -1848,7 +1861,7 @@
 
 
 <article class="spot" id="d1-8">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-rest no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -1879,7 +1892,7 @@
 
 
 <article class="spot" id="d1-9">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-rest no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -1912,7 +1925,7 @@
 
 
 <article class="spot span-2" id="d1-11">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -1942,7 +1955,7 @@
         <div class="sec-head"><h5>小提醒</h5><span class="jp-mini">Tips</span></div>
         <div class="sec-body">
           <ul>
-            <li>屋台限時 30 分撤退策略、別等太久</li>
+            <li>屋台坐 30 分鐘左右就好、外面還有人在排隊</li>
           </ul>
         </div>
       </div>
@@ -1965,8 +1978,8 @@
       
       
       <div class="sec">
-        <div class="sec-head"><h5>備案 Plan B</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">若要排隊太久、備案是附近的「博多っ子純情」、同樣是燒拉麵名店</div></div>
+        <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
+        <div class="sec-body"><div class="plan-b">排隊太久就走幾步路改去「博多っ子純情」、一樣是燒拉麵名店</div></div>
       </div>
       
       
@@ -1982,7 +1995,7 @@
 
 
 <article class="spot" id="d1-12">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-night no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -1993,7 +2006,7 @@
     </div>
     <div class="cover-bottom">
       <h3 class="spot-name">天神夏まつり（選配）</h3>
-      <p class="teaser">若 2026 年舉辦、天神夏まつり就在附近、可順路逛感受夏日祭典氣氛</p>
+      <p class="teaser">如果 2026 年有舉辦、天神夏まつり 就在附近、可以順路逛逛感受夏日祭典氣氛</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
     </div>
   </div>
@@ -2006,8 +2019,8 @@
       
       
       <div class="sec">
-        <div class="sec-head"><h5>備案 Plan B</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">若 2026 沒辦、直接回飯店</div></div>
+        <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
+        <div class="sec-body"><div class="plan-b">如果 2026 沒辦、就直接回飯店休息</div></div>
       </div>
       
       
@@ -2028,7 +2041,7 @@
   <div class="moments-card">
     <h3>今日動人時刻</h3>
     <ul class="check-list">
-      <li><span class="chk"></span>走進櫛田神社看到巨型飾り山笠的那一刻</li><li><span class="chk"></span>屋台老闆第一聲『いらっしゃい』</li>
+      <li><span class="chk"></span>走進櫛田神社看到巨型飾り山笠那一刻</li><li><span class="chk"></span>屋台老闆第一聲『いらっしゃい』的熱絡</li>
     </ul>
   </div>
 </section>
@@ -2049,24 +2062,24 @@
   <details class="decisions-card" open>
     <summary>
       <span class="decisions-icon">!</span>
-      <span class="decisions-title">Day 2 當日決策卡</span>
-      <span class="decisions-hint">IF-THEN 備案 · 點擊展開/收合</span>
+      <span class="decisions-title">Day 2 · 萬一遇到狀況</span>
+      <span class="decisions-hint">彈性備案 · 點擊展開/收合</span>
     </summary>
     <div class="decisions-body">
       <table>
-        <thead><tr><th>時點</th><th>決策</th><th>IF-THEN</th></tr></thead>
+        <thead><tr><th>時段</th><th>情況</th><th>怎麼辦</th></tr></thead>
         <tbody>
           
           <tr>
             <td>10:00 柳川船</td>
-            <td>班次選擇</td>
-            <td>堅持 10:00 出發、保全程 60 分、11:40 後會縮短</td>
+            <td>為什麼一定要早出門</td>
+            <td>7-9 月夏季、11:40 之後的船會縮成 40 分（防止中暑）。我們堅持 10:00 出發、坐滿 60 分鐘最值得。</td>
           </tr>
           
           <tr>
             <td>14:45 太宰府</td>
-            <td>體力檢查</td>
-            <td>若媽媽阿姨累 → 跳過寶物殿、只參拜 + 星巴克 + 梅枝餅</td>
+            <td>走累了怎麼辦</td>
+            <td>本殿參拜完如果想休息、就到隈研吾設計的星巴克坐一下喝冰飲、配梅枝餅。寶物殿可以跳過。</td>
           </tr>
           
         </tbody>
@@ -2181,7 +2194,7 @@
 
 
 <article class="spot span-2" id="d2-2">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2219,7 +2232,7 @@
 
 
 <article class="spot" id="d2-4">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-transport no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2255,7 +2268,7 @@
 
 
 <article class="spot" id="d2-5">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-culture no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2302,7 +2315,7 @@
 
 
 <article class="spot span-2" id="d2-7">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2358,7 +2371,7 @@
 
 
 <article class="spot" id="d2-9">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-shrine no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2399,8 +2412,8 @@
       
       
       <div class="sec">
-        <div class="sec-head"><h5>備案 Plan B</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">若本殿排隊人多、可先到參道逛、晚點回來</div></div>
+        <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
+        <div class="sec-body"><div class="plan-b">本殿如果排隊人多、就先去參道逛逛、晚點再回來參拜</div></div>
       </div>
       
       
@@ -2411,7 +2424,7 @@
 
 
 <article class="spot span-2" id="d2-10">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2452,7 +2465,7 @@
 
 
 <article class="spot span-2" id="d2-11">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2497,7 +2510,7 @@
 
 
 <article class="spot span-2" id="d2-14">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2559,7 +2572,7 @@
   <div class="moments-card">
     <h3>今日動人時刻</h3>
     <ul class="check-list">
-      <li><span class="chk"></span>柳川船上看到垂柳映水</li><li><span class="chk"></span>太宰府星巴克木構光影</li>
+      <li><span class="chk"></span>柳川船上看到垂柳映水的悠閒</li><li><span class="chk"></span>太宰府星巴克木構天井灑下的光影</li>
     </ul>
   </div>
 </section>
@@ -2580,24 +2593,24 @@
   <details class="decisions-card" open>
     <summary>
       <span class="decisions-icon">!</span>
-      <span class="decisions-title">Day 3 當日決策卡</span>
-      <span class="decisions-hint">IF-THEN 備案 · 點擊展開/收合</span>
+      <span class="decisions-title">Day 3 · 萬一遇到狀況</span>
+      <span class="decisions-hint">彈性備案 · 點擊展開/收合</span>
     </summary>
     <div class="decisions-body">
       <table>
-        <thead><tr><th>時點</th><th>決策</th><th>IF-THEN</th></tr></thead>
+        <thead><tr><th>時段</th><th>情況</th><th>怎麼辦</th></tr></thead>
         <tbody>
           
           <tr>
             <td>11:45 芥屋遊覽船</td>
-            <td>天氣</td>
-            <td>IF 海浪大或下雨 → 取消遊覽船、多花時間在夫婦岩 + LONDON BUS</td>
+            <td>海象不好的話</td>
+            <td>浪太大或下雨會停駛、那就把時間留給夫婦岩散步、LONDON BUS 喝冰咖啡也很愜意。</td>
           </tr>
           
           <tr>
             <td>14:45 LONDON BUS</td>
-            <td>體力</td>
-            <td>IF 累 → 直接開車回博多休息</td>
+            <td>累的話</td>
+            <td>跳過、直接開車回博多飯店休息。傍晚還有 A5 和牛大餐等著、留點胃。</td>
           </tr>
           
         </tbody>
@@ -2706,7 +2719,7 @@
 
 
 <article class="spot" id="d3-2">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-transport no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2758,7 +2771,7 @@
 
 
 <article class="spot" id="d3-4">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-nature no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2794,7 +2807,7 @@
 
 
 <article class="spot" id="d3-5">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-nature no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2825,7 +2838,7 @@
 
 
 <article class="spot" id="d3-6">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-nature no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2856,7 +2869,7 @@
 
 
 <article class="spot" id="d3-7">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-nature no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2897,7 +2910,7 @@
 
 
 <article class="spot span-2" id="d3-8">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2947,7 +2960,7 @@
 
 
 <article class="spot span-2" id="d3-9">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -2983,7 +2996,7 @@
 
 
 <article class="spot span-2" id="d3-10">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3007,8 +3020,8 @@
       
       
       <div class="sec">
-        <div class="sec-head"><h5>備案 Plan B</h5><span class="jp-mini">Plan B</span></div>
-        <div class="sec-body"><div class="plan-b">若累 → 跳過直接回博多</div></div>
+        <div class="sec-head"><h5>萬一不行</h5><span class="jp-mini">Plan B</span></div>
+        <div class="sec-body"><div class="plan-b">累的話跳過、直接開車回博多飯店休息</div></div>
       </div>
       
       
@@ -3023,7 +3036,7 @@
 
 
 <article class="spot span-2" id="d3-13">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3081,7 +3094,7 @@
   <div class="moments-card">
     <h3>今日動人時刻</h3>
     <ul class="check-list">
-      <li><span class="chk"></span>夫婦岩白鳥居前的那張合照</li><li><span class="chk"></span>芥屋大門海蝕洞陰影</li>
+      <li><span class="chk"></span>夫婦岩白鳥居前那張合照</li><li><span class="chk"></span>芥屋大門海蝕洞陰影裡的海風</li>
     </ul>
   </div>
 </section>
@@ -3102,24 +3115,24 @@
   <details class="decisions-card" open>
     <summary>
       <span class="decisions-icon">!</span>
-      <span class="decisions-title">Day 4 當日決策卡</span>
-      <span class="decisions-hint">IF-THEN 備案 · 點擊展開/收合</span>
+      <span class="decisions-title">Day 4 · 萬一遇到狀況</span>
+      <span class="decisions-hint">彈性備案 · 點擊展開/收合</span>
     </summary>
     <div class="decisions-body">
       <table>
-        <thead><tr><th>時點</th><th>決策</th><th>IF-THEN</th></tr></thead>
+        <thead><tr><th>時段</th><th>情況</th><th>怎麼辦</th></tr></thead>
         <tbody>
           
           <tr>
             <td>11:45 八女茶</td>
-            <td>排隊</td>
-            <td>IF 大濠テラス 排超 15 分 → 改 Starbucks 大濠湖畔店</td>
+            <td>排隊太久</td>
+            <td>大濠テラス 排超過 15 分鐘的話、轉戰湖邊的星巴克、湖景一樣美、有冷氣有座位。</td>
           </tr>
           
           <tr>
             <td>13:30 水炊鍋</td>
-            <td>預算</td>
-            <td>可事先預約避免等位</td>
+            <td>想吃得從容</td>
+            <td>出發前一週可上華味鳥官網訂位、避免到場等位。中午本來人比較少、不訂也常常進得去。</td>
           </tr>
           
         </tbody>
@@ -3222,7 +3235,7 @@
 
 
 <article class="spot span-2" id="d4-2">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3260,7 +3273,7 @@
 
 
 <article class="spot" id="d4-4">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-nature no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3301,7 +3314,7 @@
 
 
 <article class="spot span-2" id="d4-5">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3353,7 +3366,7 @@
 
 
 <article class="spot span-2" id="d4-7">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3407,7 +3420,7 @@
 
 
 <article class="spot" id="d4-8">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-rest no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3438,7 +3451,7 @@
 
 
 <article class="spot" id="d4-9">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-shop no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3474,7 +3487,7 @@
 
 
 <article class="spot span-2" id="d4-10">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3510,7 +3523,7 @@
 
 
 <article class="spot" id="d4-11">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-night no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3551,7 +3564,7 @@
   <div class="moments-card">
     <h3>今日動人時刻</h3>
     <ul class="check-list">
-      <li><span class="chk"></span>大濠湖畔喝八女茶看綠蔭</li><li><span class="chk"></span>JR City 樓頂看博多燈海</li>
+      <li><span class="chk"></span>大濠湖畔喝八女茶看綠蔭的悠閒</li><li><span class="chk"></span>JR City 樓頂看整片博多燈海</li>
     </ul>
   </div>
 </section>
@@ -3572,18 +3585,18 @@
   <details class="decisions-card" open>
     <summary>
       <span class="decisions-icon">!</span>
-      <span class="decisions-title">Day 5 當日決策卡</span>
-      <span class="decisions-hint">IF-THEN 備案 · 點擊展開/收合</span>
+      <span class="decisions-title">Day 5 · 萬一遇到狀況</span>
+      <span class="decisions-hint">彈性備案 · 點擊展開/收合</span>
     </summary>
     <div class="decisions-body">
       <table>
-        <thead><tr><th>時點</th><th>決策</th><th>IF-THEN</th></tr></thead>
+        <thead><tr><th>時段</th><th>情況</th><th>怎麼辦</th></tr></thead>
         <tbody>
           
           <tr>
             <td>11:00 Pain Stock</td>
-            <td>排隊意願</td>
-            <td>IF 不想排 → 跳過、直接買博多マイング 的 Full Full 明太子麵包</td>
+            <td>不想排隊</td>
+            <td>跳過 Pain Stock、直接到博多マイング 買 The Full Full 明太子麵包帶上飛機、味道一樣讚。</td>
           </tr>
           
         </tbody>
@@ -3674,7 +3687,7 @@
 
 
 <article class="spot span-2" id="d5-2">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3741,7 +3754,7 @@
 
 
 <article class="spot span-2" id="d5-5">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3782,7 +3795,7 @@
 
 
 <article class="spot" id="d5-6">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-shop no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3813,7 +3826,7 @@
 
 
 <article class="spot span-2" id="d5-7">
-  <div class="spot-cover" onclick="toggleSpot(this)">
+  <div class="spot-cover cat-food no-image" onclick="toggleSpot(this)">
     
     <div class="cover-top">
       <span class="time-badge">
@@ -3863,7 +3876,7 @@
   <div class="moments-card">
     <h3>今日動人時刻</h3>
     <ul class="check-list">
-      <li><span class="chk"></span>最後一碗牛舌尾湯的溫度</li>
+      <li><span class="chk"></span>最後一碗牛舌尾湯的暖意</li>
     </ul>
   </div>
 </section>
