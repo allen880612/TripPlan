@@ -137,22 +137,51 @@
   }
   .timeline-head h3 { font-family: "Shippori Mincho", serif; font-size: 1.15rem; color: var(--ink); font-weight: 700; }
   .timeline-head .en { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; }
+  /* 直式垂直時間軸：圓點 + 時間往下延伸 */
   .timeline {
-    display: flex; gap: 0.6rem; overflow-x: auto;
-    padding: 0.4rem 0.2rem 0.8rem; scrollbar-width: thin;
+    position: relative;
+    display: flex; flex-direction: column;
+    gap: 0.1rem; padding: 0.4rem 0;
+    max-width: 760px;
   }
-  .timeline::-webkit-scrollbar { height: 6px; }
-  .timeline::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
   .t-item {
-    flex: 0 0 auto; min-width: 128px;
-    background: var(--white); border: 1px solid var(--line);
-    border-radius: 14px; padding: 0.6rem 0.75rem;
-    transition: all 150ms; cursor: pointer;
+    position: relative; display: grid;
+    grid-template-columns: 46px 1fr; column-gap: 1.4rem;
+    align-items: start;
+    padding: 0.5rem 0.7rem 0.5rem 0;
+    border-radius: 10px; text-decoration: none;
+    transition: background 150ms; cursor: pointer;
   }
-  .t-item:hover { transform: translateY(-2px); border-color: var(--ink); }
-  .t-item .t-time { font-family: "Shippori Mincho", serif; font-weight: 700; color: var(--coral); font-size: 0.9rem; }
-  .t-item .t-name { font-size: 0.76rem; color: var(--ink); font-weight: 500; margin-top: 0.15rem; line-height: 1.35; }
-  .t-item .t-cat { font-size: 0.62rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.3rem; }
+  .t-item::before {
+    content: ''; position: absolute; left: 56px; top: 0; bottom: 0;
+    width: 2px; background: var(--line);
+  }
+  .t-item:first-child::before { top: 0.85rem; }
+  .t-item:last-child::before { bottom: calc(100% - 0.95rem); }
+  .t-item:hover { background: var(--cream); }
+  .t-dot {
+    position: absolute; left: 51px; top: 0.62rem;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--white); border: 2px solid var(--coral);
+    z-index: 1; box-sizing: border-box;
+  }
+  .t-item.cat-food .t-dot { border-color: var(--coral); }
+  .t-item.cat-shrine .t-dot { border-color: var(--sakura); }
+  .t-item.cat-culture .t-dot { border-color: var(--navy); }
+  .t-item.cat-nature .t-dot { border-color: var(--matcha); }
+  .t-item.cat-shop .t-dot { border-color: var(--sun); }
+  .t-item.cat-view .t-dot { border-color: var(--sun); }
+  .t-item.cat-night .t-dot { border-color: var(--navy); }
+  .t-item.cat-transport .t-dot { background: var(--line); border-color: var(--muted); width: 9px; height: 9px; left: 52px; top: 0.72rem; }
+  .t-item.cat-rest .t-dot { background: var(--line); border-color: var(--muted); width: 9px; height: 9px; left: 52px; top: 0.72rem; }
+  .t-item .t-time {
+    text-align: right; font-family: "Shippori Mincho", serif;
+    font-weight: 700; color: var(--muted); font-size: 0.82rem;
+    font-variant-numeric: tabular-nums; padding-top: 0.05rem;
+  }
+  .t-item .t-name { font-size: 0.92rem; color: var(--ink); font-weight: 500; line-height: 1.45; }
+  .t-item.cat-transport .t-name, .t-item.cat-rest .t-name { color: var(--muted); font-weight: 400; }
+  .t-item .t-dur { color: var(--muted); font-size: 0.75rem; margin-left: 0.45rem; font-weight: 400; }
 
   /* ============ Section headings ============ */
   .section-head {
@@ -846,6 +875,8 @@
       
       <a class="pill" href="#day6">Day 6</a>
       
+      <a class="pill" href="#restaurants">餐廳</a>
+      <a class="pill" href="#ramen">博多拉麵</a>
       <a class="pill" href="#shopping">逛街自由選</a>
       <a class="pill" href="#prep">事前準備</a>
       <a class="pill" href="#contacts">重要電話</a>
@@ -1026,7 +1057,7 @@
       <div class="date-num">2026.07.28</div>
     </div>
     <div class="preview-day-body">
-      <h3><span class="day-no">DAY2</span>太宰府參拜 · 中洲鰻魚 · 天神動漫分流 · うま馬拉麵</h3>
+      <h3><span class="day-no">DAY2</span>太宰府參拜 · 中洲鰻魚 · 天神地下街散步 · うま馬拉麵</h3>
       <div class="preview-items">
         
         
@@ -1042,7 +1073,7 @@
         
         <div class="pitem">
           <span class="ptime">0715</span>
-          <span class="pname food">早餐（八百治附近 / 博多站）</span>
+          <span class="pname food">早餐 · 博多站 Doutor / MING'S 麵包</span>
         </div>
         
         
@@ -1095,15 +1126,6 @@
         
         
         <div class="pitem">
-          <span class="ptime">1125</span>
-          <span class="pname shop">波佐見焼 HASAMIYAKI MARKET（天神地下街 · 加分）</span>
-        </div>
-        
-        
-        
-        
-        
-        <div class="pitem">
           <span class="ptime">1200</span>
           <span class="pname food">四代目菊川 中洲春吉店 · 鰻魚</span>
         </div>
@@ -1114,7 +1136,7 @@
         
         <div class="pitem">
           <span class="ptime">1400</span>
-          <span class="pname shop">午後分流 · 溫泉午休 vs 天神動漫</span>
+          <span class="pname shop">天神地下街一起逛 · 之後自由解散</span>
         </div>
         
         
@@ -1152,7 +1174,7 @@
         
         <div class="pitem">
           <span class="ptime">0800</span>
-          <span class="pname food">起床 · たんや / コメダ 早餐</span>
+          <span class="pname food">早餐 · 博多站 たんや（牛舌早定食）</span>
         </div>
         
         
@@ -1292,7 +1314,7 @@
         
         
         <div class="pitem">
-          <span class="ptime">0730</span>
+          <span class="ptime">0800</span>
           <span class="pname rest">起床</span>
         </div>
         
@@ -1301,8 +1323,8 @@
         
         
         <div class="pitem">
-          <span class="ptime">0800</span>
-          <span class="pname food">八百治輕食早餐</span>
+          <span class="ptime">0820</span>
+          <span class="pname food">早餐 · 博多站輕食 / くうてん</span>
         </div>
         
         
@@ -1310,8 +1332,8 @@
         
         
         <div class="pitem">
-          <span class="ptime">0823</span>
-          <span class="pname transport">博多 → 門司港（さくら 742 + JR）</span>
+          <span class="ptime">0900</span>
+          <span class="pname transport">博多 → 門司港（さくら + JR）</span>
         </div>
         
         
@@ -1319,7 +1341,7 @@
         
         
         <div class="pitem">
-          <span class="ptime">0915</span>
+          <span class="ptime">0950</span>
           <span class="pname culture">関門海峽ミュージアム（博物館）</span>
         </div>
         
@@ -1473,7 +1495,7 @@
         
         <div class="pitem">
           <span class="ptime">1530</span>
-          <span class="pname shop">兵分兩路 · 溫泉與採買</span>
+          <span class="pname shop">採買收尾 · 溫泉與逛街自由選</span>
         </div>
         
         
@@ -1608,7 +1630,7 @@
       
       <li>護照（每人帶自己的、Day 1 機場 + Day 3 租車要看）</li>
       
-      <li>SUGOCA IC 卡（Day 1 買好後每天用）</li>
+      <li>Visa 感應卡（地鐵 / 西鐵電車 / JR 直接刷、進出同一張）</li>
       
       <li>水壺 / 鹽糖（7 月 31°C 80% 濕度、媽媽阿姨易中暑）</li>
       
@@ -1661,93 +1683,93 @@
 </section>
 
 
-<!-- 時間軸 -->
+<!-- 時間軸（直式垂直：圓點 + 時間往下延伸） -->
 <section class="timeline-wrap">
   <div class="timeline-head"><h3>今日時間軸</h3><span class="en">Today · 14 站</span></div>
   <div class="timeline">
     
-    <a class="t-item" href="#d1-1">
-      <div class="t-time">09:35</div>
-      <div class="t-name">桃園機場起飛</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d1-1">
+      <span class="t-dot"></span>
+      <span class="t-time">09:35</span>
+      <span class="t-name">桃園機場起飛<span class="t-dur">飛行 2.5h</span></span>
     </a>
     
-    <a class="t-item" href="#d1-2">
-      <div class="t-time">13:05</div>
-      <div class="t-name">福岡機場落地</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d1-2">
+      <span class="t-dot"></span>
+      <span class="t-time">13:05</span>
+      <span class="t-name">福岡機場落地</span>
     </a>
     
-    <a class="t-item" href="#d1-3">
-      <div class="t-time">14:45</div>
-      <div class="t-name">GO APP 計程車 / 步行 → 八百治飯店</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d1-3">
+      <span class="t-dot"></span>
+      <span class="t-time">14:45</span>
+      <span class="t-name">GO APP 計程車 / 步行 → 八百治飯店<span class="t-dur">15 分</span></span>
     </a>
     
-    <a class="t-item" href="#d1-4">
-      <div class="t-time">15:00</div>
-      <div class="t-name">八百治飯店真人櫃台 Check-in</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d1-4">
+      <span class="t-dot"></span>
+      <span class="t-time">15:00</span>
+      <span class="t-name">八百治飯店真人櫃台 Check-in<span class="t-dur">20 分</span></span>
     </a>
     
-    <a class="t-item" href="#d1-5">
-      <div class="t-time">15:30</div>
-      <div class="t-name">東長寺 · 福岡大佛</div>
-      <div class="t-cat">CULTURE</div>
+    <a class="t-item cat-culture" href="#d1-5">
+      <span class="t-dot"></span>
+      <span class="t-time">15:30</span>
+      <span class="t-name">東長寺 · 福岡大佛<span class="t-dur">10 分</span></span>
     </a>
     
-    <a class="t-item" href="#d1-6">
-      <div class="t-time">15:45</div>
-      <div class="t-name">川端商店街穿越</div>
-      <div class="t-cat">SHOP</div>
+    <a class="t-item cat-shop" href="#d1-6">
+      <span class="t-dot"></span>
+      <span class="t-time">15:45</span>
+      <span class="t-name">川端商店街穿越<span class="t-dur">15 分</span></span>
     </a>
     
-    <a class="t-item" href="#d1-7">
-      <div class="t-time">16:00</div>
-      <div class="t-name">櫛田神社</div>
-      <div class="t-cat">SHRINE</div>
+    <a class="t-item cat-shrine" href="#d1-7">
+      <span class="t-dot"></span>
+      <span class="t-time">16:00</span>
+      <span class="t-name">櫛田神社<span class="t-dur">30 分</span></span>
     </a>
     
-    <a class="t-item" href="#d1-8">
-      <div class="t-time">16:30</div>
-      <div class="t-name">散步回 八百治飯店</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d1-8">
+      <span class="t-dot"></span>
+      <span class="t-time">16:30</span>
+      <span class="t-name">散步回 八百治飯店</span>
     </a>
     
-    <a class="t-item" href="#d1-9">
-      <div class="t-time">17:00</div>
-      <div class="t-name">飯店休息 60-90 分</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d1-9">
+      <span class="t-dot"></span>
+      <span class="t-time">17:00</span>
+      <span class="t-name">飯店休息 60-90 分</span>
     </a>
     
-    <a class="t-item" href="#d1-10">
-      <div class="t-time">18:30</div>
-      <div class="t-name">地鐵博多 → 天神</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d1-10">
+      <span class="t-dot"></span>
+      <span class="t-time">18:30</span>
+      <span class="t-name">地鐵博多 → 天神<span class="t-dur">5 分</span></span>
     </a>
     
-    <a class="t-item" href="#d1-11">
-      <div class="t-time">18:15</div>
-      <div class="t-name">天神屋台 小金ちゃん（Kogane-chan）晚餐</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d1-11">
+      <span class="t-dot"></span>
+      <span class="t-time">18:15</span>
+      <span class="t-name">天神屋台 小金ちゃん（Kogane-chan）晚餐<span class="t-dur">1h</span></span>
     </a>
     
-    <a class="t-item" href="#d1-12">
-      <div class="t-time">19:30</div>
-      <div class="t-name">天神夏まつり（Tenjin Natsu Matsuri、夏日祭典）</div>
-      <div class="t-cat">NIGHT</div>
+    <a class="t-item cat-night" href="#d1-12">
+      <span class="t-dot"></span>
+      <span class="t-time">19:30</span>
+      <span class="t-name">天神夏まつり（Tenjin Natsu Matsuri、夏日祭典）<span class="t-dur">20 分</span></span>
     </a>
     
-    <a class="t-item" href="#d1-13">
-      <div class="t-time">20:30</div>
-      <div class="t-name">地鐵回博多</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d1-13">
+      <span class="t-dot"></span>
+      <span class="t-time">20:30</span>
+      <span class="t-name">地鐵回博多</span>
     </a>
     
-    <a class="t-item" href="#d1-14">
-      <div class="t-time">22:00</div>
-      <div class="t-name">就寢</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d1-14">
+      <span class="t-dot"></span>
+      <span class="t-time">22:00</span>
+      <span class="t-name">就寢</span>
     </a>
     
   </div>
@@ -1839,7 +1861,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>跟黃色「到着 Arrivals」指標出關（入國審查 + 領行李 + 海關約 30-40 分鐘）</li><li>1F 南出口找「無料連絡バス」（免費接駁巴士、中英日三語標示、3 分鐘一班）</li><li>上接駁車到國內線航廈、走到 B2F 地鐵站</li><li>售票機選「ICカード（IC 卡）」買 SUGOCA × 4（每張 ¥2,000、含 ¥500 押金 + ¥1,500 可用額度）</li><li>刷卡進閘、2 號月台上車、2 站下車就到博多（5 分鐘 ¥260）</li><li>啟用 Airalo eSIM、加入 LINE 群組同步位置（哥哥若同時段抵達在這裡會合）</li>
+            <li>跟黃色「到着 Arrivals」指標出關（入國審查 + 領行李 + 海關約 30-40 分鐘）</li><li>1F 南出口找「無料連絡バス」（免費接駁巴士、中英日三語標示、3 分鐘一班）</li><li>上接駁車到國內線航廈、走到 B2F 地鐵站</li><li>若搭地鐵：閘口直接刷 Visa 感應進站（タッチ決済、不必買 SUGOCA）；4 人 4 大行李也可直接 1F 叫 GO APP 計程車到八百治更省事</li><li>刷 Visa 感應進閘、2 號月台上車、2 站到博多（5 分 ¥260）</li><li>啟用 Airalo eSIM、加入 LINE 群組同步位置（哥哥若同時段抵達在這裡會合）</li>
           </ol>
           
         </div>
@@ -1852,7 +1874,7 @@
         <div class="sec-body">
           <div class="warn-box">
             <ul>
-              <li>SUGOCA 全九州通用，5 天內隨意刷</li><li>IC 卡退卡要扣 ¥220 手續費，留著下次用划算</li><li>國際線有 Wi-Fi Rental 櫃台，但 Airalo eSIM 已夠用</li><li>行李寄送（ヤマト（黑貓宅急便））在國內線 1F，單件 ¥2,000 直送飯店</li>
+              <li>福岡地鐵 / 西鐵電車 / JR 都可直接刷 Visa 感應、進出用同一張卡、不必買 SUGOCA</li><li>地鐵一日自動封頂 ¥640（等於一日券）、當天刷越多越划算、不必事前買一日券</li><li>國際線有 Wi-Fi Rental 櫃台，但 Airalo eSIM 已夠用</li><li>行李寄送（ヤマト（黑貓宅急便））在國內線 1F，單件 ¥2,000 直送飯店</li>
             </ul>
           </div>
         </div>
@@ -2570,8 +2592,8 @@
 <section class="day-anchor" id="day2">
   <div>
     <div class="label">DAY 02</div>
-    <h2>太宰府參拜 · 中洲鰻魚 · 天神動漫分流 · うま馬拉麵<span class="date">7/28 (二)</span></h2>
-    <p style="color: var(--muted); font-size: 0.95rem; margin-top: 0.8rem; max-width: 800px;">抵達後的輕鬆恢復日。上午到千年古都太宰府參拜（新本殿 2026/5/17 已啟用、正常參拜）、逛參道吃梅ヶ枝餅、坐隈研吾設計的星巴克；中午回博多市區吃四代目菊川的鰻魚（已訂桌椅席）。下午兵分兩路：兩位媽媽回八百治泡天然溫泉睡午覺、崴和哥哥到天神逛動漫、傍晚在うま馬會合吃一碗溫潤的拉麵收尾。</p>
+    <h2>太宰府參拜 · 中洲鰻魚 · 天神地下街散步 · うま馬拉麵<span class="date">7/28 (二)</span></h2>
+    <p style="color: var(--muted); font-size: 0.95rem; margin-top: 0.8rem; max-width: 800px;">抵達後的輕鬆恢復日。上午到千年古都太宰府參拜（新本殿 2026/5/17 已啟用、正常參拜）、逛參道吃梅ヶ枝餅、坐隈研吾設計的星巴克；中午回博多市區吃四代目菊川的鰻魚（已訂桌椅席）。下午不急著回飯店——全家先一起逛天神地下街（整段冷氣、這幾天有波佐見焼陶瓷市集）、逛累了就在天神自由解散：想休息的回八百治泡溫泉睡午覺、想再走的留天神慢慢逛、傍晚在うま馬會合吃一碗溫潤的拉麵收尾。</p>
   </div>
 </section>
 
@@ -2587,7 +2609,7 @@
       
       <li>護照（每人帶自己的、Day 1 機場 + Day 3 租車要看）</li>
       
-      <li>SUGOCA IC 卡（Day 1 買好後每天用）</li>
+      <li>Visa 感應卡（地鐵 / 西鐵電車 / JR 直接刷、進出同一張）</li>
       
       <li>水壺 / 鹽糖（7 月 31°C 80% 濕度、媽媽阿姨易中暑）</li>
       
@@ -2634,81 +2656,75 @@
 </section>
 
 
-<!-- 時間軸 -->
+<!-- 時間軸（直式垂直：圓點 + 時間往下延伸） -->
 <section class="timeline-wrap">
-  <div class="timeline-head"><h3>今日時間軸</h3><span class="en">Today · 12 站</span></div>
+  <div class="timeline-head"><h3>今日時間軸</h3><span class="en">Today · 11 站</span></div>
   <div class="timeline">
     
-    <a class="t-item" href="#d2-1">
-      <div class="t-time">07:00</div>
-      <div class="t-name">起床</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d2-1">
+      <span class="t-dot"></span>
+      <span class="t-time">07:00</span>
+      <span class="t-name">起床</span>
     </a>
     
-    <a class="t-item" href="#d2-2">
-      <div class="t-time">07:15</div>
-      <div class="t-name">早餐（八百治附近 / 博多站）</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d2-2">
+      <span class="t-dot"></span>
+      <span class="t-time">07:15</span>
+      <span class="t-name">早餐 · 博多站 Doutor / MING'S 麵包</span>
     </a>
     
-    <a class="t-item" href="#d2-3">
-      <div class="t-time">07:45</div>
-      <div class="t-name">計程車到西鐵天神 → 西鐵太宰府</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d2-3">
+      <span class="t-dot"></span>
+      <span class="t-time">07:45</span>
+      <span class="t-name">計程車到西鐵天神 → 西鐵太宰府<span class="t-dur">約 50 分</span></span>
     </a>
     
-    <a class="t-item" href="#d2-9">
-      <div class="t-time">08:35</div>
-      <div class="t-name">太宰府天滿宮參拜</div>
-      <div class="t-cat">SHRINE</div>
+    <a class="t-item cat-shrine" href="#d2-9">
+      <span class="t-dot"></span>
+      <span class="t-time">08:35</span>
+      <span class="t-name">太宰府天滿宮參拜<span class="t-dur">90 分</span></span>
     </a>
     
-    <a class="t-item" href="#d2-10">
-      <div class="t-time">09:50</div>
-      <div class="t-name">太宰府星巴克</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d2-10">
+      <span class="t-dot"></span>
+      <span class="t-time">09:50</span>
+      <span class="t-name">太宰府星巴克<span class="t-dur">30 分</span></span>
     </a>
     
-    <a class="t-item" href="#d2-11">
-      <div class="t-time">10:15</div>
-      <div class="t-name">梅枝餅 · 烤麻糬紅豆湯</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d2-11">
+      <span class="t-dot"></span>
+      <span class="t-time">10:15</span>
+      <span class="t-name">梅枝餅 · 烤麻糬紅豆湯<span class="t-dur">20 分</span></span>
     </a>
     
-    <a class="t-item" href="#d2-back">
-      <div class="t-time">10:45</div>
-      <div class="t-name">西鐵太宰府 → 天神</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d2-back">
+      <span class="t-dot"></span>
+      <span class="t-time">10:45</span>
+      <span class="t-name">西鐵太宰府 → 天神<span class="t-dur">約 35 分</span></span>
     </a>
     
-    <a class="t-item" href="#d2-hasami">
-      <div class="t-time">11:25</div>
-      <div class="t-name">波佐見焼 HASAMIYAKI MARKET（天神地下街 · 加分）</div>
-      <div class="t-cat">SHOP</div>
+    <a class="t-item cat-food" href="#d2-eel">
+      <span class="t-dot"></span>
+      <span class="t-time">12:00</span>
+      <span class="t-name">四代目菊川 中洲春吉店 · 鰻魚<span class="t-dur">1.5h（已訂 12:30）</span></span>
     </a>
     
-    <a class="t-item" href="#d2-eel">
-      <div class="t-time">12:00</div>
-      <div class="t-name">四代目菊川 中洲春吉店 · 鰻魚</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-shop" href="#d2-onsen">
+      <span class="t-dot"></span>
+      <span class="t-time">14:00</span>
+      <span class="t-name">天神地下街一起逛 · 之後自由解散<span class="t-dur">14:00-17:15</span></span>
     </a>
     
-    <a class="t-item" href="#d2-onsen">
-      <div class="t-time">14:00</div>
-      <div class="t-name">午後分流 · 溫泉午休 vs 天神動漫</div>
-      <div class="t-cat">SHOP</div>
+    <a class="t-item cat-food" href="#d2-umauma">
+      <span class="t-dot"></span>
+      <span class="t-time">17:30</span>
+      <span class="t-name">博多うま馬 祇園本店 · 拉麵<span class="t-dur">1h</span></span>
     </a>
     
-    <a class="t-item" href="#d2-umauma">
-      <div class="t-time">17:30</div>
-      <div class="t-name">博多うま馬 祇園本店 · 拉麵</div>
-      <div class="t-cat">FOOD</div>
-    </a>
-    
-    <a class="t-item" href="#d2-sleep">
-      <div class="t-time">21:30</div>
-      <div class="t-name">回八百治就寢</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d2-sleep">
+      <span class="t-dot"></span>
+      <span class="t-time">21:30</span>
+      <span class="t-name">回八百治就寢</span>
     </a>
     
   </div>
@@ -2732,9 +2748,9 @@
       <span class="cat-pill food">FOOD</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">早餐（八百治附近 / 博多站）</h3>
+      <h3 class="spot-name">早餐 · 博多站 Doutor / MING'S 麵包</h3>
       
-      <p class="teaser">八百治不含早、博多站咖啡或現場加購早餐、早點出發太宰府</p>
+      <p class="teaser">博多站 Doutor / MING'S 麵包、¥500、早點出發太宰府（八百治不含早、可現場加購）</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
     </div>
   </div>
@@ -3118,91 +3134,6 @@
 
 
 
-<article class="spot" id="d2-hasami">
-  <div class="spot-cover cat-shop no-image" onclick="toggleSpot(this)">
-    
-    <div class="cover-top">
-      <span class="time-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        11:25
-      </span>
-      <span class="cat-pill shop">SHOP</span>
-    </div>
-    <div class="cover-bottom">
-      <h3 class="spot-name">波佐見焼 HASAMIYAKI MARKET（天神地下街 · 加分）</h3>
-      
-      <p class="teaser">2026/7/25-31 天神地下街九州陶瓷市集、太宰府回天神順路、11:25 前到逛 15-20 分、12:00 前離開趕菊川、買 1-2 件小碟小杯</p>
-      <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
-    </div>
-  </div>
-  <div class="spot-detail">
-    <div class="detail-inner">
-      
-      
-      <div class="sec">
-        <div class="sec-head"><span class="ico matcha-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"></path><path d="M15 2v6"></path><path d="M12 22a8 8 0 0 0 8-8V6H4v8a8 8 0 0 0 8 8z"></path></svg></span><h5>為什麼值得</h5><span class="jp-mini">Why</span></div>
-        <div class="sec-body"><p><strong>波佐見焼（はさみやき）</strong>是長崎波佐見町的日用陶瓷、素雅耐看、日本家庭餐桌很常見。<strong>HASAMIYAKI MARKET 2026/7/25-31 在天神地下街設九州陶瓷市集</strong>、剛好我們 7/28 這天遇得到。天神地下街全室內不曬、就在西鐵福岡（天神）到中洲春吉的路上、順路。時間掐緊：11:25 前到、逛 15-20 分、12:00 前離開、才趕得上四代目菊川 12:30。<strong>買 1-2 件小碟小杯當紀念剛好、別提整套</strong>（行李有限、瓷器易碎）。</p></div>
-      </div>
-      
-      
-      <div class="sec">
-        <div class="sec-head"><span class="ico sun-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg></span><h5>怎麼玩</h5><span class="jp-mini">Action</span></div>
-        <div class="sec-body">
-          
-          <ol>
-            <li>西鐵福岡（天神）下車、走天神地下街往中洲春吉方向</li><li>找 HASAMIYAKI MARKET 攤位（九州陶瓷市集、2026/7/25-31）</li><li>挑 1-2 件小碟 / 小杯、店家會用氣泡紙包好</li><li>11:25 前到、逛 15-20 分、12:00 前離開</li><li>接著走去四代目菊川 中洲春吉店、趕 12:30 訂位</li>
-          </ol>
-          
-        </div>
-      </div>
-      
-      
-      
-      <div class="sec">
-        <div class="sec-head"><span class="ico ink-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span><h5>注意事項</h5><span class="jp-mini">Warning</span></div>
-        <div class="sec-body">
-          <div class="warn-box">
-            <ul>
-              <li><strong>日期暫定、出發前查天神地下街 / 波佐見焼 官方最新公告（2026/7/25-31）</strong></li><li><strong>時間掐緊、12:00 前一定要離開、別壓到菊川 12:30</strong></li><li>只買 1-2 件小碟小杯、瓷器易碎、別提整套</li><li>全在室內地下街、不曬、媽媽阿姨也順路</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      
-      <div class="sec">
-        <div class="sec-head"><h5>預算</h5><span class="jp-mini">Budget</span></div>
-        <div class="sec-body">
-          <div class="budget-grid">
-            <div class="budget-item"><div class="lbl">每人</div><div class="val">小碟小杯 ¥500-1,500／件</div></div>
-            <div class="budget-item ink"><div class="lbl">合計</div><div class="val">看買多少、隨意</div></div>
-          </div>
-        </div>
-      </div>
-      
-      
-      
-      <div class="sec">
-        <div class="sec-head"><h5>萬一不行</h5></div>
-        <div class="sec-body"><div class="plan-b">萬一沒遇到市集或趕時間、直接走去四代目菊川、天神地下街平常也有選物店可下次再逛。</div></div>
-      </div>
-      
-    </div>
-  </div>
-</article>
-
-
-<div class="transit-bridge">
-  <div class="transit-bridge-inner">
-    <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"></circle><path d="M15 22v-5l-2-4 3-5 2 4 3 1"></path><path d="M8 14l-3 1-3-2 5-4 2-2"></path></svg></span>
-    <span class="from-to">波佐見焼 HASAMIYAKI MARKET（天神地下街 · 加分） → 四代目菊川 中洲春吉店 · 鰻魚：天神地下街 → 中洲春吉、走過去趕 12:30</span>
-    <span class="time-cost">10 分 · 步行</span>
-    <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=%E5%A4%A9%E7%A5%9E%E5%9C%B0%E4%B8%8B%E8%A1%97&destination=%E5%9B%9B%E4%BB%A3%E7%9B%AE%E8%8F%8A%E5%B7%9D%20%E4%B8%AD%E6%B4%B2%E6%98%A5%E5%90%89%E5%BA%97&travelmode=walking" target="_blank" rel="noopener">Google 導航</a>
-  </div>
-</div>
-
-
-
 <article class="spot span-2" id="d2-eel">
   <div class="spot-cover cat-food cat-with-image" onclick="toggleSpot(this)">
     
@@ -3249,7 +3180,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>太宰府搭西鐵回西鐵福岡（天神）、走到中洲春吉約 10 分（也可搭一小段地鐵）</li><li>報訂位姓名、店員帶到桌椅席（已訂 12:30）</li><li>招牌點<strong>せいろ蒸し</strong>（蒸籠鰻魚飯）、或傳統うな重蒲燒鰻</li><li>配肝吸（鰻魚肝清湯）、漬物</li><li>現蒸要等 15-20 分、坐著吹冷氣慢慢等</li><li>吃完搭計程車回八百治泡湯午休</li>
+            <li>太宰府搭西鐵回西鐵福岡（天神）、走到中洲春吉約 10 分（也可搭一小段地鐵）</li><li>報訂位姓名、店員帶到桌椅席（已訂 12:30）</li><li>招牌點<strong>せいろ蒸し</strong>（蒸籠鰻魚飯）、或傳統うな重蒲燒鰻</li><li>配肝吸（鰻魚肝清湯）、漬物</li><li>現蒸要等 15-20 分、坐著吹冷氣慢慢等</li><li>吃完全家一起走／搭一小段到天神、開始逛天神地下街</li>
           </ol>
           
         </div>
@@ -3315,7 +3246,7 @@
 <div class="transit-bridge">
   <div class="transit-bridge-inner">
     <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"></circle><path d="M15 22v-5l-2-4 3-5 2 4 3 1"></path><path d="M8 14l-3 1-3-2 5-4 2-2"></path></svg></span>
-    <span class="from-to">四代目菊川 中洲春吉店 · 鰻魚 → 午後分流 · 溫泉午休 vs 天神動漫：中洲春吉 → 八百治博多（媽媽阿姨泡湯）/ 天神（崴哥哥動漫）</span>
+    <span class="from-to">四代目菊川 中洲春吉店 · 鰻魚 → 天神地下街一起逛 · 之後自由解散：中洲春吉 → 天神（全家一起逛地下街）</span>
     <span class="time-cost">12 分 · 計程車 · 2200 m</span>
     <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=%E4%B8%AD%E6%B4%B2%E6%98%A5%E5%90%89&destination=%E5%85%AB%E7%99%BE%E6%B2%BB%E5%8D%9A%E5%A4%9A%E3%83%9B%E3%83%86%E3%83%AB&travelmode=driving" target="_blank" rel="noopener">Google 導航</a>
   </div>
@@ -3334,9 +3265,9 @@
       <span class="cat-pill shop">SHOP</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">午後分流 · 溫泉午休 vs 天神動漫</h3>
+      <h3 class="spot-name">天神地下街一起逛 · 之後自由解散</h3>
       
-      <p class="teaser">分兩路：媽媽阿姨八百治泡湯午休為主、崴哥哥天神動漫 90-120 分（PARCO アニメイト + TENJIN CHARA PARK + 大名 まんだらけ）、傍晚うま馬會合</p>
+      <p class="teaser">全家先一起逛天神地下街（冷氣涼、波佐見焼市集 7/25-31）、逛累了在天神自由解散、傍晚 17:30 うま馬會合</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
     </div>
   </div>
@@ -3346,7 +3277,7 @@
       
       <div class="sec">
         <div class="sec-head"><span class="ico matcha-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"></path><path d="M15 2v6"></path><path d="M12 22a8 8 0 0 0 8-8V6H4v8a8 8 0 0 0 8 8z"></path></svg></span><h5>為什麼值得</h5><span class="jp-mini">Why</span></div>
-        <div class="sec-body"><p>抵達後的第二天下午留白最舒服。兩位媽媽 58 歲、上午太宰府走一圈加暑氣、回八百治泡天然溫泉大浴場（12:00-24:00）睡個午覺最能恢復、這段以泡湯午休為主、不必特地排她們去百貨久站。崴和哥哥趁這段到天神逛一般動漫、90-120 分就掃得完：福岡 PARCO 的 アニメイト、同館的 TENJIN CHARA PARK（吉伊卡哇 ちいかわ / miffy 等一般向角色）、再走到大名的 まんだらけ（中古動漫 / 模型 / 同人）挖寶、都在同一區走路可達。媽媽阿姨若真的想逛、才加上午順路的波佐見焼市集、或單一百貨 B1（約 30 分、慢逛不久站）。傍晚各自到うま馬 祇園本店會合。</p></div>
+        <div class="sec-body"><p>天神地下街是條約 600 公尺的地下拱廊、19 世紀歐洲風的天花板與石柱、兩側 150 間店、整段有冷氣、下雨大太陽都不怕、是盛夏午後最舒服的散步場。這幾天（7/25-31）正好有九州波佐見焼陶瓷市集、喜歡碗盤的可以慢慢挑。全家一起逛一段之後不必勉強綁在一起：媽媽阿姨累了就回八百治泡天然溫泉大浴場睡個午覺（上午太宰府走一圈加暑氣、泡湯最能恢復）、還有體力想再逛的就留在天神；崴和哥哥趁這段到福岡 PARCO（各作品周邊都在）和大名一帶走走、看點喜歡的。傍晚各自到うま馬 祇園本店會合。</p></div>
       </div>
       
       
@@ -3355,7 +3286,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>媽媽阿姨：計程車或走回八百治、泡天然溫泉大浴場、房間午睡到傍晚（以休息為主）</li><li>崴和哥哥：福岡 PARCO アニメイト + 同館 TENJIN CHARA PARK（吉伊卡哇 / miffy 等一般向）看周邊</li><li>再走到大名 まんだらけ（中古動漫 / 模型 / 同人）挖寶、整段 90-120 分</li><li>媽媽阿姨真的想逛才加：上午順路的波佐見焼市集、或單一百貨 B1 約 30 分</li><li>傍晚 17:30 前各自到うま馬 祇園本店會合吃拉麵</li>
+            <li>全家從鰻魚店走／搭一小段到天神、一起逛天神地下街（冷氣涼、波佐見焼市集在這幾天）</li><li>逛到大家累了、在天神自由解散、不必硬綁在一起</li><li>想休息的：搭地鐵回八百治泡溫泉、房間午睡到傍晚</li><li>還想走的：留天神咖啡店或百貨 B1 慢慢逛</li><li>崴和哥哥：福岡 PARCO（各作品周邊）+ 大名一帶走走、挑點喜歡的</li><li>傍晚 17:30 各自到うま馬 祇園本店會合吃拉麵</li>
           </ol>
           
         </div>
@@ -3368,7 +3299,7 @@
         <div class="sec-body">
           <div class="warn-box">
             <ul>
-              <li><strong>福岡 PARCO（アニメイト + TENJIN CHARA PARK）、大名 まんだらけ 都在天神、營業約 10:00-20:00、出發前掃一眼官網</strong></li><li>天神下午人多、動漫控制在 90-120 分、17:30 うま馬會合別遲</li><li><strong>媽媽阿姨以泡湯午休為主、別排她們去百貨久站</strong>、想逛最多加波佐見焼或單一 B1 約 30 分</li><li>動漫店多為一般向、現金 / 信用卡都通</li>
+              <li><strong>天神地下街全室內有冷氣、波佐見焼市集 7/25-31、出發前掃一眼還在不在</strong></li><li><strong>解散是自由選、不是硬分兩路</strong>——媽媽阿姨想一起逛就一起、累了再回飯店都行</li><li>天神下午人多、17:30 うま馬會合別遲</li><li>福岡 PARCO、大名店家多營業 10:00-20:00、收現金 / 信用卡</li>
             </ul>
           </div>
         </div>
@@ -3385,7 +3316,7 @@
 <div class="transit-bridge">
   <div class="transit-bridge-inner">
     <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"></circle><path d="M15 22v-5l-2-4 3-5 2 4 3 1"></path><path d="M8 14l-3 1-3-2 5-4 2-2"></path></svg></span>
-    <span class="from-to">午後分流 · 溫泉午休 vs 天神動漫 → 博多うま馬 祇園本店 · 拉麵（會合）：天神 / 八百治 → 祇園站 うま馬 會合</span>
+    <span class="from-to">天神地下街一起逛 · 之後自由解散 → 博多うま馬 祇園本店 · 拉麵（會合）：天神 / 八百治 → 祇園站 うま馬 會合</span>
     <span class="time-cost">15 分 · 地鐵 / 計程車</span>
     <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=%E5%A4%A9%E7%A5%9E&destination=%E5%8D%9A%E5%A4%9A%E3%81%86%E3%81%BE%E9%A6%AC%E7%A5%87%E5%9C%92%E6%9C%AC%E5%BA%97&travelmode=transit" target="_blank" rel="noopener">Google 導航</a>
   </div>
@@ -3541,7 +3472,7 @@
       
       <li>護照（每人帶自己的、Day 1 機場 + Day 3 租車要看）</li>
       
-      <li>SUGOCA IC 卡（Day 1 買好後每天用）</li>
+      <li>Visa 感應卡（地鐵 / 西鐵電車 / JR 直接刷、進出同一張）</li>
       
       <li>水壺 / 鹽糖（7 月 31°C 80% 濕度、媽媽阿姨易中暑）</li>
       
@@ -3602,99 +3533,99 @@
 </section>
 
 
-<!-- 時間軸 -->
+<!-- 時間軸（直式垂直：圓點 + 時間往下延伸） -->
 <section class="timeline-wrap">
   <div class="timeline-head"><h3>今日時間軸</h3><span class="en">Today · 15 站</span></div>
   <div class="timeline">
     
-    <a class="t-item" href="#d3-1">
-      <div class="t-time">08:00</div>
-      <div class="t-name">起床 · たんや / コメダ 早餐</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d3-1">
+      <span class="t-dot"></span>
+      <span class="t-time">08:00</span>
+      <span class="t-name">早餐 · 博多站 たんや（牛舌早定食）</span>
     </a>
     
-    <a class="t-item" href="#d3-2">
-      <div class="t-time">08:30</div>
-      <div class="t-name">Nippon Rent-A-Car 博多口營業所 取車</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d3-2">
+      <span class="t-dot"></span>
+      <span class="t-time">08:30</span>
+      <span class="t-name">Nippon Rent-A-Car 博多口營業所 取車<span class="t-dur">30 分</span></span>
     </a>
     
-    <a class="t-item" href="#d3-3">
-      <div class="t-time">09:00</div>
-      <div class="t-name">自駕出發</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d3-3">
+      <span class="t-dot"></span>
+      <span class="t-time">09:00</span>
+      <span class="t-name">自駕出發<span class="t-dur">前原道路 30 分</span></span>
     </a>
     
-    <a class="t-item" href="#d3-6">
-      <div class="t-time">09:45</div>
-      <div class="t-name">ヤシの木ブランコ 椰子鞦韆 · 速停</div>
-      <div class="t-cat">NATURE</div>
+    <a class="t-item cat-nature" href="#d3-6">
+      <span class="t-dot"></span>
+      <span class="t-time">09:45</span>
+      <span class="t-name">ヤシの木ブランコ 椰子鞦韆 · 速停<span class="t-dur">20 分</span></span>
     </a>
     
-    <a class="t-item" href="#d3-4">
-      <div class="t-time">10:15</div>
-      <div class="t-name">夫婦岩 · 白鳥居（櫻井二見浦）</div>
-      <div class="t-cat">NATURE</div>
+    <a class="t-item cat-nature" href="#d3-4">
+      <span class="t-dot"></span>
+      <span class="t-time">10:15</span>
+      <span class="t-name">夫婦岩 · 白鳥居（櫻井二見浦）<span class="t-dur">30 分</span></span>
     </a>
     
-    <a class="t-item" href="#d3-5">
-      <div class="t-time">11:00</div>
-      <div class="t-name">Sunset Cafe Lentokone</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d3-5">
+      <span class="t-dot"></span>
+      <span class="t-time">11:00</span>
+      <span class="t-name">Sunset Cafe Lentokone<span class="t-dur">60 分</span></span>
     </a>
     
-    <a class="t-item" href="#d3-8">
-      <div class="t-time">12:30</div>
-      <div class="t-name">糸島海鮮堂 A 蒼海（soukai）包廂</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d3-8">
+      <span class="t-dot"></span>
+      <span class="t-time">12:30</span>
+      <span class="t-name">糸島海鮮堂 A 蒼海（soukai）包廂<span class="t-dur">80 分（12:30-13:50 已訂固定）</span></span>
     </a>
     
-    <a class="t-item" href="#d3-7">
-      <div class="t-time">14:00</div>
-      <div class="t-name">芥屋大門遊覽船（午餐後看體力 / 選配）</div>
-      <div class="t-cat">NATURE</div>
+    <a class="t-item cat-nature" href="#d3-7">
+      <span class="t-dot"></span>
+      <span class="t-time">14:00</span>
+      <span class="t-name">芥屋大門遊覽船（午餐後看體力 / 選配）<span class="t-dur">30 分</span></span>
     </a>
     
-    <a class="t-item" href="#d3-9">
-      <div class="t-time">15:00</div>
-      <div class="t-name">花鹽布丁 · 伊都 King 草莓冰沙</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d3-9">
+      <span class="t-dot"></span>
+      <span class="t-time">15:00</span>
+      <span class="t-name">花鹽布丁 · 伊都 King 草莓冰沙<span class="t-dur">30 分</span></span>
     </a>
     
-    <a class="t-item" href="#d3-10">
-      <div class="t-time">15:40</div>
-      <div class="t-name">LONDON BUS CAFE（選配）</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d3-10">
+      <span class="t-dot"></span>
+      <span class="t-time">15:40</span>
+      <span class="t-name">LONDON BUS CAFE（選配）<span class="t-dur">30 分</span></span>
     </a>
     
-    <a class="t-item" href="#d3-11">
-      <div class="t-time">16:00</div>
-      <div class="t-name">開車回博多</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d3-11">
+      <span class="t-dot"></span>
+      <span class="t-time">16:00</span>
+      <span class="t-name">開車回博多<span class="t-dur">1h</span></span>
     </a>
     
-    <a class="t-item" href="#d3-12">
-      <div class="t-time">16:30</div>
-      <div class="t-name">還車 · 八百治泡湯休息</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d3-12">
+      <span class="t-dot"></span>
+      <span class="t-time">16:30</span>
+      <span class="t-name">還車 · 八百治泡湯休息<span class="t-dur">還車 16:30-17:00</span></span>
     </a>
     
-    <a class="t-item" href="#d3-canal">
-      <div class="t-time">17:00</div>
-      <div class="t-name">キャナルシティ博多（選配 / 雨備）</div>
-      <div class="t-cat">SHOP</div>
+    <a class="t-item cat-shop" href="#d3-canal">
+      <span class="t-dot"></span>
+      <span class="t-time">17:00</span>
+      <span class="t-name">キャナルシティ博多（選配 / 雨備）<span class="t-dur">選配 · 雨備</span></span>
     </a>
     
-    <a class="t-item" href="#d3-13">
-      <div class="t-time">19:00</div>
-      <div class="t-name">因幡うどん 博多1番街 · 博多烏龍麵</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d3-13">
+      <span class="t-dot"></span>
+      <span class="t-time">19:00</span>
+      <span class="t-name">因幡うどん 博多1番街 · 博多烏龍麵<span class="t-dur">1h</span></span>
     </a>
     
-    <a class="t-item" href="#d3-14">
-      <div class="t-time">21:30</div>
-      <div class="t-name">回飯店就寢</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d3-14">
+      <span class="t-dot"></span>
+      <span class="t-time">21:30</span>
+      <span class="t-name">回飯店就寢</span>
     </a>
     
   </div>
@@ -3715,9 +3646,9 @@
       <span class="cat-pill food">FOOD</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">起床 · たんや / コメダ 早餐</h3>
+      <h3 class="spot-name">早餐 · 博多站 たんや（牛舌早定食）</h3>
       
-      <p class="teaser">八百治不含早、博多站 たんや / コメダ珈琲 早餐、取車前吃完</p>
+      <p class="teaser">博多站 たんや 牛舌早定食（或コメダ）、取車前吃完（八百治不含早）</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
     </div>
   </div>
@@ -3744,7 +3675,7 @@
 <div class="transit-bridge">
   <div class="transit-bridge-inner">
     <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"></circle><path d="M15 22v-5l-2-4 3-5 2 4 3 1"></path><path d="M8 14l-3 1-3-2 5-4 2-2"></path></svg></span>
-    <span class="from-to">起床 · たんや / コメダ 早餐 → 夫婦岩 · 白鳥居（櫻井二見浦）：博多取車 → 糸島夫婦岩約 35 分</span>
+    <span class="from-to">早餐 · 博多站 たんや（牛舌早定食） → 夫婦岩 · 白鳥居（櫻井二見浦）：博多取車 → 糸島夫婦岩約 35 分</span>
     <span class="time-cost">35 分 · 自駕 · 28000 m</span>
     <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=%E8%B5%B7%E5%BA%8A%20%C2%B7%20%E5%8D%9A%E5%A4%9A%E7%AB%99%E8%B6%85%E5%95%86%E6%97%A9%E9%A4%90%20%E7%A6%8F%E5%B2%A1&destination=%E5%A4%AB%E5%A9%A6%E5%B2%A9%20%C2%B7%20%E7%99%BD%E9%B3%A5%E5%B1%85%EF%BC%88%E6%AB%BB%E4%BA%95%E4%BA%8C%E8%A6%8B%E6%B5%A6%EF%BC%89%20%E7%A6%8F%E5%B2%A1&travelmode=driving" target="_blank" rel="noopener">Google 導航</a>
   </div>
@@ -4709,7 +4640,7 @@
       
       <li>護照（每人帶自己的、Day 1 機場 + Day 3 租車要看）</li>
       
-      <li>SUGOCA IC 卡（Day 1 買好後每天用）</li>
+      <li>Visa 感應卡（地鐵 / 西鐵電車 / JR 直接刷、進出同一張）</li>
       
       <li>水壺 / 鹽糖（7 月 31°C 80% 濕度、媽媽阿姨易中暑）</li>
       
@@ -4762,75 +4693,75 @@
 </section>
 
 
-<!-- 時間軸 -->
+<!-- 時間軸（直式垂直：圓點 + 時間往下延伸） -->
 <section class="timeline-wrap">
   <div class="timeline-head"><h3>今日時間軸</h3><span class="en">Today · 11 站</span></div>
   <div class="timeline">
     
-    <a class="t-item" href="#d4-1">
-      <div class="t-time">07:30</div>
-      <div class="t-name">起床</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d4-1">
+      <span class="t-dot"></span>
+      <span class="t-time">08:00</span>
+      <span class="t-name">起床</span>
     </a>
     
-    <a class="t-item" href="#d4-2">
-      <div class="t-time">08:00</div>
-      <div class="t-name">八百治輕食早餐</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d4-2">
+      <span class="t-dot"></span>
+      <span class="t-time">08:20</span>
+      <span class="t-name">早餐 · 博多站輕食 / くうてん</span>
     </a>
     
-    <a class="t-item" href="#d4-3">
-      <div class="t-time">08:23</div>
-      <div class="t-name">博多 → 門司港（さくら 742 + JR）</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d4-3">
+      <span class="t-dot"></span>
+      <span class="t-time">09:00</span>
+      <span class="t-name">博多 → 門司港（さくら + JR）<span class="t-dur">約 40 分</span></span>
     </a>
     
-    <a class="t-item" href="#d4-6">
-      <div class="t-time">09:15</div>
-      <div class="t-name">関門海峽ミュージアム（博物館）</div>
-      <div class="t-cat">CULTURE</div>
+    <a class="t-item cat-culture" href="#d4-6">
+      <span class="t-dot"></span>
+      <span class="t-time">09:50</span>
+      <span class="t-name">関門海峽ミュージアム（博物館）<span class="t-dur">90 分</span></span>
     </a>
     
-    <a class="t-item" href="#d4-5">
-      <div class="t-time">11:00</div>
-      <div class="t-name">BEAR FRUITS 燒咖哩（開店即吃）</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d4-5">
+      <span class="t-dot"></span>
+      <span class="t-time">11:00</span>
+      <span class="t-name">BEAR FRUITS 燒咖哩（開店即吃）<span class="t-dur">60 分</span></span>
     </a>
     
-    <a class="t-item" href="#d4-7">
-      <div class="t-time">12:15</div>
-      <div class="t-name">門司港レトロ展望室 31F</div>
-      <div class="t-cat">VIEW</div>
+    <a class="t-item cat-view" href="#d4-7">
+      <span class="t-dot"></span>
+      <span class="t-time">12:15</span>
+      <span class="t-name">門司港レトロ展望室 31F<span class="t-dur">60 分</span></span>
     </a>
     
-    <a class="t-item" href="#d4-return">
-      <div class="t-time">13:23</div>
-      <div class="t-name">門司港 → 博多（のぞみ）</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d4-return">
+      <span class="t-dot"></span>
+      <span class="t-time">13:23</span>
+      <span class="t-name">門司港 → 博多（のぞみ）<span class="t-dur">約 45 分</span></span>
     </a>
     
-    <a class="t-item" href="#d4-rest">
-      <div class="t-time">14:20</div>
-      <div class="t-name">回八百治稍歇</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d4-rest">
+      <span class="t-dot"></span>
+      <span class="t-time">14:20</span>
+      <span class="t-name">回八百治稍歇</span>
     </a>
     
-    <a class="t-item" href="#d4-niku">
-      <div class="t-time">16:00</div>
-      <div class="t-name">にく屋肉いち 博多店 · A5 和牛（已訂 16:00）</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d4-niku">
+      <span class="t-dot"></span>
+      <span class="t-time">16:00</span>
+      <span class="t-name">にく屋肉いち 博多店 · A5 和牛（已訂 16:00）<span class="t-dur">2h</span></span>
     </a>
     
-    <a class="t-item" href="#d4-gundam">
-      <div class="t-time">19:00</div>
-      <div class="t-name">傍晚 opt-in · AMU 8F 或 ガンダムパーク（二擇一）</div>
-      <div class="t-cat">NIGHT</div>
+    <a class="t-item cat-night" href="#d4-gundam">
+      <span class="t-dot"></span>
+      <span class="t-time">19:00</span>
+      <span class="t-name">傍晚 opt-in · AMU 8F 或 ガンダムパーク（二擇一）<span class="t-dur">40-60 分（opt-in）</span></span>
     </a>
     
-    <a class="t-item" href="#d4-sleep">
-      <div class="t-time">21:00</div>
-      <div class="t-name">回八百治 · 泡湯休息</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d4-sleep">
+      <span class="t-dot"></span>
+      <span class="t-time">21:00</span>
+      <span class="t-name">回八百治 · 泡湯休息</span>
     </a>
     
   </div>
@@ -4849,14 +4780,14 @@
     <div class="cover-top">
       <span class="time-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        08:00
+        08:20
       </span>
       <span class="cat-pill food">FOOD</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">八百治輕食早餐</h3>
+      <h3 class="spot-name">早餐 · 博多站輕食 / くうてん</h3>
       
-      <p class="teaser">八百治不含早、輕食就好、今天午燒咖哩晚肉一都是重餐</p>
+      <p class="teaser">博多站 くうてん / 站內咖啡輕食、今天午燒咖哩晚肉一都是重餐、早餐吃輕點</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
     </div>
   </div>
@@ -4888,14 +4819,14 @@
     <div class="cover-top">
       <span class="time-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        08:23
+        09:00
       </span>
       <span class="cat-pill transport">TRANSPORT</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">博多 → 門司港（さくら 742 + JR）</h3>
+      <h3 class="spot-name">博多 → 門司港（さくら + JR）</h3>
       
-      <p class="teaser">博多 08:23 搭さくら 742 到小倉、轉 JR 鹿兒島本線、09:03 抵門司港</p>
+      <p class="teaser">博多 09:00 搭さくら到小倉（約 17 分）、轉 JR 鹿兒島本線到門司港（約 15 分）、約 09:40 抵達。博多⇄門司港可直接刷 Visa 感應。</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
     </div>
   </div>
@@ -4935,7 +4866,7 @@
     <div class="cover-top">
       <span class="time-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        09:15
+        09:50
       </span>
       <span class="cat-pill culture">CULTURE</span>
     </div>
@@ -5509,7 +5440,7 @@
       
       <li>護照（每人帶自己的、Day 1 機場 + Day 3 租車要看）</li>
       
-      <li>SUGOCA IC 卡（Day 1 買好後每天用）</li>
+      <li>Visa 感應卡（地鐵 / 西鐵電車 / JR 直接刷、進出同一張）</li>
       
       <li>水壺 / 鹽糖（7 月 31°C 80% 濕度、媽媽阿姨易中暑）</li>
       
@@ -5556,81 +5487,81 @@
 </section>
 
 
-<!-- 時間軸 -->
+<!-- 時間軸（直式垂直：圓點 + 時間往下延伸） -->
 <section class="timeline-wrap">
   <div class="timeline-head"><h3>今日時間軸</h3><span class="en">Today · 12 站</span></div>
   <div class="timeline">
     
-    <a class="t-item" href="#d5-1">
-      <div class="t-time">08:30</div>
-      <div class="t-name">起床（睡飽）</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d5-1">
+      <span class="t-dot"></span>
+      <span class="t-time">08:30</span>
+      <span class="t-name">起床（睡飽）</span>
     </a>
     
-    <a class="t-item" href="#d5-2">
-      <div class="t-time">09:00</div>
-      <div class="t-name">早餐 · Blue Bottle 天神 / &LOCALS 大濠</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d5-2">
+      <span class="t-dot"></span>
+      <span class="t-time">09:00</span>
+      <span class="t-name">早餐 · Blue Bottle 天神 / &LOCALS 大濠</span>
     </a>
     
-    <a class="t-item" href="#d5-3">
-      <div class="t-time">10:15</div>
-      <div class="t-name">地鐵 → 大濠公園站</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d5-3">
+      <span class="t-dot"></span>
+      <span class="t-time">10:15</span>
+      <span class="t-name">地鐵 → 大濠公園站<span class="t-dur">13 分 5 站</span></span>
     </a>
     
-    <a class="t-item" href="#d5-ohori">
-      <div class="t-time">10:30</div>
-      <div class="t-name">大濠公園 · 日本庭園</div>
-      <div class="t-cat">NATURE</div>
+    <a class="t-item cat-nature" href="#d5-ohori">
+      <span class="t-dot"></span>
+      <span class="t-time">10:30</span>
+      <span class="t-name">大濠公園 · 日本庭園<span class="t-dur">1h</span></span>
     </a>
     
-    <a class="t-item" href="#d5-terrace">
-      <div class="t-time">11:45</div>
-      <div class="t-name">大濠 Terrace & LOCALS（テラス）八女茶</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d5-terrace">
+      <span class="t-dot"></span>
+      <span class="t-time">11:45</span>
+      <span class="t-name">大濠 Terrace & LOCALS（テラス）八女茶<span class="t-dur">1h</span></span>
     </a>
     
-    <a class="t-item" href="#d5-6">
-      <div class="t-time">13:00</div>
-      <div class="t-name">地鐵 大濠 → 藥院 / 天神南</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d5-6">
+      <span class="t-dot"></span>
+      <span class="t-time">13:00</span>
+      <span class="t-name">地鐵 大濠 → 藥院 / 天神南<span class="t-dur">12 分</span></span>
     </a>
     
-    <a class="t-item" href="#d5-fishman">
-      <div class="t-time">13:15</div>
-      <div class="t-name">魚男 Fishman · 海鮮定食</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d5-fishman">
+      <span class="t-dot"></span>
+      <span class="t-time">13:15</span>
+      <span class="t-name">魚男 Fishman · 海鮮定食<span class="t-dur">1h</span></span>
     </a>
     
-    <a class="t-item" href="#d5-back">
-      <div class="t-time">14:00</div>
-      <div class="t-name">回八百治</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d5-back">
+      <span class="t-dot"></span>
+      <span class="t-time">14:00</span>
+      <span class="t-name">回八百治<span class="t-dur">12 分</span></span>
     </a>
     
-    <a class="t-item" href="#d5-shop">
-      <div class="t-time">15:30</div>
-      <div class="t-name">兵分兩路 · 溫泉與採買</div>
-      <div class="t-cat">SHOP</div>
+    <a class="t-item cat-shop" href="#d5-shop">
+      <span class="t-dot"></span>
+      <span class="t-time">15:30</span>
+      <span class="t-name">採買收尾 · 溫泉與逛街自由選<span class="t-dur">150 分</span></span>
     </a>
     
-    <a class="t-item" href="#d5-meet">
-      <div class="t-time">18:00</div>
-      <div class="t-name">KITTE 博多會合</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d5-meet">
+      <span class="t-dot"></span>
+      <span class="t-time">18:00</span>
+      <span class="t-name">KITTE 博多會合</span>
     </a>
     
-    <a class="t-item" href="#d5-ooyama">
-      <div class="t-time">18:30</div>
-      <div class="t-name">博多もつ鍋 おおやま KITTE 博多店 9F（已訂）</div>
-      <div class="t-cat">FOOD</div>
+    <a class="t-item cat-food" href="#d5-ooyama">
+      <span class="t-dot"></span>
+      <span class="t-time">18:30</span>
+      <span class="t-name">博多もつ鍋 おおやま KITTE 博多店 9F（已訂）<span class="t-dur">90 分</span></span>
     </a>
     
-    <a class="t-item" href="#d5-pack">
-      <div class="t-time">22:30</div>
-      <div class="t-name">回八百治打包 · 早睡</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d5-pack">
+      <span class="t-dot"></span>
+      <span class="t-time">22:30</span>
+      <span class="t-name">回八百治打包 · 早睡</span>
     </a>
     
   </div>
@@ -5952,7 +5883,7 @@
         <div class="sec-body">
           <div class="warn-box">
             <ul>
-              <li><strong>招牌海鮮定食 ¥2,178、walk-in 現場候位、不強求訂位</strong></li><li><strong>排太長就改博多站備案、不硬等</strong></li><li><strong>不點和牛しゃぶ套餐、鶏白レバー小菜不吃可換</strong></li><li>假日中午高峰可能等、平日較快</li><li>店內冷氣足、桌椅座位不用盤腿</li><li>廁所在店內、無障礙廁所有</li>
+              <li><strong>招牌海鮮定食 ¥2,178、walk-in 現場候位、不強求訂位</strong></li><li><strong>排太長就換附近備選（なるみ乃薬院 / 大濠ふれあい食堂 / 橋本鮮魚店）、不硬等</strong></li><li><strong>不點和牛しゃぶ套餐、鶏白レバー小菜不吃可換</strong></li><li>假日中午高峰可能等、平日較快</li><li>店內冷氣足、桌椅座位不用盤腿</li><li>廁所在店內、無障礙廁所有</li>
             </ul>
           </div>
         </div>
@@ -5973,7 +5904,7 @@
       
       <div class="sec">
         <div class="sec-head"><h5>萬一不行</h5></div>
-        <div class="sec-body"><div class="plan-b">排太長就回博多站吃（ShinShin / 魚男無位改博多站海鮮定食 / やよい軒）、不硬等。</div></div>
+        <div class="sec-body"><div class="plan-b">排太長或客滿不硬等、就近換：<strong>なるみ乃 薬院店</strong>（同在藥院、活魚定食、有個室可久坐、可訂位 092-739-0777）、<strong>大濠ふれあい食堂</strong>（大濠公園旁、定食海鮮丼、走出來就到）、<strong>橋本鮮魚店</strong>（大濠附近鮮魚店直營、刺身定食清淡）；真的都滿再回博多站吃海鮮定食。</div></div>
       </div>
       
     </div>
@@ -6037,9 +5968,9 @@
       <span class="cat-pill shop">SHOP</span>
     </div>
     <div class="cover-bottom">
-      <h3 class="spot-name">兵分兩路 · 溫泉與採買</h3>
+      <h3 class="spot-name">採買收尾 · 溫泉與逛街自由選</h3>
       
-      <p class="teaser">兵分兩路：媽媽阿姨泡溫泉、崴哥哥兄弟採買線 マルイ → AMU 8F（Nintendo + MARUZEN）→ マイング / 阪急 B1 → Full Full → 18:20 KITTE 會合</p>
+      <p class="teaser">採買收尾（自由選、非硬分兩路）：想休息就回八百治泡湯、想逛就一起走 マルイ → AMU 8F → マイング / 阪急 B1 → 18:20 KITTE 會合</p>
       <span class="expand-hint"><span class="txt"><span class="txt-full">展開指南</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
     </div>
   </div>
@@ -6070,7 +6001,7 @@
         <div class="sec-body">
           
           <ol>
-            <li>媽媽阿姨：留八百治泡溫泉大浴場休息（想逛最多加阪急 B1 約 30 分）</li><li>崴哥哥兄弟採買線：15:30 Yaoji 出發</li><li>15:45-16:20 博多マルイ（<strong>Nintendo 無、是動漫快閃 ミルキー☆サブウェイ 7F / 薬屋周邊 3F 順看</strong>）</li><li>16:30-17:10 AMU 8F（<strong>Nintendo FUKUOKA 2025.11 新開 + MARUZEN 60 萬冊書漫 + 扭蛋</strong>）</li><li>17:15-17:50 マイング或阪急 B1「うまちか！」把明太子、通りもん、めんべい、八女茶一次買完</li><li>順路到 Full Full Hakata（祇園町、地鐵祇園站 2 分）取明太子法國 4 條（本週先電話預約）、順便買好 Day 6 一早的早餐</li><li>18:20 回 KITTE 博多會合、18:30 上 9F おおやま牛腸鍋</li>
+            <li>自由選：想休息的回八百治泡溫泉大浴場、想逛的一起走博多站（都在冷氣通道、隨時可回飯店）</li><li>採買線：15:30 出發</li><li>15:45-16:20 博多マルイ（動漫快閃 ミルキー☆サブウェイ 7F / 薬屋周邊 3F 順看）</li><li>16:30-17:10 AMU 8F（Nintendo FUKUOKA 2025.11 新開 + MARUZEN 60 萬冊書漫 + 扭蛋）</li><li>17:15-17:50 マイング或阪急 B1「うまちか！」把明太子、通りもん、めんべい、八女茶一次買完</li><li>順路到 Full Full Hakata（祇園站 2 分）取明太子法國、順便買好 Day6 一早的早餐</li><li>18:20 回 KITTE 博多會合、18:30 上 9F おおやま牛腸鍋</li>
           </ol>
           
         </div>
@@ -6083,7 +6014,7 @@
         <div class="sec-body">
           <div class="warn-box">
             <ul>
-              <li><strong>原則：動漫優先就走 マルイ + AMU、伴手禮要快就 マイング；媽媽阿姨泡湯、想逛最多加阪急 B1 約 30 分</strong></li><li><strong>博多マルイ 沒有 Nintendo、Nintendo FUKUOKA 在 AMU 8F（博多站直結、2025.11 新開）</strong></li><li>博多阪急 10:00-20:00、無休；明太子需冷藏、夏季打包冰袋（百貨可加購）</li><li><strong>夏季回國前不買會融化的生巧克力 / 生菓子</strong></li><li>退稅滿 ¥5,000 在 1F 中央退稅櫃台、護照 + 登機證</li><li>信用卡 / IC 卡都通</li>
+              <li><strong>自由選：媽媽阿姨想休息就回八百治泡湯、想一起逛也 OK、不強制分兩路</strong></li><li><strong>博多マルイ 沒有 Nintendo、Nintendo FUKUOKA 在 AMU 8F（博多站直結、2025.11 新開）</strong></li><li>博多阪急 10:00-20:00、無休；明太子需冷藏、夏季打包冰袋（百貨可加購）</li><li><strong>夏季回國前不買會融化的生巧克力 / 生菓子</strong></li><li>退稅滿 ¥5,000 在 1F 中央退稅櫃台、護照 + 登機證</li><li>信用卡 / IC 卡都通</li>
             </ul>
           </div>
         </div>
@@ -6115,7 +6046,7 @@
 <div class="transit-bridge">
   <div class="transit-bridge-inner">
     <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"></circle><path d="M15 22v-5l-2-4 3-5 2 4 3 1"></path><path d="M8 14l-3 1-3-2 5-4 2-2"></path></svg></span>
-    <span class="from-to">兵分兩路 · 溫泉與採買 → おおやま KITTE 博多店 9F：KITTE 博多館內 9F</span>
+    <span class="from-to">採買收尾 · 溫泉與逛街自由選 → おおやま KITTE 博多店 9F：KITTE 博多館內 9F</span>
     <span class="time-cost">3 分 · 步行 · 200 m</span>
     <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=%E5%8D%9A%E5%A4%9A%E9%98%AA%E6%80%A5&destination=%E3%81%8A%E3%81%8A%E3%82%84%E3%81%BE%20KITTE%E5%8D%9A%E5%A4%9A&travelmode=walking" target="_blank" rel="noopener">Google 導航</a>
   </div>
@@ -6324,7 +6255,7 @@
       
       <li>護照（每人帶自己的、Day 1 機場 + Day 3 租車要看）</li>
       
-      <li>SUGOCA IC 卡（Day 1 買好後每天用）</li>
+      <li>Visa 感應卡（地鐵 / 西鐵電車 / JR 直接刷、進出同一張）</li>
       
       <li>水壺 / 鹽糖（7 月 31°C 80% 濕度、媽媽阿姨易中暑）</li>
       
@@ -6371,57 +6302,57 @@
 </section>
 
 
-<!-- 時間軸 -->
+<!-- 時間軸（直式垂直：圓點 + 時間往下延伸） -->
 <section class="timeline-wrap">
   <div class="timeline-head"><h3>今日時間軸</h3><span class="en">Today · 8 站</span></div>
   <div class="timeline">
     
-    <a class="t-item" href="#d6-1">
-      <div class="t-time">06:30</div>
-      <div class="t-name">起床 · 最後打包</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d6-1">
+      <span class="t-dot"></span>
+      <span class="t-time">06:30</span>
+      <span class="t-name">起床 · 最後打包</span>
     </a>
     
-    <a class="t-item" href="#d6-2">
-      <div class="t-time">07:00</div>
-      <div class="t-name">八百治退房</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d6-2">
+      <span class="t-dot"></span>
+      <span class="t-time">07:00</span>
+      <span class="t-name">八百治退房<span class="t-dur">15 分</span></span>
     </a>
     
-    <a class="t-item" href="#d6-taxi">
-      <div class="t-time">07:15</div>
-      <div class="t-name">兩台計程車直達國際線航廈</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d6-taxi">
+      <span class="t-dot"></span>
+      <span class="t-time">07:15</span>
+      <span class="t-name">兩台計程車直達國際線航廈<span class="t-dur">約 20 分</span></span>
     </a>
     
-    <a class="t-item" href="#d6-5">
-      <div class="t-time">08:00</div>
-      <div class="t-name">國際線航廈 · 伴手禮最後補貨</div>
-      <div class="t-cat">SHOP</div>
+    <a class="t-item cat-shop" href="#d6-5">
+      <span class="t-dot"></span>
+      <span class="t-time">08:00</span>
+      <span class="t-name">國際線航廈 · 伴手禮最後補貨<span class="t-dur">30 分</span></span>
     </a>
     
-    <a class="t-item" href="#d6-6">
-      <div class="t-time">08:30</div>
-      <div class="t-name">Check-in + 安檢 + 出境審查</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d6-6">
+      <span class="t-dot"></span>
+      <span class="t-time">08:30</span>
+      <span class="t-name">Check-in + 安檢 + 出境審查<span class="t-dur">90 分</span></span>
     </a>
     
-    <a class="t-item" href="#d6-7">
-      <div class="t-time">10:00</div>
-      <div class="t-name">候機</div>
-      <div class="t-cat">REST</div>
+    <a class="t-item cat-rest" href="#d6-7">
+      <span class="t-dot"></span>
+      <span class="t-time">10:00</span>
+      <span class="t-name">候機<span class="t-dur">60 分</span></span>
     </a>
     
-    <a class="t-item" href="#d6-8">
-      <div class="t-time">11:00</div>
-      <div class="t-name">華航 CI0111 起飛</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d6-8">
+      <span class="t-dot"></span>
+      <span class="t-time">11:00</span>
+      <span class="t-name">華航 CI0111 起飛<span class="t-dur">飛行 2.5h</span></span>
     </a>
     
-    <a class="t-item" href="#d6-9">
-      <div class="t-time">12:30</div>
-      <div class="t-name">抵達桃園 T2</div>
-      <div class="t-cat">TRANSPORT</div>
+    <a class="t-item cat-transport" href="#d6-9">
+      <span class="t-dot"></span>
+      <span class="t-time">12:30</span>
+      <span class="t-name">抵達桃園 T2</span>
     </a>
     
   </div>
@@ -6825,126 +6756,157 @@
   <h2>餐廳清單</h2>
   <span class="jp">RESTAURANTS</span>
 
+  <p style="margin-top: 0.5rem; color: var(--ink-soft);">已訂位的四餐準時到；其餘非訂位的都附「附近 / 同類型備選」、排太長或客滿直接換、不硬等。</p>
   <div class="tab-grid cols-3">
     <div class="tab-card" style="grid-column: 1 / -1;">
-      <table class="menu-table">
-        <thead><tr><th>餐</th><th>店</th><th>特色</th><th>預約</th><th>¥/人</th></tr></thead>
-        <tbody>
-          
-          <tr>
-            <td>Day 1 晚</td>
-            <td><strong>天神屋台 小金ちゃん</strong></td>
-            <td>燒拉麵（媽媽阿姨可回八百治泡湯）</td>
-            <td>不需、排隊</td>
-            <td class="price">¥2,500</td>
-          </tr>
-          
-          <tr>
-            <td>Day 2 早</td>
-            <td><strong>八百治附近 / 博多站咖啡</strong></td>
-            <td>咖啡 + 輕食</td>
-            <td>不需</td>
-            <td class="price">¥500</td>
-          </tr>
-          
-          <tr>
-            <td>Day 2 午</td>
-            <td><strong>四代目菊川 中洲春吉店</strong></td>
-            <td>せいろ蒸し 鰻魚（已訂 12:30）</td>
-            <td>已訂桌椅席</td>
-            <td class="price">¥4,200</td>
-          </tr>
-          
-          <tr>
-            <td>Day 2 晚</td>
-            <td><strong>博多うま馬 祇園本店</strong></td>
-            <td>博多拉麵 + 餃子</td>
-            <td>不需、¥850</td>
-            <td class="price">¥1,200</td>
-          </tr>
-          
-          <tr>
-            <td>Day 3 早</td>
-            <td><strong>博多站 たんや / コメダ珈琲</strong></td>
-            <td>早餐</td>
-            <td>—</td>
-            <td class="price">¥500</td>
-          </tr>
-          
-          <tr>
-            <td>Day 3 午</td>
-            <td><strong>糸島海鮮堂 A 蒼海包廂</strong></td>
-            <td>海鮮丼（已訂 12:30-13:50）</td>
-            <td>官網 PHP 已訂、個室料先付</td>
-            <td class="price">¥4,300</td>
-          </tr>
-          
-          <tr>
-            <td>Day 3 晚</td>
-            <td><strong>因幡うどん 博多1番街</strong></td>
-            <td>ごぼう天うどん（清爽、博多站內）</td>
-            <td>不需</td>
-            <td class="price">¥800</td>
-          </tr>
-          
-          <tr>
-            <td>Day 4 早</td>
-            <td><strong>八百治輕食 / 博多站</strong></td>
-            <td>輕食</td>
-            <td>不需</td>
-            <td class="price">¥500</td>
-          </tr>
-          
-          <tr>
-            <td>Day 4 午</td>
-            <td><strong>BEAR FRUITS（門司港）</strong></td>
-            <td>燒咖哩（開店即吃）</td>
-            <td>不需、開店即入</td>
-            <td class="price">¥1,200</td>
-          </tr>
-          
-          <tr>
-            <td>Day 4 晚</td>
-            <td><strong>にく屋肉いち 博多店</strong></td>
-            <td>A5 和牛拼盤（已訂 16:00）</td>
-            <td>TableCheck 已訂 7/30 16:00</td>
-            <td class="price">¥7,000</td>
-          </tr>
-          
-          <tr>
-            <td>Day 5 早</td>
-            <td><strong>Blue Bottle 天神 / &LOCALS 大濠</strong></td>
-            <td>咖啡 / 八女茶</td>
-            <td>不需</td>
-            <td class="price">¥800</td>
-          </tr>
-          
-          <tr>
-            <td>Day 5 午</td>
-            <td><strong>魚男 Fishman（藥院）</strong></td>
-            <td>海鮮定食 ¥2,178</td>
-            <td>walk-in 現場候位</td>
-            <td class="price">¥2,178</td>
-          </tr>
-          
-          <tr>
-            <td>Day 5 晚</td>
-            <td><strong>おおやま KITTE 博多店 9F</strong></td>
-            <td>牛もつ味噌 + 豬五花分兩鍋（已訂）</td>
-            <td>TableCheck 已訂 7/31 18:30</td>
-            <td class="price">¥4,300</td>
-          </tr>
-          
-          <tr>
-            <td>Day 6 早</td>
-            <td><strong>機場 / 博多站簡單吃</strong></td>
-            <td>早餐輕食（Day 5 已先買）</td>
-            <td>—</td>
-            <td class="price">¥700</td>
-          </tr>
-          
-        </tbody>
-      </table>
+      <div style="overflow-x: auto;">
+        <table class="menu-table">
+          <thead><tr><th>餐</th><th>店</th><th>地點</th><th>特色</th><th>預約</th><th>備選（排不到 / 客滿）</th><th>¥/人</th></tr></thead>
+          <tbody>
+            
+            <tr>
+              <td>Day 1 晚</td>
+              <td><strong>天神屋台 小金ちゃん</strong></td>
+              <td>天神</td>
+              <td>燒拉麵（媽媽阿姨可回八百治泡湯）</td>
+              <td>不需、排隊</td>
+              <td>天神周邊其他屋台、或天神地下街うどん / 定食</td>
+              <td class="price">¥2,500</td>
+            </tr>
+            
+            <tr>
+              <td>Day 2 早</td>
+              <td><strong>八百治附近 / 博多站咖啡</strong></td>
+              <td>博多站</td>
+              <td>咖啡 + 輕食</td>
+              <td>不需</td>
+              <td>Doutor / Excelsior / MING'S 麵包街</td>
+              <td class="price">¥500</td>
+            </tr>
+            
+            <tr>
+              <td>Day 2 午</td>
+              <td><strong>四代目菊川 中洲春吉店</strong></td>
+              <td>中洲春吉</td>
+              <td>せいろ蒸し 鰻魚（已訂 12:30）</td>
+              <td>已訂桌椅席</td>
+              <td>已訂免備選（同區另有蒲燒うな重可點）</td>
+              <td class="price">¥4,200</td>
+            </tr>
+            
+            <tr>
+              <td>Day 2 晚</td>
+              <td><strong>博多うま馬 祇園本店</strong></td>
+              <td>祇園站旁</td>
+              <td>博多拉麵 + 餃子</td>
+              <td>不需、¥850</td>
+              <td><strong>ShinShin KITTE / 一幸舎</strong>（見博多拉麵指南）</td>
+              <td class="price">¥1,200</td>
+            </tr>
+            
+            <tr>
+              <td>Day 3 早</td>
+              <td><strong>博多站 たんや / コメダ珈琲</strong></td>
+              <td>博多站</td>
+              <td>早餐</td>
+              <td>—</td>
+              <td>くうてん早餐 / 便利店輕食</td>
+              <td class="price">¥500</td>
+            </tr>
+            
+            <tr>
+              <td>Day 3 午</td>
+              <td><strong>糸島海鮮堂 A 蒼海包廂</strong></td>
+              <td>糸島</td>
+              <td>海鮮丼（已訂 12:30-13:50）</td>
+              <td>官網 PHP 已訂、個室料先付</td>
+              <td>已訂（附近牡蠣小屋依季節、zauo）</td>
+              <td class="price">¥4,300</td>
+            </tr>
+            
+            <tr>
+              <td>Day 3 晚</td>
+              <td><strong>因幡うどん 博多1番街</strong></td>
+              <td>博多站內</td>
+              <td>ごぼう天うどん（清爽、博多站內）</td>
+              <td>不需</td>
+              <td>博多站 デイトス / マイング うどん・定食、或キャナル拉麵競技場</td>
+              <td class="price">¥800</td>
+            </tr>
+            
+            <tr>
+              <td>Day 4 早</td>
+              <td><strong>八百治輕食 / 博多站</strong></td>
+              <td>博多站</td>
+              <td>輕食</td>
+              <td>不需</td>
+              <td>くうてん / 站內咖啡 / 便利店</td>
+              <td class="price">¥500</td>
+            </tr>
+            
+            <tr>
+              <td>Day 4 午</td>
+              <td><strong>BEAR FRUITS（門司港）</strong></td>
+              <td>門司港</td>
+              <td>燒咖哩（開店即吃）</td>
+              <td>不需、開店即入</td>
+              <td>門司港 こがねむし / 王さまのたまご 等燒咖哩多家</td>
+              <td class="price">¥1,200</td>
+            </tr>
+            
+            <tr>
+              <td>Day 4 晚</td>
+              <td><strong>にく屋肉いち 博多店</strong></td>
+              <td>博多</td>
+              <td>A5 和牛拼盤（已訂 16:00）</td>
+              <td>TableCheck 已訂 7/30 16:00</td>
+              <td>已訂免備選</td>
+              <td class="price">¥7,000</td>
+            </tr>
+            
+            <tr>
+              <td>Day 5 早</td>
+              <td><strong>Blue Bottle 天神 / &LOCALS 大濠</strong></td>
+              <td>天神 / 大濠</td>
+              <td>咖啡 / 八女茶</td>
+              <td>不需</td>
+              <td>大濠 &LOCALS / 博多站咖啡</td>
+              <td class="price">¥800</td>
+            </tr>
+            
+            <tr>
+              <td>Day 5 午</td>
+              <td><strong>魚男 Fishman（藥院）</strong></td>
+              <td>藥院</td>
+              <td>海鮮定食 ¥2,178</td>
+              <td>walk-in 現場候位</td>
+              <td><strong>なるみ乃薬院 / 大濠ふれあい食堂 / 橋本鮮魚店</strong></td>
+              <td class="price">¥2,178</td>
+            </tr>
+            
+            <tr>
+              <td>Day 5 晚</td>
+              <td><strong>おおやま KITTE 博多店 9F</strong></td>
+              <td>KITTE 博多 9F</td>
+              <td>牛もつ味噌 + 豬五花分兩鍋（已訂）</td>
+              <td>TableCheck 已訂 7/31 18:30</td>
+              <td>已訂免備選</td>
+              <td class="price">¥4,300</td>
+            </tr>
+            
+            <tr>
+              <td>Day 6 早</td>
+              <td><strong>機場 / 博多站簡單吃</strong></td>
+              <td>國際線航廈</td>
+              <td>早餐輕食（Day 5 已先買）</td>
+              <td>—</td>
+              <td>國際線餐飲 / 博多站早餐（Day5 已先買）</td>
+              <td class="price">¥700</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
     </div>
     
     <div class="tab-card" style="grid-column: 1 / -1;">
@@ -6963,6 +6925,120 @@
   </div>
 </section>
 
+<!-- ========== 博多拉麵獨立指南 ========== -->
+
+<section class="tab-section" id="ramen">
+  <h2>博多拉麵 · 獨立指南</h2>
+  <span class="jp">HAKATA RAMEN GUIDE</span>
+  <p style="margin-top: 0.5rem; color: var(--ink-soft);">三輪 AI 驗證收集、依家庭適合度排序、標好每間放在行程哪一段</p>
+  
+  <p style="margin-top: 0.8rem; padding: 0.9rem 1rem; background: var(--cream); border-left: 3px solid var(--coral); font-size: 0.92rem;">單間就うま馬（舒適又有文化）、兩間就うま馬 + ShinShin、想朝聖去一蘭。</p>
+  
+  <div class="tab-grid">
+    <div class="tab-card" style="grid-column: 1 / -1;">
+      <div style="overflow-x: auto;">
+        <table class="menu-table">
+          <thead><tr><th>店</th><th>特色</th><th>地點</th><th>座位</th><th>排隊</th><th>適合哪天 / 誰</th><th>價位</th></tr></thead>
+          <tbody>
+            
+            <tr>
+              <td><strong>博多うま馬 祇園本店</strong></td>
+              <td>源流博多拉麵、湯頭溫潤</td>
+              <td>祇園站旁、距博多站約 8 分</td>
+              <td>40 席桌椅、可同桌</td>
+              <td>晚餐時段小排、翻桌快</td>
+              <td>Day 2 晚 · 家庭首選</td>
+              <td class="price">¥850 起（加餃子）</td>
+            </tr>
+            
+            <tr>
+              <td><strong>博多らーめん ShinShin KITTE 博多店</strong></td>
+              <td>屋台系溫和細麵</td>
+              <td>KITTE 博多 B1F、博多站直結</td>
+              <td>商場桌椅</td>
+              <td>免排隊壓力</td>
+              <td>博多站想吃拉麵時 · 首選</td>
+              <td class="price">¥900 起</td>
+            </tr>
+            
+            <tr>
+              <td><strong>一蘭 本社総本店</strong><br><small style="color: var(--ink-soft);">「一蘭和楽団演舞」20:00-20:15 官網現掛暫停、7/28 是否有不確定、當彩蛋看待、出發前問店員。</small></td>
+              <td>高度客製、味集中カウンター單人隔間</td>
+              <td>中洲、24 小時</td>
+              <td>單人隔間（味集中座位）</td>
+              <td>熱門時段排隊</td>
+              <td>朝聖景點 · opt-in</td>
+              <td class="price">¥980 起</td>
+            </tr>
+            
+            <tr>
+              <td><strong>博多一双 博多駅東本店</strong></td>
+              <td>泡系濃厚豚骨、卡布奇諾般泡沫</td>
+              <td>博多站東、走 5 分</td>
+              <td>座位緊、難同桌</td>
+              <td>排隊久</td>
+              <td>崴哥哥宵夜</td>
+              <td class="price">¥800 起</td>
+            </tr>
+            
+            <tr>
+              <td><strong>博多一幸舎 総本店</strong></td>
+              <td>元祖泡系濃厚豚骨</td>
+              <td>博多站周邊</td>
+              <td>吧台 + 少數桌</td>
+              <td>中等</td>
+              <td>濃厚派備選</td>
+              <td class="price">¥850 起</td>
+            </tr>
+            
+            <tr>
+              <td><strong>博多だるま 総本店</strong></td>
+              <td>昭和濃厚傳統豚骨</td>
+              <td>渡邊通、天神南一帶</td>
+              <td>有桌席</td>
+              <td>中等</td>
+              <td>傳統濃厚派</td>
+              <td class="price">¥850 起</td>
+            </tr>
+            
+            <tr>
+              <td><strong>元祖赤のれん 節ちゃん 天神本店</strong></td>
+              <td>老派醬味豚骨</td>
+              <td>天神</td>
+              <td>桌椅</td>
+              <td>中等（週二休）</td>
+              <td>Day 1 屋台備案</td>
+              <td class="price">¥800 起</td>
+            </tr>
+            
+            <tr>
+              <td><strong>博多醤油ラーメン 月や DEITOS 店</strong></td>
+              <td>非豚骨、甜口醬油</td>
+              <td>博多 DEITOS、博多站內</td>
+              <td>桌椅</td>
+              <td>免排隊</td>
+              <td>非豚骨備選（博多站內）</td>
+              <td class="price">¥900 起</td>
+            </tr>
+            
+            <tr>
+              <td><strong>ラーメンスタジアム（キャナルシティ 5F）</strong></td>
+              <td>8 店集合、各店獨立用餐</td>
+              <td>運河城 5F</td>
+              <td>各店座位（非共桌）</td>
+              <td>看店</td>
+              <td>雨天室內備案</td>
+              <td class="price">各店 ¥800-1,100</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- ========== 交通 ========== -->
 <section class="tab-section" id="transport">
   <h2>交通</h2>
@@ -6977,13 +7053,13 @@
     </div>
     <div class="tab-card">
       <h3>市內移動<span class="chip navy">LOCAL</span></h3>
-      <p><strong>SUGOCA IC 卡</strong><br>
-      含押金 ¥2,000、6 天總花 ¥1,700/人</p>
+      <p><strong>Visa 感應（タッチ決済）直接刷</strong><br>
+      2026 年福岡地鐵、西鐵電車（含太宰府線）、JR（博多⇄門司港）都支援 Visa 感應直接刷、進出站用同一張卡、不必買 SUGOCA。地鐵一日自動封頂 ¥640（等於一日券）。只有西鐵市區巴士感應仍在試辦、我們行程用不到。四人各帶一張感應卡即可。</p>
     </div>
     <div class="tab-card">
-      <h3>Day 2 柳川 · 太宰府<span class="chip matcha">PASS</span></h3>
-      <p><strong>太宰府往復乘車券（西鐵）</strong><br>
-      西鐵天神 ⇄ 太宰府 來回 + 中洲鰻魚 / 回程計程車<br>
+      <h3>Day 2 太宰府<span class="chip matcha">PASS</span></h3>
+      <p><strong>Visa 感應直接刷（往復票非必要）</strong><br>
+      西鐵天神 ⇄ 太宰府（含太宰府線）刷 Visa 感應進出、來回約 ¥840、回程一小段計程車<br>
       ¥900/人</p>
     </div>
     <div class="tab-card">
@@ -7182,9 +7258,9 @@
           </tr>
           
           <tr>
-            <td>SUGOCA 地鐵（6 天）</td>
+            <td>地鐵交通（Visa 感應、6 天）</td>
             <td class="price">NT$375</td>
-            <td>博多市區地鐵日常 ¥1,700/人上下、單日上限 ¥640 不觸發</td>
+            <td>博多市區地鐵日常 ¥1,700/人上下、Visa 感應單日自動封頂 ¥640、不必買 SUGOCA</td>
           </tr>
           
           <tr>
@@ -7277,9 +7353,9 @@
       <h3>正式排（行程已含）<span class="chip sun">TIER</span></h3>
       <ul style="line-height: 1.9; margin: 0; padding-left: 1.1rem;">
         
-        <li><strong>Day2 天神動漫</strong>（崴哥哥）：福岡 PARCO アニメイト + TENJIN CHARA PARK + 大名 まんだらけ、90-120 分</li>
+        <li><strong>Day2 天神地下街 + 天神逛街</strong>：全家先逛地下街（波佐見焼市集）、崴哥哥再走 PARCO 一帶約 90 分</li>
         
-        <li><strong>Day5 博多站採買日</strong>：兄弟採買線 マルイ → AMU 8F → マイング / 阪急 B1 一次買齊</li>
+        <li><strong>Day5 博多站採買日</strong>：採買線 マルイ → AMU 8F → マイング / 阪急 B1 一次買齊</li>
         
       </ul>
     </div>
@@ -7394,7 +7470,7 @@
         
         <li><strong>媽媽阿姨</strong>：百貨 B1 / 地下街（室內不曬、久站會累所以慢慢逛）</li>
         
-        <li><strong>崴</strong>：キャナル動漫 / AMU / 路面選品店 / 波佐見焼</li>
+        <li><strong>崴</strong>：キャナル / AMU / 路面選品店 / 波佐見焼 / 天神 PARCO 一帶</li>
         
       </ul>
       
@@ -7576,8 +7652,8 @@
         
         <li>
           <span class="chk"></span>
-          抵達當天在福岡空港買 SUGOCA IC 卡 × 4
-          <br><small>押金 ¥500 + 預儲 ¥1,500、6 天可用</small>
+          確認每人帶一張支援感應（タッチ決済）的 Visa 卡、免買 SUGOCA
+          <br><small>福岡地鐵 / 西鐵電車 / JR 都可直接刷、進出同一張卡；長輩的卡有感應波紋標誌即可</small>
         </li>
         
         <li>
@@ -7597,15 +7673,15 @@
       <h3>哥哥 · 從上海會合<span class="chip sun">COMPANION</span></h3>
       <ul style="line-height: 1.9;">
         
-        <li><strong>機票</strong>：哥哥自理上海 ⇄ 福岡來回、8/1 回程是否與我們同班待確認</li>
+        <li><strong>航班</strong>：哥哥自理上海 ⇄ 福岡、<strong>7/27（一）10:55 到福岡</strong>（比我們 13:05 早、可先到八百治櫃台寄行李）、<strong>8/1（六）10:00 從福岡飛</strong>（比我們 11:00 早）</li>
         
-        <li><strong>會合</strong>：7/27 抵達後 LINE 群組同步位置、當地會合</li>
+        <li><strong>會合</strong>：7/27 我們 13:05 落地後 LINE 群組同步、在八百治或博多站會合</li>
         
-        <li><strong>一起買的票券</strong>：SUGOCA IC 卡 4 張、太宰府往復乘車券 4 人份（崴在博多站一起買）</li>
+        <li><strong>交通票</strong>：不必買 SUGOCA、各帶一張 Visa 感應卡即可（福岡地鐵 / 西鐵電車 / JR 都能直接刷）</li>
         
-        <li><strong>自己處理</strong>：上海端機票 / 通訊 / 機場到飯店交通、若哥哥比我們早到可先在八百治櫃台寄行李等</li>
+        <li><strong>Day3 糸島自駕</strong>：哥哥有台灣駕照、辦好日文譯本可當糸島備援駕駛、跟崴輪流開（7/29 取車在場）</li>
         
-        <li><strong>Day 3 糸島自駕</strong>：哥哥有台灣駕照、辦好日文譯本可當糸島備援駕駛、跟崴輪流開</li>
+        <li><strong>Day6 動線</strong>：哥哥 10:00 班機、我們 11:00、兩台計程車一起約 07:00-07:30 出發到國際線、他先辦 check-in、我們隨後</li>
         
       </ul>
     </div>
@@ -7741,7 +7817,7 @@
     
     <div class="tab-card">
       <h3>交通<span class="chip matcha">TIP</span></h3>
-      <p>SUGOCA IC 卡最方便、可搭地鐵 / JR / 巴士 / 便利店付款</p>
+      <p>地鐵 / 西鐵電車 / JR 都可直接刷 Visa 感應（タッチ決済）、不必買 SUGOCA；地鐵一日自動封頂 ¥640。只有西鐵市區巴士感應仍試辦、我們行程用不到。</p>
     </div>
     
   </div>
@@ -7971,7 +8047,7 @@
 
 <!-- ========== FOOTER ========== -->
 <footer style="text-align: center; padding: 3rem 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem;">
-  <p>福岡 6 天 5 夜 家族旅遊 · v9.0 · 更新 2026-07-18</p>
+  <p>福岡 6 天 5 夜 家族旅遊 · v9.1 · 更新 2026-07-18</p>
   <p style="margin-top: 0.5rem;">好好玩 · 慢慢逛 · 平安回家</p>
 </footer>
 
