@@ -213,6 +213,30 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
   .dg-wd{font-size:18px}
   .dg-items{padding-left:70px}
 }
+.hero-cred{position:absolute;right:11px;bottom:8px;z-index:1;font-family:var(--mono);font-size:9px;color:rgba(255,255,255,.62);letter-spacing:.02em;max-width:72%;text-align:right;line-height:1.3}
+
+/* ===== 桌機（≥900px）雙欄 ===== */
+@media (min-width:900px){
+  .hdr-top,.page{max-width:1060px}
+  .hero{padding:20px 0 6px}
+  .hero-card{min-height:380px}
+  .hero-in{padding:30px 34px 32px}
+  .hero-title{font-size:40px}
+  .hero-sub{font-size:15px}
+  .hero-stats{gap:30px}
+  .digest{padding-top:34px}
+  .daysec{display:grid;grid-template-columns:340px minmax(0,1fr);column-gap:48px;align-items:start;padding-top:28px}
+  .daysec + .daysec{margin-top:26px;padding-top:34px}
+  .day-left{position:sticky;top:74px}
+  .day-left .cover{margin-top:0;height:238px}
+  .day-left .dayhead{padding:16px 0 0}
+  .day-left .daytitle{font-size:24px}
+  .day-left .intro{font-size:13px;line-height:1.7}
+}
+@media (min-width:1180px){
+  .hdr-top,.page{max-width:1120px}
+  .daysec{grid-template-columns:360px minmax(0,1fr);column-gap:56px}
+}
 </style>
 </head>
 <body>
@@ -249,7 +273,8 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
   
   <section class="hero">
     <div class="hero-card">
-      <img class="hero-bg" src="img/day1.jpg" alt="">
+      <img class="hero-bg" src="img/hero.jpg" alt="">
+      <span class="hero-cred">中洲川端 那珂川夜景 · Photo by BirdsEyeLV / Wikimedia Commons, CC BY-SA 3.0</span>
       <div class="hero-in">
         <div class="hero-tags"><span class="htag">2026/7/27 (一) → 8/1 (六)</span><span class="htag">6 天 5 夜</span><span class="htag">4 人家族</span><span class="htag">預算 NT$50,439/人</span></div>
         <h1 class="hero-title">福岡 6 天 5 夜 家族旅遊</h1>
@@ -597,9 +622,10 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
 
   
   <section class="daysec" id="day1">
+    <div class="day-left">
     <div class="cover">
       <img src="img/day1.jpg" alt="Day 01 · 7/27 Mon · 博多">
-      <span class="attr">中洲川端 那珂川夜景 · Photo by BirdsEyeLV / Wikimedia Commons, CC BY-SA 3.0</span>
+      <span class="attr">中洲屋台 · Photo by Yoshikazu TAKADA / Wikimedia Commons, CC BY 2.0</span>
       <div class="cap"><div class="k">Day 01 · 7/27 Mon · 博多</div></div>
     </div>
     <div class="dayhead">
@@ -608,7 +634,9 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
       <div class="daymeta"><span class="m">抵達日</span><span class="m">節奏 <b>輕</b></span><span class="m">步行 <b>中等</b></span><span class="m">屋台 <b>晚上</b></span></div>
       <p class="intro">下午 13:05 落地、先進八百治放行李、泡個湯。傍晚在博多舊城慢慢走——東長寺的福岡大佛、有頂蓋遮陽的川端商店街、博多總鎮守櫛田神社；晚上到天神吃屋台、逛夏まつり感受攤販氛圍。第一天不排滿、留體力給後面幾天。</p>
     </div>
+    </div><!-- day-left -->
 
+    <div class="day-right">
     <div class="tl">
       
       
@@ -922,9 +950,11 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
     
     <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>今天遇雨 / 颱風</h4><p>小雨：川端商店街全程有頂蓋、東長寺與櫛田神社都在市中心、照常慢走。大雨：砍戶外散步、直接進飯店休息，晚餐改博多站或 Canal City 室內；屋台看天候可能不出攤、改室內拉麵（ShinShin / 一幸舎）。抵達班機若延誤，行程整體往後順延、以進飯店休息為優先。</p></div>
     
+    </div><!-- day-right -->
   </section>
   
   <section class="daysec" id="day2">
+    <div class="day-left">
     <div class="cover">
       <img src="img/day2.jpg" alt="Day 02 · 7/28 Tue · 太宰府">
       <span class="attr">太宰府天満宮 太鼓橋・心字池 · Photo by そらみみ / Wikimedia Commons, CC BY-SA 4.0</span>
@@ -936,7 +966,9 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
       <div class="daymeta"><span class="m">節奏 <b>寬鬆</b></span><span class="m">步行 <b>中等</b></span><span class="m">已訂 <b>菊川 12:30</b></span></div>
       <p class="intro">抵達後的輕鬆恢復日。上午到千年古都太宰府參拜、逛參道吃梅枝餅、坐隈研吾的星巴克；中午回中洲吃鰻魚。下午不急著回飯店——全家先一起逛天神地下街（冷氣涼、正好有波佐見焼陶瓷市集），逛累了在天神自由解散，傍晚在うま馬會合吃碗溫潤拉麵收尾。</p>
     </div>
+    </div><!-- day-left -->
 
+    <div class="day-right">
     <div class="tl">
       
       
@@ -1307,9 +1339,11 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
     
     <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>今天遇雨 / 颱風</h4><p>小雨：太宰府参道有騎樓、九州國立博物館室內延伸半天，其餘照常。大雨或西鐵停駛：太宰府放棄，改天神 / 博多市區室內（地下街 + 動漫 + 百貨 + 博物館），鰻魚與うま馬都在市區照常。</p></div>
     
+    </div><!-- day-right -->
   </section>
   
   <section class="daysec" id="day3">
+    <div class="day-left">
     <div class="cover">
       <img src="img/day3.jpg" alt="Day 03 · 7/29 Wed · 糸島">
       <span class="attr">糸島 櫻井二見浦 夫婦岩・白鳥居 · Photo by yuki5287 / Wikimedia Commons, CC BY 2.0</span>
@@ -1321,7 +1355,9 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
       <div class="daymeta"><span class="m">自駕日</span><span class="m">崴主駕</span><span class="m">已訂 <b>海鮮堂 12:30</b></span><span class="m">防曬 <b>重要</b></span></div>
       <p class="intro">今天租車跑糸島海岸。上午趁涼衝椰子鞦韆與夫婦岩白鳥居兩個海景打卡點、中午在看得到海的海鮮堂個室吃海鮮丼兼避午後烈日；下午看體力決定芥屋遊覽船（選配、會暈船怕曬可跳過）、順路採買糸島名物，傍晚回博多還車泡湯，晚餐吃清爽的博多烏龍。</p>
     </div>
+    </div><!-- day-left -->
 
+    <div class="day-right">
     <div class="tl">
       
       
@@ -1660,9 +1696,11 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
     
     <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>今天遇雨 / 颱風</h4><p>糸島是自駕海岸、最看天氣。小雨：鞦韆與夫婦岩濕滑注意、海鮮堂室內照常、午後改早回博多。大雨或颱風：<b>放棄糸島、前 1-2 天電話取消海鮮堂（070-4005-7508）、租車改期</b>，改博多室內（Canal City / 博物館 / 動漫 / 地下街）。芥屋遊覽船風強即停航、去前電話 092-328-2012 確認。</p></div>
     
+    </div><!-- day-right -->
   </section>
   
   <section class="daysec" id="day4">
+    <div class="day-left">
     <div class="cover">
       <img src="img/day4.jpg" alt="Day 04 · 7/30 Thu · 門司港">
       <span class="attr">門司港レトロ 全景 · Photo by Project Kei / Wikimedia Commons, CC BY-SA 4.0</span>
@@ -1674,7 +1712,9 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
       <div class="daymeta"><span class="m">晚起 <b>約 9:00</b></span><span class="m">已訂 <b>肉一 16:00</b></span><span class="m">室內為主 · 避曬</span></div>
       <p class="intro">今天晚一點出發、搭車去門司港看紅磚老街與關門海峽。夏天門司港很曬，以室內館（關門海峽博物館、展望室）為主、戶外老建築外觀拍照點到為止。中午吃門司港名物燒咖哩，下午回博多讓長輩休息，16:00 吃早晚餐型的 A5 和牛（對腸胃友善又避尖峰）；傍晚崴哥哥想再逛可 opt-in。</p>
     </div>
+    </div><!-- day-left -->
 
+    <div class="day-right">
     <div class="tl">
       
       
@@ -1978,9 +2018,11 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
     
     <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>今天遇雨 / 颱風</h4><p>門司港本身室內為主、小雨照走（博物館 / 展望室 / 老建築騎樓）。大雨：只刪港邊漫步。<b>颱風致新幹線停駛</b>：門司港放棄、改博多室內半天（博物館 / Canal City / ららぽーと），<b>肉一 16:00 在市區照常</b>。</p></div>
     
+    </div><!-- day-right -->
   </section>
   
   <section class="daysec" id="day5">
+    <div class="day-left">
     <div class="cover">
       <img src="img/day5.jpg" alt="Day 05 · 7/31 Fri · 大濠">
       <span class="attr">大濠公園 黃昏 · Photo by DrHughManning / Wikimedia Commons, CC BY-SA 4.0</span>
@@ -1992,7 +2034,9 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
       <div class="daymeta"><span class="m">節奏 <b>寬鬆</b></span><span class="m">已訂 <b>おおやま 18:30</b></span><span class="m">採買日</span></div>
       <p class="intro">最後完整的一天，放慢。上午到大濠公園的日本庭園散步、在湖畔 &LOCALS 喝八女茶避暑；中午吃魚男的海鮮定食。下午回博多收尾伴手禮——這段是自由選、不是硬分兩路：媽媽阿姨想休息就回八百治泡湯、想一起逛也 OK。傍晚在 KITTE 會合吃おおやま牛腸鍋（不吃內臟的換豬五花），回飯店打包早睡、明天一早飛。</p>
     </div>
+    </div><!-- day-left -->
 
+    <div class="day-right">
     <div class="tl">
       
       
@@ -2281,9 +2325,11 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
     
     <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>今天遇雨 / 颱風</h4><p>小雨：大濠庭園撐傘可走、&LOCALS 室內避雨、其餘照常。大雨：庭園刪（只進 &LOCALS 喝茶）、大濠→魚男搭計程車；採買與おおやま都在博多站室內、影響最小。今天多為室內與短程、最不怕天氣。</p></div>
     
+    </div><!-- day-right -->
   </section>
   
   <section class="daysec" id="day6">
+    <div class="day-left">
     <div class="cover">
       <img src="img/day6.jpg" alt="Day 06 · 8/1 Sat · 再見福岡">
       <span class="attr">百道海濱・福岡塔 · Photo by 新幹線 / Wikimedia Commons, CC BY-SA 4.0</span>
@@ -2295,7 +2341,9 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
       <div class="daymeta"><span class="m">回家日</span><span class="m">華航 <b>11:00</b></span><span class="m">哥哥 <b>10:00</b></span></div>
       <p class="intro">上午的班機、Day6 就是退房直奔機場。一早退房、兩台計程車直達福岡空港國際線（不繞國內線轉車、省事），辦好 check-in 掛行李後在航廈做最後伴手禮補貨、簡單吃早餐，11:00 華航回桃園。哥哥的班機 10:00、比我們早一點、一起搭車去、他先辦。</p>
     </div>
+    </div><!-- day-left -->
 
+    <div class="day-right">
     <div class="tl">
       
       
@@ -2373,6 +2421,7 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
     
     <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>哥哥航班 · 班機延誤</h4><p>哥哥 8/1 <b>10:00 從福岡飛</b>（比我們 11:00 早）——07:00–07:30 兩台計程車一起去國際線、他先辦 check-in、我們隨後。若颱風致班機延誤／取消：查華航 CI0111 官方公告、走旅平險班機延誤理賠、必要時八百治可能加訂一晚或改次日。</p></div>
     
+    </div><!-- day-right -->
   </section>
   
 
