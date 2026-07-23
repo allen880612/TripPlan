@@ -167,7 +167,7 @@ body{background:var(--ground);color:var(--body);font-family:var(--sans);
 a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--plum);outline-offset:2px;border-radius:9px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
-/* ===== 大區導覽專用（沿用參考頁樣式） ===== */
+/* ===== 大區導覽專用 ===== */
 .reftitle{padding:24px 0 8px}
 .reftitle h1{font-family:var(--serif);font-size:26px;color:var(--ink);font-weight:700}
 .reftitle .jp{font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:var(--soft);text-transform:uppercase;display:block;margin-top:5px}
@@ -182,6 +182,27 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
 .areahd .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--plum);font-weight:600;text-transform:uppercase}
 .areahd h2{font-family:var(--serif);font-size:23px;color:var(--ink);font-weight:700;margin-top:3px}
 .tagline{padding:12px 15px;background:var(--cream,var(--raise));border-left:3px solid var(--coral,var(--plum));border-radius:10px;font-size:14px;color:var(--body);line-height:1.7;margin:12px 0 4px}
+
+/* 新版:插畫地圖 + 編號圖例 + 遊記敘事 */
+.mapfig{margin:16px 0 2px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--raise);box-shadow:var(--shadow)}
+.mapfig img{width:100%;height:auto;display:block}
+.mapcredit{font-family:var(--mono);font-size:10px;color:var(--soft);padding:7px 13px;letter-spacing:.02em}
+.legend{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:10px}
+.lg{display:flex;gap:11px;align-items:flex-start}
+.lg .no{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:#c0392b;color:#fff;font-family:var(--mono);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.lg .lgn{font-family:var(--serif);font-weight:700;font-size:14.5px;color:var(--ink)}
+.lg .lgd{font-size:12.5px;color:var(--body);line-height:1.55;margin-top:1px}
+.lg .mapmini{margin-left:5px}
+.lg .mapmini .ic{width:11px;height:11px}
+.story{font-family:var(--serif);font-size:16px;line-height:2.05;color:var(--body);margin:22px 2px 0}
+.story b{color:var(--plum);font-weight:700}
+.hl{margin-top:9px}
+.hli{padding:12px 15px;background:var(--raise);border:1px solid var(--line);border-radius:12px;margin-top:9px}
+.hln{font-family:var(--serif);font-weight:700;font-size:14.5px;color:var(--ink)}
+.hld{font-size:13px;color:var(--body);line-height:1.65;margin-top:2px}
+.hld b{color:var(--ink)}
+
+/* 舊版 7 欄（未升級的區） */
 .rsec{margin-bottom:24px}
 .rsec > h3{font-family:var(--serif);font-size:17px;color:var(--ink);font-weight:600;margin-bottom:9px;display:flex;align-items:center;gap:8px}
 .rsec > h3 .ic{width:17px;height:17px;color:var(--plum)}
@@ -198,9 +219,11 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
 .mapmini:hover{text-decoration:underline}
 .mapmini .ic{width:12px;height:12px}
 .backlink{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;color:var(--plum);text-decoration:none;margin-top:8px}
+@media (min-width:720px){.legend{grid-template-columns:1fr 1fr;gap:11px 24px}}
 @media (min-width:900px){
   .hdr-top,.page{max-width:1060px}
   .panel .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:0 22px;align-items:start}
+  .mapfig{max-width:560px}
 }
 </style>
 </head>
@@ -236,7 +259,7 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
 <div class="page">
   <div class="reftitle">
     <h1>大區導覽</h1><span class="jp">AREA GUIDE</span>
-    <p class="sub">每個大區的特色、周邊順路亮點、怎麼逛吃玩——先上線太宰府與糸島兩區,順手好用再擴到天神／中洲／門司港。</p>
+    <p class="sub">每個大區用一張日式插畫地圖看懂地理與動線,再配編號景點與遊記式介紹。太宰府為新版範本,其餘區陸續升級。</p>
   </div>
 
   <div class="tabs">
@@ -249,41 +272,44 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
       <div class="eyebrow">DAZAIFU · Day 5 上午</div>
       <h2>太宰府</h2>
     </div>
-    <div class="tagline">學問之神的千年門前町——一條參道串起梅枝餅香、隈研吾星巴克、與世界唯一的合格祈願拉麵;參拜完往山裡走,還藏著鬼滅聖地與九州唯一的枯山水名庭。</div>
+    <div class="tagline">學問之神的千年門前町 — 一條參道走到底,梅枝餅、星巴克、合格祈願全在路上。</div>
 
-    <div class="rsec">
-      <h3><svg class="ic"><use href="#i-train"/></svg>怎麼到 · 停多久</h3>
-      <div class="rcard"><p>從博多<b>計程車門到門約 25-30 分</b>(¥5,300／4 人≈¥1,325／人、避暑避轉車),或<b>太宰府ライナー『旅人』巴士</b>(博多バスターミナル直達、¥610／人、約 40 分)。我們排 09:50 到、12:00 前離開趕市區午餐,停留約 2 小時。回程走西鐵(太宰府→二日市轉→天神、¥410／人)。</p></div>
+    
+    
+    <figure class="mapfig">
+      <img src="img/area_dazaifu.jpg" alt="太宰府區域插畫導覽地圖">
+      <figcaption class="mapcredit">插畫地圖 · AI 生成(gpt-image)· 僅供本行程導覽</figcaption>
+    </figure>
+    <ul class="legend">
+      
+      <li class="lg"><span class="no">1</span><div><span class="lgn">表参道商店街</span> <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E5%AE%B0%E5%BA%9C%20%E8%A1%A8%E5%8F%82%E9%81%93%E5%95%86%E5%BA%97%E8%A1%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a><div class="lgd">梅枝餅・隈研吾星巴克・合格ラーメン一蘭,全在這條石板街上</div></div></li>
+      
+      <li class="lg"><span class="no">2</span><div><span class="lgn">太鼓橋・心字池</span> <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E5%AE%B0%E5%BA%9C%20%E5%A4%AA%E9%BC%93%E6%A9%8B%E3%83%BB%E5%BF%83%E5%AD%97%E6%B1%A0" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a><div class="lgd">過去/現在/未來三座紅橋,池畔菖蒲</div></div></li>
+      
+      <li class="lg"><span class="no">3</span><div><span class="lgn">鳥居</span> <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E5%AE%B0%E5%BA%9C%20%E9%B3%A5%E5%B1%85" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a><div class="lgd">參道入口、進入神域的門</div></div></li>
+      
+      <li class="lg"><span class="no">4</span><div><span class="lgn">御神牛</span> <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E5%AE%B0%E5%BA%9C%20%E5%BE%A1%E7%A5%9E%E7%89%9B" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a><div class="lgd">摸牛頭增智慧、學問成就</div></div></li>
+      
+      <li class="lg"><span class="no">5</span><div><span class="lgn">御本殿</span> <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E5%AE%B0%E5%BA%9C%20%E5%BE%A1%E6%9C%AC%E6%AE%BF" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a><div class="lgd">令和大改修中、2026/9 恢復;過渡動線照常參拜</div></div></li>
+      
+      <li class="lg"><span class="no">6</span><div><span class="lgn">飛梅</span> <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E5%AE%B0%E5%BA%9C%20%E9%A3%9B%E6%A2%85" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a><div class="lgd">樹齡逾千年的神木、太宰府象徵</div></div></li>
+      
+      <li class="lg"><span class="no">7</span><div><span class="lgn">九州國立博物館</span> <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E5%AE%B0%E5%BA%9C%20%E4%B9%9D%E5%B7%9E%E5%9C%8B%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a><div class="lgd">彩虹隧道電扶梯直達、全冷氣、雨天避暑備案</div></div></li>
+      
+      <li class="lg"><span class="no">8</span><div><span class="lgn">天開稲荷神社</span> <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E5%AE%B0%E5%BA%9C%20%E5%A4%A9%E9%96%8B%E7%A8%B2%E8%8D%B7%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a><div class="lgd">境內後山小社;鬼滅聖地竈門神社需另搭巴士約 10 分</div></div></li>
+      
+    </ul>
+    <p class="story">一出<b>西鐵太宰府站</b>,表参道就在眼前 — 不長的一條石板街,兩側是現烤梅枝餅的甜香、隈研吾用兩千根杉木蓋的星巴克、和全世界唯一的<b>合格祈願拉麵</b>。順著人流往上,過了心字池上的紅色<b>太鼓橋</b>、穿過鳥居,就是學問之神坐鎮的<b>天満宮</b>。御本殿正逢 124 年一次的『令和大改修』、要 2026 年 9 月才恢復,但飛梅、御神牛、庭園都照常。想再走遠一點,後山的天開稲荷神社、右側冷氣全開的九州國立博物館,都是盛夏避暑的好去處。</p>
+    
+    <div class="rsec" style="margin-top:22px"><h3><svg class="ic"><use href="#i-leaf"/></svg>特別值得一提</h3>
+      <div class="hl"><div class="hli"><span class="hln">隈研吾星巴克</span><div class="hld">兩千根杉木『地獄組』無釘工法,太宰府必拍建築,抹茶星冰樂消暑。</div></div><div class="hli"><span class="hln">合格ラーメン(一蘭)</span><div class="hld">世界唯一、五角合格碗/合格箸/59cm 麵。因 13:00 菊川鰻魚是正餐,建議看拍＋買合格周邊、想吃點一份分。</div></div><div class="hli"><span class="hln">竈門神社(延伸)</span><div class="hld">《鬼滅之刃》聖地、緣結び名社,巴士 10 分上山。夏天悶熱、體力好再去。</div></div></div>
     </div>
+    
+    <div class="rsec" style="margin-top:18px"><h3><svg class="ic"><use href="#i-umb"/></svg>家庭提醒</h3><div class="rcard"><p>參道平緩好走,但樓門有階梯、太鼓橋較陡,扶好慢走。<b>盛夏正午最熱、12 點前收工回市區吹冷氣</b>,竈門神社山路留給體力好的人。公廁在神社右側與參道中段。下午長輩想省力就直接回博多,採買午餐都在市區、不會錯過重點。</p></div></div>
 
-    <div class="rsec">
-      <h3><svg class="ic"><use href="#i-pin"/></svg>周邊順路亮點</h3>
-      <div class="rcard"><ul class="rec"><li><b>竈門神社</b>——太宰府後山、<b>鬼滅之刃聖地</b>(主角竈門炭治郎同名)、緣結び與除厄名社、秋天紅葉極美。從天満宮搭社區巴士『まほろば号』約 10 分。夏天上山悶熱、長輩斟酌。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E7%AB%88%E9%96%80%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>光明禅寺</b>——天満宮參道旁步行 5 分、<b>九州唯一的枯山水庭園</b>『佛光石庭』、遊客少極靜。近年參觀規定時有調整,出發前查一下是否開放。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%85%89%E6%98%8E%E7%A6%85%E5%AF%BA" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>九州国立博物館</b>——天満宮後方彩虹隧道電扶梯直達、<b>全冷氣＋電梯</b>、日本四大國立博物館之一。已列 Day5 的雨天／避暑備案。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E4%B9%9D%E5%B7%9E%E5%9B%BD%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>太宰府政庁跡・観世音寺</b>——古代九州行政中心遺跡、觀世音寺藏日本最古梵鐘。較遠、考古歷史迷再排。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E5%AE%B0%E5%BA%9C%E6%94%BF%E5%BA%81%E8%B7%A1%E3%83%BB%E8%A6%B3%E4%B8%96%E9%9F%B3%E5%AF%BA" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul></div>
-    </div>
+    
 
-    <div class="rsec">
-      <h3><svg class="ic"><use href="#i-walk"/></svg>怎麼逛</h3>
-      <div class="rcard"><ol><li>西鐵太宰府站出站就是參道入口</li><li><b>先直衝天満宮參拜</b>(早上 7-9 點涼、人少;本殿令和大改修中、走現場過渡動線)</li><li>回頭沿參道慢逛:隈研吾星巴克坐一下 → かさの家買熱梅枝餅 → 一蘭合格ラーメン看拍</li><li>還有體力＋不太熱 → 延伸竈門神社(鬼滅)或光明禅寺(枯山水);否則直接回程</li><li><b>避雷:</b>參道店家多 9 點後才開,先拜殿再逛店最順;夏天正午最熱,12 點前收工回市區吹冷氣</li></ol></div>
-    </div>
-
-    <div class="grid2">
-    <div class="rsec">
-      <h3><svg class="ic"><use href="#i-bowl"/></svg>怎麼吃</h3>
-      <div class="rcard"><ul class="rec"><li><b>かさの家 梅枝餅</b>——太宰府名物、現烤熱的 ¥130、參道多家都有 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8B%E3%81%95%E3%81%AE%E5%AE%B6%20%E6%A2%85%E6%9E%9D%E9%A4%85" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>スターバックス 太宰府天満宮表参道店</b>——隈研吾 2,000 多根杉木『地獄組』建築、抹茶星冰樂消暑 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%90%E3%83%83%E3%82%AF%E3%82%B9%20%E5%A4%AA%E5%AE%B0%E5%BA%9C%E5%A4%A9%E6%BA%80%E5%AE%AE%E8%A1%A8%E5%8F%82%E9%81%93%E5%BA%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>一蘭 太宰府参道店</b>——世界唯一合格ラーメン、13:00 有鰻魚正餐、這裡看拍為主想吃點一份分 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E8%98%AD%20%E5%A4%AA%E5%AE%B0%E5%BA%9C%E5%8F%82%E9%81%93%E5%BA%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>維新の庭 松屋</b>——參道老舖、二樓茶房可眺庭園、想坐下歇腳的選項 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E7%B6%AD%E6%96%B0%E3%81%AE%E5%BA%AD%20%E6%9D%BE%E5%B1%8B" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul></div>
-    </div>
-
-    <div class="rsec">
-      <h3><svg class="ic"><use href="#i-leaf"/></svg>怎麼玩</h3>
-      <div class="rcard"><ul class="rec"><li><b>太宰府天満宮 參拜</b>——過太鼓橋(過去／現在／未來三橋)、摸御神牛增智慧、看樹齡 1,100 年飛梅、買學業守 ¥800 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E5%AE%B0%E5%BA%9C%E5%A4%A9%E6%BA%80%E5%AE%AE%20%E5%8F%83%E6%8B%9C" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>隈研吾星巴克 建築打卡</b>——參道中段、太宰府必拍的木構空間 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E9%9A%88%E7%A0%94%E5%90%BE%E6%98%9F%E5%B7%B4%E5%85%8B%20%E5%BB%BA%E7%AF%89%E6%89%93%E5%8D%A1" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>合格主題道具拍照</b>——一蘭參道店的五角合格碗、合格箸、落ちないハンガー,送考生朋友很應景 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%90%88%E6%A0%BC%E4%B8%BB%E9%A1%8C%E9%81%93%E5%85%B7%E6%8B%8D%E7%85%A7" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>竈門神社 鬼滅聖地</b>——延伸行程、緣結び繪馬、拍鳥居(夏天上山熱、量力) <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E7%AB%88%E9%96%80%E7%A5%9E%E7%A4%BE%20%E9%AC%BC%E6%BB%85%E8%81%96%E5%9C%B0" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul></div>
-    </div>
-    </div>
-
-    <div class="rsec">
-      <h3><svg class="ic"><use href="#i-umb"/></svg>家庭提醒</h3>
-      <div class="rcard"><p>參道整體平緩好走,但到樓門有階梯、太鼓橋拱起較陡,扶好慢走。<b>夏天正午避免上竈門神社山路</b>,留給體力好的人。公廁在神社右側與參道中段。下午長輩想省力就直接回博多,採買與午餐都在市區,不會錯過重點。</p></div>
-    </div>
-
-    <a class="backlink" href="index.html#day"><svg class="ic"><use href="#i-chev"/></svg> 回行程頁</a>
+    <a class="backlink" href="index.html"><svg class="ic"><use href="#i-chev"/></svg> 回行程頁</a>
   </section>
   
   <section class="panel" id="a-itoshima">
@@ -293,39 +319,37 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
     </div>
     <div class="tagline">福岡人的海岸後花園——一條濱海公路串起網美椰子鞦韆、海中夫婦岩鳥居、白色希臘風咖啡與現撈海鮮;沒有鐵路直達,是自駕才玩得開的兜風路線。</div>
 
+    
+    
     <div class="rsec">
       <h3><svg class="ic"><use href="#i-train"/></svg>怎麼到 · 停多久</h3>
       <div class="rcard"><p><b>Day3 全天自駕</b>。Nippon 租車博多口取車(訂單 N64330、<b>09:00 取／19:00 還</b>、崴唯一駕駛)、MapCode <b>13 320 278*04</b>。市區到糸島海岸約 40-50 分。點與點之間開車,盛夏<b>車內高溫勿留長輩久候</b>。</p></div>
     </div>
-
     <div class="rsec">
       <h3><svg class="ic"><use href="#i-pin"/></svg>周邊順路亮點</h3>
       <div class="rcard"><ul class="rec"><li><b>芥屋大門</b>——日本三大玄武岩洞之一、可搭<b>遊覧船(約 25 分)</b>進洞、糸島半島最西端。想看奇岩海蝕洞再排。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E8%8A%A5%E5%B1%8B%E5%A4%A7%E9%96%80" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>伊都菜彩</b>——JA 直賣所、<b>全九州最大農產直賣</b>、糸島豚／糸島雞蛋／當地蔬果海產超便宜,買伴手禮或回程補貨很好逛。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E4%BC%8A%E9%83%BD%E8%8F%9C%E5%BD%A9" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>パームビーチ ザ・ガーデンズ</b>——海邊餐廳＋商店群、夕陽名所、二見ヶ浦旁。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%BC%E3%83%A0%E3%83%93%E3%83%BC%E3%83%81%20%E3%82%B6%E3%83%BB%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%BA" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>牡蠣小屋(岐志漁港等)</b>——<b>11-3 月冬季限定</b>、炭火烤牡蠣。我們 7 月去<b>沒有營業</b>、列出來讓你知道季節。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E7%89%A1%E8%A0%A3%E5%B0%8F%E5%B1%8B%28%E5%B2%90%E5%BF%97%E6%BC%81%E6%B8%AF%E7%AD%89%29" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul></div>
     </div>
-
     <div class="rsec">
       <h3><svg class="ic"><use href="#i-walk"/></svg>怎麼逛</h3>
       <div class="rcard"><ol><li>自駕環半島、我們的順路:椰子鞦韆 10:20 → 夫婦岩 11:00 → 櫻井神社 11:50 → 海鮮堂 12:30 午餐</li><li>午餐後看狀況:<b>白糸の滝為選配</b>——路順＋超前才上山(夏天往白糸塞車風險高),否則加油満タン返し直接還車</li><li>熱門的椰子鞦韆／夫婦岩一帶<b>假日與夏天午後會塞、停車位難搶</b>,早上先攻最順</li><li><b>避雷:</b>海邊各點多為戶外曝曬,車上先開好冷氣再下車;長輩不下車的點(如櫻井神社)別把人留在高溫車內</li></ol></div>
     </div>
-
     <div class="grid2">
     <div class="rsec">
       <h3><svg class="ic"><use href="#i-bowl"/></svg>怎麼吃</h3>
       <div class="rcard"><ul class="rec"><li><b>海鮮堂(已訂 12:30)</b>——現撈海鮮定食、坐桌椅、不吃內臟也沒問題 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E6%B5%B7%E9%AE%AE%E5%A0%82%28%E5%B7%B2%E8%A8%82%2012%3A30%29" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>サンセット／current／ロンドンバスカフェ</b>——糸島海岸知名咖啡群、看海放空、ロンドンバス是倫敦紅巴士改裝的打卡點 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%83%B3%E3%82%BB%E3%83%83%E3%83%88%EF%BC%8Fcurrent%EF%BC%8F%E3%83%AD%E3%83%B3%E3%83%89%E3%83%B3%E3%83%90%E3%82%B9%E3%82%AB%E3%83%95%E3%82%A7" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>伊都菜彩 現買</b>——糸島豚、雞蛋布丁、當季水果,直賣所價格實在 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E4%BC%8A%E9%83%BD%E8%8F%9C%E5%BD%A9%20%E7%8F%BE%E8%B2%B7" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul></div>
     </div>
-
     <div class="rsec">
       <h3><svg class="ic"><use href="#i-leaf"/></svg>怎麼玩</h3>
       <div class="rcard"><ul class="rec"><li><b>ヤシの木ブランコ 椰子鞦韆</b>——面海盪鞦韆的招牌網美照、要走一小段沙灘 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%83%A4%E3%82%B7%E3%81%AE%E6%9C%A8%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B3%20%E6%A4%B0%E5%AD%90%E9%9E%A6%E9%9F%86" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>二見ヶ浦 夫婦岩・白鳥居</b>——海中兩塊夫婦岩與白色鳥居、日落名所 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%8C%E8%A6%8B%E3%83%B6%E6%B5%A6%20%E5%A4%AB%E5%A9%A6%E5%B2%A9%E3%83%BB%E7%99%BD%E9%B3%A5%E5%B1%85" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>櫻井神社</b>——嵐粉聖地、莊嚴古社(車上高溫勿久留長輩) <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E6%AB%BB%E4%BA%95%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>白糸の滝 納涼(選配)</b>——落差 24m、夏天消暑、可玩流水素麵(路順再去) <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E7%99%BD%E7%B3%B8%E3%81%AE%E6%BB%9D%20%E7%B4%8D%E6%B6%BC%28%E9%81%B8%E9%85%8D%29" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul></div>
     </div>
     </div>
-
     <div class="rsec">
       <h3><svg class="ic"><use href="#i-umb"/></svg>家庭提醒</h3>
       <div class="rcard"><p><b>全程自駕、坐車不走遠,對膝蓋最友善</b>的一天。但海邊點多為戶外、日曬強,備陽傘、帽子、防曬,每個點停留別太久。椰子鞦韆要走沙灘、鞋子好走一點。海鮮堂坐桌椅、餐點清爽適合長輩。夏天沒有牡蠣小屋、別白跑。</p></div>
     </div>
+    
 
-    <a class="backlink" href="index.html#day"><svg class="ic"><use href="#i-chev"/></svg> 回行程頁</a>
+    <a class="backlink" href="index.html"><svg class="ic"><use href="#i-chev"/></svg> 回行程頁</a>
   </section>
   
 
