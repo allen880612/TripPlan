@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>福岡 6 天 5 夜 · 大區導覽</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#FBFAF7; --raise:#FFFFFF; --ink:#1C1B22; --body:#514D46; --soft:#8A8479;
+  --line:#E7E2D8; --line2:#D8D2C5;
+  --plum:#7A3B4E; --indigo:#2C3E6B; --terra:#AB5433; --matcha:#5A7247; --gold:#997529; --slate:#9A948A;
+  --ok:#4B7A52; --okbg:#EAF0EA; --warn:#9A6B1E; --warnbg:#F5ECD9; --terrabg:#F6E7DF;
+  --shadow:0 1px 2px rgba(30,25,20,.04),0 4px 14px rgba(30,25,20,.05);
+  --serif:"Noto Serif TC",serif; --sans:"Noto Sans TC",-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,monospace; --maxw:660px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --ground:#16151A; --raise:#1E1C23; --ink:#F3F0EA; --body:#C3BDB2; --soft:#8B857A;
+  --line:#2C2A32; --line2:#3A3742; --plum:#CE8598; --indigo:#93A6D6; --terra:#D98A63;
+  --matcha:#94AE78; --gold:#C9A24A; --slate:#9A948A; --ok:#7DA883; --okbg:#1E2A20;
+  --warn:#C9A24A; --warnbg:#2C2517; --terrabg:#2C1F18;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}}
+:root[data-theme="dark"]{
+  --ground:#16151A; --raise:#1E1C23; --ink:#F3F0EA; --body:#C3BDB2; --soft:#8B857A;
+  --line:#2C2A32; --line2:#3A3742; --plum:#CE8598; --indigo:#93A6D6; --terra:#D98A63;
+  --matcha:#94AE78; --gold:#C9A24A; --slate:#9A948A; --ok:#7DA883; --okbg:#1E2A20;
+  --warn:#C9A24A; --warnbg:#2C2517; --terrabg:#2C1F18;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}
+:root[data-theme="light"]{
+  --ground:#FBFAF7; --raise:#FFFFFF; --ink:#1C1B22; --body:#514D46; --soft:#8A8479;
+  --line:#E7E2D8; --line2:#D8D2C5; --plum:#7A3B4E; --indigo:#2C3E6B; --terra:#AB5433;
+  --matcha:#5A7247; --gold:#997529; --slate:#9A948A; --ok:#4B7A52; --okbg:#EAF0EA;
+  --warn:#9A6B1E; --warnbg:#F5ECD9; --terrabg:#F6E7DF;
+  --shadow:0 1px 2px rgba(30,25,20,.04),0 4px 14px rgba(30,25,20,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ground);color:var(--body);font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;line-height:1.6}
+.page{max-width:var(--maxw);margin:0 auto;padding:0 16px 90px}
+.ic{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:-.12em}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--ground) 90%,transparent);
+  backdrop-filter:saturate(1.3) blur(12px);border-bottom:1px solid var(--line)}
+.hdr-top{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:12px;padding:11px 16px}
+.brand{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:15px;white-space:nowrap;letter-spacing:.02em}
+.pills{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.pills::-webkit-scrollbar{display:none}
+.pd{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--soft);text-decoration:none;
+  padding:5px 9px;border-radius:8px;white-space:nowrap}
+.pd.on{color:#fff;background:var(--plum)}
+.next{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:9px;padding:7px 16px;border-top:1px solid var(--line)}
+.next .lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--plum);text-transform:uppercase}
+.next .t{font-family:var(--mono);font-weight:700;color:var(--ink);font-size:13px;font-variant-numeric:tabular-nums}
+.next .n{font-size:13px;color:var(--body);font-weight:500}
+.next .ic{color:var(--plum);font-size:14px}
+
+/* day header */
+.cover{margin:18px 0 0;height:190px;border-radius:16px;overflow:hidden;position:relative;
+  background:linear-gradient(120deg,var(--indigo),var(--plum))}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.cover::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,.05) 55%,transparent)}
+.cover .cap{position:absolute;left:15px;bottom:12px;right:15px;z-index:1}
+.cover .k{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:rgba(255,255,255,.9);text-transform:uppercase}
+.cover .attr{position:absolute;right:9px;top:9px;z-index:1;font-family:var(--mono);font-size:9px;
+  color:rgba(255,255,255,.7);background:rgba(0,0,0,.25);padding:2px 6px;border-radius:5px}
+.dayhead{padding:16px 0 6px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--plum)}
+.daytitle{font-family:var(--serif);color:var(--ink);font-weight:600;font-size:27px;line-height:1.3;text-wrap:balance;margin-top:10px}
+.daymeta{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.daymeta .m{font-family:var(--mono);font-size:11.5px;color:var(--body);background:var(--raise);
+  border:1px solid var(--line);border-radius:7px;padding:4px 9px;font-variant-numeric:tabular-nums}
+.daymeta .m b{color:var(--ink)}
+.intro{margin-top:16px;font-size:14px;color:var(--body);line-height:1.75}
+
+/* timeline spine + cards */
+.tl{position:relative;margin-top:22px}
+.row{position:relative;display:grid;grid-template-columns:44px 1fr;column-gap:20px;padding-bottom:10px}
+.row::before{content:"";position:absolute;left:55px;top:6px;bottom:-4px;width:2px;background:var(--line2)}
+.row:last-child::before{display:none}
+.time{font-family:var(--mono);font-size:12px;color:var(--soft);text-align:right;padding-top:15px;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.node{position:relative}
+.dot{position:absolute;left:-15px;top:16px;width:13px;height:13px;border-radius:50%;
+  background:var(--ground);border:2.5px solid var(--slate);z-index:2;box-sizing:border-box}
+.dot.food{border-color:var(--terra)} .dot.shrine{border-color:var(--indigo)}
+.dot.shop{border-color:var(--plum)} .dot.nature{border-color:var(--matcha)}
+.dot.culture{border-color:var(--indigo)} .dot.night{border-color:var(--gold)}
+
+/* minor rows */
+.minor{display:flex;align-items:center;gap:8px;color:var(--soft);font-size:12.5px;padding:6px 0 6px 2px}
+.minor .ic{color:var(--slate);font-size:14px}
+.dot.mini{width:9px;height:9px;top:10px;left:-13px;border-width:2px;background:var(--line2);border-color:var(--line2)}
+
+/* transit connector */
+.transit{display:flex;align-items:center;gap:8px;color:var(--soft);font-size:12px;
+  padding:2px 0 8px 2px}
+.transit .ic{color:var(--slate);font-size:15px;flex:0 0 auto}
+.transit b{color:var(--body);font-weight:500}
+
+/* card */
+.card{background:var(--raise);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+  overflow:hidden;transition:border-color .2s}
+.card:hover{border-color:var(--line2)}
+.card > summary{list-style:none;cursor:pointer;padding:13px 14px;display:block}
+.card > summary::-webkit-details-marker{display:none}
+.ct{display:flex;align-items:flex-start;gap:10px}
+.cic{flex:0 0 auto;font-size:19px;margin-top:1px}
+.cic.food{color:var(--terra)} .cic.shrine{color:var(--indigo)}
+.cic.shop{color:var(--plum)} .cic.nature{color:var(--matcha)}
+.cic.culture{color:var(--indigo)} .cic.night{color:var(--gold)}
+.cname{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:17.5px;line-height:1.35;flex:1}
+.dur{font-family:var(--mono);font-size:10.5px;color:var(--soft);white-space:nowrap;margin-top:3px}
+.teaser{margin-top:8px;font-size:13.5px;color:var(--body);line-height:1.65}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.chip{font-size:11.5px;font-weight:500;padding:3px 9px;border-radius:20px;font-variant-numeric:tabular-nums;
+  border:1px solid var(--line2);color:var(--soft)}
+.chip.book{color:var(--ok);background:var(--okbg);border-color:transparent}
+.chip.walk{color:var(--warn);background:var(--warnbg);border-color:transparent}
+.chip.care{color:var(--terra);background:var(--terrabg);border-color:transparent}
+.foot{display:flex;align-items:center;gap:12px;margin-top:12px}
+.maps{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:var(--indigo);
+  text-decoration:none;border:1px solid color-mix(in srgb,var(--indigo) 32%,var(--line2));padding:6px 11px;border-radius:9px}
+.maps:hover{background:color-mix(in srgb,var(--indigo) 8%,transparent)}
+.maps .ic{font-size:14px}
+.more{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--plum);
+  display:inline-flex;align-items:center;gap:5px;letter-spacing:.03em}
+.more .ic{font-size:14px;transition:transform .2s} .card[open] .more .ic{transform:rotate(180deg)}
+.card[open] .more .o{display:none} .more .c{display:none} .card[open] .more .c{display:inline}
+.detail{padding:0 14px 15px;border-top:1px solid var(--line)}
+.detail .blk{padding-top:13px}
+.detail h5{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.detail p{font-size:13.5px;color:var(--body);line-height:1.7}
+.detail ol{padding-left:18px;font-size:13px;color:var(--body);line-height:1.75}
+.detail ol li{margin-bottom:3px}
+.detail ul.rec{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.detail ul.rec li{font-size:13px;color:var(--body);line-height:1.6;padding-left:15px;position:relative}
+.detail ul.rec li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--terra)}
+.detail ul.rec.shop li::before{background:var(--plum)}
+.detail ul.rec li b{color:var(--ink);font-weight:600}
+.mapmini{display:inline-flex;align-items:center;gap:4px;color:var(--indigo);text-decoration:none;
+  font-size:11px;font-weight:600;white-space:nowrap;border:1px solid color-mix(in srgb,var(--indigo) 32%,var(--line2));
+  padding:3px 9px;border-radius:20px;margin-left:5px;vertical-align:middle}
+.mapmini:hover{background:color-mix(in srgb,var(--indigo) 10%,transparent)}.mapmini .ic{font-size:12px}
+.spotimg{width:100%;border-radius:10px;display:block;margin-bottom:3px}
+.spotimg-cap{font-family:var(--mono);font-size:10px;color:var(--soft);margin:-1px 0 2px;letter-spacing:.02em}
+.hours{font-family:var(--mono);font-size:12.5px;color:var(--body);font-variant-numeric:tabular-nums}
+
+.note{margin-top:24px;background:var(--raise);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:12px;padding:14px 16px}
+.note h4{font-family:var(--serif);font-size:14px;color:var(--ink);margin-bottom:6px;font-weight:600;display:flex;align-items:center;gap:7px}
+.note h4 .ic{color:var(--gold);font-size:16px}
+.note p{font-size:13px;color:var(--body);line-height:1.7}
+.footer{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11px;color:var(--soft);text-align:center;line-height:1.8;letter-spacing:.02em}
+
+.themebtn{position:fixed;right:16px;bottom:16px;z-index:40;width:44px;height:44px;border-radius:12px;
+  border:1px solid var(--line2);background:var(--raise);color:var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow)}
+.themebtn .ic{font-size:19px}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--plum);outline-offset:2px;border-radius:9px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ===== 大區導覽專用（沿用參考頁樣式） ===== */
+.reftitle{padding:24px 0 8px}
+.reftitle h1{font-family:var(--serif);font-size:26px;color:var(--ink);font-weight:700}
+.reftitle .jp{font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:var(--soft);text-transform:uppercase;display:block;margin-top:5px}
+.reftitle .sub{font-size:13.5px;color:var(--soft);margin-top:8px;line-height:1.6}
+.tabs{position:sticky;top:53px;z-index:20;background:color-mix(in srgb,var(--ground) 92%,transparent);backdrop-filter:blur(10px);display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;padding:10px 0;border-bottom:1px solid var(--line)}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-size:13px;font-weight:600;color:var(--soft);background:transparent;border:1px solid var(--line2);border-radius:20px;padding:6px 14px;cursor:pointer;white-space:nowrap}
+.tab.on{color:#fff;background:var(--plum);border-color:var(--plum)}
+.panel{display:none;padding:20px 0 60px}
+.panel.on{display:block}
+.areahd{padding:2px 0 4px}
+.areahd .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--plum);font-weight:600;text-transform:uppercase}
+.areahd h2{font-family:var(--serif);font-size:23px;color:var(--ink);font-weight:700;margin-top:3px}
+.tagline{padding:12px 15px;background:var(--cream,var(--raise));border-left:3px solid var(--coral,var(--plum));border-radius:10px;font-size:14px;color:var(--body);line-height:1.7;margin:12px 0 4px}
+.rsec{margin-bottom:24px}
+.rsec > h3{font-family:var(--serif);font-size:17px;color:var(--ink);font-weight:600;margin-bottom:9px;display:flex;align-items:center;gap:8px}
+.rsec > h3 .ic{width:17px;height:17px;color:var(--plum)}
+.rcard{background:var(--raise);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:15px 17px}
+.rcard p{font-size:13.5px;color:var(--body);line-height:1.75}
+.rcard ol{margin:0;padding-left:20px;font-size:13.5px;color:var(--body);line-height:1.8}
+.rcard ol li{margin-bottom:6px}
+.rcard ul.rec{list-style:none;margin:0;padding:0}
+.rcard ul.rec li{position:relative;padding-left:15px;margin-bottom:10px;font-size:13.5px;color:var(--body);line-height:1.7}
+.rcard ul.rec li:last-child{margin-bottom:0}
+.rcard ul.rec li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--plum)}
+.rcard ul.rec li b{color:var(--ink)}
+.mapmini{display:inline-flex;align-items:center;gap:3px;font-family:var(--mono);font-size:11px;color:var(--indigo);text-decoration:none;white-space:nowrap}
+.mapmini:hover{text-decoration:underline}
+.mapmini .ic{width:12px;height:12px}
+.backlink{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;color:var(--plum);text-decoration:none;margin-top:8px}
+@media (min-width:900px){
+  .hdr-top,.page{max-width:1060px}
+  .panel .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:0 22px;align-items:start}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-torii" viewBox="0 0 24 24"><path d="M3 7h18M5 5.2h14M7 7v13M17 7v13M8.5 10.2h7"/></symbol>
+  <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3.5 11h17M5 11a7 7 0 0 0 14 0M9.5 7.5c0-1.2.6-2 1.3-2.6M13 7.5c0-1.2.6-2 1.3-2.6"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8.5h12l-.9 11.5H6.9L6 8.5zM9 8.5V6.2a3 3 0 0 1 6 0v2.3"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 20c0-8 6-13 14-13 0 8-6 13-14 13zM6.5 18.5C10 15 13 12 15.5 10"/></symbol>
+  <symbol id="i-train" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="12.5" rx="3"/><path d="M6 11h12M9.5 16.5 8 20M14.5 16.5 16 20"/><circle cx="9.3" cy="13.5" r=".6"/><circle cx="14.7" cy="13.5" r=".6"/></symbol>
+  <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4.5" r="1.6"/><path d="M13 8l-2.5 3.5L12 14v6M13 8l3 1.5 1.5 3M10.5 11.5 7 16"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 13.5A8 8 0 1 1 10.5 4 6.3 6.3 0 0 0 20 13.5z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-umb" viewBox="0 0 24 24"><path d="M12 3v2M3.5 11a8.5 8.5 0 0 1 17 0zM12 11v7a2.5 2.5 0 0 1-5 0"/></symbol>
+  <symbol id="i-temple" viewBox="0 0 24 24"><path d="M3 21h18M5 21v-6h14v6M6.5 15l1.2-3h8.6l1.2 3M8 12l1-2.5h6l1 2.5M9.5 9.5 12 5.5l2.5 4M12 3.2v2.3"/></symbol>
+  <symbol id="i-fest" viewBox="0 0 24 24"><path d="M9 5h6M12 3v2M7.8 8.5C7.8 6.6 9.7 5.2 12 5.2s4.2 1.4 4.2 3.3M7.8 8.5v5M16.2 8.5v5M7.8 13.5C7.8 15.4 9.7 16.8 12 16.8s4.2-1.4 4.2-3.3M12 16.8v2.2M10 19h4M10 9.5h4M10 12.5h4"/></symbol>
+  <symbol id="i-bldg" viewBox="0 0 24 24"><path d="M4 21h16M6 21V8l6-3.5 6 3.5v13M9.5 11h1.2M13.3 11h1.2M9.5 14h1.2M13.3 14h1.2M10 21v-3.2h4V21"/></symbol>
+  <symbol id="i-beef" viewBox="0 0 24 24"><path d="M5 8.5C5 5.5 8 4 12 4s7 1.5 7 4.5c0 2-1.5 3-1.5 5.5S19 21 12 21 6.5 16.5 6.5 14 5 10.5 5 8.5z"/><circle cx="10" cy="10.5" r="1.3"/><circle cx="14.5" cy="12" r="1.1"/></symbol>
+</svg>
+
+<header class="hdr">
+  <div class="hdr-top">
+    <span class="brand">福岡 · 家族六日</span>
+    <nav class="pills">
+      <a class="pd" href="index.html">行程</a>
+      <a class="pd" href="reference.html">參考</a>
+      <a class="pd on" href="#">導覽</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <div class="reftitle">
+    <h1>大區導覽</h1><span class="jp">AREA GUIDE</span>
+    <p class="sub">每個大區的特色、周邊順路亮點、怎麼逛吃玩——先上線太宰府與糸島兩區,順手好用再擴到天神／中洲／門司港。</p>
+  </div>
+
+  <div class="tabs">
+    <button class="tab on" data-p="dazaifu">太宰府</button><button class="tab" data-p="itoshima">糸島</button>
+  </div>
+
+  
+  <section class="panel on" id="a-dazaifu">
+    <div class="areahd">
+      <div class="eyebrow">DAZAIFU · Day 5 上午</div>
+      <h2>太宰府</h2>
+    </div>
+    <div class="tagline">學問之神的千年門前町——一條參道串起梅枝餅香、隈研吾星巴克、與世界唯一的合格祈願拉麵;參拜完往山裡走,還藏著鬼滅聖地與九州唯一的枯山水名庭。</div>
+
+    <div class="rsec">
+      <h3><svg class="ic"><use href="#i-train"/></svg>怎麼到 · 停多久</h3>
+      <div class="rcard"><p>從博多<b>計程車門到門約 25-30 分</b>(¥5,300／4 人≈¥1,325／人、避暑避轉車),或<b>太宰府ライナー『旅人』巴士</b>(博多バスターミナル直達、¥610／人、約 40 分)。我們排 09:50 到、12:00 前離開趕市區午餐,停留約 2 小時。回程走西鐵(太宰府→二日市轉→天神、¥410／人)。</p></div>
+    </div>
+
+    <div class="rsec">
+      <h3><svg class="ic"><use href="#i-pin"/></svg>周邊順路亮點</h3>
+      <div class="rcard"><ul class="rec"><li><b>竈門神社</b>——太宰府後山、<b>鬼滅之刃聖地</b>(主角竈門炭治郎同名)、緣結び與除厄名社、秋天紅葉極美。從天満宮搭社區巴士『まほろば号』約 10 分。夏天上山悶熱、長輩斟酌。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E7%AB%88%E9%96%80%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>光明禅寺</b>——天満宮參道旁步行 5 分、<b>九州唯一的枯山水庭園</b>『佛光石庭』、遊客少極靜。近年參觀規定時有調整,出發前查一下是否開放。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%85%89%E6%98%8E%E7%A6%85%E5%AF%BA" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>九州国立博物館</b>——天満宮後方彩虹隧道電扶梯直達、<b>全冷氣＋電梯</b>、日本四大國立博物館之一。已列 Day5 的雨天／避暑備案。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E4%B9%9D%E5%B7%9E%E5%9B%BD%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>太宰府政庁跡・観世音寺</b>——古代九州行政中心遺跡、觀世音寺藏日本最古梵鐘。較遠、考古歷史迷再排。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E5%AE%B0%E5%BA%9C%E6%94%BF%E5%BA%81%E8%B7%A1%E3%83%BB%E8%A6%B3%E4%B8%96%E9%9F%B3%E5%AF%BA" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul></div>
+    </div>
+
+    <div class="rsec">
+      <h3><svg class="ic"><use href="#i-walk"/></svg>怎麼逛</h3>
+      <div class="rcard"><ol><li>西鐵太宰府站出站就是參道入口</li><li><b>先直衝天満宮參拜</b>(早上 7-9 點涼、人少;本殿令和大改修中、走現場過渡動線)</li><li>回頭沿參道慢逛:隈研吾星巴克坐一下 → かさの家買熱梅枝餅 → 一蘭合格ラーメン看拍</li><li>還有體力＋不太熱 → 延伸竈門神社(鬼滅)或光明禅寺(枯山水);否則直接回程</li><li><b>避雷:</b>參道店家多 9 點後才開,先拜殿再逛店最順;夏天正午最熱,12 點前收工回市區吹冷氣</li></ol></div>
+    </div>
+
+    <div class="grid2">
+    <div class="rsec">
+      <h3><svg class="ic"><use href="#i-bowl"/></svg>怎麼吃</h3>
+      <div class="rcard"><ul class="rec"><li><b>かさの家 梅枝餅</b>——太宰府名物、現烤熱的 ¥130、參道多家都有 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8B%E3%81%95%E3%81%AE%E5%AE%B6%20%E6%A2%85%E6%9E%9D%E9%A4%85" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>スターバックス 太宰府天満宮表参道店</b>——隈研吾 2,000 多根杉木『地獄組』建築、抹茶星冰樂消暑 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%90%E3%83%83%E3%82%AF%E3%82%B9%20%E5%A4%AA%E5%AE%B0%E5%BA%9C%E5%A4%A9%E6%BA%80%E5%AE%AE%E8%A1%A8%E5%8F%82%E9%81%93%E5%BA%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>一蘭 太宰府参道店</b>——世界唯一合格ラーメン、13:00 有鰻魚正餐、這裡看拍為主想吃點一份分 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E8%98%AD%20%E5%A4%AA%E5%AE%B0%E5%BA%9C%E5%8F%82%E9%81%93%E5%BA%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>維新の庭 松屋</b>——參道老舖、二樓茶房可眺庭園、想坐下歇腳的選項 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E7%B6%AD%E6%96%B0%E3%81%AE%E5%BA%AD%20%E6%9D%BE%E5%B1%8B" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul></div>
+    </div>
+
+    <div class="rsec">
+      <h3><svg class="ic"><use href="#i-leaf"/></svg>怎麼玩</h3>
+      <div class="rcard"><ul class="rec"><li><b>太宰府天満宮 參拜</b>——過太鼓橋(過去／現在／未來三橋)、摸御神牛增智慧、看樹齡 1,100 年飛梅、買學業守 ¥800 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E5%AE%B0%E5%BA%9C%E5%A4%A9%E6%BA%80%E5%AE%AE%20%E5%8F%83%E6%8B%9C" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>隈研吾星巴克 建築打卡</b>——參道中段、太宰府必拍的木構空間 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E9%9A%88%E7%A0%94%E5%90%BE%E6%98%9F%E5%B7%B4%E5%85%8B%20%E5%BB%BA%E7%AF%89%E6%89%93%E5%8D%A1" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>合格主題道具拍照</b>——一蘭參道店的五角合格碗、合格箸、落ちないハンガー,送考生朋友很應景 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%90%88%E6%A0%BC%E4%B8%BB%E9%A1%8C%E9%81%93%E5%85%B7%E6%8B%8D%E7%85%A7" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>竈門神社 鬼滅聖地</b>——延伸行程、緣結び繪馬、拍鳥居(夏天上山熱、量力) <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E7%AB%88%E9%96%80%E7%A5%9E%E7%A4%BE%20%E9%AC%BC%E6%BB%85%E8%81%96%E5%9C%B0" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul></div>
+    </div>
+    </div>
+
+    <div class="rsec">
+      <h3><svg class="ic"><use href="#i-umb"/></svg>家庭提醒</h3>
+      <div class="rcard"><p>參道整體平緩好走,但到樓門有階梯、太鼓橋拱起較陡,扶好慢走。<b>夏天正午避免上竈門神社山路</b>,留給體力好的人。公廁在神社右側與參道中段。下午長輩想省力就直接回博多,採買與午餐都在市區,不會錯過重點。</p></div>
+    </div>
+
+    <a class="backlink" href="index.html#day"><svg class="ic"><use href="#i-chev"/></svg> 回行程頁</a>
+  </section>
+  
+  <section class="panel" id="a-itoshima">
+    <div class="areahd">
+      <div class="eyebrow">ITOSHIMA · Day 3 全天</div>
+      <h2>糸島</h2>
+    </div>
+    <div class="tagline">福岡人的海岸後花園——一條濱海公路串起網美椰子鞦韆、海中夫婦岩鳥居、白色希臘風咖啡與現撈海鮮;沒有鐵路直達,是自駕才玩得開的兜風路線。</div>
+
+    <div class="rsec">
+      <h3><svg class="ic"><use href="#i-train"/></svg>怎麼到 · 停多久</h3>
+      <div class="rcard"><p><b>Day3 全天自駕</b>。Nippon 租車博多口取車(訂單 N64330、<b>09:00 取／19:00 還</b>、崴唯一駕駛)、MapCode <b>13 320 278*04</b>。市區到糸島海岸約 40-50 分。點與點之間開車,盛夏<b>車內高溫勿留長輩久候</b>。</p></div>
+    </div>
+
+    <div class="rsec">
+      <h3><svg class="ic"><use href="#i-pin"/></svg>周邊順路亮點</h3>
+      <div class="rcard"><ul class="rec"><li><b>芥屋大門</b>——日本三大玄武岩洞之一、可搭<b>遊覧船(約 25 分)</b>進洞、糸島半島最西端。想看奇岩海蝕洞再排。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E8%8A%A5%E5%B1%8B%E5%A4%A7%E9%96%80" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>伊都菜彩</b>——JA 直賣所、<b>全九州最大農產直賣</b>、糸島豚／糸島雞蛋／當地蔬果海產超便宜,買伴手禮或回程補貨很好逛。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E4%BC%8A%E9%83%BD%E8%8F%9C%E5%BD%A9" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>パームビーチ ザ・ガーデンズ</b>——海邊餐廳＋商店群、夕陽名所、二見ヶ浦旁。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%BC%E3%83%A0%E3%83%93%E3%83%BC%E3%83%81%20%E3%82%B6%E3%83%BB%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%BA" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>牡蠣小屋(岐志漁港等)</b>——<b>11-3 月冬季限定</b>、炭火烤牡蠣。我們 7 月去<b>沒有營業</b>、列出來讓你知道季節。 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E7%89%A1%E8%A0%A3%E5%B0%8F%E5%B1%8B%28%E5%B2%90%E5%BF%97%E6%BC%81%E6%B8%AF%E7%AD%89%29" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul></div>
+    </div>
+
+    <div class="rsec">
+      <h3><svg class="ic"><use href="#i-walk"/></svg>怎麼逛</h3>
+      <div class="rcard"><ol><li>自駕環半島、我們的順路:椰子鞦韆 10:20 → 夫婦岩 11:00 → 櫻井神社 11:50 → 海鮮堂 12:30 午餐</li><li>午餐後看狀況:<b>白糸の滝為選配</b>——路順＋超前才上山(夏天往白糸塞車風險高),否則加油満タン返し直接還車</li><li>熱門的椰子鞦韆／夫婦岩一帶<b>假日與夏天午後會塞、停車位難搶</b>,早上先攻最順</li><li><b>避雷:</b>海邊各點多為戶外曝曬,車上先開好冷氣再下車;長輩不下車的點(如櫻井神社)別把人留在高溫車內</li></ol></div>
+    </div>
+
+    <div class="grid2">
+    <div class="rsec">
+      <h3><svg class="ic"><use href="#i-bowl"/></svg>怎麼吃</h3>
+      <div class="rcard"><ul class="rec"><li><b>海鮮堂(已訂 12:30)</b>——現撈海鮮定食、坐桌椅、不吃內臟也沒問題 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E6%B5%B7%E9%AE%AE%E5%A0%82%28%E5%B7%B2%E8%A8%82%2012%3A30%29" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>サンセット／current／ロンドンバスカフェ</b>——糸島海岸知名咖啡群、看海放空、ロンドンバス是倫敦紅巴士改裝的打卡點 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%83%B3%E3%82%BB%E3%83%83%E3%83%88%EF%BC%8Fcurrent%EF%BC%8F%E3%83%AD%E3%83%B3%E3%83%89%E3%83%B3%E3%83%90%E3%82%B9%E3%82%AB%E3%83%95%E3%82%A7" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>伊都菜彩 現買</b>——糸島豚、雞蛋布丁、當季水果,直賣所價格實在 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E4%BC%8A%E9%83%BD%E8%8F%9C%E5%BD%A9%20%E7%8F%BE%E8%B2%B7" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul></div>
+    </div>
+
+    <div class="rsec">
+      <h3><svg class="ic"><use href="#i-leaf"/></svg>怎麼玩</h3>
+      <div class="rcard"><ul class="rec"><li><b>ヤシの木ブランコ 椰子鞦韆</b>——面海盪鞦韆的招牌網美照、要走一小段沙灘 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%83%A4%E3%82%B7%E3%81%AE%E6%9C%A8%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B3%20%E6%A4%B0%E5%AD%90%E9%9E%A6%E9%9F%86" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>二見ヶ浦 夫婦岩・白鳥居</b>——海中兩塊夫婦岩與白色鳥居、日落名所 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%8C%E8%A6%8B%E3%83%B6%E6%B5%A6%20%E5%A4%AB%E5%A9%A6%E5%B2%A9%E3%83%BB%E7%99%BD%E9%B3%A5%E5%B1%85" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>櫻井神社</b>——嵐粉聖地、莊嚴古社(車上高溫勿久留長輩) <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E6%AB%BB%E4%BA%95%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>白糸の滝 納涼(選配)</b>——落差 24m、夏天消暑、可玩流水素麵(路順再去) <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E7%99%BD%E7%B3%B8%E3%81%AE%E6%BB%9D%20%E7%B4%8D%E6%B6%BC%28%E9%81%B8%E9%85%8D%29" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul></div>
+    </div>
+    </div>
+
+    <div class="rsec">
+      <h3><svg class="ic"><use href="#i-umb"/></svg>家庭提醒</h3>
+      <div class="rcard"><p><b>全程自駕、坐車不走遠,對膝蓋最友善</b>的一天。但海邊點多為戶外、日曬強,備陽傘、帽子、防曬,每個點停留別太久。椰子鞦韆要走沙灘、鞋子好走一點。海鮮堂坐桌椅、餐點清爽適合長輩。夏天沒有牡蠣小屋、別白跑。</p></div>
+    </div>
+
+    <a class="backlink" href="index.html#day"><svg class="ic"><use href="#i-chev"/></svg> 回行程頁</a>
+  </section>
+  
+
+  <p class="footer">福岡家族六日 · 行程頁 · Noto Serif / Sans TC · 內容以官方為準、行前一週複查</p>
+</div>
+
+<button class="themebtn" onclick="(function(){var r=document.documentElement;var d=(r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'))==='dark';r.setAttribute('data-theme',d?'light':'dark');})()" aria-label="切換深淺色"><svg class="ic"><use href="#i-moon"/></svg></button>
+<script>
+function openArea(key){
+  var sec=document.getElementById('a-'+key); if(!sec) return false;
+  document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+  document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('on')});
+  var btn=document.querySelector('.tab[data-p="'+key+'"]'); if(btn) btn.classList.add('on');
+  sec.classList.add('on'); return true;
+}
+document.querySelectorAll('.tab').forEach(function(b){b.addEventListener('click',function(){
+  openArea(b.dataset.p); window.scrollTo({top:0,behavior:'smooth'});
+});});
+(function(){var h=(location.hash||'').replace('#a-','');if(h)openArea(h);})();
+window.addEventListener('hashchange',function(){var h=(location.hash||'').replace('#a-','');if(h)openArea(h);});
+</script>
+</body>
+</html>
