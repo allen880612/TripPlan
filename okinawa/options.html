@@ -1,0 +1,643 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>沖繩問卷 選項介紹</title>
+<style>:root{
+  --ground:#FBFAF7; --raise:#FFFFFF; --ink:#1C1B22; --body:#514D46; --soft:#8A8479;
+  --line:#E7E2D8; --line2:#D8D2C5;
+  --plum:#7A3B4E; --indigo:#2C3E6B; --terra:#AB5433; --matcha:#5A7247; --gold:#997529; --slate:#9A948A;
+  --ok:#4B7A52; --okbg:#EAF0EA; --warn:#9A6B1E; --warnbg:#F5ECD9; --terrabg:#F6E7DF;
+  --shadow:0 1px 2px rgba(30,25,20,.04),0 4px 14px rgba(30,25,20,.05);
+  --serif:"Noto Serif TC",serif; --sans:"Noto Sans TC",-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,monospace; --maxw:660px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --ground:#16151A; --raise:#1E1C23; --ink:#F3F0EA; --body:#C3BDB2; --soft:#8B857A;
+  --line:#2C2A32; --line2:#3A3742; --plum:#CE8598; --indigo:#93A6D6; --terra:#D98A63;
+  --matcha:#94AE78; --gold:#C9A24A; --slate:#9A948A; --ok:#7DA883; --okbg:#1E2A20;
+  --warn:#C9A24A; --warnbg:#2C2517; --terrabg:#2C1F18;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}}
+:root[data-theme="dark"]{
+  --ground:#16151A; --raise:#1E1C23; --ink:#F3F0EA; --body:#C3BDB2; --soft:#8B857A;
+  --line:#2C2A32; --line2:#3A3742; --plum:#CE8598; --indigo:#93A6D6; --terra:#D98A63;
+  --matcha:#94AE78; --gold:#C9A24A; --slate:#9A948A; --ok:#7DA883; --okbg:#1E2A20;
+  --warn:#C9A24A; --warnbg:#2C2517; --terrabg:#2C1F18;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}
+:root[data-theme="light"]{
+  --ground:#FBFAF7; --raise:#FFFFFF; --ink:#1C1B22; --body:#514D46; --soft:#8A8479;
+  --line:#E7E2D8; --line2:#D8D2C5; --plum:#7A3B4E; --indigo:#2C3E6B; --terra:#AB5433;
+  --matcha:#5A7247; --gold:#997529; --slate:#9A948A; --ok:#4B7A52; --okbg:#EAF0EA;
+  --warn:#9A6B1E; --warnbg:#F5ECD9; --terrabg:#F6E7DF;
+  --shadow:0 1px 2px rgba(30,25,20,.04),0 4px 14px rgba(30,25,20,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ground);color:var(--body);font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;line-height:1.6}
+.page{max-width:var(--maxw);margin:0 auto;padding:0 16px 90px}
+.ic{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:-.12em}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--ground) 90%,transparent);
+  backdrop-filter:saturate(1.3) blur(12px);border-bottom:1px solid var(--line)}
+.hdr-top{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:12px;padding:11px 16px}
+.brand{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:15px;white-space:nowrap;letter-spacing:.02em}
+.pills{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.pills::-webkit-scrollbar{display:none}
+.pd{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--soft);text-decoration:none;
+  padding:5px 9px;border-radius:8px;white-space:nowrap}
+.pd.on{color:#fff;background:var(--plum)}
+.next{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:9px;padding:7px 16px;border-top:1px solid var(--line)}
+.next .lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--plum);text-transform:uppercase}
+.next .t{font-family:var(--mono);font-weight:700;color:var(--ink);font-size:13px;font-variant-numeric:tabular-nums}
+.next .n{font-size:13px;color:var(--body);font-weight:500}
+.next .ic{color:var(--plum);font-size:14px}
+
+/* day header */
+.cover{margin:18px 0 0;height:190px;border-radius:16px;overflow:hidden;position:relative;
+  background:linear-gradient(120deg,var(--indigo),var(--plum))}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.cover::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,.05) 55%,transparent)}
+.cover .cap{position:absolute;left:15px;bottom:12px;right:15px;z-index:1}
+.cover .k{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:rgba(255,255,255,.9);text-transform:uppercase}
+.cover .attr{position:absolute;right:9px;top:9px;z-index:1;font-family:var(--mono);font-size:9px;
+  color:rgba(255,255,255,.7);background:rgba(0,0,0,.25);padding:2px 6px;border-radius:5px}
+.dayhead{padding:16px 0 6px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--plum)}
+.daytitle{font-family:var(--serif);color:var(--ink);font-weight:600;font-size:27px;line-height:1.3;text-wrap:balance;margin-top:10px}
+.daymeta{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.daymeta .m{font-family:var(--mono);font-size:11.5px;color:var(--body);background:var(--raise);
+  border:1px solid var(--line);border-radius:7px;padding:4px 9px;font-variant-numeric:tabular-nums}
+.daymeta .m b{color:var(--ink)}
+.intro{margin-top:16px;font-size:14px;color:var(--body);line-height:1.75}
+
+/* timeline spine + cards */
+.tl{position:relative;margin-top:22px}
+.row{position:relative;display:grid;grid-template-columns:44px 1fr;column-gap:20px;padding-bottom:10px}
+.row::before{content:"";position:absolute;left:55px;top:6px;bottom:-4px;width:2px;background:var(--line2)}
+.row:last-child::before{display:none}
+.time{font-family:var(--mono);font-size:12px;color:var(--soft);text-align:right;padding-top:15px;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.node{position:relative}
+.dot{position:absolute;left:-15px;top:16px;width:13px;height:13px;border-radius:50%;
+  background:var(--ground);border:2.5px solid var(--slate);z-index:2;box-sizing:border-box}
+.dot.food{border-color:var(--terra)} .dot.shrine{border-color:var(--indigo)}
+.dot.shop{border-color:var(--plum)} .dot.nature{border-color:var(--matcha)}
+.dot.culture{border-color:var(--indigo)} .dot.night{border-color:var(--gold)}
+
+/* minor rows */
+.minor{display:flex;align-items:center;gap:8px;color:var(--soft);font-size:12.5px;padding:6px 0 6px 2px}
+.minor .ic{color:var(--slate);font-size:14px}
+.dot.mini{width:9px;height:9px;top:10px;left:-13px;border-width:2px;background:var(--line2);border-color:var(--line2)}
+
+/* transit connector */
+.transit{display:flex;align-items:center;gap:8px;color:var(--soft);font-size:12px;
+  padding:2px 0 8px 2px}
+.transit .ic{color:var(--slate);font-size:15px;flex:0 0 auto}
+.transit b{color:var(--body);font-weight:500}
+
+/* card */
+.card{background:var(--raise);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+  overflow:hidden;transition:border-color .2s}
+.card:hover{border-color:var(--line2)}
+.card > summary{list-style:none;cursor:pointer;padding:13px 14px;display:block}
+.card > summary::-webkit-details-marker{display:none}
+.ct{display:flex;align-items:flex-start;gap:10px}
+.cic{flex:0 0 auto;font-size:19px;margin-top:1px}
+.cic.food{color:var(--terra)} .cic.shrine{color:var(--indigo)}
+.cic.shop{color:var(--plum)} .cic.nature{color:var(--matcha)}
+.cic.culture{color:var(--indigo)} .cic.night{color:var(--gold)}
+.cname{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:17.5px;line-height:1.35;flex:1}
+.dur{font-family:var(--mono);font-size:10.5px;color:var(--soft);white-space:nowrap;margin-top:3px}
+.teaser{margin-top:8px;font-size:13.5px;color:var(--body);line-height:1.65}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.chip{font-size:11.5px;font-weight:500;padding:3px 9px;border-radius:20px;font-variant-numeric:tabular-nums;
+  border:1px solid var(--line2);color:var(--soft)}
+.chip.book{color:var(--ok);background:var(--okbg);border-color:transparent}
+.chip.walk{color:var(--warn);background:var(--warnbg);border-color:transparent}
+.chip.care{color:var(--terra);background:var(--terrabg);border-color:transparent}
+.foot{display:flex;align-items:center;gap:12px;margin-top:12px}
+.maps{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:var(--indigo);
+  text-decoration:none;border:1px solid color-mix(in srgb,var(--indigo) 32%,var(--line2));padding:6px 11px;border-radius:9px}
+.maps:hover{background:color-mix(in srgb,var(--indigo) 8%,transparent)}
+.maps .ic{font-size:14px}
+.more{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--plum);
+  display:inline-flex;align-items:center;gap:5px;letter-spacing:.03em}
+.more .ic{font-size:14px;transition:transform .2s} .card[open] .more .ic{transform:rotate(180deg)}
+.card[open] .more .o{display:none} .more .c{display:none} .card[open] .more .c{display:inline}
+.detail{padding:0 14px 15px;border-top:1px solid var(--line)}
+.detail .blk{padding-top:13px}
+.detail h5{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.detail p{font-size:13.5px;color:var(--body);line-height:1.7}
+.detail ol{padding-left:18px;font-size:13px;color:var(--body);line-height:1.75}
+.detail ol li{margin-bottom:3px}
+.detail ul.rec{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.detail ul.rec li{font-size:13px;color:var(--body);line-height:1.6;padding-left:15px;position:relative}
+.detail ul.rec li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--terra)}
+.detail ul.rec.shop li::before{background:var(--plum)}
+.detail ul.rec li b{color:var(--ink);font-weight:600}
+.mapmini{display:inline-flex;align-items:center;gap:4px;color:var(--indigo);text-decoration:none;
+  font-size:11px;font-weight:600;white-space:nowrap;border:1px solid color-mix(in srgb,var(--indigo) 32%,var(--line2));
+  padding:3px 9px;border-radius:20px;margin-left:5px;vertical-align:middle}
+.mapmini:hover{background:color-mix(in srgb,var(--indigo) 10%,transparent)}.mapmini .ic{font-size:12px}
+.spotimg{width:100%;border-radius:10px;display:block;margin-bottom:3px}
+.spotimg-cap{font-family:var(--mono);font-size:10px;color:var(--soft);margin:-1px 0 2px;letter-spacing:.02em}
+.hours{font-family:var(--mono);font-size:12.5px;color:var(--body);font-variant-numeric:tabular-nums}
+
+.note{margin-top:24px;background:var(--raise);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:12px;padding:14px 16px}
+.note h4{font-family:var(--serif);font-size:14px;color:var(--ink);margin-bottom:6px;font-weight:600;display:flex;align-items:center;gap:7px}
+.note h4 .ic{color:var(--gold);font-size:16px}
+.note p{font-size:13px;color:var(--body);line-height:1.7}
+.footer{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11px;color:var(--soft);text-align:center;line-height:1.8;letter-spacing:.02em}
+
+.themebtn{position:fixed;right:16px;bottom:16px;z-index:40;width:44px;height:44px;border-radius:12px;
+  border:1px solid var(--line2);background:var(--raise);color:var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow)}
+.themebtn .ic{font-size:19px}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--plum);outline-offset:2px;border-radius:9px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.opt{max-width:860px;margin:0 auto;padding:20px 18px 60px;line-height:1.75}
+.opt h1{font-size:26px;margin:10px 0 6px} .opt h2{font-size:20px;margin:34px 0 8px;padding-top:14px;border-top:1px solid var(--line2,#ddd)} .opt h3{font-size:16px;margin:22px 0 4px}
+.opt p{margin:4px 0} .opt a{word-break:break-all} .opt hr{border:0;border-top:1px solid var(--line2,#ddd);margin:16px 0}
+</style></head><body><div class="opt"><p><a href="index.html">← 回行程頁</a></p><h1>沖繩問卷 選項介紹</h1>
+<p>每個選項一段：特色、介紹連結、要注意的事。連結是繁體中文介紹，標「日文」的是找不到繁中。</p>
+<hr />
+<h2>那霸市區</h2>
+<p>住五晚的基地，白天空檔與晚上續攤都靠這一區填。
+本區就在那霸，單軌電車加走路就到，不用車。
+只有瀨長島那段跟南部沾邊；三方一致「必去」，朋友兩趟都住這裡。</p>
+<h3>逛｜國際通商店街</h3>
+<p>特色：1.6 公里主街，土產藥妝一次買齊，晚上最熱鬧；週日午後另有機會封街六小時、路中間有街頭表演
+介紹：https://boo2k.com/kokusai-street/ （小布少爺、2026）
+注意：已排在 v2 的 Day1 與 Day4，步行者天國那段已排 10/18（日）12:00-18:00。朋友兩趟都逛過多次，多數店 10:00 到 22:00。2026 年官方紀錄封街已中止六次、全部標惡劣天氣，週日封街 2026 年常臨時取消，當天早上要看官網公告；沒封街的話那天可以改走浮島通選物店。</p>
+<h3>景｜波上宮</h3>
+<p>特色：蓋在珊瑚礁懸崖上的神社，崖下就是海灘
+介紹：https://mimigo.tw/naminouegu/ （Mimi韓の旅遊指南、年份未標）
+注意：已排在 v2 的 Day1。朋友 2025/8 去過。24 小時可參拜，授與所 09:00-16:45，免費。純參拜 30 分鐘就夠。</p>
+<h3>吃｜金武阿古豬與山城牛涮涮鍋 琉球</h3>
+<p>特色：純血阿古豬配 A5 山城和牛的兩種涮涮鍋
+介紹：https://kinaguu100.owst.jp/ （店家官網、日文）
+注意：朋友 2025/8 的犒賞餐。套餐一人 6,500 到 12,000 円（未稅），要訂位。本館、別邸、國際通店三家資訊混雜，訂之前要先確認是哪一家。</p>
+<h3>逛｜樂園百貨店與エーデルワイス（RYUBO 內）</h3>
+<p>特色：百貨二樓整層沖繩選物，一樓是老牌洋菓子店
+介紹：https://matcha-jp.com/tw/9655 （MATCHA、年份未標）
+注意：朋友 2025/8 去過。10:00-20:30。就在縣廳前站，適合當雨天的備用。</p>
+<h3>吃｜Pain de Main</h3>
+<p>特色：深綠色小店只做外帶，明太子法國麵包最搶手
+介紹：https://iceoffice.com.tw/pain-de-main/ （食攝人生事務所、年份未標）
+注意：朋友 2025/8 去過。08:00-19:00，週二三休。一個 200 到 400 円。離旭橋站走 10 分。</p>
+<h3>吃｜漁師食堂 大ばんぶる舞 さかな大統漁</h3>
+<p>特色：漁港旁的海鮮定食，附十公斤魚骨熬的魚湯
+介紹：https://www.tabirai.net/localinfo/article/article-29758/ （たびらい、日文）
+注意：朋友 2026/3 去過。日替定食 1,580 円（含稅）。週五六 17:00-21:00 另有海鮮吃到飽 3,000 円。平日午晚餐的確切時段沒查到。</p>
+<h3>景｜首里 金城町石疊道</h3>
+<p>特色：十六世紀的琉球石灰岩坡道，兩側紅瓦老宅
+介紹：https://leafto.tw/ishitatami/ （一葉之頁、年份未標）
+注意：codex 點名補進、那霸區域顧問也包了一個走法，兩邊都推。全天開放、免費，走 30 到 40 分。坡陡，雨天極滑，要穿運動鞋。</p>
+<h3>玩｜瑞泉酒造</h3>
+<p>特色：首里城旁的泡盛酒廠，看影片加免費試喝古酒
+介紹：https://www.zuisen.co.jp/blank-8 （瑞泉酒造官網繁體中文頁）
+注意：codex 點名補進。09:00-17:00，全程約 30 分。官網寫五人以下免預約、祝日窗口休，但另一份舊資料寫六日祝休且要預約，兩邊矛盾。10/18 是週日，能不能進要先打 098-894-1968 問。</p>
+<h3>玩｜榮町市場 續攤喝一輪（はしご酒）</h3>
+<p>特色：白天是菜市場，晚上變成幾十間小店的酒街
+介紹：https://baygolee.com/sakaemachi-2/ （貝哥照玩誌、年份未標）
+注意：16:00 到深夜，一人一晚 4,000 到 5,000 円，走進去就好不用訂。主力的三家（なかま商店、出汁ダシ、あだん）週日休，10/18 去會撲空一半。巷子昏暗、廁所少。</p>
+<h3>吃｜なかま商店</h3>
+<p>特色：十個位子的小店，三杯酒加一道菜一千出頭
+介紹：https://okinawa.letsgojp.com/archives/878566/ （樂吃購！日本 沖繩版、年份未標）
+注意：16:00-24:00，週日休。單點一道 350 円起，免訂位但 16:00 開門即到最穩。菸味與吵雜是常態。</p>
+<h3>吃｜出汁ダシ（現刨柴魚專門店）</h3>
+<p>特色：老菜攤第三代開的柴魚店，現刨柴魚拌飯
+介紹：https://goodxssss.com/okinawa-naha-sakaemachi-shintoshin-guide/ （那霸榮町市場・新都心攻略、2026）
+注意：08:00 到 14:00 賣完為止，週日休。柴魚高湯套餐約 880 円。只有兩三樣、量不大，胃口大會不夠。</p>
+<h3>景｜沖繩縣立博物館・美術館</h3>
+<p>特色：用海洋與島嶼兩條線講沖繩，有免費中文語音導覽
+介紹：https://japantravel.co/%E6%B2%96%E7%B9%A9/%E9%82%A3%E9%9C%B8/%E6%B2%96%E7%B9%A9%E7%B8%A3%E7%AB%8B%E5%8D%9A%E7%89%A9%E9%A4%A8%E7%BE%8E%E8%A1%93%E9%A4%A8/ （Japan Travel、2026）
+注意：09:00-18:00，週五六到 20:00，週一休（10/19 剛好休）。常設展大人 410 到 530 円。10/20 起有「首里城與琉中關係」特展，可以補首里城只看外觀的遺憾。おもろまち站走 10 分。</p>
+<h3>景｜識名園</h3>
+<p>特色：琉球王家的迎賓庭園，世界遺產裡最大的一座
+介紹：https://okinawa.letsgojp.com/archives/849914/ （樂吃購！日本 沖繩版、年份未標）
+注意：人比首里城少很多。營業時間大約 09:00-17:30、週三休，票價大約 400 円，兩者都還沒核到官方頁，出發前要查那霸市官網。</p>
+<h3>景｜福州園</h3>
+<p>特色：福州工匠蓋的江南庭園，晚上點燈幾乎沒人
+介紹：https://shotrip.com/attractions/japan-attractions/4961/fukusyuen-okinawa （拉拉桑's 旅遊足跡、年份未標）
+注意：09:00-21:00，週三休。白天 200 到 330 円、夜間 300 円。離波上宮走 10 分。2026 年臨時休園頻繁，去之前要看官網公告。</p>
+<h3>逛｜浮島通 選物店</h3>
+<p>特色：國際通後巷的設計小店，T 恤器物銀飾都有
+介紹：https://gogojp.tw/naha-ukishima/ （福寶媽衝日本、年份未標）
+注意：多數店 11:00 到 19:30，早上沒得逛。沖繩設計 T 恤 3,000 到 5,000 円。萬一週日國際通沒封街，這裡是那天的替代走法。</p>
+<h3>吃｜泊いゆまち まぐろや本舗</h3>
+<p>特色：漁港市場的鮪魚朝丼四百円起，六點就開賣
+介紹：https://ajunfun.tw/tomari-port-fish-market/ （阿君的玩食天堂、年份未標）
+注意：06:00-16:00，朝丼供應到 11:00。免訂位、多收現金。美榮橋站走 15 分，計程車約 1,000 円。適合離島日出發前順路吃。</p>
+<h3>吃｜自家製麺 三竹寿 本店</h3>
+<p>特色：沖繩沾麵的開山店，超粗麵配九小時熬的濃湯
+介紹：https://www.oki-family.com/3chikuju/ （沖繩趣、年份未標）
+注意：11:00-21:00，無休。一碗 1,000 到 1,300 円，App 有九折。在古島站的商場裡，沒什麼氣氛，午餐尖峰排 15 到 30 分。想吃拉麵又不想在暖暮排一小時的話是替代。</p>
+<h3>吃｜楚辺そば（沖繩麵）</h3>
+<p>特色：紅瓦老宅九十席，定食七百五十円起跳
+介紹：https://slowlifeinokinawa.com/okifood-sobesoba/ （沖繩緩慢生活、年份未標）
+注意：11:30-21:00，只休正月與舊盆。850 円起，停車 30 台。不在單軌沿線，壺川站走 15 分。</p>
+<hr />
+<h2>南部（豐見城・糸滿・南城・八重瀨）</h2>
+<p>沒有壓倒性的單一大景點，價值在密度，一天串得起五六個小點。
+從那霸開車 30 到 50 分鐘，要車；沒車的話只有瀨長島能靠ウミカジライナー接駁巴士到。
+只有瀨長島夕陽跟那霸沾邊；三方一致「值得」，朋友 2026/3 走過這裡的採買那一條。</p>
+<h3>景｜齋場御嶽</h3>
+<p>特色：琉球最高聖地，三角岩縫望出去就是久高島
+介紹：https://kimiyo.tw/sefa-utaki/ （喵爸喵媽玩轉地球、年份未標）
+注意：已排在 v2 的 Day2。2026/10/1 起大人從 300 円漲到 600 円，部落格寫的舊價要自己換算。3 到 10 月 09:00-18:00，10/16 有開。售票在南城市地域物產館，離入口還要走 600 公尺。地面沒鋪平，別穿涼鞋。期待壯觀會失望。</p>
+<h3>逛｜道の駅いとまん（糸滿魚市場・お魚センター）</h3>
+<p>特色：縣內最大鮮魚中心，切好的生魚片三盒一千円
+介紹：https://www.funliday.com/posts/itoman-fish-center/ （Funliday、年份未標）
+注意：朋友 2026/3 去過。09:00-19:00，無休。海鮮下午常賣光。沒車不會經過這裡。跟南城那條線不同方向，要另排半天（跟糸滿漁民食堂湊成同一趟）。</p>
+<h3>逛｜Costco 南城倉庫店</h3>
+<p>特色：台灣會員卡直接進場，聯名信用卡也能結帳
+介紹：https://pingu.blog/okinawa-costco/ （小企鵝生活趣、年份未標）
+注意：朋友 2026/3 去過。10:00-20:00（週末是否 09:00 開，來源有矛盾）。要帶會員卡，一張可帶兩人；已經沒有外國旅客免稅，兩人的份量偏大不好處理。</p>
+<h3>逛｜沖繩 ASHIBINAA Outlet</h3>
+<p>特色：機場十五分鐘的戶外 Outlet，百家品牌長年打折
+介紹：https://bobbytravel.tw/ashibinaa-outlet/ （波比看世界、2026）
+注意：朋友 2026/3 取車後第一站。10:00-20:00，全年無休。戶外設計，下雨或太熱都不好逛。</p>
+<h3>逛｜iias 沖繩豐崎</h3>
+<p>特色：南部最大商場，二樓還有一間水族館
+介紹：https://ayaca.tw/iias-okinawa-toyosaki/ （AYACA 日本旅行研究所、2026）
+注意：朋友 2026/3 去過。10:00-21:00。跟 ASHIBINAA 之間有免費接駁車。目前在 v2 裡的定位是雨天備用。</p>
+<h3>吃｜浜辺の茶屋</h3>
+<p>特色：木屋直接蓋在礁石海邊，2025 年整修後有冷氣
+介紹：https://mimigo.tw/hamabe-no-chaya/ （Mimi韓の旅遊指南、年份未標）
+注意：08:00-18:00，不定休，平日也供應 8:00 早餐。不接受訂位、先到先坐，熱門時段等 20 到 40 分。一千円內。退潮時窗外只剩礁石，要對滿潮前後一小時。</p>
+<h3>吃｜Cafe やぶさち</h3>
+<p>特色：高台大玻璃窗正對太平洋，不必看潮汐
+介紹：https://atm0710.pixnet.net/blog/posts/7122270936 （YANG漾的趴趴照、痞客邦、年份未標）
+注意：11:00-18:00，週三休。HotPepper 可線上訂位，午餐 1,600 到 2,300 円，有 50 格停車。比浜辺の茶屋觀光化，有團客與婚宴。</p>
+<h3>吃｜大城てんぷら店</h3>
+<p>特色：六十年老店，麵衣薄脆現點現炸一個一百円出頭
+介紹：https://journey.tw/o-jima-oshiro-tempura-ten/ （許傑，旅行圖中、年份未標）
+注意：11:00-18:00，週一二休。10/16 是週五，跟中本兩家都開，可以各買兩個比。現炸要等 10 到 15 分，沒有座位。</p>
+<h3>吃｜奧武島いまいゆ市場</h3>
+<p>特色：島上唯一能坐下吃的地方，二樓露台看海
+介紹：https://boo2k.com/archives/43512 （小布少爺、年份未標）
+注意：09:00-18:00，基本無休。2025 年 6 月新蓋的兩層用餐區，一樓有冷氣。刺身、壽司、海鮮丼各 430 円一盒，賣完就沒。不是餐廳，要自己收拾。</p>
+<h3>吃｜糸満漁民食堂</h3>
+<p>特色：漁港旁吃當天卸貨的縣產魚，招牌是奶油煎魚
+介紹：https://www.oki-family.com/okinawasouth/ （沖繩趣 南部一日遊、年份未標）
+注意：11:30-15:00、18:00-22:00，週二休。現場排隊，定食 1,500 到 2,500 円，午餐排 30 分常見。跟南城那條線不同方向，要另排半天（跟道の駅いとまん湊成同一趟）。</p>
+<h3>景｜平和祈念公園</h3>
+<p>特色：海崖上刻著二十四萬個名字的「平和之礎」
+介紹：https://lailai-web.com/heiwa-kinen-park/ （來來琉球、年份未標）
+注意：公園全天免費，資料館 09:00-17:00、300 円。全戶外沒遮蔭。主題沉重，不適合排在想放鬆的那一天。</p>
+<h3>景｜ひめゆりの塔・姬百合和平祈念資料館</h3>
+<p>特色：學生護士隊的最後現場，展示克制不煽情
+介紹：https://lailai-web.com/himeyuri-no-to/ （來來琉球、年份未標）
+注意：09:00-17:25，全年無休，約 310 到 450 円（官網沒列，兩個來源不同）。跟平和祈念公園是一組，只挑一個看的話多數人挑這裡。館內主要是日文與英文，中文只有簡介紙。門口團體遊覽車多。</p>
+<h3>吃｜氾濫バーガー チムフガス</h3>
+<p>特色：五百克起跳的巨無霸漢堡，露台看海
+介紹：https://pingu.blog/flooding-burger-chimfugas/ （小企鵝生活趣、年份未標）
+注意：11:00-21:00，無休，不用訂位。一人 1,000 到 1,600 円，兩人分一個剛好。夕陽時段排 20 到 30 分，最後點餐 20:00 比周邊店家早。</p>
+<h3>吃｜POSILLIPO</h3>
+<p>特色：瀨長島高處的義式餐廳，夕陽正對水平線
+介紹：https://gogojp.tw/2017-01-08-461/ （福寶媽衝日本、2017）
+注意：瀨長島唯一能坐下來好好吃的一家。週五 11:30-15:30、17:30-22:00。HotPepper 或一休可線上訂，晚餐一人 4,000 到 6,000 円。露台位要先訂，下雨會關；不在階梯商場區內，要走一段上坡。</p>
+<h3>玩｜猿人の湯（ユインチホテル南城）</h3>
+<p>特色：地下兩千公尺的天然源泉，露天池看中城灣
+介紹：https://www.yuinchi.jp/heal/hot-spring/ （飯店官網、日文）
+注意：06:30-23:00，2,200 円含浴巾與館內服。比瀨長島的龍神之湯人少。位置偏，離那霸 35 到 40 分，泡完還要開回去，設施偏老。</p>
+<h3>玩｜Gangala 之谷（ガンガラーの谷）</h3>
+<p>特色：崩塌鐘乳石洞變成的森林谷，跟導覽走八十分鐘
+介紹：https://lailai-web.com/valley-of-gangala/ （來來琉球、年份未標）
+注意：導覽 10:00／12:00／14:00／16:00，全年無休，要先預約（官網或 098-948-4192），2,500 円、每場上限 20 人。就在玉泉洞馬路對面。只能跟團走，解說是日文、有中文語音導覽機。南部顧問說這是南部最值得加的新點，但 codex 明講「要加就得先拿掉溫泉或瀨長島晚餐」。</p>
+<hr />
+<h2>北谷與中部西海岸（含浦添）</h2>
+<p>夕陽與海岸步道才是這區的價值，購物設施只是配菜。
+從那霸開車或計程車約 40 分鐘；住兩晚的話區內走路就夠，不用車。
+逛街購物跟那霸重疊、海景跟讀谷恩納重疊；三方一致「必去」，朋友兩趟都來、2026/3 還住在這裡。</p>
+<h3>逛｜美國村（美浜アメリカンビレッジ）</h3>
+<p>特色：西岸風格的海邊商圈，十幾棟商場串著海灘
+介紹：https://bobbytravel.tw/american-village/ （波比看世界、2026）
+注意：已排在 v2 的 Day6 到 Day7 住宿地。朋友兩趟都來。多數店 10:00-22:00。地標摩天輪 2022 年已拆，原址 2026/4 開了新飯店，舊攻略寫的摩天輪不要再找。</p>
+<h3>逛｜港川外人住宅</h3>
+<p>特色：美軍舊宿舍改成的甜點咖啡與選物街區
+介紹：https://www.wendyjourney.com/minatogawa-stateside-town/ （Wendy's Journey、2026）
+注意：已排在 v2 的 10/21 二選一。朋友 2025/8 去過。各店不同，多數 11:00-18:00。10/21 是週三，1363、Proots、喫茶ニワトリ、ef 都休，有開的是鶏そばいしぐふー、oHacorté、沖縄セラードコーヒー、ほうき星、COKOFU。從美國村計程車單程約 2,500 円。</p>
+<h3>逛｜PARCO CITY 浦添西海岸</h3>
+<p>特色：兩百五十家店，美食街是一百八十度海景
+介紹：https://ajunfun.tw/parco-city/ （阿君的玩食天堂、2026）
+注意：已排在 v2 的 Day5。朋友兩趟都特地去，等於幫我們驗證過。10:00-22:00。接駁車是おもろまち駅前 15:35 發、PARCO CITY 18:45 回，上車處是國道 330 號的站牌不是站前圓環，官方也說塞車會延誤。</p>
+<h3>玩｜Dragon Palace</h3>
+<p>特色：美國村裡的大型遊樂場，開到晚上十一點
+介紹：https://www.okinawa-americanvillage.com/en/shoparea/en-dragon_palace/ （美國村官方網站、英文）
+注意：朋友 2026/3 晚上去過。10:00-23:00，這個時間只有第三方旅遊網站的資料，沒經官方頁確認。走路就到，不佔白天，適合吃喝逛完的收尾。</p>
+<h3>吃｜hoppepan（ほっぺパン）</h3>
+<p>特色：貓咪招牌的人氣麵包店，不加奶油與糖
+介紹：https://co-trip.jp/spot/847913 （ことりっぷ、日文）
+注意：朋友兩趟都吃。浦添內間店 10:00-19:00、週一到週四休；宜野灣店 08:00-19:00 賣完為止、週三四休。定休日多而且兩家不同，一定要先查當週。</p>
+<h3>吃｜Tang Tang 手作肉包</h3>
+<p>特色：開二十五年的肉包店，四種口味賣完為止
+介紹：https://okinawa-life30.com/tangtang/ （おきなわめぐり、日文）
+注意：朋友 2025/8 去過，接在港川之後。10:00 開賣到賣完，週二休，常常中午前就沒了。只有肉包、咖哩包、角煮味噌包、紅豆包四種。可電話預約 098-878-8835，一個也能訂。體積小好分食。</p>
+<h3>吃｜浜屋 沖繩麵</h3>
+<p>特色：鹽味清湯配燉到入口即化的軟骨排
+介紹：https://mimihan.tw/okinawa-hamaya/ （Mimi韓の旅遊生活、年份未標）
+注意：codex 點名補進。10:00-17:30，官方寫無定休但有不定休。一人 1,000 到 1,300 円。10:00 就開，可以當早午餐。免費停車只有 9 台，店外是拖吊區；不開車的話從美國村計程車 5 分。</p>
+<h3>景｜砂邊 宮城海岸 海岸步道</h3>
+<p>特色：北谷人自己看夕陽的堤防步道，還看得到戰機
+介紹：https://www.ericaworld.tw/2018/05/30/%E5%AE%AE%E5%9F%8E%E6%B5%B7%E5%B2%B8/ （說走就走、2018）
+注意：codex 點名補進。全天免費。美國村北邊約 2 公里，比美國村安靜得多。沒有沙灘，是堤防與礁岩，風大時浪會打上堤防。</p>
+<h3>吃｜タコス専門店 メキシコ 北谷店</h3>
+<p>特色：1977 年的塔可老店，餅皮現烤外脆內軟
+介紹：https://okinawa-labo.com/mexico-chatan-70269 （沖縄ラボ、日文）
+注意：11:00-20:00，週三四休，這趟只有 10/20 吃得到。不接受訂位，塔可四個 740 到 840 円。2026 年 1 月才從宜野灣整個搬到 Araha Beach 旁，離 Depot Island 走 20 分。</p>
+<h3>景｜Araha Beach（安良波公園）</h3>
+<p>特色：六百公尺沙灘配一艘等比例的海盜船遊具
+介紹：https://chrysie.pixnet.net/blog/posts/7121825853 （小林&amp;郭郭小夫妻生活、痞客邦、年份未標）
+注意：全天開放、免費，停車免費。10 月 09:00-17:00 有救生員。比 Sunset Beach 長、人少，夕陽視角一樣朝西。親子客多，沙灘上沒有店。</p>
+<h3>玩｜Chatan Harbor Brewery</h3>
+<p>特色：漁港旁的自釀啤酒廠，落地窗正對西邊
+介紹：https://basil.idv.tw/blog/14303/chatan-harbor （basil 食旅手帖、年份未標）
+注意：17:00-22:00，啤酒一杯 800 到 1,000 円，電話 098-926-1118。走路五分鐘就到，適合最後一晚收尾。官網 2026/8/25 貼過臨時休業公告、內容抓不到，出發前要再看一次。</p>
+<h3>吃｜焼肉 琉球の牛 北谷</h3>
+<p>特色：沖繩縣產和牛燒肉，炙燒牛肉壽司是招牌
+介紹：https://niniyeh.com/ryukyu-no-ushi-chatan/ （Nico＆妮喃小語、2026）
+注意：16:30-23:00，年中無休。TableCheck 可線上訂位、不用日文，一人 5,000 到 8,000 円。不訂位要等一小時。這是這趟預算裡最容易花得值的一頓犒賞餐。電話以官網 098-923-1525 為準。</p>
+<h3>吃｜THE POST CHATAN</h3>
+<p>特色：熟成三天到一個月的魚握壽司配日本酒
+介紹：https://www.hotpepper.jp/strJ004493010/ （HotPepper、日文）
+注意：11:00-14:00、17:00-24:00，無休。HotPepper 可線上訂或電 098-923-2455，套餐 4,000 円起、晚餐實際落在 5,000 到 8,000 円。2025 年 12 月才開，評價樣本少，品質有波動的風險。補上美國村一直缺的「好好吃一頓日式料理」。</p>
+<h3>吃｜Seaside Cafe Hanon</h3>
+<p>特色：二樓露台的厚舒芙蕾鬆餅，正對海
+介紹：https://pingu.blog/seaside-cafe-hanon/ （小企鵝生活趣、年份未標）
+注意：平日 09:00-17:30、週末 08:30-19:00。HotPepper 平日可線上訂位，一人約 2,000 円，不訂常等一小時。10/21 是平日、17:30 就關，在店裡看不到 17:56 的日落。</p>
+<h3>吃｜ZHYVAGO COFFEE WORKS</h3>
+<p>特色：水泥鐵件的海邊咖啡，露天座朝著日落方向
+介紹：https://omega.taipei/zhyvago-okinawa/ （半熟態度-歐美加、年份未標）
+注意：海側本店 08:00-20:00，Lequ 一樓的 ROASTERY 07:00-22:00、有麵包。咖啡 550 到 750 円。本店座位少。姊妹店 VONGO &amp; ANCHOR 2026 年 5 月已歇業，舊攻略還在推，別再找。</p>
+<h3>吃｜ポーたま 北谷店（午餐肉蛋飯糰）</h3>
+<p>特色：那霸要排四十分的飯糰，這家七點就開又不用排
+介紹：https://momoblog.tw/porktamago/ （桃桃's 旅人手札、年份未標）
+注意：07:00 開，打烊 19:00 與 20:00 兩說。一個 400 到 600 円。有面海座位，也可以拿去海邊吃。北谷店有起司牛肉、蝦美乃滋、鮪魚照燒三種限定口味。</p>
+<h3>逛｜イオン北谷店</h3>
+<p>特色：美國村裡的大超市，食品區開到半夜
+介紹：https://gogojp.tw/aeon-chatan/ （福寶媽衝日本、年份未標）
+注意：食品區 09:00-23:00（另有來源寫 07:00-24:00），有免稅櫃台，晚上熟食打折。回國前的補貨在這裡解決，就不必為了那霸的 AEON 在最後一天多跑一趟。</p>
+<hr />
+<h2>讀谷與恩納</h2>
+<p>陶器工房與海崖夕陽，適合順路半日，不值得為它專程從那霸來回。
+從那霸開車 50 到 70 分鐘，要車；從美國村過去 20 到 40 分，包計程車半日也行。
+海景跟北部古宇利重疊、陶器跟那霸壺屋重疊；顧問說「值得」，codex 說「值得但不必另闢完整一天」，朋友沒去過。</p>
+<h3>玩｜青之洞窟 船潛</h3>
+<p>特色：從漁港搭船十分鐘，進洞看陽光折射出來的藍
+介紹：https://www.funliday.com/posts/okinawa-blue-cave-snorkeling-and-scuba-diving-tips/ （Funliday、年份未標）
+注意：已排在 v2 的 10/20。業者梯次多在 08:00-15:00，網路價 2,500 到 4,000 円（浮潛），體驗潛水一人約 16,500 円。進洞率大約五成、船晃會暈、人多水混，10 月吹北風時會直接關閉，所以要挑寫明惡天改期或退款的業者。出港的前兼久漁港走五到十分就是土花土花，潛完不必空車回那霸。這一項跟第 8 題的「座間味島一日」是二選一。</p>
+<h3>景｜萬座毛</h3>
+<p>特色：象鼻形狀的海崖，環狀步道十五分鐘走完
+介紹：https://okinawa.letsgojp.com/archives/780996/ （樂吃購！日本 沖繩版、年份未標）
+注意：已在候選裡。3 到 10 月 08:00-20:00（比舊資料晚一小時），年中無休，大人小孩都 100 円、售票機可切中文。小而且商業化，30 分就走完；09:00 到 11:00 是遊覽車尖峰。</p>
+<h3>景｜殘波岬 燈塔與夕陽</h3>
+<p>特色：三十公尺海崖，配全日本少數能登上去的燈塔
+介紹：https://tingandkao.com/zanpa-cape-lighthouse/ （樂和、年份未標）
+注意：公園全天免費、停車免費，燈塔 10 到 2 月 09:30-16:30、中午 12:00-13:00 休，登塔 300 円。燈塔 16:30 就關，想登塔又想看夕陽要先登再等一小時。沒有公車。行程裡其他夕陽點都是市區級，只有這裡是懸崖加燈塔。</p>
+<h3>逛｜讀谷買陶器（工房區或選品店）</h3>
+<p>特色：やちむんの里十九間工房散在樹林裡、直營店比壺屋便宜，或走讀谷村共同販賣中心的選品店四十分鐘比完全村作品
+介紹（やちむんの里）：https://www.bigfang.tw/blog/post/yomitan-okinawa （樂活的大方、年份未標）
+介紹（讀谷村共同販賣中心）：https://www.yomitan-syakyo.com/kyouhan/merchandise.php （共同販賣中心官網、日文）
+注意：やちむんの里北窯共同売店 09:30-17:30，各工房時間不一，免費參觀免費停車，10/20（二）與 10/21（三）工房多休不理想；壺屋窯元 1970 年代搬過來的源頭，同一位作家的東西通常比壺屋便宜。讀谷村共同販賣中心藝廊 10:00-18:00、週四休（2026/6/1 起由 09:00 改成 10:00 開），免費入場，是選品店性質看不到窯，不想一間間找工房可以走這裡；兩種走法二擇一或都排都行。</p>
+<h3>景｜座喜味城跡</h3>
+<p>特色：沖繩最古老的石造拱門，而且能走上城牆
+介紹：https://boo2k.com/archives/57636 （小布少爺、年份未標）
+注意：全天開放、免費，走 30 到 45 分。世界遺產城跡裡最省力的一座，停車走五分就上城牆。城牆上沒有欄杆；規模比今歸仁、中城小。</p>
+<h3>吃｜土花土花</h3>
+<p>特色：陶藝家開的海景咖啡，餐點用他自己燒的器皿上桌
+介紹：https://www.oki-family.com/dokadoka/ （沖繩趣、年份未標）
+注意：08:00-18:00，週日休。披薩約 1,500 到 2,000 円，早上有早餐套餐。離青之洞窟出港的前兼久漁港只有 1 公里，是潛完最近的一頓，但從漁港走上去是上坡。</p>
+<h3>吃｜麦焼屋</h3>
+<p>特色：無農藥小麥發酵十七小時的石窯麵包
+介紹：https://oday.okinawa/area/mugiyakiya （oday.okinawa、日文）
+注意：11:30-19:00 賣完為止，週日一二休，所以 10/20（二）排不了。麵包 200 到 350 円，露台看得到海。沒有正餐。</p>
+<h3>吃｜なかむらそば（沖繩麵）</h3>
+<p>特色：露台面海，麵裡揉了海藻的手打沖繩麵
+介紹：https://www.nakamurasoba.com/ （店家官網、日文）
+注意：10:30-17:00，無休，750 到 900 円，只收現金。行程裡的沖繩麵都在市區店裡吃，這是唯一看著海吃的一碗。中午 12 到 13 點旅行團與自駕客會疊在一起。</p>
+<h3>吃｜Pizzeria da ENZO</h3>
+<p>特色：柴窯四百度現烤的拿坡里披薩，露台看夕陽
+介紹：https://www.otv.co.jp/okitive/article/374/ （OKITIVE、日文）
+注意：11:30-15:00、17:30-22:00，不定休，出發前要看店家 IG。TableCheck 可線上即時訂位，兩人約 6,000 到 8,000 円。Tabelog 2025 義大利菜百名店。開車的人不能喝酒。</p>
+<h3>吃｜鶴亀堂ぜんざい（沖繩式紅豆刨冰）</h3>
+<p>特色：紅豆燉六小時，紅芋黑糖口味只有這裡有
+介紹：https://paulyear.com/okinawa-castle/ （阿一一之食意旅遊、年份未標）
+注意：10:00-17:00，350 到 700 円，只收現金。就在座喜味城停車場旁。定休來源分歧（週三與週二三兩說），去之前要確認。只有 18 個座位。</p>
+<h3>逛｜おんなの駅 なかゆくい市場</h3>
+<p>特色：58 號線的中途站，招牌是水果堆成山的刨冰
+介紹：https://goto-onna.com/facility/nakayukui-market/ （恩納村觀光協會官方、日文）
+注意：10:00-19:00，無休，免費入場、133 格免費停車。裡面有十來攤，琉冰的水果刨冰兩人一份就夠。旅行團也停這裡，中午人多。停 30 到 40 分當點心站剛好。</p>
+<h3>景｜真榮田岬 展望台</h3>
+<p>特色：不下水也看得到青之洞窟那片海的免費展望台
+介紹：https://journey.tw/cape-maeda/ （許傑，旅行圖中、年份未標）
+注意：停車場 07:00-19:00，停車 100 円一小時，展望台本身免費，比萬座毛人少。岬上沒有遮蔭；下到海邊要走 100 階，只看展望台就不用下去。是自然斷崖，沒護欄又濕滑。</p>
+<hr />
+<h2>東海岸（うるま・沖繩市・北中城）</h2>
+<p>這區賣的是「跨海堤道加四個小島」與美軍城市胡差，觀光化程度全島最低。
+那霸開車到海中道路約 60 分、到北中城約 30 分，沒有大眾運輸，整條線非自駕不可（北中城那半天叫計程車勉強可行）。
+海景跟北部的古宇利重疊度高；三方在這區意見不同，區域顧問說「值得，開車才划算」，codex 說「可跳過」，朋友兩趟都沒去過。折衷是不另加租車日，只用 10/21 上午的北中城半日。</p>
+<h3>逛｜AEON MALL 沖繩來客夢</h3>
+<p>特色：沖繩最大的購物中心，2025 年 3 月翻新四十五家店。
+介紹：https://okinawa.letsgojp.com/archives/640089/ （樂吃購！日本，2026）
+注意：10:00-22:00 無休，免費停車。已排在 10/21 上午的三選一裡。下雨也能走，但它跟本土任何一間 AEON 差不多。旅客服務中心憑護照可換 500 円折價券。</p>
+<h3>景｜中城城跡</h3>
+<p>特色：六個郭的曲線石牆，沖繩保存最完整的一座城。
+介紹：https://www.nakagusuku-jo.jp/tw （官方繁體中文頁）
+注意：10 月 08:30-17:00，官網票價大人 500 円（部分中文攻略仍寫 400 円），停車免費。離來客夢車程 10 分。全程戶外沒有遮蔭，停車場到入口有一段坡。</p>
+<h3>景｜中村家住宅</h3>
+<p>特色：18 世紀琉球士族農家，紅瓦、石牆、豬舍原樣留著。
+介紹：https://hanejapan.com/okinawa-nakamurake/ （羽日本，中文）
+注意：官網寫 09:00-17:00（最後入場 16:40）、週三與週四休，門票 500 円。10/21 是週三，那天去撲空。三十分鐘看得完。</p>
+<h3>吃｜PLOUGHMAN'S LUNCH BAKERY</h3>
+<p>特色：北中城山丘外人住宅改的麵包咖啡，露台看得到東海岸。
+介紹：https://chadars.com/ploughmans-lunch-bakery-okinawa-2023/ （CHADARS，2023）
+注意：09:00-16:00，週日休（10/18 那天不行）。建議先打電話訂位，一人約 1,500-2,200 円。停車只有七八台而且離店有一段路，假日要排隊。</p>
+<h3>景｜海中道路四島（濱比嘉、宮城、伊計）</h3>
+<p>特色：4.7 公里堤道兩側都是淺海，漲潮時像開在海面上；堤道連往的濱比嘉島是琉球創世神聖地，紅瓦石牆聚落幾乎沒有商業氣息。
+介紹（海中道路）：https://www.jathao.com/2026/01/okinawa-kaichu-doro.html （家旅好，2026，含四島全攻略）
+介紹（濱比嘉島）：https://snowhy.tw/hamahigajima/ （白雪姬 喫趣玩）
+注意：海中道路 24 小時免費、沒有收費站，退潮時兩側露出泥灘畫面差很多，是純路過型的點，要配四島（濱比嘉、宮城、伊計）才撐得起一天。濱比嘉島全天免費，聚落內道路很窄要慢開、不要停在民宅門口；拜所是當地人現在還在用的聖地，不要大聲、不要進去內部。阿摩美久之墓是灌籃高手電影版的取景地。</p>
+<h3>逛｜海の駅 あやはし館</h3>
+<p>特色：堤道正中央的休息站，上天橋能拍到整條路與兩側海。
+介紹：https://lailai-web.com/uminoeki-ayahashikan/ （來來琉球）
+注意：09:00-17:30，全年無休，免費入場，炸物一個約 100 円。設施偏舊、伴手禮很普通，二樓的海之文化資料館可以跳過。</p>
+<h3>景｜果報バンタ與ぬちまーす製鹽廠</h3>
+<p>特色：七十公尺懸崖俯瞰翡翠小灣，就在製鹽廠園區裡。
+介紹：https://dongwa.tw/nutimasu/ （東蛙池塘 DongWa）
+注意：09:00-17:30、導覽到 16:30，全部免費，鹽味霜淇淋 650 円。只能在園區營業時間內進去。導航要用地址，不要用 Map Code 會導錯。這是東海岸最多人說「私心最愛」的一個點。</p>
+<h3>景｜勝連城跡</h3>
+<p>特色：城頂 360 度同時看得到海中道路、金武灣與太平洋。
+介紹：https://wendychangblog.com/katsuren-castle-ruins/ （溫蒂's blog）
+注意：09:00-18:00、最後受理 17:30，門票 600 円（不少中文文章還寫免費，那是舊資訊），停車免費 148 台。上城頂是陡坡加石階約 15 分鐘，沒有遮蔭。這條路線最好的收尾。</p>
+<h3>吃｜古民家食堂 てぃーらぶい</h3>
+<p>特色：九十年古民家榻榻米座，島民一起開發的沖繩家常菜。
+介紹：https://snowhy.tw/teirabui/ （白雪姬 喫趣玩，有中文菜單照片）
+注意：11:00-16:00，休週二、第一三五週三、第三週日，還會配合島上祭事臨時休。行程期間 10/18、10/20、10/21 都休，只有 10/15、16、17、19 有開。電話 098-977-7688 訂位，一人 1,400-1,800 円。這是四島唯一被中日文都反覆點名的午餐。</p>
+<h3>吃｜丸一食品 塩屋店</h3>
+<p>特色：豆皮壽司配蒜香炸雞，沖繩人自己的早餐組合。
+介紹：https://feeljapan.net/okinawa-zhhk/article/2021-04-07-17670/ （Feel 沖繩，2021）
+注意：09:00-14:00 賣完收，週一休，只外帶、只收現金，一人 500 円內。10 點以後常常已經賣光，週末更快。在往海中道路的路上，順路買了車上吃。</p>
+<h3>吃｜泡瀬 パヤオ食堂</h3>
+<p>特色：沖繩市漁協直營，魚汁定食比牧志市場便宜一半。
+介紹：https://www.payao-okinawa.com/restaurant.php （官方網站，日文）
+注意：10 月到 3 月是 10:30-17:30，最後點餐 16:45，一人 1,200-1,700 円。因為日圓貶值已經停售海膽、伊勢蝦、鮭魚卵，舊部落格寫的菜色現在點不到。位置在胡差與海中道路之間。</p>
+<h3>逛｜コザ ゲート通り</h3>
+<p>特色：嘉手納基地二號門延伸出來的街，美軍與在地人混著喝。
+介紹：https://www.biteamap.com/blog/post/okinawacity/ （焦糖熱一點 Bite A Map）
+注意：白天商店多 11:00-18:00，週五六晚上最熱鬧。平日白天很空、鐵門很多，期待值要放在夜晚。那霸過去計程車單程約 5,000 円。這是本島唯一還活著的美軍夜街，不是為觀光客蓋的。</p>
+<h3>吃｜チャーリー多幸寿 本店</h3>
+<p>特色：1956 年沖繩第一間塔可店，玉米餅皮外酥內軟。
+介紹：https://tw.kozaweb.jp/eats/show/177 （沖繩市官方觀光網站 KozaWeb，繁體中文）
+注意：11:00-18:45（最後點餐 17:30），週四休，10/15 與 10/22 都是週四。一人 1,000-1,500 円，晚餐時段不開。店家沒有自己的停車場，附近 Corinza 停車場有一小時免費。跟金武的 KING TACOS 是塔可飯的兩個源頭。</p>
+<hr />
+<h2>北部（本部・今歸仁・名護）</h2>
+<p>這區是整趟唯一非自駕不可的一天，核心是美麗海水族館與古宇利島這條線。
+那霸走高速到水族館約 2 小時、到古宇利約 2 小時 15 分，沒車幾乎做不到（想不租車就得買一日巴士團）。
+跟山原相接、跟東海岸的海景重疊；三方一致說必去，朋友 2026 年 3 月也走過同一條線，等於幫我們驗證過。codex 唯一的煞車是「Day3 已經是水族館加備瀨加古宇利三個點，別再加今歸仁城跡」。</p>
+<h3>景｜沖繩美麗海水族館</h3>
+<p>特色：黑潮之海三隻鯨鯊同框，全日本只有這裡看得到。
+介紹：https://www.funliday.com/posts/2026-okinawa-churaumi/ （Funliday，2026）
+注意：08:30-18:30（最後入館 17:30），到 2027 年 3 月沒有預定休館日。大人 2,180 円，道の駅許田前售 2,000 円、來客夢 1,950 円。便利商店的折扣券多半已經結束；16:00 後的夕方券官網沒有列，不要當作一定有。朋友 2026/3 去過。</p>
+<h3>景｜備瀨福木林道</h3>
+<p>特色：兩萬棵福木圍成的綠隧道，走 20 分鐘就到海邊。
+介紹：https://mimigo.tw/okinawa028/ （Mimi韓の旅遊指南）
+注意：全天免費。水牛車 11:00-15:30（主要是週末），四人一車 2,000 円。這裡是住宅聚落，沒有廁所，入口停車場很小。就在水族館旁邊，已排在同一天。</p>
+<h3>景｜古宇利島（含ワルミ大橋展望台）</h3>
+<p>特色：兩公里跨海直線大橋本身就是主角，島上停一小時夠；本部往古宇利必經的ワルミ大橋橋頭有免費展望台，一眼看到古宇利大橋與屋我地島。
+介紹（古宇利島）：https://www.wendyjourney.com/kouri-heart-rock-ocean-tower/ （Wendy's Journey，2025）
+介紹（ワルミ大橋）：https://oki-raku.net/blog/rikarikawarumi/ （沖楽，日文；沒有找到繁體中文介紹）
+注意：橋與島免費，Tinu 濱停車 300-500 円。心形岩要退潮才走得近，10/17 滿潮只能遠看，而且人多、下坡濕滑。朋友 2026/3 去過。ワルミ大橋橋の駅約 09:00-18:00、免費，有免費望遠鏡，停 15 分鐘就走，不值得專程繞，是本部往古宇利路上順路停的點。</p>
+<h3>吃｜KOURI SHRIMP</h3>
+<p>特色：夏威夷式蒜香奶油蝦飯，三層樓看得到古宇利大橋。
+介紹：https://paulyear.com/kouri-shrimp/ （阿一一之食意旅遊，有內用區實況）
+注意：09:00-17:00、週末假日到 18:00，無定休，櫃台點餐一份 1,300-1,500 円，有中文點餐。這家的舊店名就是 Shrimp Wagon，2020 年 11 月島內搬遷後改名，行程裡不要重複列兩筆。中午等 15-30 分算正常，超過就外帶或換店。價格是觀光價。</p>
+<h3>逛｜道の駅許田</h3>
+<p>特色：許田交流道下來就到，美麗海折扣票在這裡買最便宜。
+介紹：https://okajapan.com/kyoda-roadside-station/ （OKA 沖繩租車旅遊）
+注意：08:30-19:00。美麗海折扣票 2,000 円，另外也賣今歸仁城跡等景點的優惠票。07:00 去程經過時還沒開門，適合回程停；假日停車場會滿。現炸沙翁是招牌。</p>
+<h3>逛｜漫畫倉庫 名護店</h3>
+<p>特色：二手漫畫、公仔、轉蛋、夾娃娃機全混在一起的挖寶倉庫。
+介紹：https://aikolife.com/matcha/ （aiko。手感溫度．愛生活；這篇寫的是那霸店，名護店同集團）
+注意：09:00-22:00，年中無休，2024 年 2 月開幕。朋友 2026/3 從美麗海回程順路去。只有在北部住一晚才用得到，當天來回那霸的話這一站塞不進去。</p>
+<h3>吃｜きしもと食堂 本店</h3>
+<p>特色：1905 年創業，木灰汁手打麵配柴魚豬骨湯。
+介紹：https://www.huihuifun.com/kishimoto-cafeteria/ （慧慧愛旅行）
+注意：本店 11:00-17:30 或賣完收，週三休，只收現金、不能訂位，一人 1,000-1,300 円。本店中午排 20-40 分鐘，太長就去車程 4 分鐘的八重岳店（同樣味道、11:00-19:00 無休、好停車）。菜單只有沖繩麵大小碗與限量炊飯。</p>
+<h3>吃｜ピザ喫茶 花人逢</h3>
+<p>特色：山丘古民家坐在緣側看伊江島，吃手工厚披薩。
+介紹：https://tc.tabirai.net/sightseeing/article/okinawa-kajinho/ （Tabirai Japan 繁體中文）
+注意：11:30-19:00，週二三休，不接受預約。中披薩 2,700 円是 2023 年的價格，2025/10/23 起已改價、新價沒查到。假日中午排 30-60 分鐘。評價普遍是「景觀滿分、披薩普通」。離水族館車程約 10-15 分。</p>
+<h3>吃｜焼肉もとぶ牧場 もとぶ店</h3>
+<p>特色：本部牛牧場直營，午間套餐兩三千円吃得到品牌和牛。
+介紹：https://lailai-web.com/motobu-bokujo-motobu/ （來來琉球，附官方線上預約與優惠券）
+注意：午餐 11:30-15:00、晚餐 17:00-22:00，Retty 或 TableCheck 線上可訂，午餐 2,000-3,000 円。定休日與午餐開始時間各來源說法不同，訂位前要再確認。離水族館車程約 10 分。</p>
+<h3>吃｜CAFE FUKURUBI</h3>
+<p>特色：心形岩旁高台 180 度海景，窯烤披薩與自家甜點。
+介紹：https://1817box.tw/cafe-fukurubi/ （1817BOX 部落格）
+注意：12:00-19:00，週四休，另有每月變動的不定休，出發前看官網。電話 090-1436-9659，一人 1,500-2,500 円。12:00 才開，早到的話用不到。想在古宇利坐久一點才需要這家。</p>
+<h3>景｜今歸仁城跡</h3>
+<p>特色：世界遺產裡石牆保存最完整的一座，距水族館 15 分鐘。
+介紹：https://okinawa.letsgojp.com/archives/737284/ （樂吃購！日本）
+注意：08:00-18:00 年中無休，停車免費 320 台。票價兩說：官網 2026 年寫 1,000 円，多數中文攻略仍寫 600 円，出發前要確認。codex 明確反對把它加進美麗海那天，會變成三個大點。走完主郭來回約 30 分、慢慢逛約 1 小時。</p>
+<h3>景｜瀨底海灘</h3>
+<p>特色：過橋十分鐘就到的天然白沙灘，透明度北部第一。
+介紹：https://kimiyo.tw/sesoko-island/ （喵爸喵媽玩轉地球）
+注意：遊泳期 09:00-17:00，停車 1,000 円一日（一小時內 500 円）。琉球大學調查顯示 2025 年 2 月活珊瑚覆蓋率從 22% 掉到 6%，抱著看珊瑚的期待會失望。水族館那天已經很滿，加進來會超過戶外時間的上限。</p>
+<h3>吃｜山原そば</h3>
+<p>特色：伊豆味山路上的排隊麵店，厚切ソーキ是招牌。
+介紹：https://okinawatravel.jp/yanbarusoba （沖縄トラベル，日文；沒有找到繁體中文介紹）
+注意：約 11:00-15:00 賣完就收，週一二休（10/19 與 10/20 都撞到），只收現金，1,000 円內。旺季開門就有人排，午餐尖峰十幾組人是常態。位置在山裡，不順路。</p>
+<hr />
+<h2>山原（國頭・大宜味・東村）</h2>
+<p>警語：比地大瀑布 2024/11 起封閉，舊攻略別信（國頭村公所公告、日文：豪雨後連停車場一起封閉，國頭村說復舊要好幾年，2026/9 官網仍寫閉鎖中）。不是選項，只是提醒不要誤信舊攻略。
+本島最北的世界自然遺產森林區，賣的是原始亞熱帶林、最北端的岬角，還有幾間漁協與古民家食堂。
+那霸開到邊戶岬單程 2.5 小時，來回車程五小時、看點四小時，等於一整天 13 小時；不租車的唯一走法是一日巴士。
+跟北部相接（北上一定經過名護）；三方一致標「可跳過」——區域顧問、codex 都這樣寫，朋友兩趟最北只到名護。這一節留著是讓大家自己判斷，不是在推銷。</p>
+<h3>景｜ASMUI Spiritual Hikes（舊名大石林山）</h3>
+<p>特色：兩億年石灰岩石林，走在巨岩與榕樹氣根之間。
+介紹：https://ohh.okinawa/cn/article/20616/ （OkinawaHolidayHackers，繁體中文）
+注意：09:30-17:30、最終受付 16:00，全年無休。2024 年 12 月改名並漲價，現場只收現金 2,500 円（asoview 前售 2,375 円），不用預約。中文文章多半還寫舊價 1,200 円。四條步道走完約兩小時，只走巨岩加展望台約一小時。有人覺得步道長度配這個價偏貴，雨天石面很滑。</p>
+<h3>景｜辺戸岬</h3>
+<p>特色：本島最北端的隆起珊瑚礁懸崖，晴天看得到与論島。
+介紹：https://lailai-web.com/hedo-cape/ （來來琉球）
+注意：全天免費，停車免費 70 台，觀光案內所 10:00-17:00。風極大、沒有遮蔭，斷崖沒有護欄。20 到 40 分鐘看完，單獨跑一趟不划算，一定要跟 ASMUI 綁在一起。</p>
+<h3>吃｜ふしくぶカフェ（辺戸岬 2F）</h3>
+<p>特色：本島最北端的咖啡，落地窗正對東海與太平洋交界。
+介紹：https://hedomisaki-okinawa.com/experience/%E3%81%B5%E3%81%97%E3%81%8F%E3%81%B6%E3%82%AB%E3%83%95%E3%82%A7/ （辺戸岬観光案內所官方，日文；沒有找到繁體中文介紹）
+注意：10:00-17:00（最後點餐 16:30），全年無休，一人 1,000-1,800 円。菜單簡單、價位是觀光價，週末中午巴士團到了會擠。最北端一日最合理的午餐點。</p>
+<h3>玩｜Hip Hop 巴士 C 路線</h3>
+<p>特色：不租車也能到最北端的一日巴士，門票與午餐都含。
+介紹：https://hiphopbus.jumbotours.co.jp/chinese_hant/ （官方繁體中文頁）
+注意：週日、二、四、五、六運行，行程期間可排 10/16、10/17、10/18、10/20。縣廳前 07:50 集合、18:40 回，リウボウ旅行 11,800 円或 KKday 12,000 円。五天前截止、五人成團。整天 11 小時、車上就佔六小時。兩個平台的行程版本不一樣（一版走道の駅加古宇利，另一版走紅樹林公園加クイナの森），訂之前要看清楚該平台當下寫的內容。</p>
+<h3>吃｜前田食堂</h3>
+<p>特色：牛肉そば的發源店，胡椒炒豆芽與牛肉堆到看不見麵。
+介紹：https://www.tabirai.net/sightseeing/column/0004147.aspx （たびらい，日文；沒有找到繁體中文介紹）
+注意：1972 年創業，在大宜味 58 號路邊。營業時間兩個來源打架（一說 11:00-16:00 賣完收、週三四休，另一說 10:00-18:00 只休週三），去之前打 0980-44-2025。一人 1,200-1,500 円，只收現金，中午停車場常滿。北上或回程最省事的一餐。</p>
+<h3>逛｜道の駅おおぎみ やんばるの森ビジターセンター</h3>
+<p>特色：廢校改的休息站，有影像廳先講一遍世界自然遺產。
+介紹：https://www.yambaru-vc.com/ （官方網站，日文；沒有找到繁體中文介紹）
+注意：特產區 09:00-18:00 無休，免費，餐 600-1,200 円。餐廳與小賣部各自有定休（週一、二、三、五分開休），11:00 以前只有特產區開。那霸北上進山原的第一站，招牌是柑橘漢堡與沖繩肉桂霜淇淋。</p>
+<h3>吃｜まぁぐすくやー</h3>
+<p>特色：塩屋灣正對面的古民家食堂，島野菜份量很足的魚午餐。
+介紹：https://omalblog.com/2025/02/08/ogimi-magusukuya/ （おまるブログ，2025，日文；沒有找到繁體中文介紹）
+注意：2024 年 1 月開的，08:00-17:00（10:00 前是早餐、11:00 起午餐、15:00 起下午茶），週二三四休。電話 0980-43-9692 必訂，只能電話或 IG 私訊，座位少，不訂位幾乎吃不到。午餐 900-1,800 円。山原少數需要訂位的店，這件事本身就是人氣的證明。</p>
+<h3>景｜クイナの森（山原秧雞生態展示學習設施）</h3>
+<p>特色：野外看到山原秧雞靠運氣，這裡 700 円保證看到活的。
+介紹：https://kuinapark.com/kuina （安田くいなふれあい公園官方，日文；沒有找到繁體中文介紹）
+注意：09:00-17:00，週三休，700 円，每 30 分鐘一場解說。只有一隻鳥、20 分鐘就結束。從辺戸岬要翻過山到東海岸再開 30 分鐘，繞路成本不小。</p>
+<h3>吃｜国頭港食堂</h3>
+<p>特色：國頭漁協直營，菜單看當天卸貨的魚決定。
+介紹：https://www.okinawaclip.com/post/minatosyokudo/ （OKINAWA CLIP，日文；沒有找到繁體中文介紹）
+注意：11:30-14:00、17:30-20:00，週一休（週日只做 11:00-14:30）。定食 1,200-2,000 円，停車免費，只有日文菜單。週末中午常被巴士團包走。最大的問題是位置：17:30 吃完還要再開 2.5 小時回那霸。</p>
+<hr />
+<h2>離島一日遊（慶良間・ナガンヌ・久高）</h2>
+<p>賣的是本島沒有的東西：慶良間藍、近岸的海龜、真正的離島白沙灘，而且不用開車。
+座間味高速船 50 分、渡嘉敷高速船 40 分、ナガンヌ從三重城港 20 分、久高島從安座真港 15 到 25 分；全部從港口出發，不需要租車，但要把飯店到港口的計程車時間算進去。
+離島班船（座間味、渡嘉敷、久高）在泊港（とまりん），船上浮潛團與ナガンヌ在三重城港，兩個港不是同一處，訂錯集合地點會直接錯過船；國際通到泊港計程車約 1,000 到 1,300 円，到三重城港約 1,200 到 1,500 円，早上 07:40 到 09:00 的集合時間要把叫車與塞車一起算進去。
+跟讀谷恩納的青之洞窟功能重疊；兩邊裁決一致——區域顧問說「值得，但要跟青之洞窟二選一」，codex 更直接：「慶良間比青之洞窟更有獨特性，二選一選慶良間」。另外先講一件事：2024 年海洋熱浪讓沖繩淺礁大面積白化，去的理由該放在海龜、水色與海灘，不是珊瑚。</p>
+<h3>玩｜青之洞窟船潛（已排，二選一的另一邊）</h3>
+<p>特色：洞內反射的藍光，船程十分鐘、價格是慶良間的一半。
+介紹：https://okinawa.letsgojp.com/archives/895600/ （樂吃購！日本，真榮田岬與青之洞窟）
+注意：業者梯次多在 08:00-15:00，網路價 2,500-4,000 円。進洞率大約五成、人擠水混，洞口面西北，10 月中旬起吹東北季風「ミーニシ」時直接關。要訂能用中文文字聯絡、含那霸接送、白紙黑字寫惡天改期或退款的船潛。目前排在 10/20 早上。</p>
+<h3>玩｜座間味島 高速船一日（慶良間一日，codex 首選）</h3>
+<p>特色：不用開車就到得了的慶良間藍，島上有六到七小時；古座間味海灘走進去幾公尺就是珊瑚礁與熱帶魚，阿真海灘近岸看海龜遭遇率業者說八成以上。
+介紹（船班與島上交通）：https://ksk.tw/zamami/ （凱子凱，船班時間、島上交通、景點）
+介紹（古座間味ビーチ）：https://www.ana.co.jp/zh/tw/japan-travel-planner/okinawa/0000004.html （ANA 繁體中文旅遊指南）
+介紹（阿真ビーチ）：https://lailai-web.com/ama-beach/ （來來琉球）
+注意：<strong>這一項與青之洞窟半日二選一，取捨如下。</strong>
+- 時間：慶良間吃掉一整天（2026 年 9 月官方班表是那霸泊港 09:00 發、座間味 17:20 發、18:10 回那霸）；青之洞窟只佔半天，下午還能吃午餐加搬家到美國村。
+- 價格：高速船來回 7,510 円一人，另收 100 円環境協力税，兩人約 15,220 円，還沒算島上巴士與餐飲；青之洞窟兩人約 5,000 到 8,000 円。
+- 看得到什麼：慶良間是開闊的離島海灘、慶良間藍、阿真海灘近岸有機會遇到海龜；青之洞窟賣的是洞內那道藍光，進洞率約五成，看不到海龜。
+- 取消風險：兩邊都受 10 月北風影響。高速船的停航基準是波高 3 公尺或風速 15 公尺，10 月中旬以後北風日風險上升；青之洞窟面西北，北風大時業者直接停開。兩個都排等於連兩天賭海況，不建議。
+- 還沒查到的事：2026 年 10 月的座間味船班時刻表到 9/6 為止官網還沒公布（官網只到 9 月），第三方寫的 10 月第二班時間跟九月官方不一致。出發前看 vill.zamami.okinawa.jp/ship/ 或打 098-987-2614。
+- 位置限制：真的要選這個，它得放在能跟那霸市區日對調的位置，不要放在搬家日。
+- 古座間味ビーチ從港口走 20 分鐘或搭村營巴士 5 分鐘（單程 300 円，票在港前的青のゆくる館買，回程票要一起買好），海灘面北、北風日會有浪，10 月中旬租借小屋還開不開沒查到。
+- 阿真ビーチ從港口走 15 分鐘，早上九點前或滿潮前後兩小時遇龜機率最高，海龜不是保證，禁止追逐與觸碰、也不要發出聲音。</p>
+<h3>玩｜渡嘉敷島 一日</h3>
+<p>特色：離那霸最近的慶良間島，渡輪 70 分很穩、不太晃。
+介紹：https://www.bubu-jp.com/archives/40856 （步步日本）
+注意：高速船 09:00 去、17:00 回；渡輪 10:00 去、15:30 回。官網或 098-868-7541 預約。官網「10 月以降」的運賃寫 2,200／3,300 円，比其他來源高很多，判斷是 2026 年 10 月起調漲，但沒看到公告原文。怕暈船的話選這個而不是座間味。</p>
+<h3>景｜阿波連ビーチ</h3>
+<p>特色：渡嘉敷的主海灘，白沙彎月灣、設施最齊全。
+介紹：https://keramatravel.com/zh/tourist_information/aharenbeach/ （ケラマトラベル 中文版）
+注意：全天免費，淋浴 300 円起，港口有巴士接駁 450 円現金。約 800 公尺長、在灣內所以浪平。10 月中旬監視員還在不在沒查到。這片海灘沒有海龜。搭渡輪的話 15:30 就要離島，實際玩不到四小時。</p>
+<h3>玩｜チービシ 半日船浮潛（Sea World）</h3>
+<p>特色：跟青之洞窟一樣的時間長度，去的是慶良間外圍礁區。
+介紹：https://www.tripbaa.com/travel/S20230514095912dl/ （Tripbaa 趣吧，中文產品頁，含那霸市區接送說明）
+注意：08:30-12:00 或 12:30-16:00，全年開，asoview 或業者官網 5,000 円起。集合在三重城港內待合所，停車一天 500 円。是否含那霸飯店接送，Sea World 的頁面沒有寫，訂之前一定要問，這關係到當天下午接不接得上搬家與午餐。前一天 17:00 以後取消收全額。看到海龜的機率比青洞高、大船比較不晃。</p>
+<h3>玩｜チービシ 半日船浮潛（慶良間ツアーズ）</h3>
+<p>特色：有 12:40-17:00 的下午場，少數睡飽再出海的半日團。
+介紹：https://keramatour.world-tours.jp/plan/pm-snorkeling356 （業者官網，日文）
+注意：07:40-12:00 或 12:40-17:00，官網預約，大人 10,000 円（10 月不加價），比 Sea World 貴一倍。公安委員會指定優良店、105 則評價 4.8 分，水中照片免費給。沒有飯店接送，要自己到三重城港。</p>
+<h3>玩｜ナガンヌ島</h3>
+<p>特色：那霸出港 20 分鐘就上無人島，整島白沙淺灘。
+介紹：https://myokinawalife.jp/2026/01/24/nagannu/ （我的沖繩生活，2026，繁體中文）
+注意：10 到 11 月是 09:30 出港 15:00 回，或 10:30 出港 16:00 回。官網 9,500 円起，代理商 10 至 11 月約 7,000 円，KKday 也有中文產品。島上有溫水淋浴、置物櫃、餐廳、陽傘躺椅。沒有天然遮蔭，陰雨或北風天很難熬，禁帶外食。停航與否當天早上 08:00 才決定。</p>
+<h3>玩｜久高島 半日</h3>
+<p>特色：齋場御嶽岩縫看出去的那座神之島，租腳踏車兩小時繞完。
+介紹：https://www.jeepe.jp/zh_TW/articles/kudaka-island-guide-2301 （JeePe 日本旅遊指南，含島上禮儀）
+注意：安座真港 08:00 起每一到兩小時一班，渡輪 25 分、高速船 15 分，來回 1,480 円，當日窗口現金購票、不用預約。腳踏車兩小時約 600 円。島上禁忌多：御嶽禁止進入，砂石與貝殼不可帶走。港口以外沒有廁所也沒有商店。要加進南部那天的話，得拿掉知念岬或齋場御嶽其中一個。</p></div></body></html>
