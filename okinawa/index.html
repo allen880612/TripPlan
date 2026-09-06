@@ -1,0 +1,2520 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>沖繩八天七夜 · 休假模式</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#FBFAF7; --raise:#FFFFFF; --ink:#1C1B22; --body:#514D46; --soft:#8A8479;
+  --line:#E7E2D8; --line2:#D8D2C5;
+  --plum:#7A3B4E; --indigo:#2C3E6B; --terra:#AB5433; --matcha:#5A7247; --gold:#997529; --slate:#9A948A;
+  --ok:#4B7A52; --okbg:#EAF0EA; --warn:#9A6B1E; --warnbg:#F5ECD9; --terrabg:#F6E7DF;
+  --shadow:0 1px 2px rgba(30,25,20,.04),0 4px 14px rgba(30,25,20,.05);
+  --serif:"Noto Serif TC",serif; --sans:"Noto Sans TC",-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,monospace; --maxw:660px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --ground:#16151A; --raise:#1E1C23; --ink:#F3F0EA; --body:#C3BDB2; --soft:#8B857A;
+  --line:#2C2A32; --line2:#3A3742; --plum:#CE8598; --indigo:#93A6D6; --terra:#D98A63;
+  --matcha:#94AE78; --gold:#C9A24A; --slate:#9A948A; --ok:#7DA883; --okbg:#1E2A20;
+  --warn:#C9A24A; --warnbg:#2C2517; --terrabg:#2C1F18;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}}
+:root[data-theme="dark"]{
+  --ground:#16151A; --raise:#1E1C23; --ink:#F3F0EA; --body:#C3BDB2; --soft:#8B857A;
+  --line:#2C2A32; --line2:#3A3742; --plum:#CE8598; --indigo:#93A6D6; --terra:#D98A63;
+  --matcha:#94AE78; --gold:#C9A24A; --slate:#9A948A; --ok:#7DA883; --okbg:#1E2A20;
+  --warn:#C9A24A; --warnbg:#2C2517; --terrabg:#2C1F18;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}
+:root[data-theme="light"]{
+  --ground:#FBFAF7; --raise:#FFFFFF; --ink:#1C1B22; --body:#514D46; --soft:#8A8479;
+  --line:#E7E2D8; --line2:#D8D2C5; --plum:#7A3B4E; --indigo:#2C3E6B; --terra:#AB5433;
+  --matcha:#5A7247; --gold:#997529; --slate:#9A948A; --ok:#4B7A52; --okbg:#EAF0EA;
+  --warn:#9A6B1E; --warnbg:#F5ECD9; --terrabg:#F6E7DF;
+  --shadow:0 1px 2px rgba(30,25,20,.04),0 4px 14px rgba(30,25,20,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ground);color:var(--body);font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;line-height:1.6}
+.page{max-width:var(--maxw);margin:0 auto;padding:0 16px 90px}
+.ic{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:-.12em}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--ground) 90%,transparent);
+  backdrop-filter:saturate(1.3) blur(12px);border-bottom:1px solid var(--line)}
+.hdr-top{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:12px;padding:11px 16px}
+.brand{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:15px;white-space:nowrap;letter-spacing:.02em}
+.pills{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.pills::-webkit-scrollbar{display:none}
+.pd{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--soft);text-decoration:none;
+  padding:5px 9px;border-radius:8px;white-space:nowrap}
+.pd.on{color:#fff;background:var(--plum)}
+.next{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:9px;padding:7px 16px;border-top:1px solid var(--line)}
+.next .lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--plum);text-transform:uppercase}
+.next .t{font-family:var(--mono);font-weight:700;color:var(--ink);font-size:13px;font-variant-numeric:tabular-nums}
+.next .n{font-size:13px;color:var(--body);font-weight:500}
+.next .ic{color:var(--plum);font-size:14px}
+
+/* day header */
+.cover{margin:18px 0 0;height:190px;border-radius:16px;overflow:hidden;position:relative;
+  background:linear-gradient(120deg,var(--indigo),var(--plum))}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.cover::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,.05) 55%,transparent)}
+.cover .cap{position:absolute;left:15px;bottom:12px;right:15px;z-index:1}
+.cover .k{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:rgba(255,255,255,.9);text-transform:uppercase}
+.cover .attr{position:absolute;right:9px;top:9px;z-index:1;font-family:var(--mono);font-size:9px;
+  color:rgba(255,255,255,.7);background:rgba(0,0,0,.25);padding:2px 6px;border-radius:5px}
+.dayhead{padding:16px 0 6px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--plum)}
+.daytitle{font-family:var(--serif);color:var(--ink);font-weight:600;font-size:27px;line-height:1.3;text-wrap:balance;margin-top:10px}
+.daymeta{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.daymeta .m{font-family:var(--mono);font-size:11.5px;color:var(--body);background:var(--raise);
+  border:1px solid var(--line);border-radius:7px;padding:4px 9px;font-variant-numeric:tabular-nums}
+.daymeta .m b{color:var(--ink)}
+.intro{margin-top:16px;font-size:14px;color:var(--body);line-height:1.75}
+
+/* timeline spine + cards */
+.tl{position:relative;margin-top:22px}
+.row{position:relative;display:grid;grid-template-columns:44px 1fr;column-gap:20px;padding-bottom:10px}
+.row::before{content:"";position:absolute;left:55px;top:6px;bottom:-4px;width:2px;background:var(--line2)}
+.row:last-child::before{display:none}
+.time{font-family:var(--mono);font-size:12px;color:var(--soft);text-align:right;padding-top:15px;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.node{position:relative}
+.dot{position:absolute;left:-15px;top:16px;width:13px;height:13px;border-radius:50%;
+  background:var(--ground);border:2.5px solid var(--slate);z-index:2;box-sizing:border-box}
+.dot.food{border-color:var(--terra)} .dot.shrine{border-color:var(--indigo)}
+.dot.shop{border-color:var(--plum)} .dot.nature{border-color:var(--matcha)}
+.dot.culture{border-color:var(--indigo)} .dot.night{border-color:var(--gold)}
+
+/* minor rows */
+.minor{display:flex;align-items:center;gap:8px;color:var(--soft);font-size:12.5px;padding:6px 0 6px 2px}
+.minor .ic{color:var(--slate);font-size:14px}
+.dot.mini{width:9px;height:9px;top:10px;left:-13px;border-width:2px;background:var(--line2);border-color:var(--line2)}
+
+/* transit connector */
+.transit{display:flex;align-items:center;gap:8px;color:var(--soft);font-size:12px;
+  padding:2px 0 8px 2px}
+.transit .ic{color:var(--slate);font-size:15px;flex:0 0 auto}
+.transit b{color:var(--body);font-weight:500}
+
+/* card */
+.card{background:var(--raise);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+  overflow:hidden;transition:border-color .2s}
+.card:hover{border-color:var(--line2)}
+.card > summary{list-style:none;cursor:pointer;padding:13px 14px;display:block}
+.card > summary::-webkit-details-marker{display:none}
+.ct{display:flex;align-items:flex-start;gap:10px}
+.cic{flex:0 0 auto;font-size:19px;margin-top:1px}
+.cic.food{color:var(--terra)} .cic.shrine{color:var(--indigo)}
+.cic.shop{color:var(--plum)} .cic.nature{color:var(--matcha)}
+.cic.culture{color:var(--indigo)} .cic.night{color:var(--gold)}
+.cname{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:17.5px;line-height:1.35;flex:1}
+.dur{font-family:var(--mono);font-size:10.5px;color:var(--soft);white-space:nowrap;margin-top:3px}
+.teaser{margin-top:8px;font-size:13.5px;color:var(--body);line-height:1.65}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.chip{font-size:11.5px;font-weight:500;padding:3px 9px;border-radius:20px;font-variant-numeric:tabular-nums;
+  border:1px solid var(--line2);color:var(--soft)}
+.chip.book{color:var(--ok);background:var(--okbg);border-color:transparent}
+.chip.walk{color:var(--warn);background:var(--warnbg);border-color:transparent}
+.chip.care{color:var(--terra);background:var(--terrabg);border-color:transparent}
+.foot{display:flex;align-items:center;gap:12px;margin-top:12px}
+.maps{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:var(--indigo);
+  text-decoration:none;border:1px solid color-mix(in srgb,var(--indigo) 32%,var(--line2));padding:6px 11px;border-radius:9px}
+.maps:hover{background:color-mix(in srgb,var(--indigo) 8%,transparent)}
+.maps .ic{font-size:14px}
+.more{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--plum);
+  display:inline-flex;align-items:center;gap:5px;letter-spacing:.03em}
+.more .ic{font-size:14px;transition:transform .2s} .card[open] .more .ic{transform:rotate(180deg)}
+.card[open] .more .o{display:none} .more .c{display:none} .card[open] .more .c{display:inline}
+.detail{padding:0 14px 15px;border-top:1px solid var(--line)}
+.detail .blk{padding-top:13px}
+.detail h5{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.detail p{font-size:13.5px;color:var(--body);line-height:1.7}
+.detail ol{padding-left:18px;font-size:13px;color:var(--body);line-height:1.75}
+.detail ol li{margin-bottom:3px}
+.detail ul.rec{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.detail ul.rec li{font-size:13px;color:var(--body);line-height:1.6;padding-left:15px;position:relative}
+.detail ul.rec li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--terra)}
+.detail ul.rec.shop li::before{background:var(--plum)}
+.detail ul.rec li b{color:var(--ink);font-weight:600}
+.mapmini{display:inline-flex;align-items:center;gap:4px;color:var(--indigo);text-decoration:none;
+  font-size:11px;font-weight:600;white-space:nowrap;border:1px solid color-mix(in srgb,var(--indigo) 32%,var(--line2));
+  padding:3px 9px;border-radius:20px;margin-left:5px;vertical-align:middle}
+.mapmini:hover{background:color-mix(in srgb,var(--indigo) 10%,transparent)}.mapmini .ic{font-size:12px}
+.spotimg{width:100%;border-radius:10px;display:block;margin-bottom:3px}
+.spotimg-cap{font-family:var(--mono);font-size:10px;color:var(--soft);margin:-1px 0 2px;letter-spacing:.02em}
+.hours{font-family:var(--mono);font-size:12.5px;color:var(--body);font-variant-numeric:tabular-nums}
+
+.note{margin-top:24px;background:var(--raise);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:12px;padding:14px 16px}
+.note h4{font-family:var(--serif);font-size:14px;color:var(--ink);margin-bottom:6px;font-weight:600;display:flex;align-items:center;gap:7px}
+.note h4 .ic{color:var(--gold);font-size:16px}
+.note p{font-size:13px;color:var(--body);line-height:1.7}
+.footer{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11px;color:var(--soft);text-align:center;line-height:1.8;letter-spacing:.02em}
+
+.themebtn{position:fixed;right:16px;bottom:16px;z-index:40;width:44px;height:44px;border-radius:12px;
+  border:1px solid var(--line2);background:var(--raise);color:var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow)}
+.themebtn .ic{font-size:19px}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--plum);outline-offset:2px;border-radius:9px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ===== 行程頁專用 ===== */
+.daysec{padding-top:6px}
+.daysec + .daysec{margin-top:10px;border-top:1px solid var(--line)}
+.arealink{display:inline-flex;align-items:center;gap:5px;margin-top:12px;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--plum);text-decoration:none;border:1px solid color-mix(in srgb,var(--plum) 35%,var(--line2));border-radius:20px;padding:5px 12px}
+.arealink:hover{background:color-mix(in srgb,var(--plum) 10%,transparent)}
+.arealink .ic{width:13px;height:13px}
+.cover.plain{height:96px}
+.overviewmap{padding:6px 0 10px}
+.overviewmap img{width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.ovcap{font-family:var(--mono);font-size:10.5px;color:var(--soft);text-align:center;margin-top:8px}
+
+/* Hero */
+.hero{padding:16px 0 4px}
+.hero-card{position:relative;border-radius:18px;overflow:hidden;min-height:300px;display:flex;align-items:flex-end;background:linear-gradient(120deg,var(--indigo),var(--plum))}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.74),rgba(0,0,0,.28) 55%,rgba(0,0,0,.12))}
+.hero-in{position:relative;z-index:1;padding:22px 22px 24px;color:#fff}
+.hero-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+.htag{font-family:var(--mono);font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.30);color:#fff}
+.hero-title{font-family:var(--serif);font-weight:700;font-size:32px;line-height:1.2;text-wrap:balance;color:#fff}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.85);margin-top:9px;line-height:1.6}
+.hero-stats{display:flex;gap:24px;margin-top:18px}
+.hstat{font-size:12px;color:rgba(255,255,255,.8);font-family:var(--mono)}
+.hstat .n{display:block;font-family:var(--serif);font-size:26px;font-weight:700;color:#fff;line-height:1;margin-bottom:3px}
+
+/* 速覽 digest（大星期字 + 每天可收合時間清單） */
+.digest{padding:28px 0 6px}
+.digest h2{font-family:var(--serif);font-size:22px;color:var(--ink);font-weight:600}
+.digest .jp{font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:var(--soft);text-transform:uppercase;display:block;margin:4px 0 6px}
+.dg-day{border-top:1px solid var(--line)}
+.dg-day:last-of-type{border-bottom:1px solid var(--line)}
+.dg-sum{list-style:none;cursor:pointer;display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start;padding:16px 4px}
+.dg-sum::-webkit-details-marker{display:none}
+.dg-sum:hover .dg-theme{color:var(--plum)}
+.dg-wd{font-family:var(--serif);font-weight:700;font-size:25px;letter-spacing:.14em;color:var(--ink);line-height:1}
+.dg-wd small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--soft);font-weight:400;margin-top:6px}
+.dg-title{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;padding-top:3px}
+.dno{font-family:var(--mono);font-weight:700;color:var(--plum);font-size:13px}
+.dg-theme{font-family:var(--serif);color:var(--ink);font-size:16px;font-weight:600;flex:1;line-height:1.4;transition:color .15s}
+.dg-chev{font-size:16px;color:var(--soft);transition:transform .2s;align-self:center}
+.dg-day[open] .dg-chev{transform:rotate(180deg)}
+.dg-items{display:flex;flex-direction:column;gap:5px;padding:0 4px 16px 112px}
+.dg-it{display:flex;gap:12px;align-items:baseline;text-decoration:none;padding:1px 0}
+.dg-it:hover .dg-n{text-decoration:underline}
+.dg-t{font-family:var(--mono);font-size:12px;color:var(--soft);min-width:42px;font-variant-numeric:tabular-nums}
+.dg-n{font-size:13.5px;color:var(--body);line-height:1.45}
+.dg-n.food{color:var(--terra)} .dg-n.shrine,.dg-n.culture{color:var(--indigo)} .dg-n.nature{color:var(--matcha)} .dg-n.shop{color:var(--plum)} .dg-n.night{color:var(--gold)} .dg-n.minor{color:var(--soft)}
+@media (max-width:520px){
+  .hero-title{font-size:26px}
+  .dg-sum{grid-template-columns:60px 1fr;gap:10px}
+  .dg-wd{font-size:18px}
+  .dg-items{padding-left:70px}
+}
+.hero-cred{position:absolute;right:11px;bottom:8px;z-index:1;font-family:var(--mono);font-size:9px;color:rgba(255,255,255,.62);letter-spacing:.02em;max-width:72%;text-align:right;line-height:1.3}
+
+/* ===== 桌機（≥900px）雙欄 ===== */
+@media (min-width:900px){
+  .hdr-top,.page{max-width:1060px}
+  .hero{padding:20px 0 6px}
+  .hero-card{min-height:380px}
+  .hero-in{padding:30px 34px 32px}
+  .hero-title{font-size:40px}
+  .hero-sub{font-size:15px}
+  .hero-stats{gap:30px}
+  .digest{padding-top:34px}
+  .daysec{display:grid;grid-template-columns:340px minmax(0,1fr);column-gap:48px;align-items:start;padding-top:28px}
+  .daysec + .daysec{margin-top:26px;padding-top:34px}
+  .day-left{position:sticky;top:74px}
+  .day-left .cover{margin-top:0;height:238px}
+  .day-left .cover.plain{height:120px}
+  .day-left .dayhead{padding:16px 0 0}
+  .day-left .daytitle{font-size:24px}
+  .day-left .intro{font-size:13px;line-height:1.7}
+}
+@media (min-width:1180px){
+  .hdr-top,.page{max-width:1120px}
+  .daysec{grid-template-columns:360px minmax(0,1fr);column-gap:56px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-torii" viewBox="0 0 24 24"><path d="M3 7h18M5 5.2h14M7 7v13M17 7v13M8.5 10.2h7"/></symbol>
+  <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3.5 11h17M5 11a7 7 0 0 0 14 0M9.5 7.5c0-1.2.6-2 1.3-2.6M13 7.5c0-1.2.6-2 1.3-2.6"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8.5h12l-.9 11.5H6.9L6 8.5zM9 8.5V6.2a3 3 0 0 1 6 0v2.3"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 20c0-8 6-13 14-13 0 8-6 13-14 13zM6.5 18.5C10 15 13 12 15.5 10"/></symbol>
+  <symbol id="i-train" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="12.5" rx="3"/><path d="M6 11h12M9.5 16.5 8 20M14.5 16.5 16 20"/><circle cx="9.3" cy="13.5" r=".6"/><circle cx="14.7" cy="13.5" r=".6"/></symbol>
+  <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4.5" r="1.6"/><path d="M13 8l-2.5 3.5L12 14v6M13 8l3 1.5 1.5 3M10.5 11.5 7 16"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 13.5A8 8 0 1 1 10.5 4 6.3 6.3 0 0 0 20 13.5z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-umb" viewBox="0 0 24 24"><path d="M12 3v2M3.5 11a8.5 8.5 0 0 1 17 0zM12 11v7a2.5 2.5 0 0 1-5 0"/></symbol>
+  <symbol id="i-temple" viewBox="0 0 24 24"><path d="M3 21h18M5 21v-6h14v6M6.5 15l1.2-3h8.6l1.2 3M8 12l1-2.5h6l1 2.5M9.5 9.5 12 5.5l2.5 4M12 3.2v2.3"/></symbol>
+  <symbol id="i-fest" viewBox="0 0 24 24"><path d="M9 5h6M12 3v2M7.8 8.5C7.8 6.6 9.7 5.2 12 5.2s4.2 1.4 4.2 3.3M7.8 8.5v5M16.2 8.5v5M7.8 13.5C7.8 15.4 9.7 16.8 12 16.8s4.2-1.4 4.2-3.3M12 16.8v2.2M10 19h4M10 9.5h4M10 12.5h4"/></symbol>
+  <symbol id="i-bldg" viewBox="0 0 24 24"><path d="M4 21h16M6 21V8l6-3.5 6 3.5v13M9.5 11h1.2M13.3 11h1.2M9.5 14h1.2M13.3 14h1.2M10 21v-3.2h4V21"/></symbol>
+  <symbol id="i-beef" viewBox="0 0 24 24"><path d="M5 8.5C5 5.5 8 4 12 4s7 1.5 7 4.5c0 2-1.5 3-1.5 5.5S19 21 12 21 6.5 16.5 6.5 14 5 10.5 5 8.5z"/><circle cx="10" cy="10.5" r="1.3"/><circle cx="14.5" cy="12" r="1.1"/></symbol>
+</svg>
+
+<header class="hdr">
+  <div class="hdr-top">
+    <span class="brand">沖繩 · 8 天 7 夜</span>
+    <nav class="pills">
+      <a class="pd" href="#overview">總覽</a>
+      <a class="pd" href="#day1">D1</a><a class="pd" href="#day2">D2</a><a class="pd" href="#day3">D3</a><a class="pd" href="#day4">D4</a><a class="pd" href="#day5">D5</a><a class="pd" href="#day6">D6</a><a class="pd" href="#day7">D7</a><a class="pd" href="#day8">D8</a>
+      <a class="pd" href="reference.html">參考</a>
+      
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+
+  
+  <section class="hero">
+    <div class="hero-card">
+      <img class="hero-bg" src="img/hero.jpg" alt="">
+      
+      <div class="hero-in">
+        <div class="hero-tags"><span class="htag">2026/10/15 (四) → 10/22 (四)</span><span class="htag">8 天</span><span class="htag">沖繩</span></div>
+        <h1 class="hero-title">沖繩八天七夜 · 休假模式</h1>
+        <p class="hero-sub">一天一個大點，其餘同區小點看心情。那霸五晚加美國村兩晚，租車兩天跑南北，其他天單軌、公車與計程車。</p>
+        <div class="hero-stats"><div class="hstat"><span class="n">8</span>天</div><div class="hstat"><span class="n">7</span>夜</div><div class="hstat"><span class="n">2</span>人</div></div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="digest" id="overview">
+    <h2>8 天行程速覽</h2><span class="jp">ITINERARY AT A GLANCE</span>
+    
+    <details class="dg-day" open>
+      <summary class="dg-sum">
+        <div class="dg-wd">THU<small>2026.10.15</small></div>
+        <div class="dg-title"><span class="dno">DAY1</span><span class="dg-theme">落地那霸，輕鬆吃、海崖夕陽、市場晚餐</span><svg class="ic dg-chev"><use href="#i-chev"/></svg></div>
+      </summary>
+      <div class="dg-items">
+        
+        <a class="dg-it" href="#day1">
+          <span class="dg-t">10:45</span>
+          <span class="dg-n minor">抵達那霸機場</span>
+        </a>
+        
+        <a class="dg-it" href="#day1">
+          <span class="dg-t">12:00</span>
+          <span class="dg-n minor">飯店寄放行李</span>
+        </a>
+        
+        <a class="dg-it" href="#day1">
+          <span class="dg-t">13:00</span>
+          <span class="dg-n food">やっぱりステーキ 4th 國際通店</span>
+        </a>
+        
+        <a class="dg-it" href="#day1">
+          <span class="dg-t">14:00</span>
+          <span class="dg-n minor">入住、休息、附近走走</span>
+        </a>
+        
+        <a class="dg-it" href="#day1">
+          <span class="dg-t">17:00</span>
+          <span class="dg-n shrine">波上宮與波之上海灘 夕陽</span>
+        </a>
+        
+        <a class="dg-it" href="#day1">
+          <span class="dg-t">18:45</span>
+          <span class="dg-n food">第一牧志公設市場 持ち上げ</span>
+        </a>
+        
+        <a class="dg-it" href="#day1">
+          <span class="dg-t">20:15</span>
+          <span class="dg-n shop">國際通夜散步</span>
+        </a>
+        
+      </div>
+    </details>
+    
+    <details class="dg-day" open>
+      <summary class="dg-sum">
+        <div class="dg-wd">FRI<small>2026.10.16</small></div>
+        <div class="dg-title"><span class="dno">DAY2</span><span class="dg-theme">租車第一天：鐘乳石洞、漁港天婦羅、聖地、瀨長島夕陽與溫泉</span><svg class="ic dg-chev"><use href="#i-chev"/></svg></div>
+      </summary>
+      <div class="dg-items">
+        
+        <a class="dg-it" href="#day2">
+          <span class="dg-t">08:30</span>
+          <span class="dg-n food">ポーたま 牧志市場店 早餐</span>
+        </a>
+        
+        <a class="dg-it" href="#day2">
+          <span class="dg-t">09:30</span>
+          <span class="dg-n minor">取車</span>
+        </a>
+        
+        <a class="dg-it" href="#day2">
+          <span class="dg-t">11:00</span>
+          <span class="dg-n nature">沖繩世界 玉泉洞</span>
+        </a>
+        
+        <a class="dg-it" href="#day2">
+          <span class="dg-t">13:20</span>
+          <span class="dg-n food">中本鮮魚てんぷら店（奧武島）輕午餐</span>
+        </a>
+        
+        <a class="dg-it" href="#day2">
+          <span class="dg-t">14:20</span>
+          <span class="dg-n shrine">齋場御嶽</span>
+        </a>
+        
+        <a class="dg-it" href="#day2">
+          <span class="dg-t">15:40</span>
+          <span class="dg-n nature">知念岬公園</span>
+        </a>
+        
+        <a class="dg-it" href="#day2">
+          <span class="dg-t">17:05</span>
+          <span class="dg-n night">瀨長島 Umikaji Terrace 夕陽</span>
+        </a>
+        
+        <a class="dg-it" href="#day2">
+          <span class="dg-t">18:15</span>
+          <span class="dg-n food">瀨長島 晚餐</span>
+        </a>
+        
+        <a class="dg-it" href="#day2">
+          <span class="dg-t">19:30</span>
+          <span class="dg-n night">琉球溫泉 龍神之湯</span>
+        </a>
+        
+      </div>
+    </details>
+    
+    <details class="dg-day" open>
+      <summary class="dg-sum">
+        <div class="dg-wd">SAT<small>2026.10.17</small></div>
+        <div class="dg-title"><span class="dno">DAY3</span><span class="dg-theme">租車第二天：美麗海、備瀨林道、古宇利島</span><svg class="ic dg-chev"><use href="#i-chev"/></svg></div>
+      </summary>
+      <div class="dg-items">
+        
+        <a class="dg-it" href="#day3">
+          <span class="dg-t">07:00</span>
+          <span class="dg-n minor">出發往北</span>
+        </a>
+        
+        <a class="dg-it" href="#day3">
+          <span class="dg-t">09:00</span>
+          <span class="dg-n nature">沖繩美麗海水族館</span>
+        </a>
+        
+        <a class="dg-it" href="#day3">
+          <span class="dg-t">11:40</span>
+          <span class="dg-n nature">備瀨福木林道</span>
+        </a>
+        
+        <a class="dg-it" href="#day3">
+          <span class="dg-t">13:20</span>
+          <span class="dg-n food">KOURI SHRIMP 蒜味蝦</span>
+        </a>
+        
+        <a class="dg-it" href="#day3">
+          <span class="dg-t">14:10</span>
+          <span class="dg-n nature">古宇利島 大橋與 Tinu 濱遠看心形岩</span>
+        </a>
+        
+        <a class="dg-it" href="#day3">
+          <span class="dg-t">17:00</span>
+          <span class="dg-n minor">回那霸、停車</span>
+        </a>
+        
+        <a class="dg-it" href="#day3">
+          <span class="dg-t">17:15</span>
+          <span class="dg-n minor">回飯店休息</span>
+        </a>
+        
+        <a class="dg-it" href="#day3">
+          <span class="dg-t">19:00</span>
+          <span class="dg-n food">安里家 OKINAWA 阿古豬涮涮鍋</span>
+        </a>
+        
+      </div>
+    </details>
+    
+    <details class="dg-day" open>
+      <summary class="dg-sum">
+        <div class="dg-wd">SUN<small>2026.10.18</small></div>
+        <div class="dg-title"><span class="dno">DAY4</span><span class="dg-theme">還車、首里城外觀與玉陵、古民家沖繩麵、步行者天國、壺屋、煙火</span><svg class="ic dg-chev"><use href="#i-chev"/></svg></div>
+      </summary>
+      <div class="dg-items">
+        
+        <a class="dg-it" href="#day4">
+          <span class="dg-t">09:00</span>
+          <span class="dg-n minor">還車</span>
+        </a>
+        
+        <a class="dg-it" href="#day4">
+          <span class="dg-t">10:00</span>
+          <span class="dg-n food">C&C BREAKFAST 或 ポーたま</span>
+        </a>
+        
+        <a class="dg-it" href="#day4">
+          <span class="dg-t">11:15</span>
+          <span class="dg-n culture">首里城公園（正殿外觀）</span>
+        </a>
+        
+        <a class="dg-it" href="#day4">
+          <span class="dg-t">12:20</span>
+          <span class="dg-n culture">玉陵</span>
+        </a>
+        
+        <a class="dg-it" href="#day4">
+          <span class="dg-t">13:05</span>
+          <span class="dg-n food">御殿山 首里本店 沖繩麵</span>
+        </a>
+        
+        <a class="dg-it" href="#day4">
+          <span class="dg-t">14:45</span>
+          <span class="dg-n shop">國際通步行者天國</span>
+        </a>
+        
+        <a class="dg-it" href="#day4">
+          <span class="dg-t">15:45</span>
+          <span class="dg-n shop">壺屋陶器街</span>
+        </a>
+        
+        <a class="dg-it" href="#day4">
+          <span class="dg-t">16:45</span>
+          <span class="dg-n minor">回飯店休息</span>
+        </a>
+        
+        <a class="dg-it" href="#day4">
+          <span class="dg-t">18:30</span>
+          <span class="dg-n night">浦添てだこ祭 煙火</span>
+        </a>
+        
+      </div>
+    </details>
+    
+    <details class="dg-day" open>
+      <summary class="dg-sum">
+        <div class="dg-wd">MON<small>2026.10.19</small></div>
+        <div class="dg-title"><span class="dno">DAY5</span><span class="dg-theme">那霸慢日：首里そば第一輪、Main Place、PARCO CITY 海景逛街、島唄 live</span><svg class="ic dg-chev"><use href="#i-chev"/></svg></div>
+      </summary>
+      <div class="dg-items">
+        
+        <a class="dg-it" href="#day5">
+          <span class="dg-t">09:00</span>
+          <span class="dg-n food">早餐：飯店或超商</span>
+        </a>
+        
+        <a class="dg-it" href="#day5">
+          <span class="dg-t">11:30</span>
+          <span class="dg-n food">首里そば 本店</span>
+        </a>
+        
+        <a class="dg-it" href="#day5">
+          <span class="dg-t">13:15</span>
+          <span class="dg-n shop">SAN-A 那霸 Main Place</span>
+        </a>
+        
+        <a class="dg-it" href="#day5">
+          <span class="dg-t">14:15</span>
+          <span class="dg-n minor">おもろまち歇腳、等接駁車</span>
+        </a>
+        
+        <a class="dg-it" href="#day5">
+          <span class="dg-t">16:00</span>
+          <span class="dg-n shop">PARCO CITY 浦添西海岸</span>
+        </a>
+        
+        <a class="dg-it" href="#day5">
+          <span class="dg-t">20:00</span>
+          <span class="dg-n food">とぅばらーま 國際通店 島唄 live 居酒屋</span>
+        </a>
+        
+      </div>
+    </details>
+    
+    <details class="dg-day" open>
+      <summary class="dg-sum">
+        <div class="dg-wd">TUE<small>2026.10.20</small></div>
+        <div class="dg-title"><span class="dno">DAY6</span><span class="dg-theme">青之洞窟船潛、老牛排離峰、搬到美國村看夕陽</span><svg class="ic dg-chev"><use href="#i-chev"/></svg></div>
+      </summary>
+      <div class="dg-items">
+        
+        <a class="dg-it" href="#day6">
+          <span class="dg-t">07:30</span>
+          <span class="dg-n minor">早餐、寄放行李</span>
+        </a>
+        
+        <a class="dg-it" href="#day6">
+          <span class="dg-t">08:00</span>
+          <span class="dg-n minor">業者接送集合</span>
+        </a>
+        
+        <a class="dg-it" href="#day6">
+          <span class="dg-t">09:30</span>
+          <span class="dg-n nature">青之洞窟船潛</span>
+        </a>
+        
+        <a class="dg-it" href="#day6">
+          <span class="dg-t">13:30</span>
+          <span class="dg-n food">Jack's Steak House 離峰午餐</span>
+        </a>
+        
+        <a class="dg-it" href="#day6">
+          <span class="dg-t">16:00</span>
+          <span class="dg-n minor">入住美國村飯店</span>
+        </a>
+        
+        <a class="dg-it" href="#day6">
+          <span class="dg-t">16:45</span>
+          <span class="dg-n nature">北谷 Sunset Beach 海岸步道 夕陽</span>
+        </a>
+        
+        <a class="dg-it" href="#day6">
+          <span class="dg-t">18:15</span>
+          <span class="dg-n food">美國村晚餐</span>
+        </a>
+        
+        <a class="dg-it" href="#day6">
+          <span class="dg-t">20:30</span>
+          <span class="dg-n minor">溫泉</span>
+        </a>
+        
+      </div>
+    </details>
+    
+    <details class="dg-day" open>
+      <summary class="dg-sum">
+        <div class="dg-wd">WED<small>2026.10.21</small></div>
+        <div class="dg-title"><span class="dno">DAY7</span><span class="dg-theme">美國村基地：睡飽、來客夢或港川、Depot Island、最後一個夕陽</span><svg class="ic dg-chev"><use href="#i-chev"/></svg></div>
+      </summary>
+      <div class="dg-items">
+        
+        <a class="dg-it" href="#day7">
+          <span class="dg-t">10:00</span>
+          <span class="dg-n minor">睡飽、早餐</span>
+        </a>
+        
+        <a class="dg-it" href="#day7">
+          <span class="dg-t">11:00</span>
+          <span class="dg-n shop">AEON MALL 沖繩來客夢 或 港川外人住宅（二選一）</span>
+        </a>
+        
+        <a class="dg-it" href="#day7">
+          <span class="dg-t">15:00</span>
+          <span class="dg-n shop">美國村 Depot Island 逛街與海岸</span>
+        </a>
+        
+        <a class="dg-it" href="#day7">
+          <span class="dg-t">18:15</span>
+          <span class="dg-n food">美國村晚餐</span>
+        </a>
+        
+        <a class="dg-it" href="#day7">
+          <span class="dg-t">20:30</span>
+          <span class="dg-n minor">打包</span>
+        </a>
+        
+      </div>
+    </details>
+    
+    <details class="dg-day" open>
+      <summary class="dg-sum">
+        <div class="dg-wd">THU<small>2026.10.22</small></div>
+        <div class="dg-title"><span class="dno">DAY8</span><span class="dg-theme">退房去機場</span><svg class="ic dg-chev"><use href="#i-chev"/></svg></div>
+      </summary>
+      <div class="dg-items">
+        
+        <a class="dg-it" href="#day8">
+          <span class="dg-t">07:15</span>
+          <span class="dg-n minor">起床、最後打包</span>
+        </a>
+        
+        <a class="dg-it" href="#day8">
+          <span class="dg-t">08:00</span>
+          <span class="dg-n minor">退房、上預約好的計程車</span>
+        </a>
+        
+        <a class="dg-it" href="#day8">
+          <span class="dg-t">08:50</span>
+          <span class="dg-n minor">抵達機場、報到</span>
+        </a>
+        
+        <a class="dg-it" href="#day8">
+          <span class="dg-t">09:30</span>
+          <span class="dg-n minor">機場早餐：ポーたま 那霸機場店</span>
+        </a>
+        
+        <a class="dg-it" href="#day8">
+          <span class="dg-t">11:50</span>
+          <span class="dg-n minor">CI121 起飛</span>
+        </a>
+        
+      </div>
+    </details>
+    
+  </section>
+
+  
+
+  
+  <section class="daysec" id="day1">
+    <div class="day-left">
+    
+    <div class="cover">
+      <img src="img/day1.jpg" alt="Day 01 · 10/15 Thu · 那霸">
+      <span class="attr">Zairon／CC BY 4.0／Wikimedia Commons</span>
+      <div class="cap"><div class="k">Day 01 · 10/15 Thu · 那霸</div></div>
+    </div>
+    <div class="dayhead">
+      <div class="eyebrow">Day 01 · 10/15 (四) Thu</div>
+      <h1 class="daytitle">落地那霸，輕鬆吃、海崖夕陽、市場晚餐</h1>
+      <div class="daymeta"><span class="m">強度 <b>2</b>/4</span><span class="m">那霸</span></div>
+      <p class="intro">10:45 落地，行李先寄飯店，第一餐吃 15 分鐘就能入座的沖繩本土牛排連鎖，不排隊。傍晚去波上宮，待到 18:02 日落看完海崖夕陽，晚上在牧志市場樓下挑魚、樓上煮。</p>
+      
+    </div>
+    </div><!-- day-left -->
+
+    <div class="day-right">
+    <div class="tl">
+      
+      
+      <div class="row"><div class="time">10:45</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>抵達那霸機場</b> · CI120 落地。國內線 1F 走連絡通道到單軌站，兩人各刷一張感應信用卡進站，不用買票。今天現金需求高（市場晚餐多為現金），先在機場 ATM 領 15,000 円/人以上。</div></div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>單軌 那霸機場 → 飯店最近站</b>（15 分） · 290 円，13 分。行李多的話計程車約 1,500 円。以下交通都以「飯店在縣廳前～牧志、離站 5 分內」為前提，卡位後依實際飯店改。</div>
+      
+      
+      
+      <div class="row"><div class="time">12:00</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>飯店寄放行李</b> · 入住 15:00 後。寄完行李輕裝出門。</div></div></div>
+      
+      
+      
+      <div class="row"><div class="time">13:00</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">やっぱりステーキ 4th 國際通店</span><span class="dur">45 分</span></div>
+            <p class="teaser">沖繩本土平價牛排，熔岩板上桌、沙拉湯白飯吃到飽，落地第一餐不排隊。</p>
+            <div class="chips"><span class="chip walk">不排隊</span><span class="chip">營業 11:00-21:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E3%82%84%E3%81%A3%E3%81%B1%E3%82%8A%E3%82%B9%E3%83%86%E3%83%BC%E3%82%AD%204th%20%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A%E5%BA%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">特色 · 建議點 · 現場</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>特色</h5>
+              <p>沖繩起家的牛排連鎖，100g 1,000 円起，翻桌快。老店 Jack's 排到 90 分鐘，留到 10/20 離峰再去。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>やっぱりステーキ（ミスジ 板腱）200g</b>約 1,600-2,000 円</li><li><b>赤身ステーキ</b>想清爽</li></ul>
+            </div>
+            
+            <div class="blk"><h5>現場</h5>
+              <p>2 樓店面，L.O. 20:30。國際通上有多家分店互為備援。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>附近備選</h5>
+              
+              
+              
+              <ul class="rec"><li><b>花笠食堂</b>國際通旁老派沖繩定食，午餐 11:00-14:00 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E8%8A%B1%E7%AC%A0%E9%A3%9F%E5%A0%82%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>OKINAWA SOBA EIBUN（壺屋）</b>年輕派濃湯沖繩麵，11:00-20:00（L.O. 19:30），國際通步行 5 分 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=OKINAWA%20SOBA%20EIBUN%20%E5%A3%BA%E5%B1%8B" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul>
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">14:00</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-moon"/></svg>入住、休息、附近走走（3 小時）</div></div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-pin"/></svg><b>計程車 → 波上宮</b>（10 分） · 約 1,000 円。走路 20 分也行，但傍晚先省力。</div>
+      
+      
+      
+      <div class="row"><div class="time">17:00</div><div class="node"><span class="dot shrine"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic shrine"><use href="#i-torii"/></svg>
+              <span class="cname">波上宮與波之上海灘 夕陽</span><span class="dur">1 小時 10 分</span></div>
+            <p class="teaser">蓋在海崖上的琉球一之宮，10/15 日落 18:02，待到看完再走。</p>
+            <div class="chips"><span class="chip walk">日落 18:02</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E6%B3%A2%E4%B8%8A%E5%AE%AE" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">為什麼值得 · 怎麼逛 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>為什麼值得</h5>
+              <p>那霸市區唯一的海邊神社。展望台被樹擋住看不到海，海灘那側回頭往上拍才是拍點，日落前後 20 分最好看。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>怎麼逛</h5>
+              
+              
+              <ol><li>先上神社參拜（御朱印授與所 09:00-16:45，17:00 到已經關了，要御朱印得改天早上來）</li><li>下到波之上海灘，回頭往上拍神社</li><li>沿海灘走到高架橋下，18:02 日落，看完 18:10 上車</li></ol>
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>神社本身很小、海灘正對高架橋，當散步不當景點。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-pin"/></svg><b>計程車 → 牧志市場</b>（10 分） · 約 1,000 円。</div>
+      
+      
+      
+      <div class="row"><div class="time">18:45</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">第一牧志公設市場 持ち上げ</span><span class="dur">1 小時 30 分</span></div>
+            <p class="teaser">一樓挑魚、付調理費請二樓食堂做，沖繩最有代表性的一餐。</p>
+            <div class="chips"><span class="chip care">先問價再點</span><span class="chip care">19:45 最後受理</span><span class="chip care">現金</span><span class="chip">營業 08:00-22:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E7%AC%AC%E4%B8%80%E7%89%A7%E5%BF%97%E5%85%AC%E8%A8%AD%E5%B8%82%E5%A0%B4" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">特色 · 建議點 · 現場</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>特色</h5>
+              <p>持ち上げ（もちあげ）是這裡獨有的制度：一樓魚攤買夜光貝、龍蝦、島魚，二樓食堂幫你做成生魚片、奶油燒、味噌湯。2023 年新館啟用，室內冷氣、乾淨。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>夜光貝刺身</b>沖繩才有的貝，脆</li><li><b>龍蝦半生半烤</b>兩人一隻剛好</li><li><b>グルクン唐揚</b>縣魚雙帶鰺，整條炸</li></ul>
+            </div>
+            
+            <div class="blk"><h5>現場</h5>
+              <p>攤商多會講中文、會拉客。先問清楚食材價與調理費（過去行情每人約 500 円起）再點，多走兩攤比價。一樓持ち上げ最後受理 19:45、二樓 L.O. 20:00，18:45 到還有一小時挑。多數攤商收現金。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>負評顧問查到的抱怨集中在「規模比想像小、觀光價」，兩人吃一隻龍蝦加幾樣約 6,000-10,000 円，當體驗不當划算餐。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">20:15</div><div class="node"><span class="dot shop"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic shop"><use href="#i-bag"/></svg>
+              <span class="cname">國際通夜散步</span><span class="dur">1 小時</span></div>
+            <p class="teaser">飯後沿 1.3 公里主街走回飯店，藥妝與伴手禮先看不買。</p>
+            <div class="chips"><span class="chip walk">只看不買</span><span class="chip">營業 10:00-22:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">怎麼逛 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>怎麼逛</h5>
+              
+              
+              <ol><li>從市場出來往牧志方向走，主街兩側都是伴手禮店，第一晚只看價不買</li><li>想吃冰去 Blue Seal 國際通店，鹽金楚糕口味只有沖繩有</li><li>巷子（浮島通、櫻坂）比主街有趣，留給後面幾天</li></ol>
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>唐吉軻德退稅櫃台晚上排隊很兇，採買留到平日白天。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+    </div>
+
+    
+    <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>萬一下雨</h4><p>波上宮改成 RYUBO 琉貿百貨（縣廳前站樓上）逛一圈，市場晚餐照舊，都在室內。</p></div>
+    
+    </div><!-- day-right -->
+  </section>
+  
+  <section class="daysec" id="day2">
+    <div class="day-left">
+    
+    <div class="cover">
+      <img src="img/day2.jpg" alt="Day 02 · 10/16 Fri · 南部">
+      <span class="attr">Kugel~commonswiki／CC BY-SA 4.0／Wikimedia Commons</span>
+      <div class="cap"><div class="k">Day 02 · 10/16 Fri · 南部</div></div>
+    </div>
+    <div class="dayhead">
+      <div class="eyebrow">Day 02 · 10/16 (五) Fri</div>
+      <h1 class="daytitle">租車第一天：鐘乳石洞、漁港天婦羅、聖地、瀨長島夕陽與溫泉</h1>
+      <div class="daymeta"><span class="m">強度 <b>3</b>/4</span><span class="m">南部</span></div>
+      <p class="intro">早上在飯店附近取車，往南 30 分鐘就是玉泉洞。南部的點都小而近：洞裡 21 度很涼，奧武島港邊站著吃天婦羅當輕午餐，齋場御嶽走一段樹蔭石板路，17:00 前就到機場旁的瀨長島，看 18:01 日落與飛機起降，晚餐後泡溫泉再回那霸。</p>
+      
+    </div>
+    </div><!-- day-left -->
+
+    <div class="day-right">
+    <div class="tl">
+      
+      
+      <div class="row"><div class="time">08:30</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">ポーたま 牧志市場店 早餐</span><span class="dur">30 分</span></div>
+            <p class="teaser">午餐肉蛋飯糰本店，取車前快速解決。</p>
+            <div class="chips"><span class="chip">營業 07:00-18:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%83%BC%E3%82%AF%E3%81%9F%E3%81%BE%E3%81%94%E3%81%8A%E3%81%AB%E3%81%8E%E3%82%8A%E6%9C%AC%E5%BA%97%20%E7%89%A7%E5%BF%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">建議點 · 現場</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>ポークたまご 原味</b>350-550 円</li><li><b>油みそ</b>沖繩味噌</li></ul>
+            </div>
+            
+            <div class="blk"><h5>現場</h5>
+              <p>8-10 點排 20-40 分，不想排就飯店附近超商。泊港的鮪魚朝丼留給 10/21。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">09:30</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>取車</b> · 訂車時鎖定飯店步行 10 分內的營業所（縣廳前一帶選旭橋周邊如 ORIX 旭橋駅西店 24 小時營業；牧志一帶選新都心周邊），不選機場店免得接駁排隊。帶台灣駕照正本、日文譯本、護照，三樣缺一不租。櫃檯 30-60 分，加 CDW 與 NOC 補償，一定拿 ETC 卡（高速 ETC 1,040 円、現金 1,610 円，來回差 1,140 円）。</div></div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>開車 → おきなわワールド</b>（30 分） · 那霸市區出發約 30 分；平日早上 58 號線最外側是公車專用道，別開。</div>
+      
+      
+      
+      <div class="row"><div class="time">11:00</div><div class="node"><span class="dot nature"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic nature"><use href="#i-leaf"/></svg>
+              <span class="cname">沖繩世界 玉泉洞</span><span class="dur">2 小時</span></div>
+            <p class="teaser">30 萬年鐘乳石洞開放 890 公尺，洞內恆溫 21 度。</p>
+            <div class="chips"><span class="chip care">洞內濕滑</span><span class="chip walk">12:30 Eisa 秀</span><span class="chip">營業 09:00-17:30</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8A%E3%81%8D%E3%81%AA%E3%82%8F%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">為什麼值得 · 怎麼逛 · 營業時間</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>為什麼值得</h5>
+              <p>日本最大級的鐘乳石洞之一，走地下 40 公尺的步道，十月外面 28 度、裡面 21 度。園內每天三場太鼓 Eisa 秀免費看，12:30 那場剛好接在洞後面。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>怎麼逛</h5>
+              
+              
+              <ol><li>09:00 開園，11:00 到避開團客尖峰（最終受付 16:00）</li><li>先走玉泉洞，單向約 30-40 分，地面濕滑穿好走的鞋</li><li>出洞經王國村，12:30 看 Eisa 太鼓秀</li><li>毒蛇博物公園看不看都行，13:00 前離開</li></ol>
+              
+            </div>
+            
+            <div class="blk"><h5>營業時間</h5>
+              
+              <p class="hours">09:00-17:30，最終受付 16:00；大人 2,000 円（含玉泉洞、王國村、毒蛇博物公園），KKday/Klook 有小折扣</p>
+              
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>負評集中在「悶熱濕滑、出洞必經土產街、團客多」。期待值調成「濕熱一小時的鐘乳石步道加商業園區」就不會失望。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>開車 → 奧武島</b>（15 分）</div>
+      
+      
+      
+      <div class="row"><div class="time">13:20</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">中本鮮魚てんぷら店（奧武島）輕午餐</span><span class="dur">40 分</span></div>
+            <p class="teaser">漁港邊站著吃的沖繩式天婦羅，一個 100 円上下，一人吃四五個當午餐。</p>
+            <div class="chips"><span class="chip walk">一人 4-5 個</span><span class="chip">營業 10:30-18:00</span><span class="chip care">公休 週四</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E6%9C%AC%E9%AE%AE%E9%AD%9A%E3%81%A6%E3%82%93%E3%81%B7%E3%82%89%E5%BA%97%20%E5%A5%A5%E6%AD%A6%E5%B3%B6" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">特色 · 建議點 · 現場</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>特色</h5>
+              <p>沖繩天婦羅麵衣厚、常溫吃。魚是店家自己定置網捕的，港邊貓很多。今天早餐小、晚餐 18:15，這一餐吃飽一點。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>魚てんぷら ×2</b>必點</li><li><b>もずく（水雲）てんぷら</b>沖繩限定</li><li><b>イカ、野菜</b>各一</li></ul>
+            </div>
+            
+            <div class="blk"><h5>現場</h5>
+              <p>自助勾單點餐，週五平日排隊短。沒有座位。週四休（我們是週五）。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>開車 → 齋場御嶽</b>（20 分） · 票與停車在 500 公尺外的南城市地域物產館，先買票再走上去。</div>
+      
+      
+      
+      <div class="row"><div class="time">14:20</div><div class="node"><span class="dot shrine"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic shrine"><use href="#i-torii"/></svg>
+              <span class="cname">齋場御嶽</span><span class="dur">1 小時 15 分</span></div>
+            <p class="teaser">琉球王國最高聖地，三角岩縫走進去能看到久高島。</p>
+            <div class="chips"><span class="chip care">票在物產館</span><span class="chip walk">600 円</span><span class="chip">營業 09:00-18:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E6%96%8E%E5%A0%B4%E5%BE%A1%E5%B6%BD" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">為什麼值得 · 怎麼逛 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>為什麼值得</h5>
+              <p>沖繩世界遺產裡最有「氣場」的一處：安靜、樹蔭多，不是壯觀型景點，是走進去會自然放輕聲音的地方。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>怎麼逛</h5>
+              
+              
+              <ol><li>物產館買票（大人 600 円，2026/10/1 起調漲）、看 3 分鐘導覽片</li><li>步行 5-10 分上坡到入口</li><li>三庫理的三角岩縫是終點，回望久高島</li><li>15:35 前離開</li></ol>
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>石板路凹凸、雨天極滑，不能穿高跟鞋（入口可借涼鞋）。祭祀場所，不對拜所拍人像、不摸岩石。2026 休息日 6/15-17 與 11/9-11，10/16 有開。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>開車 → 知念岬</b>（5 分）</div>
+      
+      
+      
+      <div class="row"><div class="time">15:40</div><div class="node"><span class="dot nature"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic nature"><use href="#i-leaf"/></svg>
+              <span class="cname">知念岬公園</span><span class="dur">30 分</span></div>
+            <p class="teaser">三面海的草坪岬角，南部最開闊的海景，停 30 分就走。</p>
+            <div class="chips"><span class="chip walk">30 分</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E7%9F%A5%E5%BF%B5%E5%B2%AC%E5%85%AC%E5%9C%92" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">怎麼逛</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>怎麼逛</h5>
+              
+              
+              <ol><li>停車場走下去到岬尖，草坪坐一下</li><li>16:10 出發。Nirai Kanai 橋展望台沒有停車場只能違停，不去；開過橋時從車上看就好</li></ol>
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>開車 → 瀨長島</b>（50 分） · 經 331 號往豐見城，傍晚下班尖峰會塞，抓 50 分。目標 17:00 前停好車；停車場滿就往瀨長島ホテル方向右轉停展望台停車場走 10 分。</div>
+      
+      
+      
+      <div class="row"><div class="time">17:05</div><div class="node"><span class="dot night"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic night"><use href="#i-moon"/></svg>
+              <span class="cname">瀨長島 Umikaji Terrace 夕陽</span><span class="dur">1 小時 10 分</span></div>
+            <p class="teaser">白色階梯式商店街面海，18:01 日落配飛機起降。</p>
+            <div class="chips"><span class="chip walk">日落 18:01</span><span class="chip">營業 10:00-21:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E7%80%AC%E9%95%B7%E5%B3%B6%E3%82%A6%E3%83%9F%E3%82%AB%E3%82%B8%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">為什麼值得 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>為什麼值得</h5>
+              <p>離機場 15 分鐘的斜坡商店街，飛機從跑道起降就在眼前。當黃昏一小時散步剛好，別為它排整個下午。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>負評顧問查到：飛機比想像遠、白牆反光要墨鏡、樓梯多。利用者停車免費。幸せのパンケーキ已取消網路預約要現場候位，不必為它排隊。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">18:15</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">瀨長島 晚餐</span><span class="dur">1 小時</span></div>
+            <p class="teaser">47 間店任選，看飛機吃飯。今天開車，開車的人不喝酒。</p>
+            <div class="chips"><span class="chip care">開車的人不喝</span><span class="chip">營業 11:00-21:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E7%80%AC%E9%95%B7%E5%B3%B6%E3%82%A6%E3%83%9F%E3%82%AB%E3%82%B8%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">現場 · 附近備選</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>現場</h5>
+              <p>餐飲 11:00-21:00、L.O. 20:30。夕陽時段熱門店要排，隨便挑一間看得到跑道的就好。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>附近備選</h5>
+              
+              
+              
+              <ul class="rec"><li><b>やっぱりステーキ 4th 國際通店</b>1,000 円級熔岩板牛排，15 分內入座 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%82%84%E3%81%A3%E3%81%B1%E3%82%8A%E3%82%B9%E3%83%86%E3%83%BC%E3%82%AD%204th%20%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A%E5%BA%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul>
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">19:30</div><div class="node"><span class="dot night"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic night"><use href="#i-moon"/></svg>
+              <span class="cname">琉球溫泉 龍神之湯</span><span class="dur">1 小時</span></div>
+            <p class="teaser">離機場最近的露天溫泉，泡完直接回那霸睡。</p>
+            <div class="chips"><span class="chip walk">2,000 円</span><span class="chip">營業 06:00-24:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E7%90%89%E7%90%83%E6%B8%A9%E6%B3%89%20%E7%80%AC%E9%95%B7%E5%B3%B6%E3%83%9B%E3%83%86%E3%83%AB%20%E9%BE%8D%E7%A5%9E%E3%81%AE%E6%B9%AF" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">為什麼值得</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>為什麼值得</h5>
+              <p>瀨長島飯店的天然溫泉，露天池看得到跑道燈。純泡湯大人 2,000 円，最終受付 23:00，開車一天泡一下剛好。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>開車 → 那霸</b>（25 分） · 約 21:00 回市區。過夜停車：卡位時把「飯店有自有或可預約停車位」當硬條件；沒有就出發前標好飯店 300 公尺內兩個有夜間上限的コインパーキング（一晚約 1,000-1,800 円），兩晚預算約 3,000 円。明早 07:00 出發往北。</div>
+      
+      
+    </div>
+
+    
+    <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>萬一下雨或颱風</h4><p>下雨：玉泉洞在洞裡照常；齋場御嶽石板極滑就跳過，改去 iias 豐崎（DMM 水族館與購物都在室內），瀨長島改只吃晚餐不散步。颱風：租車改期或退租（OTS 7 天前免費取消，颱風當日規定各家不同，訂前問清楚），整天改市區室內（RYUBO、Main Place）。</p></div>
+    
+    </div><!-- day-right -->
+  </section>
+  
+  <section class="daysec" id="day3">
+    <div class="day-left">
+    
+    <div class="cover">
+      <img src="img/day3.jpg" alt="Day 03 · 10/17 Sat · 北部">
+      <span class="attr">Jordy Meow／CC BY-SA 3.0／Wikimedia Commons</span>
+      <div class="cap"><div class="k">Day 03 · 10/17 Sat · 北部</div></div>
+    </div>
+    <div class="dayhead">
+      <div class="eyebrow">Day 03 · 10/17 (六) Sat</div>
+      <h1 class="daytitle">租車第二天：美麗海、備瀨林道、古宇利島</h1>
+      <div class="daymeta"><span class="m">強度 <b>4</b>/4</span><span class="m">北部</span></div>
+      <p class="intro">全程最遠的一天，值得一次做好：07:00 出發、09:00 前進水族館，10:30 團客湧入前已經看完黑潮之海。接著走備瀨的福木綠隧道到海邊，過古宇利大橋吃蒜味蝦；今天 13:17 滿潮，心形岩只能遠看，島上不久留，15:00 往回開，避開週六傍晚 58 號線的塞車。</p>
+      
+    </div>
+    </div><!-- day-left -->
+
+    <div class="day-right">
+    <div class="tl">
+      
+      
+      <div class="row"><div class="time">07:00</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>出發往北</b> · 早餐飯店附近超商買了在車上吃。水族館門票前一晚在便利商店多功能機買前售券或官網 WEB 票（道の駅許田 08:30 才開，去程經過時還沒開）。那霸 IC 上沖繩自動車道到許田 IC，ETC 1,040 円，約 1 小時 50 分。</div></div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>開車 那霸 → 海洋博公園</b>（2 小時） · 走高速到許田 IC 再接 449／84 號。導航設「海洋博公園 中央ゲート」或 P7 北口立體停車場，免費。想 08:30 開門就進場要 06:40 出發，由你們決定。</div>
+      
+      
+      
+      <div class="row"><div class="time">09:00</div><div class="node"><span class="dot nature"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic nature"><use href="#i-leaf"/></svg>
+              <span class="cname">沖繩美麗海水族館</span><span class="dur">2 小時 30 分</span></div>
+            <p class="teaser">黑潮之海 7,500 噸水槽同時看三隻鯨鯊，全日本只有這裡。</p>
+            <div class="chips"><span class="chip care">09:00 前進場</span><span class="chip walk">前售券</span><span class="chip">營業 08:30-18:30</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E7%B8%84%E7%BE%8E%E3%82%89%E6%B5%B7%E6%B0%B4%E6%97%8F%E9%A4%A8" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">為什麼值得 · 怎麼逛 · 營業時間</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>為什麼值得</h5>
+              <p>願望清單的第一名，也是北部唯一「非去不可」的室內點。09:00 進場，10:30-14:00 團客尖峰前已經看完主水槽，海豚秀在園內免費。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>怎麼逛</h5>
+              
+              
+              <ol><li>進館先直奔黑潮之海大水槽，人最少的時候拍</li><li>往回逛珊瑚海、深海區</li><li>出館看免費海豚秀（時段現場看告示）</li><li>11:30 前離開往備瀨</li></ol>
+              
+            </div>
+            
+            <div class="blk"><h5>營業時間</h5>
+              
+              <p class="hours">08:30-18:30，入館到 17:30；大人 2,180 円，前售券 1,850-2,000 円；到 2027/3 無預定休館</p>
+              
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>從停車場到入口有一段戶外坡，有手扶梯。海龜餵食體驗 2025 年起停辦，別找。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>開車 → 備瀨</b>（5 分） · 或從水族館步行 7-8 分。入口免費停車場小，滿了停周邊收費約 500 円。</div>
+      
+      
+      
+      <div class="row"><div class="time">11:40</div><div class="node"><span class="dot nature"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic nature"><use href="#i-leaf"/></svg>
+              <span class="cname">備瀨福木林道</span><span class="dur">50 分</span></div>
+            <p class="teaser">300 年老福木排成綠色隧道，走到底就是備瀨崎的海。</p>
+            <div class="chips"><span class="chip walk">全程樹蔭</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E5%82%99%E7%80%AC%E3%81%AE%E3%83%95%E3%82%AF%E3%82%AE%E4%B8%A6%E6%9C%A8" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">怎麼逛 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>怎麼逛</h5>
+              
+              
+              <ol><li>從入口沿砂土路往海走，全程樹蔭，約 20 分到備瀨崎</li><li>海邊坐一下再原路回</li><li>水牛車現場排 20 分、約 2,000 円/人，可跳過</li></ol>
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>是住宅聚落，別大聲、別闖私宅。沒有廁所，先在水族館解決。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>開車 → 古宇利島</b>（50 分） · 備瀨在水族館更北，到古宇利實際 40-50 分。經屋我地島過古宇利大橋，2 公里直線兩側都是海。</div>
+      
+      
+      
+      <div class="row"><div class="time">13:20</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">KOURI SHRIMP 蒜味蝦</span><span class="dur">45 分</span></div>
+            <p class="teaser">古宇利島上最有名的一餐，露台看得到大橋。</p>
+            <div class="chips"><span class="chip care">觀光價</span><span class="chip">營業 11:00-18:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=KOURI%20SHRIMP%20%E5%8F%A4%E5%AE%87%E5%88%A9%E5%B3%B6" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">建議點 · 現場</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>オリジナル ガーリックシュリンプ</b>1,300-1,500 円/份</li><li><b>烤半雞</b>兩人分食</li></ul>
+            </div>
+            
+            <div class="blk"><h5>現場</h5>
+              <p>櫃台點餐，中午等 15-30 分。17:00 後只外帶。蝦帶殼要剝，備濕紙巾。另一家 Shrimp Wagon 是不同店，網路常混用。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">14:10</div><div class="node"><span class="dot nature"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic nature"><use href="#i-leaf"/></svg>
+              <span class="cname">古宇利島 大橋與 Tinu 濱遠看心形岩</span><span class="dur">40 分</span></div>
+            <p class="teaser">10/17 滿潮 13:17，心形岩只能從岸上遠看，島上停 40 分就走。</p>
+            <div class="chips"><span class="chip care">滿潮只遠看</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%A4%E5%AE%87%E5%88%A9%E5%A4%A7%E6%A9%8B" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">怎麼逛 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>怎麼逛</h5>
+              
+              
+              <ol><li>Tinu 濱停車場（約 300-500 円）走 3-5 分下坡到海灘，遠看心形岩</li><li>不想走坡就上古宇利 Ocean Tower（1,000 円，免費停車 200 台）看大橋全景</li><li>15:00 前上車回程</li></ol>
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>氣象廳潮位表 10/17 滿潮 13:17（150 cm），乾潮在清晨與傍晚，都到不了島上，所以今天不走到岩邊。負評顧問的結論本來就是「順路看看、別當獨立目的地」。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>開車 古宇利 → 那霸</b>（1 小時 50 分） · 回程經名護上高速（ETC 1,040 円），週六傍晚那霸 58 號線會塞，抓將近 2 小時。回程經道の駅許田可停 15 分買 サーターアンダギー 當點心。</div>
+      
+      
+      
+      <div class="row"><div class="time">17:00</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>回那霸、停車</b> · 把車停回昨晚的停車場。明早 09:00 前還車。</div></div></div>
+      
+      
+      
+      <div class="row"><div class="time">17:15</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-moon"/></svg>回飯店休息（1 小時 30 分）</div></div></div>
+      
+      
+      
+      <div class="row"><div class="time">19:00</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">安里家 OKINAWA 阿古豬涮涮鍋</span><span class="dur">1 小時 30 分</span></div>
+            <p class="teaser">沖繩品牌豬 あぐー 吃到飽，線上就能訂。</p>
+            <div class="chips"><span class="chip book">線上訂位</span><span class="chip">營業 17:00-23:00</span><span class="chip book">要預約</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E5%AE%89%E9%87%8C%E5%AE%B6%20OKINAWA%20%E3%82%A2%E3%82%B0%E3%83%BC%E8%B1%9A%E3%81%97%E3%82%83%E3%81%B6" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">特色 · 建議點 · 現場</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>特色</h5>
+              <p>あぐー（阿古豬）是沖繩在地品牌豬，油脂甜。這家在牧志站步行 5 分，吃到飽 5,500 円/人，另附沖繩小菜，不用開車去名護。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>あぐー豚しゃぶ食べ放題 基本コース</b>5,500 円</li><li><b>海ぶどう</b>海葡萄</li><li><b>ジーマーミ豆腐</b>花生豆腐</li></ul>
+            </div>
+            
+            <div class="blk"><h5>現場</h5>
+              <p>HotPepper Gourmet 線上訂位，不會日文也能訂。今天開了一整天車，這家離飯店近、不用排隊，是刻意選的；車已停好，可以喝。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>附近備選</h5>
+              
+              
+              
+              <ul class="rec"><li><b>古酒と琉球料理 うりずん</b>1972 年老店，只能電話訂；17:30 開店即到常有位。ドゥル天、ラフテー、泡盛古酒 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%81%86%E3%82%8A%E3%81%9A%E3%82%93%20%E5%AE%89%E9%87%8C%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul>
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+    </div>
+
+    
+    <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>萬一颱風或大雨</h4><p>颱風接近時古宇利大橋會封閉、水族館臨時休館、高速可能封路，這天整個換成那霸市區日（縣立博物館、Main Place），北部改到 10/20（二）用一日遊補（那天不開車）。只是普通雨的話水族館照去，古宇利改成備瀨林道多走一點就回。</p></div>
+    
+    </div><!-- day-right -->
+  </section>
+  
+  <section class="daysec" id="day4">
+    <div class="day-left">
+    
+    <div class="cover">
+      <img src="img/day4.jpg" alt="Day 04 · 10/18 Sun · 那霸・首里">
+      <span class="attr">663highland／CC BY 2.5／Wikimedia Commons</span>
+      <div class="cap"><div class="k">Day 04 · 10/18 Sun · 那霸・首里</div></div>
+    </div>
+    <div class="dayhead">
+      <div class="eyebrow">Day 04 · 10/18 (日) Sun</div>
+      <h1 class="daytitle">還車、首里城外觀與玉陵、古民家沖繩麵、步行者天國、壺屋、煙火</h1>
+      <div class="daymeta"><span class="m">強度 <b>2</b>/4</span><span class="m">那霸</span></div>
+      <p class="intro">開了兩天車，今天慢下來。早上還車，單軌上首里看剛完工的正殿外觀（正殿內部 11/23 才開，這趟只看得到外面，先說清楚），順路走 5 分鐘到世界遺產玉陵，中午在 150 年古民家吃沖繩麵。下午國際通封街變步行街、壺屋陶器街週日全開，晚上想看煙火就去浦添てだこ祭。</p>
+      
+    </div>
+    </div><!-- day-left -->
+
+    <div class="day-right">
+    <div class="tl">
+      
+      
+      <div class="row"><div class="time">09:00</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>還車</b> · 開回營業所，還車前加滿油（満タン返し）、留收據。租 48 小時剛好。</div></div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-walk"/></svg><b>單軌或步行 → 牧志一帶</b>（20 分） · 營業所在旭橋的話單軌旭橋 → 牧志 10 分。</div>
+      
+      
+      
+      <div class="row"><div class="time">10:00</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">C&C BREAKFAST 或 ポーたま</span><span class="dur">30 分</span></div>
+            <p class="teaser">週日 C&C 08:00 就開但會排，不想排就 ポーたま 飯糰。</p>
+            <div class="chips"><span class="chip walk">二選一</span><span class="chip">營業 09:00-15:00</span><span class="chip care">公休 週二</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=C%26C%20BREAKFAST%20OKINAWA%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">建議點</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>C&C：季節水果パンケーキ</b>舒芙蕾鬆餅，1,500-2,200 円/人，排 30 分很常見 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=C%26C%20BREAKFAST%20OKINAWA%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>ポーたま：ポークたまご 原味</b>350-550 円一個，10 分鐘搞定 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%83%BC%E3%82%AF%E3%81%9F%E3%81%BE%E3%81%94%E3%81%8A%E3%81%AB%E3%81%8E%E3%82%8A%E6%9C%AC%E5%BA%97%20%E7%89%A7%E5%BF%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul>
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>單軌 牧志 → 首里</b>（25 分） · 約 340-390 円，含等車與首里站步行 15 分到守禮門。</div>
+      
+      
+      
+      <div class="row"><div class="time">11:15</div><div class="node"><span class="dot culture"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic culture"><use href="#i-temple"/></svg>
+              <span class="cname">首里城公園（正殿外觀）</span><span class="dur">1 小時</span></div>
+            <p class="teaser">2019 火災後重建的正殿今年完工，十月可以近看紅瓦與龍柱，但正殿內部 11/23 才開放。</p>
+            <div class="chips"><span class="chip care">只看外觀</span><span class="chip walk">免費區為主</span><span class="chip">營業 08:30-19:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E9%A6%96%E9%87%8C%E5%9F%8E%E5%85%AC%E5%9C%92" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">為什麼排在這裡 · 怎麼逛 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>為什麼排在這裡</h5>
+              <p>免費區（守禮門、歓会門、城牆）就能看到正殿外觀。有料區 400 円可上東のアザナ看那霸全景與復興展示室，11/23 起改 1,000 円；只有正殿內部才需要預約。要有心理準備：這趟看的是外殼，不是完整首里城。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>怎麼逛</h5>
+              
+              
+              <ol><li>守禮門進，一路上坡多段石階約 15 分</li><li>免費區看正殿外觀；想上東のアザナ再付 400 円</li><li>12:15 下山往玉陵</li></ol>
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>負評顧問標為這趟最大的期待落差點。要不要付 400 円進有料區由你們現場決定。出發前一週看 oki-park.jp/shurijo 確認 11/23 開幕前見学デッキ沒有臨時封閉。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">12:20</div><div class="node"><span class="dot culture"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic culture"><use href="#i-temple"/></svg>
+              <span class="cname">玉陵</span><span class="dur">30 分</span></div>
+            <p class="teaser">守禮門步行 5 分的世界遺產琉球王陵，300 円 30 分看完。</p>
+            <div class="chips"><span class="chip walk">300 円</span><span class="chip">營業 09:00-18:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E7%8E%89%E9%99%B5%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">為什麼值得</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>為什麼值得</h5>
+              <p>首里城只看外殼的最便宜補償：第二尚氏王朝的石造陵墓，安靜、人少，入場到 17:30。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-pin"/></svg><b>計程車 → 御殿山</b>（10 分） · 首里石嶺，離站有段距離，從玉陵叫計程車最省事。</div>
+      
+      
+      
+      <div class="row"><div class="time">13:05</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">御殿山 首里本店 沖繩麵</span><span class="dur">1 小時</span></div>
+            <p class="teaser">150 年紅瓦古民家裡吃木灰汁手打麵。</p>
+            <div class="chips"><span class="chip walk">脫鞋</span><span class="chip">營業 11:30-16:00</span><span class="chip care">公休 週一、週二</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E9%A6%96%E9%87%8C%E5%BE%A1%E6%AE%BF%E5%B1%B1%20%E9%A6%96%E9%87%8C%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">特色 · 建議點 · 現場</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>特色</h5>
+              <p>首里そば（週四、週日休，今天沒開）的替代，也是很多人更喜歡的一家：環境舒服、排隊短。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>御殿山そば（三種肉）</b>800-1,200 円</li><li><b>じゅーしー</b>沖繩炊飯</li></ul>
+            </div>
+            
+            <div class="blk"><h5>現場</h5>
+              <p>先到先入座，榻榻米座位要脫鞋。週一、週二休，今天週日 OK。L.O. 15:30。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>單軌 首里 → 牧志</b>（25 分）</div>
+      
+      
+      
+      <div class="row"><div class="time">14:45</div><div class="node"><span class="dot shop"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic shop"><use href="#i-bag"/></svg>
+              <span class="cname">國際通步行者天國</span><span class="dur">1 小時</span></div>
+            <p class="teaser">每週日 12:00-18:00 整條國際通封車變步行街，街頭 Eisa 與攤位；雨天中止。</p>
+            <div class="chips"><span class="chip care">雨天中止</span><span class="chip">營業 12:00-18:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">怎麼逛 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>怎麼逛</h5>
+              
+              
+              <ol><li>從牧志站端往縣廳前走，主街中間可以走</li><li>鑽浮島通、櫻坂的巷子，選物店與咖啡在那裡</li></ol>
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>封街時段除 10 號外所有公車改道、計程車進不去，今天在那霸市區靠走。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">15:45</div><div class="node"><span class="dot shop"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic shop"><use href="#i-bag"/></svg>
+              <span class="cname">壺屋陶器街</span><span class="dur">1 小時</span></div>
+            <p class="teaser">400 公尺琉球石灰岩老街、20 間窯元直營店，週日全開。</p>
+            <div class="chips"><span class="chip care">18:00 收</span><span class="chip">營業 10:00-18:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E5%A3%BA%E5%B1%8B%E3%82%84%E3%81%A1%E3%82%80%E3%82%93%E9%80%9A%E3%82%8A" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">為什麼值得</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>為什麼值得</h5>
+              <p>買一組 やちむん 碗盤帶回家比伴手禮實在。18:00 收，別排晚上。陶器重，請店家寄送或最後一天再買。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">16:45</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-moon"/></svg>回飯店休息（1 小時）</div></div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-walk"/></svg><b>走到牧志站或縣廳前站 → 單軌 古島站 → 計程車</b>（35 分） · 封街到 18:00 飯店門口叫不到車，17:50 走到單軌站，古島站前叫計程車約 10 分到會場。</div>
+      
+      
+      
+      <div class="row"><div class="time">18:30</div><div class="node"><span class="dot night"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic night"><use href="#i-moon"/></svg>
+              <span class="cname">浦添てだこ祭 煙火</span><span class="dur">2 小時</span></div>
+            <p class="teaser">行程內唯一的大型在地祭典，兩晚都有約 1,000 發煙火，免費。</p>
+            <div class="chips"><span class="chip walk">選配</span><span class="chip care">散場走去單軌</span><span class="chip">營業 13:00-20:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E6%B5%A6%E6%B7%BB%E3%82%AB%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%83%91%E3%83%BC%E3%82%AF" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">為什麼值得 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>為什麼值得</h5>
+              <p>舞台表演、攤販、19:50-20:00 煙火，就在那霸旁邊。吃攤販當晚餐。第 49 回 10/17-18，節目表浦添市官網約 9-10 月公布，出發前確認。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>週日是最後一天，往年人潮約 12 萬。煙火一結束就走：步行 15-20 分到單軌浦添前田站回牧志最穩，公車與計程車當備案。這是選配，不去就在國際通吃晚餐：うりずん 17:30 開店即到，或提前 HotPepper 訂安里家。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+    </div>
+
+    
+    <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>萬一下雨</h4><p>首里城與玉陵照去（園內多有遮蔭）；步行者天國雨天中止，直接改逛 RYUBO 或 Main Place；煙火雨天可能延期，看浦添市官網與主辦 IG @tedakomatsuri。</p></div>
+    
+    </div><!-- day-right -->
+  </section>
+  
+  <section class="daysec" id="day5">
+    <div class="day-left">
+    
+    <div class="cover">
+      <img src="img/day5.jpg" alt="Day 05 · 10/19 Mon · 那霸・浦添">
+      <span class="attr">663highland／CC BY 2.5／Wikimedia Commons</span>
+      <div class="cap"><div class="k">Day 05 · 10/19 Mon · 那霸・浦添</div></div>
+    </div>
+    <div class="dayhead">
+      <div class="eyebrow">Day 05 · 10/19 (一) Mon</div>
+      <h1 class="daytitle">那霸慢日：首里そば第一輪、Main Place、PARCO CITY 海景逛街、島唄 live</h1>
+      <div class="daymeta"><span class="m">強度 <b>2</b>/4</span><span class="m">那霸</span></div>
+      <p class="intro">開了兩天車、走了一天，週一慢下來。先上首里排 11:30 開店第一輪的首里そば（週一有開、賣完就收），下午到おもろまち的 Main Place 採買，再搭 15:35 的接駁車去浦添 PARCO CITY 逛街，晚上 20:00 場的島唄 live 居酒屋。縣立博物館週一休，所以不排。</p>
+      
+    </div>
+    </div><!-- day-left -->
+
+    <div class="day-right">
+    <div class="tl">
+      
+      
+      <div class="row"><div class="time">09:00</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">早餐：飯店或超商</span><span class="dur">30 分</span></div>
+            <p class="teaser">首里そば要吃飽一點的中餐，早餐簡單。</p>
+            <div class="chips"><span class="chip">營業 07:00-18:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%83%BC%E3%82%AF%E3%81%9F%E3%81%BE%E3%81%94%E3%81%8A%E3%81%AB%E3%81%8E%E3%82%8A%E6%9C%AC%E5%BA%97%20%E7%89%A7%E5%BF%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">建議點</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>ポーたま 牧志市場店</b>7:00 開，8-10 點排 20-40 分 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%83%BC%E3%82%AF%E3%81%9F%E3%81%BE%E3%81%94%E3%81%8A%E3%81%AB%E3%81%8E%E3%82%8A%E6%9C%AC%E5%BA%97%20%E7%89%A7%E5%BF%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul>
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-walk"/></svg><b>單軌 牧志 → 首里，步行</b>（25 分） · 首里站步行約 10 分到店。</div>
+      
+      
+      
+      <div class="row"><div class="time">11:30</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">首里そば 本店</span><span class="dur">1 小時</span></div>
+            <p class="teaser">沖繩麵清湯派的代表，一天 60-70 碗、賣完就收，11:15 到店排第一輪、11:30 開店入座。</p>
+            <div class="chips"><span class="chip care">11:15 排隊</span><span class="chip care">現金</span><span class="chip">營業 11:30-14:00</span><span class="chip care">公休 週四、週日</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E9%A6%96%E9%87%8C%E3%81%9D%E3%81%B0%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">特色 · 建議點 · 現場</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>特色</h5>
+              <p>手打粗麵、柴魚豬骨清湯、三層肉與軟骨。週四、週日休，所以排週二。常在 13:30 前售罄。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>そば（中）</b>約 500-700 円</li><li><b>じゅーしー</b>炊飯</li><li><b>煮付け</b>滷肉拼盤</li></ul>
+            </div>
+            
+            <div class="blk"><h5>現場</h5>
+              <p>不接受訂位、只收現金。開店前 15 分到，第一輪入座。只有日文菜單但品項極少，用手指。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>附近備選</h5>
+              
+              
+              
+              <ul class="rec"><li><b>OKINAWA SOBA EIBUN（壺屋）</b>年輕派濃湯沖繩麵，11:00-20:00（L.O. 19:30），國際通步行 5 分 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=OKINAWA%20SOBA%20EIBUN%20%E5%A3%BA%E5%B1%8B" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul>
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-walk"/></svg><b>單軌 首里 → おもろまち，步行</b>（25 分）</div>
+      
+      
+      
+      <div class="row"><div class="time">13:15</div><div class="node"><span class="dot shop"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic shop"><use href="#i-bag"/></svg>
+              <span class="cname">SAN-A 那霸 Main Place</span><span class="dur">1 小時</span></div>
+            <p class="teaser">おもろまち的大型超市商場，生活採買最方便的一站。</p>
+            <div class="chips"><span class="chip walk">順路採買</span><span class="chip">營業 09:00-22:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%83%B3%E3%82%A8%E3%83%BC%E9%82%A3%E8%A6%87%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%97%E3%83%AC%E3%82%A4%E3%82%B9" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">買什麼 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>買什麼</h5>
+              <p>沖繩零食、調味料、泡盛、藥妝，比國際通便宜。想寄回台灣的重物在這裡看價。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>T Galleria DFS 就在旁邊，但負評顧問查到 LV、Chanel 已撤、Cartier 缺貨，「精品免稅」這項實質不存在，路過看化妝品就好。接駁車 15:35 從おもろまち駅前發，14:15 到 15:30 之間可在 DFS 或站前咖啡歇腳。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">14:15</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-moon"/></svg>おもろまち歇腳、等接駁車（1 小時 15 分）</div></div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>15:35 カリー観光接駁車 おもろまち駅前 → PARCO CITY</b>（25 分） · 接駁車一天只有 7 班：おもろまち駅前發 10:52、11:38、12:38、13:33、15:35、16:45、17:55，大人 300 円現金、約 20 分。趕不上就縣廳北口搭 26／32／143／385 路線巴士，或計程車約 2,500-3,000 円。</div>
+      
+      
+      
+      <div class="row"><div class="time">16:00</div><div class="node"><span class="dot shop"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic shop"><use href="#i-bag"/></svg>
+              <span class="cname">PARCO CITY 浦添西海岸</span><span class="dur">2 小時 45 分</span></div>
+            <p class="teaser">海景大商場，逛街主場。</p>
+            <div class="chips"><span class="chip walk">逛街主場</span><span class="chip care">末班接駁 18:45</span><span class="chip">營業 10:00-22:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%83%B3%E3%82%A8%E3%83%BC%E6%B5%A6%E6%B7%BB%E8%A5%BF%E6%B5%B7%E5%B2%B8%20PARCO%20CITY" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">特色 · 值得逛的店 · 買什麼</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>特色</h5>
+              <p>全沖繩最大的商場之一，面海，有無印、UNIQLO、GU、藥妝、沖繩伴手禮專區。負評顧問說「跟本土 mall 差不多」，但海景與集中採買是它的用處。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>值得逛的店</h5>
+              
+              
+              
+              <ul class="rec"><li><b>サンエー超市（1F）</b>沖繩零食、泡盛、伴手禮比國際通便宜</li><li><b>3F 海側露台</b>17:56 日落</li><li><b>御殿山 分店</b>想在這裡簡單吃</li></ul>
+            </div>
+            
+            <div class="blk"><h5>買什麼</h5>
+              <p>沖繩限定零食、藥妝一次補。重的東西請商場寄送或最後再買。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>回程接駁車末班 18:45 PARCO 發、19:05 到おもろまち；逛更晚就計程車回國際通約 2,500-3,000 円。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>18:45 接駁車 → おもろまち → 單軌 牧志</b>（35 分） · 或計程車 25 分。</div>
+      
+      
+      
+      <div class="row"><div class="time">20:00</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">とぅばらーま 國際通店 島唄 live 居酒屋</span><span class="dur">2 小時</span></div>
+            <p class="teaser">吃沖繩料理配三線島唄現場表演，20:00 場。</p>
+            <div class="chips"><span class="chip book">線上訂位</span><span class="chip care">很熱鬧</span><span class="chip">營業 11:00-24:00</span><span class="chip book">要預約</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E5%B3%B6%E5%94%84%E3%81%A8%E5%9C%B0%E6%96%99%E7%90%86%20%E3%81%A8%E3%81%85%E3%81%B0%E3%82%89%E3%83%BC%E3%81%BE%20%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A%E5%BA%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">特色 · 建議點 · 現場</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>特色</h5>
+              <p>體驗型晚餐：料理普通、重點是表演，會拉全場一起跳。想坐二樓舞台前要指定訂。live charge 約 1,100 円/人另計。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>沖縄料理コース</b>省事</li><li><b>ゴーヤーチャンプルー、海ぶどう</b>單點</li><li><b>オリオン生啤</b>今天不開車，喝</li></ul>
+            </div>
+            
+            <div class="blk"><h5>現場</h5>
+              <p>HotPepper 線上訂位。不喜歡熱鬧就換うりずん（只能電話）或安里家。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+    </div>
+
+    
+    <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>萬一下雨</h4><p>首里そば照去；Main Place 與 PARCO 都在室內，整天不受影響。</p></div>
+    
+    </div><!-- day-right -->
+  </section>
+  
+  <section class="daysec" id="day6">
+    <div class="day-left">
+    
+    <div class="cover">
+      <img src="img/day6.jpg" alt="Day 06 · 10/20 Tue · 恩納・北谷">
+      <span class="attr">CEphoto, Uwe Aranas／CC BY-SA 3.0／Wikimedia Commons</span>
+      <div class="cap"><div class="k">Day 06 · 10/20 Tue · 恩納・北谷</div></div>
+    </div>
+    <div class="dayhead">
+      <div class="eyebrow">Day 06 · 10/20 (二) Tue</div>
+      <h1 class="daytitle">青之洞窟船潛、老牛排離峰、搬到美國村看夕陽</h1>
+      <div class="daymeta"><span class="m">強度 <b>3</b>/4</span><span class="m">中部</span></div>
+      <p class="intro">早上出門前把行李寄在那霸飯店。報含那霸接送的船潛團，中午回市區，13:30 離峰時段去 1953 年的 Jack's 吃老牛排，回飯店拿行李搭計程車 40 分到美國村的 Lequ 或 Vessel 入住，17:56 在 Sunset Beach 看日落，晚餐就在美國村。</p>
+      
+    </div>
+    </div><!-- day-left -->
+
+    <div class="day-right">
+    <div class="tl">
+      
+      
+      <div class="row"><div class="time">07:30</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>早餐、寄放行李</b> · 飯店退房、大行李寄放（下午回來拿）。超商或 ポーたま，下水前吃輕一點。</div></div></div>
+      
+      
+      
+      <div class="row"><div class="time">08:00</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>業者接送集合</b> · 選含那霸市區接送的船潛（boat entry）方案，不用爬真榮田岬 100 階樓梯、開洞率也比岸潛高。業者只到指定飯店名單，卡位時對照 2-3 家業者名單；飯店不在名單上就走到最近的指定集合飯店。</div></div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-train"/></svg><b>接送車 → 恩納村前兼久漁港</b>（1 小時） · 船潛從前兼久漁港出港 5-10 分到洞口，實際集合點以業者通知為準。</div>
+      
+      
+      
+      <div class="row"><div class="time">09:30</div><div class="node"><span class="dot nature"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic nature"><use href="#i-leaf"/></svg>
+              <span class="cname">青之洞窟船潛</span><span class="dur">2 小時 30 分</span></div>
+            <p class="teaser">陽光從白砂海底反射成整片藍光，沖繩本島最有名的水上體驗。</p>
+            <div class="chips"><span class="chip book">要預約</span><span class="chip care">看海況</span><span class="chip">營業 08:00-15:00</span><span class="chip book">要預約</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E5%89%8D%E5%85%BC%E4%B9%85%E6%BC%81%E6%B8%AF%20%E6%81%A9%E7%B4%8D%E6%9D%91" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">為什麼值得 · 怎麼玩 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>為什麼值得</h5>
+              <p>十月水溫約 28 度，是今年最後能舒服下水的月份，人潮也比夏天少。要有心理準備：全年進洞率約五成，十月北風開始增加，所以排在週二、把週三從美國村出發（30 分）當備案。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>怎麼玩</h5>
+              
+              
+              <ol><li>訂 boat entry 方案，含裝備與防寒衣</li><li>看清楚含哪些費用，低價團現場常加購照片、保險</li><li>陰天藍光弱，晴天早班最藍</li></ol>
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>前一天與當天取消多為全額收費，颱風或海況取消不收。多數業者有年齡與 BMI 條件，報名時看。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-walk"/></svg><b>接送車 → 那霸，單軌或步行 → 旭橋</b>（1 小時 10 分） · 約 12:30-13:00 回到市區。Jack's 在旭橋站步行 8 分。</div>
+      
+      
+      
+      <div class="row"><div class="time">13:30</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">Jack's Steak House 離峰午餐</span><span class="dur">1 小時 15 分</span></div>
+            <p class="teaser">1953 年美軍時代開到現在的鐵板牛排，13:30 是一天最短的隊之一。</p>
+            <div class="chips"><span class="chip care">現金のみ</span><span class="chip care">超過 40 分就換</span><span class="chip">營業 11:00-22:00</span><span class="chip care">公休 週三</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B8%E3%83%A3%E3%83%83%E3%82%AD%E3%83%BC%E3%82%B9%E3%83%86%E3%83%BC%E3%82%AD%E3%83%8F%E3%82%A6%E3%82%B9%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">特色 · 建議點 · 現場</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>特色</h5>
+              <p>沖繩牛排文化的原點：鐵板上桌、A1 醬、附湯麵包沙拉。肉是美式粗獷路線不是和牛細緻，湯與醬評價普通，吃的是招牌與老店氣氛。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>テンダーロインステーキ（菲力）</b>L 約 3,000-3,500 円</li><li><b>ニューヨークステーキ</b>想吃有嚼勁</li><li><b>タコス 750 円</b>兩人分一份</li></ul>
+            </div>
+            
+            <div class="blk"><h5>現場</h5>
+              <p>不接受訂位，門口簽名簿排隊，只有下一組能在店內等。2025 年評論晚餐時段常等 60-90 分，16:30 離峰約 20-40 分；簽名後前面超過 8 組就放棄改 やっぱりステーキ。只收現金，不收信用卡也不收 JCB。週三休。</p>
+              
+              
+              
+            </div>
+            
+            <div class="blk"><h5>附近備選</h5>
+              
+              
+              
+              <ul class="rec"><li><b>やっぱりステーキ 4th 國際通店</b>1,000 円級熔岩板牛排，15 分內入座 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%82%84%E3%81%A3%E3%81%B1%E3%82%8A%E3%82%B9%E3%83%86%E3%83%BC%E3%82%AD%204th%20%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A%E5%BA%97" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul>
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-walk"/></svg><b>步行或單軌 → 那霸飯店拿行李，計程車 → 美國村</b>（1 小時） · 計程車約 40 分、5,000-6,000 円；想省就 120 號公車 900 円 55-80 分，行李上得去。</div>
+      
+      
+      
+      <div class="row"><div class="time">16:00</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>入住美國村飯店</b> · Lequ Okinawa Chatan（天然溫泉、房內洗衣機、旁邊 Lawson）或 Vessel Hotel Campana（海景房、屋頂泳池），見 research/住宿候選.md。</div></div></div>
+      
+      
+      
+      <div class="row"><div class="time">16:45</div><div class="node"><span class="dot nature"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic nature"><use href="#i-leaf"/></svg>
+              <span class="cname">北谷 Sunset Beach 海岸步道 夕陽</span><span class="dur">1 小時 15 分</span></div>
+            <p class="teaser">飯店走 5 分就到的沙灘，17:56 日落。</p>
+            <div class="chips"><span class="chip walk">日落 17:56</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E8%B0%B7%E5%85%AC%E5%9C%92%E3%82%B5%E3%83%B3%E3%82%BB%E3%83%83%E3%83%88%E3%83%93%E3%83%BC%E3%83%81" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">怎麼逛 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>怎麼逛</h5>
+              
+              
+              <ol><li>沿海岸步道走到 Sunset Beach</li><li>17:56 日落，看完回美國村吃飯</li></ol>
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>10 月沒有 Sunset on the Beach 活動場次（2026 只辦 4/18、7/18、9/19、11/14），沙灘本身照樣能看夕陽。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">18:15</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">美國村晚餐</span><span class="dur">1 小時 30 分</span></div>
+            <p class="teaser">餐廳酒吧多，今天不開車，想喝就喝。</p>
+            <div class="chips"><span class="chip">營業 10:00-22:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E6%B5%9C%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E3%83%B3%E3%83%93%E3%83%AC%E3%83%83%E3%82%B8" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">建議點</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>タコライス</b>金武發源的塔可飯，美國村到處有</li><li><b>グルメ回転寿司市場 美浜店</b>人氣迴轉壽司，17:00 前抽號；週三休，所以排今天</li><li><b>Depot Island 內看海的店</b>晚上有夜景</li></ul>
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">20:30</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>溫泉</b> · 住 Lequ 的話泡天然溫泉（06:00-10:00、15:00-25:00 免費）。</div></div></div>
+      
+      
+    </div>
+
+    
+    <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>萬一海況差取消</h4><p>業者多在前一天傍晚通知。取消就早上直接搬去美國村（計程車或 120 號公車），浮潛改約 10/21（三）早上從美國村出發，那天原本就是備用日；那霸的空檔用縣立博物館首里城展（週二有開、常設票 530 円含）填。</p></div>
+    
+    </div><!-- day-right -->
+  </section>
+  
+  <section class="daysec" id="day7">
+    <div class="day-left">
+    
+    <div class="cover">
+      <img src="img/day7.jpg" alt="Day 07 · 10/21 Wed · 北谷">
+      <span class="attr">そらみみ／CC BY-SA 4.0／Wikimedia Commons</span>
+      <div class="cap"><div class="k">Day 07 · 10/21 Wed · 北谷</div></div>
+    </div>
+    <div class="dayhead">
+      <div class="eyebrow">Day 07 · 10/21 (三) Wed</div>
+      <h1 class="daytitle">美國村基地：睡飽、來客夢或港川、Depot Island、最後一個夕陽</h1>
+      <div class="daymeta"><span class="m">強度 <b>2</b>/4</span><span class="m">中部</span></div>
+      <p class="intro">最後一個完整日，住在美國村不用趕。睡飽後看想逛哪裡：AEON MALL 來客夢（計程車 15 分，全沖繩最大）或港川外人住宅（咖啡與選物，計程車 20 分）二選一，下午回美國村逛 Depot Island，17:56 再看一次日落，晚餐後打包。這天也是浮潛的備用日。</p>
+      
+    </div>
+    </div><!-- day-left -->
+
+    <div class="day-right">
+    <div class="tl">
+      
+      
+      <div class="row"><div class="time">10:00</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>睡飽、早餐</b> · 飯店早餐或美國村的咖啡店。</div></div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-pin"/></svg><b>計程車 美國村 → 來客夢或港川</b>（20 分） · 來客夢約 15 分、2,000 円；港川約 20 分、2,500 円。都不順公車，計程車最省事。</div>
+      
+      
+      
+      <div class="row"><div class="time">11:00</div><div class="node"><span class="dot shop"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic shop"><use href="#i-bag"/></svg>
+              <span class="cname">AEON MALL 沖繩來客夢 或 港川外人住宅（二選一）</span><span class="dur">3 小時</span></div>
+            <p class="teaser">二選一：大型 Mall 一次逛完，或美軍眷舍改的咖啡與選物街區。</p>
+            <div class="chips"><span class="chip walk">現場決定</span><span class="chip">營業 10:00-22:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E6%B2%96%E7%B8%84%E3%83%A9%E3%82%A4%E3%82%AB%E3%83%A0" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">特色 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>特色</h5>
+              
+              
+              
+              <ul class="rec"><li><b>AEON MALL 沖繩來客夢</b>全沖繩最大，2025/3 翻新 45 店；負評顧問說「跟本土差不多」，但下雨天與集中採買很好用，午餐美食街解決 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E6%B2%96%E7%B8%84%E3%83%A9%E3%82%A4%E3%82%AB%E3%83%A0" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li><li><b>港川外人住宅</b>1960 年代美軍眷舍改成幾十間咖啡、麵包、雜貨與選物店；多數店 11:00-17:00，週三 Proots 休、其他多數有開；午餐 いしぐふー 鶏そば（10:00-15:00） <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E6%B8%AF%E5%B7%9D%E5%A4%96%E4%BA%BA%E4%BD%8F%E5%AE%85" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></li></ul>
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>兩邊都是 逛街時段，兩人想的話可以分流：兩人留美國村海邊喝咖啡，同行 去逛，15:00 美國村會合。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-pin"/></svg><b>計程車 → 美國村</b>（20 分）</div>
+      
+      
+      
+      <div class="row"><div class="time">15:00</div><div class="node"><span class="dot shop"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic shop"><use href="#i-bag"/></svg>
+              <span class="cname">美國村 Depot Island 逛街與海岸</span><span class="dur">2 小時 30 分</span></div>
+            <p class="teaser">選物店、雜貨、美式街區，累了海岸邊長椅多。</p>
+            <div class="chips"><span class="chip walk">最後的夕陽</span><span class="chip">營業 10:00-22:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E6%B5%9C%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E3%83%B3%E3%83%93%E3%83%AC%E3%83%83%E3%82%B8" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">怎麼逛 · 提醒</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>怎麼逛</h5>
+              
+              
+              <ol><li>Depot Island 與周邊選物店</li><li>17:30 移到 Sunset Beach，17:56 最後一個日落</li></ol>
+              
+            </div>
+            
+            <div class="blk"><h5>提醒</h5>
+              <p>地標摩天輪已拆除（原址 2026/4 開了 Rihga Royal 飯店，以現場為準）。十月整區有萬聖節布置，主活動在 10/31 不在這趟。</p>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">18:15</div><div class="node"><span class="dot food"></span>
+        <details class="card">
+          <summary>
+            <div class="ct"><svg class="ic cic food"><use href="#i-bowl"/></svg>
+              <span class="cname">美國村晚餐</span><span class="dur">1 小時 30 分</span></div>
+            <p class="teaser">昨天沒吃到的那家。</p>
+            <div class="chips"><span class="chip">營業 10:00-22:00</span></div>
+            <div class="foot">
+              <a class="maps" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E6%B5%9C%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E3%83%B3%E3%83%93%E3%83%AC%E3%83%83%E3%82%B8" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Google Maps</a>
+              <span class="more"><span class="o">建議點</span><span class="c">收合</span><svg class="ic"><use href="#i-chev"/></svg></span>
+            </div>
+          </summary>
+          
+          <div class="detail">
+            
+            <div class="blk"><h5>建議點</h5>
+              
+              
+              
+              <ul class="rec"><li><b>A&W 美國村店</b>沖繩限定美式速食，root beer 無限續杯</li><li><b>Depot Island 海景餐廳</b>最後一晚看夜景</li></ul>
+            </div>
+            
+          </div>
+          
+        </details>
+      </div></div>
+      
+      
+      
+      <div class="row"><div class="time">20:30</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>打包</b> · 前晚裝箱，明早 08:00 計程車到機場。</div></div></div>
+      
+      
+    </div>
+
+    
+    <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>萬一下雨或颱風</h4><p>下雨：來客夢全室內，逛整天也行。颱風：留在飯店，泡溫泉、看海；隔天班機狀況看華航公告，租車已還不受影響。</p></div>
+    
+    </div><!-- day-right -->
+  </section>
+  
+  <section class="daysec" id="day8">
+    <div class="day-left">
+    
+    <div class="cover plain">
+      
+      
+      <div class="cap"><div class="k">Day 08 · 10/22 (四) Thu</div></div>
+    </div>
+    <div class="dayhead">
+      <div class="eyebrow">Day 08 · 10/22 (四) Thu</div>
+      <h1 class="daytitle">退房去機場</h1>
+      <div class="daymeta"><span class="m">強度 <b>1</b>/4</span><span class="m">機場</span></div>
+      <p class="intro">11:50 起飛，08:50 要到機場。美國村到那霸機場計程車約 40 分，08:00 出發、前一晚先請飯店預約車。機場國內線的 ポーたま 分店當早餐，沒買到的伴手禮在機場補。</p>
+      
+    </div>
+    </div><!-- day-left -->
+
+    <div class="day-right">
+    <div class="tl">
+      
+      
+      <div class="row"><div class="time">07:15</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>起床、最後打包</b> · 前晚裝箱，早上只收盥洗用品。</div></div></div>
+      
+      
+      
+      <div class="row"><div class="time">08:00</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>退房、上預約好的計程車</b> · 前一晚請飯店預約 08:00 的車，約 40 分、5,000 円。</div></div></div>
+      
+      
+      
+      <div class="transit"><svg class="ic"><use href="#i-pin"/></svg><b>計程車 美國村 → 那霸機場</b>（40 分） · 58 號線南下，平日早上會塞，抓 40-50 分。</div>
+      
+      
+      
+      <div class="row"><div class="time">08:50</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>抵達機場、報到</b> · 國際線航廈。台灣海關禁帶肉製品，伴手禮避開。</div></div></div>
+      
+      
+      
+      <div class="row"><div class="time">09:30</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>機場早餐：ポーたま 那霸機場店</b> · 報到後在國內線側的 ポーたま 分店買最後一顆午餐肉蛋飯糰（07:00-20:00）。</div></div></div>
+      
+      
+      
+      <div class="row"><div class="time">11:50</div><div class="node"><span class="dot mini"></span>
+        <div class="minor"><svg class="ic"><use href="#i-pin"/></svg><b>CI121 起飛</b> · 12:25 抵桃園。</div></div></div>
+      
+      
+    </div>
+
+    
+    <div class="note"><h4><svg class="ic"><use href="#i-umb"/></svg>萬一塞車或颱風</h4><p>平日早上 58 號線南下往那霸會塞，07:45 出發更保險；颱風時道路狀況看飯店櫃台建議，班機異動看華航公告。</p></div>
+    
+    </div><!-- day-right -->
+  </section>
+  
+
+  <p class="footer">沖繩八天七夜 · 休假模式 · v3 · 2026-09-06 · 內容以官方公告為準，出發前一週複查</p>
+</div>
+
+<button class="themebtn" onclick="(function(){var r=document.documentElement;var d=(r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'))==='dark';r.setAttribute('data-theme',d?'light':'dark');})()" aria-label="切換深淺色">
+  <svg class="ic"><use href="#i-moon"/></svg>
+</button>
+</body>
+</html>

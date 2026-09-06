@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>沖繩八天七夜 · 休假模式 · 參考</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#FBFAF7; --raise:#FFFFFF; --ink:#1C1B22; --body:#514D46; --soft:#8A8479;
+  --line:#E7E2D8; --line2:#D8D2C5;
+  --plum:#7A3B4E; --indigo:#2C3E6B; --terra:#AB5433; --matcha:#5A7247; --gold:#997529; --slate:#9A948A;
+  --ok:#4B7A52; --okbg:#EAF0EA; --warn:#9A6B1E; --warnbg:#F5ECD9; --terrabg:#F6E7DF;
+  --shadow:0 1px 2px rgba(30,25,20,.04),0 4px 14px rgba(30,25,20,.05);
+  --serif:"Noto Serif TC",serif; --sans:"Noto Sans TC",-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,monospace; --maxw:660px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --ground:#16151A; --raise:#1E1C23; --ink:#F3F0EA; --body:#C3BDB2; --soft:#8B857A;
+  --line:#2C2A32; --line2:#3A3742; --plum:#CE8598; --indigo:#93A6D6; --terra:#D98A63;
+  --matcha:#94AE78; --gold:#C9A24A; --slate:#9A948A; --ok:#7DA883; --okbg:#1E2A20;
+  --warn:#C9A24A; --warnbg:#2C2517; --terrabg:#2C1F18;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}}
+:root[data-theme="dark"]{
+  --ground:#16151A; --raise:#1E1C23; --ink:#F3F0EA; --body:#C3BDB2; --soft:#8B857A;
+  --line:#2C2A32; --line2:#3A3742; --plum:#CE8598; --indigo:#93A6D6; --terra:#D98A63;
+  --matcha:#94AE78; --gold:#C9A24A; --slate:#9A948A; --ok:#7DA883; --okbg:#1E2A20;
+  --warn:#C9A24A; --warnbg:#2C2517; --terrabg:#2C1F18;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+}
+:root[data-theme="light"]{
+  --ground:#FBFAF7; --raise:#FFFFFF; --ink:#1C1B22; --body:#514D46; --soft:#8A8479;
+  --line:#E7E2D8; --line2:#D8D2C5; --plum:#7A3B4E; --indigo:#2C3E6B; --terra:#AB5433;
+  --matcha:#5A7247; --gold:#997529; --slate:#9A948A; --ok:#4B7A52; --okbg:#EAF0EA;
+  --warn:#9A6B1E; --warnbg:#F5ECD9; --terrabg:#F6E7DF;
+  --shadow:0 1px 2px rgba(30,25,20,.04),0 4px 14px rgba(30,25,20,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ground);color:var(--body);font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;line-height:1.6}
+.page{max-width:var(--maxw);margin:0 auto;padding:0 16px 90px}
+.ic{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:-.12em}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--ground) 90%,transparent);
+  backdrop-filter:saturate(1.3) blur(12px);border-bottom:1px solid var(--line)}
+.hdr-top{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:12px;padding:11px 16px}
+.brand{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:15px;white-space:nowrap;letter-spacing:.02em}
+.pills{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.pills::-webkit-scrollbar{display:none}
+.pd{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--soft);text-decoration:none;
+  padding:5px 9px;border-radius:8px;white-space:nowrap}
+.pd.on{color:#fff;background:var(--plum)}
+.next{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:9px;padding:7px 16px;border-top:1px solid var(--line)}
+.next .lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--plum);text-transform:uppercase}
+.next .t{font-family:var(--mono);font-weight:700;color:var(--ink);font-size:13px;font-variant-numeric:tabular-nums}
+.next .n{font-size:13px;color:var(--body);font-weight:500}
+.next .ic{color:var(--plum);font-size:14px}
+
+/* day header */
+.cover{margin:18px 0 0;height:190px;border-radius:16px;overflow:hidden;position:relative;
+  background:linear-gradient(120deg,var(--indigo),var(--plum))}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.cover::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,.05) 55%,transparent)}
+.cover .cap{position:absolute;left:15px;bottom:12px;right:15px;z-index:1}
+.cover .k{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:rgba(255,255,255,.9);text-transform:uppercase}
+.cover .attr{position:absolute;right:9px;top:9px;z-index:1;font-family:var(--mono);font-size:9px;
+  color:rgba(255,255,255,.7);background:rgba(0,0,0,.25);padding:2px 6px;border-radius:5px}
+.dayhead{padding:16px 0 6px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--plum)}
+.daytitle{font-family:var(--serif);color:var(--ink);font-weight:600;font-size:27px;line-height:1.3;text-wrap:balance;margin-top:10px}
+.daymeta{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.daymeta .m{font-family:var(--mono);font-size:11.5px;color:var(--body);background:var(--raise);
+  border:1px solid var(--line);border-radius:7px;padding:4px 9px;font-variant-numeric:tabular-nums}
+.daymeta .m b{color:var(--ink)}
+.intro{margin-top:16px;font-size:14px;color:var(--body);line-height:1.75}
+
+/* timeline spine + cards */
+.tl{position:relative;margin-top:22px}
+.row{position:relative;display:grid;grid-template-columns:44px 1fr;column-gap:20px;padding-bottom:10px}
+.row::before{content:"";position:absolute;left:55px;top:6px;bottom:-4px;width:2px;background:var(--line2)}
+.row:last-child::before{display:none}
+.time{font-family:var(--mono);font-size:12px;color:var(--soft);text-align:right;padding-top:15px;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.node{position:relative}
+.dot{position:absolute;left:-15px;top:16px;width:13px;height:13px;border-radius:50%;
+  background:var(--ground);border:2.5px solid var(--slate);z-index:2;box-sizing:border-box}
+.dot.food{border-color:var(--terra)} .dot.shrine{border-color:var(--indigo)}
+.dot.shop{border-color:var(--plum)} .dot.nature{border-color:var(--matcha)}
+.dot.culture{border-color:var(--indigo)} .dot.night{border-color:var(--gold)}
+
+/* minor rows */
+.minor{display:flex;align-items:center;gap:8px;color:var(--soft);font-size:12.5px;padding:6px 0 6px 2px}
+.minor .ic{color:var(--slate);font-size:14px}
+.dot.mini{width:9px;height:9px;top:10px;left:-13px;border-width:2px;background:var(--line2);border-color:var(--line2)}
+
+/* transit connector */
+.transit{display:flex;align-items:center;gap:8px;color:var(--soft);font-size:12px;
+  padding:2px 0 8px 2px}
+.transit .ic{color:var(--slate);font-size:15px;flex:0 0 auto}
+.transit b{color:var(--body);font-weight:500}
+
+/* card */
+.card{background:var(--raise);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+  overflow:hidden;transition:border-color .2s}
+.card:hover{border-color:var(--line2)}
+.card > summary{list-style:none;cursor:pointer;padding:13px 14px;display:block}
+.card > summary::-webkit-details-marker{display:none}
+.ct{display:flex;align-items:flex-start;gap:10px}
+.cic{flex:0 0 auto;font-size:19px;margin-top:1px}
+.cic.food{color:var(--terra)} .cic.shrine{color:var(--indigo)}
+.cic.shop{color:var(--plum)} .cic.nature{color:var(--matcha)}
+.cic.culture{color:var(--indigo)} .cic.night{color:var(--gold)}
+.cname{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:17.5px;line-height:1.35;flex:1}
+.dur{font-family:var(--mono);font-size:10.5px;color:var(--soft);white-space:nowrap;margin-top:3px}
+.teaser{margin-top:8px;font-size:13.5px;color:var(--body);line-height:1.65}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.chip{font-size:11.5px;font-weight:500;padding:3px 9px;border-radius:20px;font-variant-numeric:tabular-nums;
+  border:1px solid var(--line2);color:var(--soft)}
+.chip.book{color:var(--ok);background:var(--okbg);border-color:transparent}
+.chip.walk{color:var(--warn);background:var(--warnbg);border-color:transparent}
+.chip.care{color:var(--terra);background:var(--terrabg);border-color:transparent}
+.foot{display:flex;align-items:center;gap:12px;margin-top:12px}
+.maps{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:var(--indigo);
+  text-decoration:none;border:1px solid color-mix(in srgb,var(--indigo) 32%,var(--line2));padding:6px 11px;border-radius:9px}
+.maps:hover{background:color-mix(in srgb,var(--indigo) 8%,transparent)}
+.maps .ic{font-size:14px}
+.more{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--plum);
+  display:inline-flex;align-items:center;gap:5px;letter-spacing:.03em}
+.more .ic{font-size:14px;transition:transform .2s} .card[open] .more .ic{transform:rotate(180deg)}
+.card[open] .more .o{display:none} .more .c{display:none} .card[open] .more .c{display:inline}
+.detail{padding:0 14px 15px;border-top:1px solid var(--line)}
+.detail .blk{padding-top:13px}
+.detail h5{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.detail p{font-size:13.5px;color:var(--body);line-height:1.7}
+.detail ol{padding-left:18px;font-size:13px;color:var(--body);line-height:1.75}
+.detail ol li{margin-bottom:3px}
+.detail ul.rec{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.detail ul.rec li{font-size:13px;color:var(--body);line-height:1.6;padding-left:15px;position:relative}
+.detail ul.rec li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--terra)}
+.detail ul.rec.shop li::before{background:var(--plum)}
+.detail ul.rec li b{color:var(--ink);font-weight:600}
+.mapmini{display:inline-flex;align-items:center;gap:4px;color:var(--indigo);text-decoration:none;
+  font-size:11px;font-weight:600;white-space:nowrap;border:1px solid color-mix(in srgb,var(--indigo) 32%,var(--line2));
+  padding:3px 9px;border-radius:20px;margin-left:5px;vertical-align:middle}
+.mapmini:hover{background:color-mix(in srgb,var(--indigo) 10%,transparent)}.mapmini .ic{font-size:12px}
+.spotimg{width:100%;border-radius:10px;display:block;margin-bottom:3px}
+.spotimg-cap{font-family:var(--mono);font-size:10px;color:var(--soft);margin:-1px 0 2px;letter-spacing:.02em}
+.hours{font-family:var(--mono);font-size:12.5px;color:var(--body);font-variant-numeric:tabular-nums}
+
+.note{margin-top:24px;background:var(--raise);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:12px;padding:14px 16px}
+.note h4{font-family:var(--serif);font-size:14px;color:var(--ink);margin-bottom:6px;font-weight:600;display:flex;align-items:center;gap:7px}
+.note h4 .ic{color:var(--gold);font-size:16px}
+.note p{font-size:13px;color:var(--body);line-height:1.7}
+.footer{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11px;color:var(--soft);text-align:center;line-height:1.8;letter-spacing:.02em}
+
+.themebtn{position:fixed;right:16px;bottom:16px;z-index:40;width:44px;height:44px;border-radius:12px;
+  border:1px solid var(--line2);background:var(--raise);color:var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow)}
+.themebtn .ic{font-size:19px}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--plum);outline-offset:2px;border-radius:9px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ===== 參考頁專用 ===== */
+.pd.on{color:#fff;background:var(--plum)}
+.rhead{padding:26px 0 8px}
+.rhead h1{font-family:var(--serif);font-size:26px;color:var(--ink);font-weight:600;line-height:1.3}
+.rhead .sub{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-top:6px}
+.lodge{margin-top:16px;background:var(--raise);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--body)}
+.lodge b{color:var(--ink);font-weight:600}
+.lodge .k{font-family:var(--mono);font-size:10.5px;color:var(--soft);letter-spacing:.06em;margin-right:5px}
+.tabs{position:sticky;top:47px;z-index:20;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:12px 0 10px;margin:8px -16px 0;padding-left:16px;padding-right:16px;background:color-mix(in srgb,var(--ground) 92%,transparent);backdrop-filter:blur(10px)}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--body);background:var(--raise);border:1px solid var(--line2);border-radius:20px;padding:6px 13px;cursor:pointer;white-space:nowrap}
+.tab.on{color:#fff;background:var(--plum);border-color:var(--plum)}
+.pane{display:none;padding-top:18px}
+.pane.on{display:block}
+.sec-h{font-family:var(--serif);font-size:20px;color:var(--ink);font-weight:600;margin-bottom:4px}
+.sec-jp{font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:var(--soft);text-transform:uppercase;display:block;margin-bottom:14px}
+.rcard{background:var(--raise);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:14px 16px;margin-bottom:12px}
+.rcard h3{font-family:var(--serif);font-size:16px;color:var(--ink);font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rcard ul{list-style:none;padding:0;margin-top:9px;display:flex;flex-direction:column;gap:6px}
+.rcard li{font-size:13.5px;color:var(--body);line-height:1.65;padding-left:14px;position:relative}
+.rcard li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--slate)}
+.badge{font-family:var(--mono);font-size:10px;letter-spacing:.1em;padding:2px 8px;border-radius:6px;border:1px solid var(--line2);color:var(--soft);font-weight:600}
+.badge.day{color:var(--plum);border-color:color-mix(in srgb,var(--plum) 40%,var(--line2))}
+.badge.tag{color:var(--indigo);border-color:color-mix(in srgb,var(--indigo) 40%,var(--line2))}
+.badge.排入{color:var(--ok);background:var(--okbg);border-color:transparent}
+.badge.備選{color:var(--warn);background:var(--warnbg);border-color:transparent}
+.badge.不排{color:var(--terra);background:var(--terrabg);border-color:transparent}
+.rcard .meta{font-family:var(--mono);font-size:11px;color:var(--soft);margin-top:2px}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+.tbl td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--body);line-height:1.55}
+.tbl td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap;color:var(--ink);font-weight:600}
+.tbl td.name{color:var(--ink);font-weight:500}
+.tbl td.note{font-size:12.5px;color:var(--soft)}
+.tbl tr.total td{border-bottom:0;border-top:2px solid var(--line2);color:var(--ink);font-weight:700}
+.tblwrap{overflow-x:auto;background:var(--raise);border:1px solid var(--line);border-radius:14px;padding:6px 8px;box-shadow:var(--shadow)}
+.bnote{font-size:12.5px;color:var(--soft);line-height:1.65;margin-top:10px}
+.phr{display:grid;grid-template-columns:1fr;gap:8px}
+.phr .p{background:var(--raise);border:1px solid var(--line);border-radius:12px;padding:11px 14px}
+.phr .zh{font-size:13px;color:var(--soft)}
+.phr .lo{font-family:var(--serif);font-size:17px;color:var(--ink);font-weight:600;margin-top:2px}
+.phr .ro{font-family:var(--mono);font-size:11px;color:var(--soft);margin-top:2px}
+.emg{display:flex;flex-direction:column;gap:8px}
+.emg .e{background:var(--raise);border:1px solid var(--line);border-radius:12px;padding:11px 14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.emg .nm{font-weight:600;color:var(--ink);font-size:14px;flex:1;min-width:140px}
+.emg .no{font-family:var(--mono);font-size:16px;font-weight:700;color:var(--terra);text-decoration:none;white-space:nowrap}
+.emg .nt{flex-basis:100%;font-size:12.5px;color:var(--soft);line-height:1.55}
+.pack label{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--body);line-height:1.6;padding:4px 0;cursor:pointer}
+.pack input{margin-top:5px;accent-color:var(--plum)}
+.pack input:checked + span{color:var(--soft);text-decoration:line-through}
+.pack ul{margin-top:6px}.pack li{padding-left:0}.pack li::before{display:none}
+@media (min-width:900px){
+  .hdr-top,.page{max-width:1060px}
+  .phr{grid-template-columns:1fr 1fr}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+  .grid2 .rcard{margin-bottom:0}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-torii" viewBox="0 0 24 24"><path d="M3 7h18M5 5.2h14M7 7v13M17 7v13M8.5 10.2h7"/></symbol>
+  <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3.5 11h17M5 11a7 7 0 0 0 14 0M9.5 7.5c0-1.2.6-2 1.3-2.6M13 7.5c0-1.2.6-2 1.3-2.6"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8.5h12l-.9 11.5H6.9L6 8.5zM9 8.5V6.2a3 3 0 0 1 6 0v2.3"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 20c0-8 6-13 14-13 0 8-6 13-14 13zM6.5 18.5C10 15 13 12 15.5 10"/></symbol>
+  <symbol id="i-train" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="12.5" rx="3"/><path d="M6 11h12M9.5 16.5 8 20M14.5 16.5 16 20"/><circle cx="9.3" cy="13.5" r=".6"/><circle cx="14.7" cy="13.5" r=".6"/></symbol>
+  <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4.5" r="1.6"/><path d="M13 8l-2.5 3.5L12 14v6M13 8l3 1.5 1.5 3M10.5 11.5 7 16"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 13.5A8 8 0 1 1 10.5 4 6.3 6.3 0 0 0 20 13.5z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-umb" viewBox="0 0 24 24"><path d="M12 3v2M3.5 11a8.5 8.5 0 0 1 17 0zM12 11v7a2.5 2.5 0 0 1-5 0"/></symbol>
+  <symbol id="i-temple" viewBox="0 0 24 24"><path d="M3 21h18M5 21v-6h14v6M6.5 15l1.2-3h8.6l1.2 3M8 12l1-2.5h6l1 2.5M9.5 9.5 12 5.5l2.5 4M12 3.2v2.3"/></symbol>
+  <symbol id="i-fest" viewBox="0 0 24 24"><path d="M9 5h6M12 3v2M7.8 8.5C7.8 6.6 9.7 5.2 12 5.2s4.2 1.4 4.2 3.3M7.8 8.5v5M16.2 8.5v5M7.8 13.5C7.8 15.4 9.7 16.8 12 16.8s4.2-1.4 4.2-3.3M12 16.8v2.2M10 19h4M10 9.5h4M10 12.5h4"/></symbol>
+  <symbol id="i-bldg" viewBox="0 0 24 24"><path d="M4 21h16M6 21V8l6-3.5 6 3.5v13M9.5 11h1.2M13.3 11h1.2M9.5 14h1.2M13.3 14h1.2M10 21v-3.2h4V21"/></symbol>
+  <symbol id="i-beef" viewBox="0 0 24 24"><path d="M5 8.5C5 5.5 8 4 12 4s7 1.5 7 4.5c0 2-1.5 3-1.5 5.5S19 21 12 21 6.5 16.5 6.5 14 5 10.5 5 8.5z"/><circle cx="10" cy="10.5" r="1.3"/><circle cx="14.5" cy="12" r="1.1"/></symbol>
+</svg>
+
+<header class="hdr">
+  <div class="hdr-top">
+    <span class="brand">沖繩 · 8 天 7 夜</span>
+    <nav class="pills">
+      <a class="pd" href="index.html">行程</a>
+      <a class="pd on" href="#">參考</a>
+      
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <section class="rhead">
+    <h1>沖繩 · 參考資料</h1>
+    <div class="sub">REFERENCE · 2026/10/15 (四) → 10/22 (四)</div>
+    
+    <div class="lodge">
+      <span><span class="k">住宿</span><b>那霸市區 10/15-10/19（5 晚，待卡位）＋ 美國村 10/20-10/21（2 晚，Lequ 或 Vessel Campana）</b> <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></span>
+      <span><span class="k">區域</span>那霸</span>
+      
+      <span><span class="k">退房</span>08:00</span>
+      <span><span class="k">抵達</span>10:45</span>
+      <span><span class="k">起飛</span>11:50</span>
+    </div>
+    
+  </section>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <nav class="tabs" id="tabs">
+    <button class="tab on" data-tab="lodging">住宿候選</button><button class="tab" data-tab="transport">交通</button><button class="tab" data-tab="daytrips">日程交通</button><button class="tab" data-tab="budget">預算</button><button class="tab" data-tab="wishlist">願望清單</button><button class="tab" data-tab="phrases">常用句</button><button class="tab" data-tab="emergency">緊急</button><button class="tab" data-tab="packing">打包</button>
+  </nav>
+
+  
+  
+  <section class="pane on" id="lodging">
+    <h2 class="sec-h">住宿候選</h2><span class="sec-jp">LODGING</span>
+    <p class="bnote">那霸 10/15-19 五晚、美國村 10/20-21 兩晚。價格是顧問 2026-09-06 查到的區間，10 月當日價多數沒抓到；免費取消期限訂前在平台方案頁確認。卡位硬條件：那霸離單軌站 5 分內、10/16-17 兩晚有可預約停車位、在浮潛業者接送名單、租車營業所步行 10 分內。</p>
+    
+    <h3 style="margin:18px 0 8px">那霸 5 晚</h3>
+    <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>名稱</th><th>位置</th><th>為什麼</th><th>價格</th><th>注意</th></tr></thead>
+      <tbody>
+      
+      <tr><td class="name">Daiwa Roynet Hotel 那霸國際通 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%83%80%E3%82%A4%E3%83%AF%E3%83%AD%E3%82%A4%E3%83%8D%E3%83%83%E3%83%88%E3%83%9B%E3%83%86%E3%83%AB%E9%82%A3%E8%A6%87%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></td><td class="note">那霸・牧志（國際通東端）</td><td class="note">單軌牧志站天橋直結 1 分鐘、樓下 CARGOES 有超市，拖行李進出最省力；2025/2 整修過，標準雙床 27.3 ㎡ 兩個大男生不擠。</td><td class="note">2 名 1 室素泊：JTB 方案頁 11,000 円起（範圍 11,000-106,960）；jalan 聚合頁最低 11,463 円。10 月中旬實際多在 13,000-18,000 円/室。早餐約 50 種沖繩菜自助（價格未查到）。停車有料。</td><td class="note">沒有大浴場；Casual Twin 只有 18.2 ㎡，訂時要挑 Standard Twin 以上；國際通東端，週末夜間街上較吵。</td></tr>
+      
+      <tr><td class="name">Almont Hotel 那霸縣廳前 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%AB%E3%83%A2%E3%83%B3%E3%83%88%E3%83%9B%E3%83%86%E3%83%AB%E9%82%A3%E8%A6%87%E7%9C%8C%E5%BA%81%E5%89%8D" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></td><td class="note">那霸・縣廳前（國際通西端）</td><td class="note">縣廳前站走 3 分鐘、國際通 3 分鐘，12 樓有大浴場和投幣洗衣，是那霸市區「便宜但什麼都有」的基準款。</td><td class="note">jalan 2026/10/15 2 名 1 室：7,225-16,370 円（含早/不含早混合）；JTB：13,584-31,740 円/室。Twin 21 ㎡。早餐 2026/6 起 1,870 円/人（06:30-09:30）。洗衣 200 円/次、烘 100 円/30 分。大浴場 16:00-26:00、06:00-10:00。停車 1,500 円/晚。</td><td class="note">Twin 只有 21 ㎡，房間偏小；商務飯店等級，沒有度假感。</td></tr>
+      
+      <tr><td class="name">Hyatt Regency 那霸沖繩 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%83%8F%E3%82%A4%E3%82%A2%E3%83%83%E3%83%88%E3%83%AA%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%82%B7%E3%83%BC%E9%82%A3%E8%A6%87%E6%B2%96%E7%B8%84" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></td><td class="note">那霸・櫻坂（牧志站南側）</td><td class="note">國際通旁唯一國際連鎖等級，有戶外泳池與健身房，twin 28 ㎡起；離壺屋陶器街、櫻坂小巷很近，晚上散步好走。</td><td class="note">jalan 2026/10/15 2 名 1 室：標準方案 14,110-28,500 円，Club 樓層 27,500-57,000 円；JTB 10 月素泊最低 21,998 円/室、含早 27,864 円起。HIS 9/20（週日）價 40,700 円起，週末明顯貴。停車 1,500 円/晚。早餐自助 07:00-10:00（sakurazaka）。</td><td class="note">沒有大浴場、沒有投幣洗衣（官網未確認）；牧志站到飯店有一段小坡。</td></tr>
+      
+      <tr><td class="name">Hotel Aqua Citta Naha by WBF <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%81%E3%83%83%E3%82%BF%E3%83%8A%E3%83%8F" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></td><td class="note">那霸・前島（美榮橋站北側）</td><td class="note">屋頂加溫透明泳池全年可用、有大浴場和洗衣，jalan 10/15 雙床房只要 4,400 円起，是這份名單裡 CP 值最高的一間。</td><td class="note">jalan 2026/10/15 2 名 1 室：Twin 20.4 ㎡ 4,400 円起、Club Twin 26.5 ㎡ 5,600-10,750 円、Executive Twin 27.2 ㎡ 6,600-11,000 円（不含早）；Yahoo トラベル 8,594 円起。早餐單點式 07:00-11:00 另計。停車 1,200 円/晚。</td><td class="note">離單軌站與國際通都要走 7-10 分鐘；最便宜的 Twin 只有 20 ㎡。</td></tr>
+      
+      <tr><td class="name">JR 九州 Hotel Blossom 那霸 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=JR%E4%B9%9D%E5%B7%9E%E3%83%9B%E3%83%86%E3%83%AB%E3%83%96%E3%83%A9%E3%83%83%E3%82%B5%E3%83%A0%E9%82%A3%E8%A6%87" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></td><td class="note">那霸・牧志（國際通旁）</td><td class="note">國際通走 1 分、美榮橋站 5 分，Superior Twin 26 ㎡、獨立洗面台，早餐約 60 種沖繩菜，是「乾淨新穎又在國際通」的中價位選擇。</td><td class="note">平台當日價未抓到（jalan 編號未查到）。部落格淡季雙人房約 NT$3,500-5,800；10 月估 15,000-22,000 円/室。停車 1,500 円（15:00-12:00）。</td><td class="note">沒有大浴場、沒有投幣洗衣（官網未列）；Twin 床寬 120 cm 偏窄。</td></tr>
+      
+      <tr><td class="name">HOTEL COLLECTIVE <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=HOTEL%20COLLECTIVE%20%E9%82%A3%E8%A6%87" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></td><td class="note">那霸・松尾（國際通正中央）</td><td class="note">國際通正中央的高級飯店，全室 30 ㎡ 以上、有戶外泳池與三溫暖，預算往上捏的話這是那霸市區最有度假感的一間。</td><td class="note">jalan 2026/10/15 2 名 1 室：約 27,900 円起（Premium Twin 等），Club Lounge 方案到 50,000 円以上。縣廳前站步行 7 分；機場 120/125 號巴士「ホテルコレクティブ前」下車 280 円。</td><td class="note">口碑提到隔音普通、浴室設備不如價格預期；投幣洗衣有無來源互相矛盾（jalan 說有、部落格說無）；週日 12-18 國際通封街，計程車不能直接到門口。</td></tr>
+      
+      <tr><td class="name">Southgate Hotel 沖繩（2026/5 新開幕） <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%82%A6%E3%82%B9%E3%82%B2%E3%83%BC%E3%83%88%E3%83%9B%E3%83%86%E3%83%AB%E6%B2%96%E7%B8%84%20%E3%81%A8%E3%81%BE%E3%82%8A%E3%82%93" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></td><td class="note">那霸・前島（泊港とまりん）</td><td class="note">2026/5/23 才開幕，開在泊港大樓裡，屋頂有酒吧、三溫暖、按摩池加大浴場，部分房型附廚房與洗衣機，適合想住新館又不在意離國際通走 10 分鐘的人。</td><td class="note">價格未抓到（jalan 方案頁亂碼、tabirai 403）。216 室、6-15 樓；停車 2,000 円/晚。美榮橋站約 700 m、おもろまち站步行約 10 分。</td><td class="note">離國際通與單軌站都要走；開幕不到半年，評價樣本少，服務磨合風險。</td></tr>
+      
+      </tbody>
+    </table>
+    </div>
+    
+    <h3 style="margin:18px 0 8px">美國村 2 晚</h3>
+    <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>名稱</th><th>位置</th><th>為什麼</th><th>價格</th><th>注意</th></tr></thead>
+      <tbody>
+      
+      <tr><td class="name">Vessel Hotel Campana 沖繩 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%83%99%E3%83%83%E3%82%BB%E3%83%AB%E3%83%9B%E3%83%86%E3%83%AB%E3%82%AB%E3%83%B3%E3%83%91%E3%83%BC%E3%83%8A%E6%B2%96%E7%B8%84" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></td><td class="note">北谷・美國村</td><td class="note">就在美國村裡、走 3-5 分到日落海灘，樓下 Lawson，有展望浴場、屋頂泳池和投幣洗衣，海景 twin 30-38 ㎡，是美國村住一晚的首選。</td><td class="note">平台當日價未抓到。部落格淡季雙人房 NT$3,189-4,300；10 月估 18,000-28,000 円/室。Premium Ocean View Twin 38 ㎡、Deluxe Ocean View Twin 30 ㎡。早餐自助（有料，價格未查到）。停車免費。</td><td class="note">沒有單軌，去那霸靠巴士（約 1 小時）或自駕；親子客多、旺季吵。</td></tr>
+      
+      <tr><td class="name">Lequ Okinawa Chatan Spa & Resort <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=Lequ%20Okinawa%20Chatan%20Spa%20Resort" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></td><td class="note">北谷・美國村</td><td class="note">美國村走 1 分、日落海灘 5 分，有 1,400 m 天然溫泉大浴場和屋頂無邊際泳池，房內附洗衣機，旁邊就是 Lawson，體驗型住宿裡最省事。</td><td class="note">Trip.com 2 名 1 室 US$142 起（約 21,000 円）；聚合站顯示 JPY 12,631 起（低季）。Garden Twin 25.1 ㎡、Superior 30-31.8 ㎡、Premier 37-39 ㎡（Premier 房內有溫泉浴缸）。早餐 2,200 円/人 07:00-10:30。溫泉 06:00-10:00、15:00-25:00 免費。停車免費。</td><td class="note">Premier 棟沒海景、主要設施在另一棟要走 2 分鐘；無單軌。</td></tr>
+      
+      <tr><td class="name">Hilton 沖繩北谷度假村 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%83%92%E3%83%AB%E3%83%88%E3%83%B3%E6%B2%96%E7%B8%84%E5%8C%97%E8%B0%B7%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></td><td class="note">北谷・美國村北側</td><td class="note">美國村走路就到，房間 33-44 ㎡、退房 12:00，有室內外泳池與大浴場，兩個人想在中部住得寬鬆、早上慢慢來的話選這間。</td><td class="note">jalan 2026/10/15 2 名 1 室：36,500 円起（到 152,000）；トラベルコ最低 29,558 円（Trip.com）。HIS 9/20 週日價 89,070 円起（含晚餐方案，參考用）。停車 2026/5/15 起有料 500 円/晚、4 晚以上上限 2,000 円。早餐 60 種以上自助。</td><td class="note">價格是美國村區最高一級；部分方案不可取消（トラベルコ頁註明取消收全額）。</td></tr>
+      
+      </tbody>
+    </table>
+    </div>
+    
+  </section>
+  
+
+  
+  <section class="pane" id="transport">
+    <h2 class="sec-h">交通</h2><span class="sec-jp">GETTING AROUND</span>
+    <div class="grid2">
+    
+    <div class="rcard">
+      <h3>付款方式</h3>
+      <ul><li>主力用有感應功能的信用卡（Visa/JCB/Master）：單軌全站、120/117/95 公車、やんばる急行、DiDi 都能刷</li><li>備現金：Jack's 與首里そば只收現金、牧志市場多為現金、83/152 公車與 PARCO 接駁車現金，Day1 領 15,000 円/人以上</li><li>不必買 OKICA 或任何周遊券：兩人市區一天只搭 2-3 趟單軌</li></ul>
+    </div>
+    
+    <div class="rcard">
+      <h3>單軌 ゆいレール</h3>
+      <ul><li>機場 → 縣廳前/美榮橋 290 円 13 分；→ おもろまち 320；→ 首里 390</li><li>首末班約 06:00-23:30（官網動態載入未核對）</li></ul>
+    </div>
+    
+    <div class="rcard">
+      <h3>計程車</h3>
+      <ul><li>2026/8/24 起初乘 650 円/1.65 km，市區 3 km 內約 1,000-1,200 円；22:00 後加二成</li><li>DiDi 為主（九成車行有接）、機場排乘車處比 App 快</li><li>那霸 ⇄ 美國村約 40 分、5,000-6,000 円；美國村 → 機場約 40 分、5,000 円（前晚預約）</li></ul>
+    </div>
+    
+    <div class="rcard">
+      <h3>租車 10/16-10/18（48 小時）</h3>
+      <ul><li>飯店步行 10 分內的市區營業所取還、不選機場店；帶駕照正本＋日文譯本＋護照</li><li>加 CDW 與 NOC 補償（每日 550-1,210 円）、ETC 卡 550 円</li><li>那霸 IC ⇄ 許田 IC 單程 ETC 1,040 円（現金 1,610），特別割引到 2027/3</li><li>還車前満タン返し留收據</li><li>那霸過夜停車兩晚：飯店可預約車位優先，否則附近夜間上限 1,000-1,800 円/晚的コインパーキング</li><li>兩人總價含高速油錢約 21,500 円（每人約 10,800 円）</li><li>市區早晚 58 號線最外側是公車專用道，別誤闖</li></ul>
+    </div>
+    
+    <div class="rcard">
+      <h3>PARCO CITY 接駁車（カリー観光）</h3>
+      <ul><li>おもろまち駅前發 10:52、11:38、12:38、13:33、15:35、16:45、17:55；PARCO 發 11:15、12:15、13:10、15:10、16:20、17:30、18:45</li><li>大人 300 円現金、約 20 分（2024/10/1 時刻表，出發前再看官網）</li></ul>
+    </div>
+    
+    </div>
+  </section>
+  
+
+  
+  <section class="pane" id="daytrips">
+    <h2 class="sec-h">日程交通</h2><span class="sec-jp">DAY TRIPS</span>
+    
+    
+    <div class="rcard">
+      <h3><span class="badge day">DAY 2</span><span class="badge tag">DRIVE</span>南部自駕 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8A%E3%81%8D%E3%81%AA%E3%82%8F%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></h3>
+      <div class="meta">10/16 (五) · 租車第一天：鐘乳石洞、漁港天婦羅、聖地、瀨長島夕陽與溫泉</div>
+      <ul><li>那霸 → 玉泉洞 30 分 → 奧武島 15 分 → 齋場御嶽 20 分 → 知念岬 5 分 → 瀨長島 50 分（17:00 前到）→ 那霸 25 分</li></ul>
+    </div>
+    
+    
+    <div class="rcard">
+      <h3><span class="badge day">DAY 3</span><span class="badge tag">DRIVE</span>北部自駕 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E6%B2%96%E7%B8%84%E7%BE%8E%E3%82%89%E6%B5%B7%E6%B0%B4%E6%97%8F%E9%A4%A8" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></h3>
+      <div class="meta">10/17 (六) · 租車第二天：美麗海、備瀨林道、古宇利島</div>
+      <ul><li>07:00 出發走高速約 1 小時 50 分 → 美麗海 09:00 進場 → 備瀨 5 分 → 古宇利 50 分 → 15:00 回程約 1 小時 50 分</li></ul>
+    </div>
+    
+    
+    <div class="rcard">
+      <h3><span class="badge day">DAY 6</span><span class="badge tag">MOVE</span>搬到美國村 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E6%B5%9C%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E3%83%B3%E3%83%93%E3%83%AC%E3%83%83%E3%82%B8" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></h3>
+      <div class="meta">10/20 (二) · 青之洞窟船潛、老牛排離峰、搬到美國村看夕陽</div>
+      <ul><li>浮潛接送回那霸 → Jack's（旭橋）→ 飯店拿行李 → 計程車 40 分 5,000-6,000 円到美國村（或 120 號公車 900 円）</li></ul>
+    </div>
+    
+    
+    <div class="rcard">
+      <h3><span class="badge day">DAY 8</span><span class="badge tag">TAXI</span>美國村 → 機場 <a class="mapmini" href="https://www.google.com/maps/search/?api=1&query=%E9%82%A3%E8%A6%87%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Maps</a></h3>
+      <div class="meta">10/22 (四) · 退房去機場</div>
+      <ul><li>前晚預約 08:00 的計程車，約 40 分 5,000 円；平日早上 58 號線會塞</li></ul>
+    </div>
+    
+  </section>
+  
+
+  
+  
+  <section class="pane" id="budget">
+    <h2 class="sec-h">預算（每人）</h2><span class="sec-jp">BUDGET · TWD</span>
+    <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>項目</th><th style="text-align:right">金額</th><th>說明</th></tr></thead>
+      <tbody>
+      
+      <tr><td class="name">住宿 7 晚（兩人分攤） <span class="badge">住宿</span></td><td class="n">13,200</td><td class="note">那霸 15,000×5 + 美國村 22,500×2 ÷ 2</td></tr>
+      
+      <tr><td class="name">租車 2 天分攤 <span class="badge">交通</span></td><td class="n">2,400</td><td class="note">含保險、ETC、高速（ETC 價）、油、兩晚停車，每人約 10,800 円</td></tr>
+      
+      <tr><td class="name">市區交通 <span class="badge">交通</span></td><td class="n">2,800</td><td class="note">單軌、公車、計程車；含那霸→美國村與美國村→機場兩趟計程車分攤</td></tr>
+      
+      <tr><td class="name">餐飲 8 天 <span class="badge">餐飲</span></td><td class="n">8,800</td><td class="note">高消費三晚（市場、安里家、live 居酒屋）各 6,500-8,000 円，其餘天 3,000-4,000 円</td></tr>
+      
+      <tr><td class="name">門票與體驗 <span class="badge">體驗</span></td><td class="n">2,600</td><td class="note">美麗海前售 1,850-2,000、玉泉洞 2,000、玉陵 300、首里城有料區 400 可選、齋場 600、青之洞窟約 3,500、龍神之湯 2,000</td></tr>
+      
+      <tr><td class="name">保險、eSIM <span class="badge">雜項</span></td><td class="n">1,500</td><td class="note">旅平險 8 天含班機延誤＋eSIM</td></tr>
+      
+      <tr><td class="name">伴手禮與購物緩衝 <span class="badge">購物</span></td><td class="n">5,000</td><td class="note">PARCO、Main Place、機場</td></tr>
+      
+      <tr class="total"><td>合計</td><td class="n">36,300</td><td class="note">TWD / 人</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="bnote">匯率以 1 円 ≈ 0.22 台幣估（2026-09-06 概算，出發前更新）。不含機票。住宿：那霸 5 晚以 15,000 円/房/晚、美國村 2 晚以 22,500 円/房/晚估（Lequ/Vessel 區間），卡位後改實價。預算顧問給的合理區間是 36,000-40,000。</p>
+  </section>
+  
+
+  
+  <section class="pane" id="wishlist">
+    <h2 class="sec-h">願望清單去向</h2><span class="sec-jp">WISHLIST</span>
+    <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>願望</th><th>去向</th><th>說明</th></tr></thead>
+      <tbody>
+      
+      
+      <tr><td class="name">沖繩美麗海水族館</td><td><span class="badge 排入">排入</span> <a class="badge day" href="index.html#day3" style="text-decoration:none">DAY 3 · 10/17 (六)</a></td><td class="note">09:00 前進場避團客</td></tr>
+      
+      
+      <tr><td class="name">古宇利島</td><td><span class="badge 排入">排入</span> <a class="badge day" href="index.html#day3" style="text-decoration:none">DAY 3 · 10/17 (六)</a></td><td class="note">與美麗海同一天；10/17 滿潮，心形岩只遠看</td></tr>
+      
+      
+      <tr><td class="name">美國村</td><td><span class="badge 排入">排入</span> <a class="badge day" href="index.html#day6" style="text-decoration:none">DAY 6 · 10/20 (二)</a></td><td class="note">10/20-21 住這裡兩晚，夕陽看兩次</td></tr>
+      
+      
+      <tr><td class="name">國際通</td><td><span class="badge 排入">排入</span> <a class="badge day" href="index.html#day4" style="text-decoration:none">DAY 4 · 10/18 (日)</a></td><td class="note">週日步行者天國；Day1 夜散步先看</td></tr>
+      
+      
+      <tr><td class="name">第一牧志公設市場</td><td><span class="badge 排入">排入</span> <a class="badge day" href="index.html#day1" style="text-decoration:none">DAY 1 · 10/15 (四)</a></td><td class="note">第一晚持ち上げ晚餐</td></tr>
+      
+      
+      <tr><td class="name">波上宮</td><td><span class="badge 排入">排入</span> <a class="badge day" href="index.html#day1" style="text-decoration:none">DAY 1 · 10/15 (四)</a></td><td class="note">待到 18:02 日落，不專程</td></tr>
+      
+      
+      <tr><td class="name">青之洞窟</td><td><span class="badge 排入">排入</span> <a class="badge day" href="index.html#day6" style="text-decoration:none">DAY 6 · 10/20 (二)</a></td><td class="note">週二那霸接送船潛，週三從美國村出發當備案</td></tr>
+      
+      
+      <tr><td class="name">玉泉洞</td><td><span class="badge 排入">排入</span> <a class="badge day" href="index.html#day2" style="text-decoration:none">DAY 2 · 10/16 (五)</a></td><td class="note">南部自駕日第一站</td></tr>
+      
+      
+      <tr><td class="name">瀨長島</td><td><span class="badge 排入">排入</span> <a class="badge day" href="index.html#day2" style="text-decoration:none">DAY 2 · 10/16 (五)</a></td><td class="note">南部自駕日收尾：17:00 前到，夕陽、晚餐、龍神之湯</td></tr>
+      
+      
+      <tr><td class="name">PARCO CITY</td><td><span class="badge 排入">排入</span> <a class="badge day" href="index.html#day5" style="text-decoration:none">DAY 5 · 10/19 (一)</a></td><td class="note">週一下午，接駁車 15:35 去、18:45 回</td></tr>
+      
+      
+      <tr><td class="name">SAN-A 那霸 Main Place</td><td><span class="badge 排入">排入</span> <a class="badge day" href="index.html#day5" style="text-decoration:none">DAY 5 · 10/19 (一)</a></td><td class="note">博物館旁順路採買</td></tr>
+      
+      
+      <tr><td class="name">T Galleria DFS</td><td><span class="badge 不排">不排</span></td><td class="note">負評顧問查到 LV/Chanel 已撤、Cartier 缺貨、有閉店風險，精品目的地已不存在；Main Place 旁路過可看化妝品</td></tr>
+      
+      
+      <tr><td class="name">AEON MALL 沖繩來客夢</td><td><span class="badge 排入">排入</span> <a class="badge day" href="index.html#day7" style="text-decoration:none">DAY 7 · 10/21 (三)</a></td><td class="note">與港川外人住宅二選一，現場決定</td></tr>
+      
+      
+      <tr><td class="name">Ashibinaa Outlet</td><td><span class="badge 備選">備選</span></td><td class="note">負評：規模小、店少、折扣淺；Day2 想去可在瀨長島前繞 1 小時（10:00-20:00），但會壓到夕陽</td></tr>
+      
+      
+      <tr><td class="name">iias 沖繩豐崎</td><td><span class="badge 備選">備選</span></td><td class="note">Day2 雨天備案（DMM 水族館在裡面）；回程 11:50 起飛，最後一天來不及</td></tr>
+      
+      
+      <tr><td class="name">RYUBO 琉貿百貨</td><td><span class="badge 備選">備選</span></td><td class="note">縣廳前站樓上，Day1、Day4 雨天備案</td></tr>
+      
+      
+      <tr><td class="name">AEON 那霸 Shopping Center</td><td><span class="badge 備選">備選</span></td><td class="note">小祿站直結，Main Place 已能補齊，不特別排</td></tr>
+      
+      </tbody>
+    </table>
+    </div>
+  </section>
+  
+
+  
+  <section class="pane" id="phrases">
+    <h2 class="sec-h">常用句</h2><span class="sec-jp">PHRASES</span>
+    <div class="phr">
+    
+    <div class="p"><div class="zh">兩位，沒有訂位</div><div class="lo">二名です、予約していません</div><div class="ro">ninmei desu, yoyaku shiteimasen</div></div>
+    
+    <div class="p"><div class="zh">請給我菜單</div><div class="lo">メニューをください</div><div class="ro">menyuu o kudasai</div></div>
+    
+    <div class="p"><div class="zh">可以刷卡嗎</div><div class="lo">カードは使えますか</div><div class="ro">kaado wa tsukaemasu ka</div></div>
+    
+    <div class="p"><div class="zh">請加滿（加油站）</div><div class="lo">満タンでお願いします</div><div class="ro">mantan de onegaishimasu</div></div>
+    
+    <div class="p"><div class="zh">結帳</div><div class="lo">お会計お願いします</div><div class="ro">okaikei onegaishimasu</div></div>
+    
+    </div>
+  </section>
+  
+
+  
+  <section class="pane" id="emergency">
+    <h2 class="sec-h">緊急聯絡</h2><span class="sec-jp">EMERGENCY</span>
+    <div class="emg">
+    
+    
+    <div class="e"><span class="nm">警察</span><a class="no" href="tel:110">110</a><span class="nt">租車擦撞一定要先報警拿事故証明，保險才賠</span></div>
+    
+    
+    <div class="e"><span class="nm">救護車／消防</span><a class="no" href="tel:119">119</a></div>
+    
+    
+    <div class="e"><span class="nm">台北駐日經濟文化代表處 那霸分處</span><a class="no" href="tel:0988627008">098-862-7008</a><span class="nt">護照遺失</span></div>
+    
+    
+    <div class="e"><span class="nm">租車公司緊急電話</span><span class="no">訂車後填</span></div>
+    
+    </div>
+  </section>
+  
+
+  
+  <section class="pane" id="packing">
+    <h2 class="sec-h">打包</h2><span class="sec-jp">PACKING</span>
+    <div class="grid2 pack">
+    
+    <div class="rcard">
+      <h3>隨身重要</h3>
+      <ul><li><label><input type="checkbox" data-k="pack:隨身重要:1"><span>護照</span></label></li><li><label><input type="checkbox" data-k="pack:隨身重要:2"><span>台灣駕照正本＋日文譯本（兩人）</span></label></li><li><label><input type="checkbox" data-k="pack:隨身重要:3"><span>感應信用卡兩張以上</span></label></li><li><label><input type="checkbox" data-k="pack:隨身重要:4"><span>日圓現金 Day1 就要 15,000 円/人以上（Jack's、首里そば、市場只收現金）</span></label></li><li><label><input type="checkbox" data-k="pack:隨身重要:5"><span>eSIM 或 SIM</span></label></li></ul>
+    </div>
+    
+    <div class="rcard">
+      <h3>十月沖繩</h3>
+      <ul><li><label><input type="checkbox" data-k="pack:十月沖繩:1"><span>短袖＋薄外套（夜間 23 度）</span></label></li><li><label><input type="checkbox" data-k="pack:十月沖繩:2"><span>防曬、墨鏡、帽子</span></label></li><li><label><input type="checkbox" data-k="pack:十月沖繩:3"><span>泳裝與速乾毛巾（浮潛、溫泉）</span></label></li><li><label><input type="checkbox" data-k="pack:十月沖繩:4"><span>好走防滑的鞋（玉泉洞、齋場御嶽）</span></label></li><li><label><input type="checkbox" data-k="pack:十月沖繩:5"><span>雨傘或輕便雨衣</span></label></li></ul>
+    </div>
+    
+    </div>
+  </section>
+  
+
+  <p class="footer">沖繩八天七夜 · 休假模式 · v3 · 2026-09-06 · 內容以官方公告為準，出發前一週複查</p>
+</div>
+
+<button class="themebtn" onclick="(function(){var r=document.documentElement;var d=(r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'))==='dark';r.setAttribute('data-theme',d?'light':'dark');})()" aria-label="切換深淺色">
+  <svg class="ic"><use href="#i-moon"/></svg>
+</button>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab')),panes=[].slice.call(document.querySelectorAll('.pane'));
+  function show(id){tabs.forEach(function(t){t.classList.toggle('on',t.dataset.tab===id)});panes.forEach(function(p){p.classList.toggle('on',p.id===id)});}
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.tab);history.replaceState(null,'','#'+t.dataset.tab)})});
+  function fromHash(){var h=location.hash.slice(1);if(h&&document.getElementById(h))show(h);}
+  fromHash();window.addEventListener('hashchange',fromHash);
+  [].slice.call(document.querySelectorAll('.pack input')).forEach(function(c){
+    try{c.checked=localStorage.getItem(c.dataset.k)==='1'}catch(e){}
+    c.addEventListener('change',function(){try{localStorage.setItem(c.dataset.k,c.checked?'1':'0')}catch(e){}});
+  });
+})();
+</script>
+</body>
+</html>
